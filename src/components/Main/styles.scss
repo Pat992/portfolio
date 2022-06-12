@@ -2,20 +2,26 @@
 
 section {
     height: 90vh;
+    margin: 0 auto;
+    width: 80vw;
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
 }
 
-.introduction {
-    flex-grow: 1;
+h1 {
+    font-size: 5rem !important;
+    margin: 2rem auto;
 }
 
+.introduction,
 .animations {
+    margin: 2rem auto;
     flex-grow: 1;
 }
 
 .profile-card {
+    margin: 0 auto;
     position: relative;
     background: $accent-yellow;
     height: 45rem;
@@ -38,4 +44,29 @@ section {
     bottom: -10;
     height: 50rem;
     transform: rotateZ(-15deg);
+}
+
+@media screen and (max-width: 800px) {
+    section {
+        justify-content: center;
+    }
+
+    .introduction,
+    .animations {
+        margin: 0 auto;
+    }
+
+    .profile-card {
+        height: 30rem;
+        width: 30rem;
+    }
+
+    .profile-image {
+        height: 35rem;
+    }
+
+    .profile-image-overlay {
+        height: 45rem;
+        width: 45rem;
+    }
 }
