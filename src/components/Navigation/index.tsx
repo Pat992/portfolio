@@ -1,5 +1,5 @@
 import Icon from './Icon';
-import './index.scss';
+import './styles.scss';
 
 interface NavProps { };
 const Nav: React.FC<NavProps> = () => {

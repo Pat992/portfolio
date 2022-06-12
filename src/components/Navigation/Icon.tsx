@@ -1,8 +1,9 @@
+import './styles.scss';
 
 interface IconProps { };
 const Icon: React.FC<IconProps> = () => {
     return (
-        <svg width="100%" height="100%" viewBox="0 0 200 200" version="1.1" xmlns="http://www.w3.org/2000/svg" style={{ fillRule: 'evenodd', clipRule: 'evenodd', strokeLinejoin: 'round', strokeMiterlimit: 2 }}>
+        <svg className="icon" width="100%" height="100%" viewBox="0 0 200 200" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlSpace="preserve" style={{ fillRule: 'evenodd', clipRule: 'evenodd', strokeLinejoin: 'round', strokeMiterlimit: 2 }}>
             <g transform="matrix(1,0,0,1,-5087,-549)">
                 <g id="icon" transform="matrix(0.104167,0,0,0.185185,5087,549)">
                     <rect x="0" y="0" width="1920" height="1080" style={{ fill: 'none' }} />
