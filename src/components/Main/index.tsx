@@ -1,3 +1,4 @@
+import './index.scss';
 
 interface MainProps { };
 const Main: React.FC<MainProps> = () => {

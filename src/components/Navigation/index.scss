@@ -1,0 +1,13 @@
+@import '../../global';
+
+nav,
+ul {
+    width: 90vw;
+    display: flex;
+    justify-content: space-between;
+}
+
+ul {
+    width: 40vw;
+    margin: 0 auto;
+}
