@@ -5,8 +5,7 @@ import Nav from './components/Navigation';
 import Projects from './components/Projects';
 import Skills from './components/Skills';
 import ConnectionSidebar from './components/UI/Connection-sidebar';
-import Github from './components/UI/Github';
-import Linkedin from './components/UI/Linkedin';
+import ContactButton from './components/UI/Contact-button';
 
 function App() {
   return (
@@ -15,6 +14,7 @@ function App() {
       <Main />
       <Projects />
       <Skills />
+      <ContactButton />
       <ConnectionSidebar />
     </Fragment>
   );

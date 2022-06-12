@@ -1,1 +1,41 @@
 @import '../../global';
+
+section {
+    height: 90vh;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.introduction {
+    flex-grow: 1;
+}
+
+.animations {
+    flex-grow: 2;
+}
+
+.profile-card {
+    position: relative;
+    background: $accent-yellow;
+    height: 45rem;
+    width: 45rem;
+    transform: rotateZ(15deg);
+    border-radius: 25%;
+    overflow: hidden;
+}
+
+.profile-image-overlay {
+    z-index: 1;
+    bottom: -10;
+    position: absolute;
+    height: 50rem;
+    width: 50rem;
+}
+
+.profile-image {
+    position: absolute;
+    bottom: -10;
+    height: 50rem;
+    transform: rotateZ(-15deg);
+}
