@@ -1,0 +1,75 @@
+/*
+Variables
+*/
+$header1: 2.5rem;
+$header2: 4rem;
+$header3: 2.5rem;
+$header4: 2rem;
+$text: 2.5rem;
+$accent-blue: #676DDB;
+$accent-red: #FE8058;
+$accent-yellow: #FFD143;
+$accent-light-blue: #39AFC9;
+$bg-color-dark: #29283F;
+$card-color-dark: #3E3E5F;
+$text-color-dark: #FFF;
+$text-color-accent-dark: #BBB;
+$bg-color-light: #F8FBFF;
+$card-color-light: #FFF;
+$text-color-light: #000;
+$text-color-accent-light: #4F4F4F;
+
+/*
+Global styles
+*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+
+p {
+    font-size: $text;
+}
+
+h1 {
+    font-size: $header1;
+}
+
+li,
+button,
+label,
+p,
+a {
+    font-size: $text;
+}
+
+h2 {
+    font-size: $header2;
+}
+
+h3 {
+    font-size: $header3;
+}
+
+h4,
+h5 {
+    font-size: $header4;
+}
+
+a {
+    text-decoration: none;
+    color: $text-color-accent-light;
+}
+
+ul {
+    list-style: none;
+}
