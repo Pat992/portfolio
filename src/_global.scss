@@ -38,6 +38,7 @@ body {
 
 p {
     font-size: $text;
+    font-family: 'Roboto', sans-serif;
 }
 
 h1 {
@@ -50,6 +51,7 @@ label,
 p,
 a {
     font-size: $text;
+    font-family: 'Roboto', sans-serif;
 }
 
 h2 {
@@ -68,8 +70,10 @@ h5 {
 a {
     text-decoration: none;
     color: $text-color-accent-light;
+    font-family: 'Roboto', sans-serif;
 }
 
 ul {
     list-style: none;
+    font-family: 'Roboto', sans-serif;
 }
