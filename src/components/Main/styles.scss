@@ -10,22 +10,28 @@ section {
 }
 
 h1 {
-    font-size: 5rem !important;
     margin: 2rem auto;
 }
 
+h4 {
+    font-size: $text  !important;
+}
+
+.title-2 {
+    margin-left: 10rem;
+}
+
 .introduction,
-.animations {
+.profile {
     margin: 2rem auto;
-    flex-grow: 1;
 }
 
 .profile-card {
     margin: 0 auto;
     position: relative;
     background: $accent-yellow;
-    height: 45rem;
-    width: 45rem;
+    height: calc(45rem + 1vh);
+    width: calc(45rem + 1vw);
     transform: rotateZ(15deg);
     border-radius: 25%;
     overflow: hidden;
@@ -35,38 +41,60 @@ h1 {
     z-index: 1;
     bottom: -10;
     position: absolute;
-    height: 50rem;
-    width: 50rem;
+    height: calc(50rem + 1vh);
+    width: calc(50rem + 1vw);
 }
 
 .profile-image {
     position: absolute;
     bottom: -10;
-    height: 50rem;
+    height: calc(50rem + 1vh);
     transform: rotateZ(-15deg);
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 1200px) {
     section {
-        justify-content: center;
+        justify-content: start;
+        flex-direction: column;
     }
 
     .introduction,
-    .animations {
-        margin: 0 auto;
+    .profile {
+        height: 10vh;
+    }
+
+    .profile {
+        margin: 10rem 0;
     }
 
     .profile-card {
-        height: 30rem;
-        width: 30rem;
+        height: calc(35rem + 1vh);
+        width: calc(35rem + 1vw);
     }
 
     .profile-image {
-        height: 35rem;
+        height: calc(40rem + 1vh);
     }
 
     .profile-image-overlay {
-        height: 45rem;
-        width: 45rem;
+        height: calc(40rem + 1vh);
+        width: calc(40rem + 1vw);
+    }
+}
+
+@media screen and (max-width: 700px) {
+
+    .profile-card {
+        height: calc(25rem + 1vh);
+        width: calc(25rem + 1vw);
+    }
+
+    .profile-image {
+        height: calc(30rem + 1vh);
+    }
+
+    .profile-image-overlay {
+        height: calc(30rem + 1vh);
+        width: calc(30rem + 1vw);
     }
 }

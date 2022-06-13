@@ -1,7 +1,7 @@
 @import '../../global';
 
 aside {
-    position: sticky;
+    position: fixed;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -16,11 +16,11 @@ aside {
 }
 
 .contact-button {
-    display: block;
-    position: sticky;
+    position: fixed;
     bottom: 15%;
-    margin: auto;
-    width: 20rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: calc(25rem + 1vw);
     padding: 2rem;
     border: none;
     border-radius: 50px;

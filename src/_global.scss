@@ -1,11 +1,11 @@
 /*
 Variables
 */
-$header1: 2.5rem;
-$header2: 4rem;
-$header3: 2.5rem;
-$header4: 2rem;
-$text: 2.5rem;
+$header1: calc(2.5rem + 1vw);
+$header2: calc(4rem + 1vw);
+$header3: calc(2.5rem + 1vw);
+$header4: calc(2rem + 1vw);
+$text: calc(1.5rem + 1vw);
 $accent-blue: #676DDB;
 $accent-red: #FE8058;
 $accent-yellow: #FFD143;

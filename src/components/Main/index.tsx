@@ -6,10 +6,14 @@ const Main: React.FC<MainProps> = () => {
     return (
         <section>
             <div className='introduction'>
-                <h1>Patrick<br />Hettich</h1>
-                <h4>software developer /<br />cloud engineer</h4>
+                <h4>Patrick Hettich</h4>
+                <h1>
+                    <span>software developer \</span>
+                    <br />
+                    <span className='title-2'>cloud engineer</span>
+                </h1>
             </div>
-            <div className='animations'><ProfileCard /></div>
+            <div className='profile'><ProfileCard /></div>
         </section>
     );
 };
