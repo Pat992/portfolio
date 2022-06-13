@@ -1,16 +1,21 @@
 @import '../../global';
 
+section {
+    display: flex;
+    flex-direction: row;
+}
+
 svg {
     fill: #A9CAF7;
 }
 
 .project {
-    height: 90vh;
     width: 80vw;
-    margin: 0 auto;
+    margin: 50px auto;
 }
 
 .adwave-project,
+.andfm-project,
 .project-card {
     position: relative;
     height: 70vh;
@@ -43,18 +48,29 @@ svg {
     background: linear-gradient(#2275E8, #428BEB);
 }
 
+.andfm-project {
+    .project-card {
+        background: #3755EF;
+    }
+
+    .bg {
+        width: 120%;
+    }
+}
+
 @media screen and (max-width: 1200px) {
     section {
         width: 95vw;
     }
 
     .project {
-        height: 50vh;
+        height: 60vh;
         width: 100vw;
-        margin: 0 auto;
+        margin: 30px auto;
     }
 
     .adwave-project,
+    .andfm-project,
     .project-card {
         width: 100%;
         position: relative;
@@ -84,11 +100,12 @@ svg {
     .project {
         height: 40vh;
         width: 100vw;
-        margin: 0 auto;
+        margin: 50px auto;
     }
 
     .adwave-project,
-    .project-card {
+    .project-card,
+    .andfm-project {
         width: 100%;
         position: relative;
         height: 30vh;

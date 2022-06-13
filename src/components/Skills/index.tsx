@@ -2,7 +2,7 @@
 interface SkillsProps { };
 const Skills: React.FC<SkillsProps> = () => {
     return (
-        <h1>Skills</h1>
+        <div style={{ marginTop: '2000px' }}></div>
     );
 };
 
