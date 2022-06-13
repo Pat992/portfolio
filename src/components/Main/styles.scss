@@ -30,8 +30,10 @@ h4 {
     margin: 0 auto;
     position: relative;
     background: $accent-yellow;
-    height: calc(45rem + 1vh);
-    width: calc(45rem + 1vw);
+    height: 45vh;
+    width: 45vh;
+    max-width: 40vw;
+    max-height: 40vw;
     transform: rotateZ(15deg);
     border-radius: 25%;
     overflow: hidden;
@@ -41,14 +43,18 @@ h4 {
     z-index: 1;
     bottom: -10;
     position: absolute;
-    height: calc(50rem + 1vh);
-    width: calc(50rem + 1vw);
+    height: 50vh;
+    width: 50vh;
+    max-width: 45vw;
+    max-height: 45vw;
 }
 
 .profile-image {
     position: absolute;
     bottom: -10;
-    height: calc(50rem + 1vh);
+    height: 50vh;
+    max-width: 45vw;
+    max-height: 45vw;
     transform: rotateZ(-15deg);
 }
 

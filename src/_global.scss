@@ -5,7 +5,7 @@ $header1: calc(2.5rem + 1vw);
 $header2: calc(4rem + 1vw);
 $header3: calc(2.5rem + 1vw);
 $header4: calc(2rem + 1vw);
-$text: calc(1.5rem + 1vw);
+$text: calc(1rem + 1vw);
 $accent-blue: #676DDB;
 $accent-red: #FE8058;
 $accent-yellow: #FFD143;
@@ -34,9 +34,10 @@ html {
 }
 
 body {
+    padding: 0;
     font-family: 'Montserrat', sans-serif;
     width: 97vw;
-    margin: 0 auto;
+    margin: 0 0;
 }
 
 p {

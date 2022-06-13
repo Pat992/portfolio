@@ -20,7 +20,8 @@ aside {
     bottom: 15%;
     left: 50%;
     transform: translateX(-50%);
-    width: calc(25rem + 1vw);
+    width: 15vw;
+    min-width: 20rem;
     padding: 2rem;
     border: none;
     border-radius: 50px;

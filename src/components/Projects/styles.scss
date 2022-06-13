@@ -23,44 +23,89 @@ svg {
 }
 
 .insights {
-    height: 150%;
-    max-width: 50vw;
+    width: calc(50% + 1vw);
+    max-height: 70vh;
     position: absolute;
-    bottom: -30%;
+    bottom: -10em;
+    left: 5px;
     transform: rotateZ(-10deg);
 }
 
 .public {
     position: absolute;
-    top: -10%;
-    right: -10%;
-    height: 70%;
-    max-width: 40vw;
+    top: -10em;
+    right: -300px;
+    width: calc(50% + 1vw);
+    max-height: 70vh;
 }
 
 .adwave-card {
     background: linear-gradient(#2275E8, #428BEB);
 }
 
-@media screen and (max-width: 1080px) {
-
-    .project-card,
-    .project {
-        height: 30vh;
+@media screen and (max-width: 1200px) {
+    section {
         width: 95vw;
     }
-}
 
-@media screen and (max-width: 800px) {
-
-    .project-card,
     .project {
-        height: 30vh;
+        height: 50vh;
         width: 100vw;
+        margin: 0 auto;
+    }
+
+    .adwave-project,
+    .project-card {
+        width: 100%;
+        position: relative;
+        height: 40vh;
+    }
+
+    .insights,
+    .public {
+        width: calc(40% + 1vw);
     }
 
     .insights {
-        bottom: -50%;
-        width: 50%;
+        bottom: -10em;
+        width: calc(50% + 1vw);
+    }
+
+    .public {
+        right: -100px;
+    }
+}
+
+@media screen and (max-width: 750px) {
+    section {
+        width: 100vw;
+    }
+
+    .project {
+        height: 40vh;
+        width: 100vw;
+        margin: 0 auto;
+    }
+
+    .adwave-project,
+    .project-card {
+        width: 100%;
+        position: relative;
+        height: 30vh;
+    }
+
+    .insights,
+    .public {
+        width: calc(40% + 1vw);
+    }
+
+    .insights {
+        bottom: -5em;
+        width: calc(60% + 1vw);
+    }
+
+    .public {
+        right: -50px;
+        top: -5em;
     }
 }
