@@ -49,12 +49,18 @@ svg {
 }
 
 .andfm-project {
+    h2 {
+        position: absolute;
+    }
+
     .project-card {
         background: #3453f3;
     }
 
     .bg {
         width: 120%;
+        position: absolute;
+        top: 0;
     }
 }
 
