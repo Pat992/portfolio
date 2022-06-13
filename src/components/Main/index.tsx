@@ -4,7 +4,7 @@ import './styles.scss';
 interface MainProps { };
 const Main: React.FC<MainProps> = () => {
     return (
-        <section>
+        <section className='main'>
             <div className='introduction'>
                 <h4>Patrick Hettich</h4>
                 <h1>

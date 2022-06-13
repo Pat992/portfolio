@@ -4,7 +4,8 @@ import AndFm from "./AndFm/And-fm";
 interface ProjectsProps { };
 const Projects: React.FC<ProjectsProps> = () => {
     return (
-        <section>
+        <section className="projects">
+            <h2>PROJECTS</h2>
             <AdWave />
             <AndFm />
         </section>

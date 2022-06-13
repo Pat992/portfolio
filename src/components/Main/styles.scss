@@ -1,6 +1,6 @@
 @import '../../global';
 
-section {
+.main {
     height: 90vh;
     margin: 0 auto;
     width: 80vw;
@@ -59,7 +59,7 @@ h4 {
 }
 
 @media screen and (max-width: 1200px) {
-    section {
+    .main {
         justify-content: start;
         flex-direction: column;
     }

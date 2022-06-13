@@ -1,8 +1,8 @@
 @import '../../global';
 
-section {
+.projects {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
 }
 
 svg {
@@ -59,7 +59,7 @@ svg {
 }
 
 @media screen and (max-width: 1200px) {
-    section {
+    .projects {
         width: 95vw;
     }
 
@@ -92,7 +92,7 @@ svg {
 }
 
 @media screen and (max-width: 750px) {
-    section {
+    .projects {
         width: 100vw;
     }
 
