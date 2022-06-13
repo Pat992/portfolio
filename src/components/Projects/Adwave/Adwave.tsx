@@ -7,6 +7,7 @@ const AdWave: React.FC<AdWaveProps> = () => {
     return (
         <div className='adwave-project project'>
             <div className='project-card adwave-card'>
+                <h2>AdWave</h2>
                 <PublicSvg />
             </div>
             <InsightsSvg />
