@@ -1,7 +1,7 @@
 import '../styles.scss';
 
-interface BgTopProps { };
-const BgTop: React.FC<BgTopProps> = () => {
+interface BackgroundProps { };
+const Background: React.FC<BackgroundProps> = () => {
     return (
         <svg className='bg' viewBox="0 0 3073 1500" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" xmlSpace="preserve" clipRule={'evenodd'} strokeLinejoin={'round'} strokeMiterlimit={2} style={{ fillRule: 'evenodd' }}>
             <g transform="matrix(1,0,0,1,-15106,0)">
@@ -71,4 +71,4 @@ const BgTop: React.FC<BgTopProps> = () => {
     );
 };
 
-export default BgTop;
+export default Background;
