@@ -1,7 +1,7 @@
-import { motion } from 'framer-motion';
+import { motion, Variants } from 'framer-motion';
 import './styles.scss';
 
-const svgVariants = {
+const svgVariants: Variants = {
     from: {
         y: 'calc(50vh + 100px)',
         x: '50vw',

@@ -1,8 +1,8 @@
-import { motion } from 'framer-motion';
+import { motion, Variants } from 'framer-motion';
 import ProfileCard from './ProfileCard';
 import './styles.scss';
 
-const sectionVariants = {
+const sectionVariants: Variants = {
     from: {
         opacity: 0
     },
