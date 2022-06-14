@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import './styles.scss';
 import profile from '../../assets/image.png';
+import { useState } from 'react';
 
 const cardVariants = {
     from: {
@@ -15,6 +16,14 @@ const cardVariants = {
             duration: 0.5,
             when: 'beforeChildren',
             staggerChildren: 0.4
+        }
+    },
+    idle: {
+        scale: [1, 0.9],
+        rotateZ: ['15deg', '16deg'],
+        transition: {
+            yoyo: Infinity,
+            duration: 10
         }
     }
 }
@@ -32,15 +41,28 @@ const imageVariants = {
             duration: 1,
             type: 'easeOut',
         }
+    },
+    idle: {
+        y: 0,
+        scale: 1,
+        rotateZ: '-15deg',
+        transition: {
+            yoyo: Infinity,
+        }
     }
 }
 
 interface ProfileCardProps { };
 const ProfileCard: React.FC<ProfileCardProps> = () => {
+    const [cardIdle, setCardIdle] = useState(false);
+
     return (
-        <motion.div variants={cardVariants} initial='from' animate='to' className='profile-card'>
+        <motion.div variants={cardVariants} initial='from' animate={!cardIdle ? 'to' : 'idle'} className='profile-card'>
             <div className='profile-image-overlay'></div>
-            <motion.img variants={imageVariants} className='profile-image' src={profile} alt="profile image" />
+            <motion.img variants={imageVariants} onAnimationComplete={() => {
+                setCardIdle(_ => true);
+                console.log(cardIdle);
+            }} className='profile-image' src={profile} alt="profile image" />
         </motion.div>
     );
 };
