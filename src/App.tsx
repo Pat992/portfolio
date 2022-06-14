@@ -7,7 +7,7 @@ import Skills from './components/Skills';
 import ConnectionSidebar from './components/UI/Connection-sidebar';
 import ContactButton from './components/UI/Contact-button';
 
-function App() {
+const App = () => {
   return (
     <Fragment>
       <Nav />

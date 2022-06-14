@@ -1,9 +1,29 @@
+import { motion } from 'framer-motion';
 import './styles.scss';
+
+const svgVariants = {
+    from: {
+        y: 'calc(50vh + 100px)',
+        x: '50vw',
+        scale: 5
+    },
+    to: {
+        y: 0,
+        x: 0,
+        scale: 1,
+        transition: {
+            duration: 0.5,
+            type: 'easeInOut'
+        }
+    }
+};
+
 
 interface IconProps { };
 const Icon: React.FC<IconProps> = () => {
+
     return (
-        <svg className="icon" width="100%" height="100%" viewBox="0 0 200 200" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlSpace="preserve" style={{ fillRule: 'evenodd', clipRule: 'evenodd', strokeLinejoin: 'round', strokeMiterlimit: 2 }}>
+        <motion.svg variants={svgVariants} initial='from' animate='to' className="icon" viewBox="0 0 200 200" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlSpace="preserve">
             <g transform="matrix(1,0,0,1,-5087,-549)">
                 <g id="icon" transform="matrix(0.104167,0,0,0.185185,5087,549)">
                     <rect x="0" y="0" width="1920" height="1080" style={{ fill: 'none' }} />
@@ -15,7 +35,7 @@ const Icon: React.FC<IconProps> = () => {
                     </g>
                 </g>
             </g>
-        </svg>
+        </motion.svg>
     );
 };
 
