@@ -1,16 +1,14 @@
 @import '../../global';
 
 .projects {
+    width: 90vw;
+    margin: 0 auto;
     display: flex;
     flex-direction: column;
 }
 
-svg {
-    fill: #A9CAF7;
-}
-
 .project {
-    width: 80vw;
+    width: 90vw;
     margin: 50px auto;
 }
 
@@ -42,6 +40,12 @@ svg {
     right: -300px;
     width: calc(50% + 1vw);
     max-height: 70vh;
+}
+
+.adwave-project {
+    svg {
+        fill: #A9CAF7;
+    }
 }
 
 .adwave-card {
@@ -97,7 +101,7 @@ svg {
     }
 }
 
-@media screen and (max-width: 750px) {
+@media screen and (max-width: 650px) {
     .projects {
         width: 100vw;
     }

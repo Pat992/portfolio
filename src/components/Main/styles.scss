@@ -1,9 +1,9 @@
 @import '../../global';
 
 .main {
-    height: 90vh;
+    height: 95vh;
     margin: 0 auto;
-    width: 80vw;
+    width: 100vw;
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
@@ -60,7 +60,7 @@ h4 {
 @media screen and (max-width: 1200px) {
     .main {
         justify-content: start;
-        flex-direction: column;
+        flex-direction: column-reverse;
 
         h1 {
             font-size: $header4;
@@ -73,7 +73,7 @@ h4 {
     }
 
     .profile {
-        margin: 10rem 0;
+        margin: 15rem 0;
     }
 
     .profile-card {

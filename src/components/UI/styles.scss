@@ -11,17 +11,18 @@ aside {
 
 .github,
 .linkedin {
-    width: 4rem;
+    width: calc(2rem + 1vw);
     margin: 1rem 0;
+    min-width: 3rem;
 }
 
 .contact-button {
     position: fixed;
-    bottom: 15%;
+    bottom: 5%;
     left: 50%;
     transform: translateX(-50%);
     width: 15vw;
-    min-width: 20rem;
+    min-width: 15rem;
     padding: 2rem;
     border: none;
     border-radius: 50px;
