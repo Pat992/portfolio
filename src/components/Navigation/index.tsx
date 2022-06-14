@@ -19,9 +19,7 @@ const liVariants = {
     to: {
         x: 0,
         transition: {
-            duration: 0.5,
-            when: 'beforeChildren',
-            staggerChildren: 0.4
+            duration: 1.5,
         }
     }
 }
