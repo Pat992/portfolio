@@ -6,6 +6,7 @@ export const projectsSlice = createSlice({
         hasEnteredVP: false,
         inViewport: false,
         hasLeftVP: false,
+        scrollValue: 0,
     },
     reducers: {
         setHasEnteredProjects: (state) => {
