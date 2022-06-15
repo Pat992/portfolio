@@ -6,7 +6,6 @@ import Nav from './components/Navigation';
 import Projects from './components/Projects';
 import Skills from './components/Skills';
 import ConnectionSidebar from './components/UI/Connection-sidebar';
-import ContactButton from './components/UI/Contact-button';
 import { useAppDispatch } from './store/hooks';
 import { setScrollValue } from './store/scroll-slice';
 
@@ -24,7 +23,6 @@ const App = () => {
       <Main />
       <Projects />
       <Skills />
-      <ContactButton />
       <ConnectionSidebar />
     </Fragment>
   );

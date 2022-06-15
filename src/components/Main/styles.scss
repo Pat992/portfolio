@@ -57,6 +57,17 @@ h4 {
     max-height: 45vw;
 }
 
+.contact-button {
+    position: relative;
+    margin: 5rem auto;
+    width: 15vw;
+    min-width: 15rem;
+    padding: 2rem;
+    border: none;
+    border-radius: 50px;
+    z-index: 2;
+}
+
 @media screen and (max-width: 1200px) {
     .main {
         justify-content: start;

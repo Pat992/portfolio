@@ -1,4 +1,5 @@
 import { motion, Variants } from 'framer-motion';
+import ContactButton from './Contact-button';
 import ProfileCard from './ProfileCard';
 import './styles.scss';
 
@@ -41,6 +42,7 @@ const Main: React.FC<MainProps> = () => {
                 <motion.h4 variants={textVariants}>Patrick Hettich</motion.h4>
                 <motion.h1 variants={textVariants} >software developer \</motion.h1>
                 <motion.h1 variants={textVariants} className='title-2'>cloud engineer</motion.h1>
+                <ContactButton />
             </motion.div>
             <div className='profile'><ProfileCard /></div>
         </motion.section>
