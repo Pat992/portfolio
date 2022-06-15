@@ -69,7 +69,8 @@ const imageVariants: Variants = {
 
 interface ProfileCardProps { };
 const ProfileCard: React.FC<ProfileCardProps> = () => {
-    const inViewport = useAppSelector((state) => state.projects.inViewport);
+    const inMainViewport = useAppSelector((state) => state.main.inViewport);
+    const hasEnteredProjects = useAppSelector((state) => state.projects.hasEnteredVP);
     const controls = useAnimation();
 
     useEffect(() => {
@@ -82,14 +83,15 @@ const ProfileCard: React.FC<ProfileCardProps> = () => {
     }, []);
 
     useEffect(() => {
-        if (inViewport === true) {
+        if (hasEnteredProjects === true) {
             controls.start('moveToProjects');
-        } if (inViewport === false) {
+        }
+        else if (inMainViewport === true) {
             controls.start('to').then(() => {
                 controls.start('idle');
             });
         }
-    }, [inViewport]);
+    }, [hasEnteredProjects, inMainViewport]);
 
     return (
         <motion.div variants={cardVariants} initial='from' animate={controls} className='profile-card'>

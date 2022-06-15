@@ -1,4 +1,6 @@
 import { motion, Variants } from 'framer-motion';
+import { useAppDispatch } from '../../store/hooks';
+import { setHasEnteredMain, setHasLeftMain } from '../../store/main-slice';
 import ContactButton from './Contact-button';
 import ProfileCard from './ProfileCard';
 import './styles.scss';
@@ -36,8 +38,9 @@ const textVariants = {
 
 interface MainProps { };
 const Main: React.FC<MainProps> = () => {
+    const dispatch = useAppDispatch();
     return (
-        <motion.section variants={sectionVariants} initial='from' animate='to' className='main'>
+        <motion.section variants={sectionVariants} initial='from' animate='to' className='main' onViewportEnter={() => dispatch(setHasEnteredMain())} onViewportLeave={() => dispatch(setHasLeftMain())}>
             <motion.div className='introduction'>
                 <motion.h4 variants={textVariants}>Patrick Hettich</motion.h4>
                 <motion.h1 variants={textVariants} >software developer \</motion.h1>
