@@ -23,8 +23,8 @@ const buttonVariants: Variants = {
     leaveMain: {
         position: 'fixed',
         //bottom: 0,
-        x: '70vw',
-        y: '45vh',
+        x: '980%',
+        y: '600%',
         width: '7rem',
         height: '7rem',
         transition: {
