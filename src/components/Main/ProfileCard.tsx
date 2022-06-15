@@ -91,7 +91,7 @@ const ProfileCard: React.FC<ProfileCardProps> = () => {
                 controls.start('idle');
             });
         }
-    }, [hasEnteredProjects, inMainViewport]);
+    }, [inMainViewport, hasEnteredProjects]);
 
     return (
         <motion.div variants={cardVariants} initial='from' animate={controls} className='profile-card'>
