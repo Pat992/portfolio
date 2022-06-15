@@ -5,6 +5,10 @@
     margin: 0 auto;
     display: flex;
     flex-direction: column;
+
+    h2 {
+        z-index: 1;
+    }
 }
 
 .project {
