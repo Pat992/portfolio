@@ -19,7 +19,7 @@ const liVariants = {
     to: {
         x: 0,
         transition: {
-            duration: 1.5,
+            duration: 0.5,
         }
     }
 }

@@ -20,6 +20,7 @@ const inViewVariants: Variants = {
 
 interface ProjectsProps { };
 const Projects: React.FC<ProjectsProps> = () => {
+
     return (
         <section className="projects">
             <h2>PROJECTS</h2>
