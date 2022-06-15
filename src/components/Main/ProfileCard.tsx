@@ -32,7 +32,7 @@ const cardVariants: Variants = {
         y: 500,
         rotateZ: '10deg',
         transition: {
-            duration: 0.5
+            duration: 1
         }
     }
 }
