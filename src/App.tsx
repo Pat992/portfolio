@@ -1,5 +1,5 @@
 import { useViewportScroll } from 'framer-motion';
-import { Fragment, useState } from 'react';
+import { Fragment } from 'react';
 import { useDispatch } from 'react-redux';
 import './App.scss';
 import Main from './components/Main';

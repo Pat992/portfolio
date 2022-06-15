@@ -4,19 +4,24 @@ export const projectsSlice = createSlice({
     name: 'projects',
     initialState: {
         hasEnteredVP: false,
+        inViewport: false,
         hasLeftVP: false,
     },
     reducers: {
-        setHasEntered: (state, action) => {
-            state.hasEnteredVP = action.payload
+        setHasEnteredProjects: (state) => {
+            state.hasEnteredVP = true;
+            state.inViewport = true;
+            state.hasLeftVP = false;
         },
-        setHasLeft: (state, action) => {
-            state.hasLeftVP = action.payload
+        setHasLeftProjcets: (state) => {
+            state.hasEnteredVP = false;
+            state.inViewport = false;
+            state.hasLeftVP = true;
         },
     },
 })
 
 // Action creators are generated for each case reducer function
-export const { setHasEntered, setHasLeft } = projectsSlice.actions
+export const { setHasEnteredProjects, setHasLeftProjcets } = projectsSlice.actions
 
 export default projectsSlice.reducer

@@ -1,4 +1,6 @@
 import { motion, Variants } from 'framer-motion';
+import { useDispatch } from 'react-redux';
+import { setHasEnteredProjects, setHasLeftProjcets } from '../../store/projects-slice';
 import AdWave from "./Adwave/Adwave";
 import AndFm from "./AndFm/And-fm";
 
@@ -20,13 +22,14 @@ const inViewVariants: Variants = {
 
 interface ProjectsProps { };
 const Projects: React.FC<ProjectsProps> = () => {
+    const dispatch = useDispatch();
 
     return (
-        <section className="projects">
+        <motion.section className="projects" onViewportEnter={() => dispatch(setHasEnteredProjects())} onViewportLeave={() => dispatch(setHasLeftProjcets())}>
             <h2>PROJECTS</h2>
             <motion.div className='project' variants={inViewVariants} initial='from' whileInView='to' viewport={{ once: false, amount: 0.5 }}><AdWave /></motion.div>
             <motion.div className='project' variants={inViewVariants} initial='from' whileInView='to' viewport={{ once: false, amount: 0.5 }}><AndFm /></motion.div>
-        </section>
+        </motion.section>
     );
 };
 
