@@ -36,19 +36,6 @@ const textVariants: Variants = {
     }
 }
 
-const buttonVariants: Variants = {
-    from: {
-        x: '-50vw'
-    },
-    to: {
-        x: 0,
-        transition: {
-            duration: 0.5,
-            type: 'spring'
-        }
-    }
-};
-
 interface MainProps { };
 const Main: React.FC<MainProps> = () => {
     const dispatch = useAppDispatch();
@@ -58,7 +45,7 @@ const Main: React.FC<MainProps> = () => {
                 <motion.h4 variants={textVariants}>Patrick Hettich</motion.h4>
                 <motion.h1 variants={textVariants} >software developer \</motion.h1>
                 <motion.h1 variants={textVariants} className='title-2'>cloud engineer</motion.h1>
-                <motion.div variants={buttonVariants} ><ContactButton /></motion.div>
+                <ContactButton />
             </motion.div>
             <div className='profile'><ProfileCard /></div>
         </motion.section>
