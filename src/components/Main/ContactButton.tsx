@@ -28,8 +28,9 @@ const ContactButton: React.FC<ContactButtonProps> = () => {
             }
         },
         leaveMain: {
-            top: '80vh',
-            left: '80vw',
+            top: 'calc(90vh - 10vh)',
+            left: 'calc(90vw - 10vh)',
+            right: 0,
             width: '10vh',
             position: 'fixed',
             transition: {
