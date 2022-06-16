@@ -58,13 +58,12 @@ h4 {
 }
 
 .contact-button {
+    width: 30vh;
+    height: 10vh;
     margin: 5rem auto;
-    width: 15vw;
-    height: 7rem;
-    min-width: 15rem;
     padding: 2rem;
+    border-radius: 2vh;
     border: none;
-    border-radius: 50px;
     z-index: 2;
 }
 

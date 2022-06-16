@@ -1,7 +1,7 @@
 import { motion, Variants } from 'framer-motion';
 import { useAppDispatch } from '../../store/hooks';
 import { setHasEnteredMain, setHasLeftMain } from '../../store/main-slice';
-import ContactButton from './Contact-button';
+import ContactButton from './ContactButton';
 import ProfileCard from './ProfileCard';
 import './styles.scss';
 
