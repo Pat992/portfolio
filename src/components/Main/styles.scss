@@ -58,10 +58,11 @@ h4 {
 }
 
 .contact-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 30vh;
-    height: 10vh;
     margin: 5rem auto;
-    padding: 2rem;
     border-radius: 2vh;
     border: none;
     z-index: 2;

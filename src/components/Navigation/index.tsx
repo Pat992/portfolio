@@ -1,8 +1,8 @@
-import { motion } from 'framer-motion';
+import { motion, Variants } from 'framer-motion';
 import Icon from './Icon';
 import './styles.scss';
 
-const ulVariants = {
+const ulVariants: Variants = {
     from: {},
     to: {
         transition: {
@@ -12,7 +12,7 @@ const ulVariants = {
     }
 }
 
-const liVariants = {
+const liVariants: Variants = {
     from: {
         x: '100vw',
     },

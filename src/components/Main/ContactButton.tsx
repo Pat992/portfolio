@@ -1,6 +1,7 @@
 import { useAnimation, Variants, motion } from 'framer-motion';
 import { useEffect } from 'react';
 import { useAppSelector } from '../../store/hooks';
+import MailSvg from './MailSvg';
 import './styles.scss';
 
 interface ContactButtonProps { };
@@ -20,7 +21,7 @@ const ContactButton: React.FC<ContactButtonProps> = () => {
             top: '1vh',
             left: '1vw',
             width: '30vh',
-            height: '10vh',
+            height: '7vh',
             position: 'relative',
             transition: {
                 duration: 0.5,
@@ -29,9 +30,9 @@ const ContactButton: React.FC<ContactButtonProps> = () => {
         },
         leaveMain: {
             top: 'calc(90vh - 10vh)',
-            left: 'calc(90vw - 10vh)',
+            left: 'calc(95vw - 10vh)',
             right: 0,
-            width: '10vh',
+            width: '7vh',
             position: 'fixed',
             transition: {
                 duration: 0.5,
@@ -51,7 +52,7 @@ const ContactButton: React.FC<ContactButtonProps> = () => {
 
     return (
         <motion.button variants={buttonVariants} initial='from' animate={controls} className="contact-button" layout>
-            CONTACT ME
+            {hasEnteredProjects ? <MailSvg /> : 'CONTACT ME'}
         </motion.button>
     );
 };
