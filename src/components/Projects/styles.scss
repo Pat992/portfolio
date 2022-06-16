@@ -73,12 +73,7 @@
 }
 
 @media screen and (max-width: 1200px) {
-    .projects {
-        width: 95vw;
-    }
-
     .project {
-        height: 60vh;
         width: 100vw;
     }
 
@@ -106,13 +101,6 @@
 }
 
 @media screen and (max-width: 650px) {
-    .projects {
-        width: 100vw;
-    }
-
-    .project {
-        height: 40vh;
-    }
 
     .adwave-project,
     .project-card,
