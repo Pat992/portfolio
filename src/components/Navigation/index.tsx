@@ -1,5 +1,5 @@
 import { motion, Variants } from 'framer-motion';
-import Icon from './Icon';
+import Icon from './IconSvg';
 import './styles.scss';
 
 const ulVariants: Variants = {

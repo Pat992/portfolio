@@ -1,14 +1,16 @@
 import { useAnimation, Variants, motion } from 'framer-motion';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useAppSelector } from '../../store/hooks';
 import MailSvg from './MailSvg';
 import './styles.scss';
 
 interface ContactButtonProps { };
 const ContactButton: React.FC<ContactButtonProps> = () => {
+    const [showSvg, setShowSvg] = useState(false);
     const inMainViewport = useAppSelector((state) => state.main.inViewport);
     const hasEnteredProjects = useAppSelector((state) => state.projects.hasEnteredVP);
     const controls = useAnimation();
+    let isOutOfMain = false;
 
     const buttonVariants: Variants = {
         from: {
@@ -44,15 +46,17 @@ const ContactButton: React.FC<ContactButtonProps> = () => {
     useEffect(() => {
         if (hasEnteredProjects === true) {
             controls.start('leaveMain');
+            setShowSvg(true);
         }
         else if (inMainViewport === true) {
             controls.start('enterMain');
+            setShowSvg(false);
         }
     }, [inMainViewport, hasEnteredProjects])
 
     return (
-        <motion.button variants={buttonVariants} initial='from' animate={controls} className="contact-button" layout>
-            {hasEnteredProjects ? <MailSvg /> : 'CONTACT ME'}
+        <motion.button variants={buttonVariants} initial='from' animate={controls} className="btn contact-button" layout>
+            {showSvg ? <MailSvg /> : 'CONTACT ME'}
         </motion.button>
     );
 };

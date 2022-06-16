@@ -1,0 +1,37 @@
+@import './global';
+
+.dark {
+    background: $bg-color-dark;
+
+    h1,
+    h2,
+    h3 {
+        color: $text-color-dark;
+    }
+
+    li,
+    label,
+    p,
+    a,
+    h4,
+    h5 {
+        color: $text-color-accent-dark;
+    }
+
+    .logo {
+        fill: $accent-yellow;
+    }
+
+    .svg-fill {
+        stroke: $text-color-light;
+    }
+
+    button {
+        background: $accent-yellow;
+        color: $text-color-light;
+    }
+
+    .card {
+        background: $card-color-dark;
+    }
+}

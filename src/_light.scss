@@ -1,0 +1,31 @@
+@import './global';
+
+.light {
+    background: $bg-color-light;
+
+    li,
+    label,
+    p,
+    a,
+    h4,
+    h5 {
+        color: $text-color-accent-light;
+    }
+
+    .logo {
+        fill: $accent-light-blue;
+    }
+
+    .svg-fill {
+        stroke: $text-color-dark;
+    }
+
+    button {
+        background: $accent-light-blue;
+        color: $text-color-dark;
+    }
+
+    .card {
+        background: $card-color-light;
+    }
+}
