@@ -2,16 +2,6 @@ import { motion, Variants } from 'framer-motion';
 import Icon from './IconSvg';
 import './styles.scss';
 
-const ulVariants: Variants = {
-    from: {},
-    to: {
-        transition: {
-            when: 'beforeChildren',
-            staggerChildren: 0.4
-        }
-    }
-}
-
 const liVariants: Variants = {
     from: {
         x: '100vw',
@@ -21,19 +11,24 @@ const liVariants: Variants = {
         transition: {
             duration: 0.5,
         }
+    },
+    hover: {
+        scale: 1.1
     }
 }
+
+
 
 interface NavProps { };
 const Nav: React.FC<NavProps> = () => {
     return (
         <nav>
             <div><Icon /></div>
-            <motion.ul variants={ulVariants} initial='from' animate='to'>
-                <motion.li variants={liVariants}><a href="#">HOME</a></motion.li>
-                <motion.li variants={liVariants}><a href="#">PROJECTS</a></motion.li>
-                <motion.li variants={liVariants}><a href="#">SKILLS</a></motion.li>
-            </motion.ul>
+            <ul>
+                <motion.li variants={liVariants} initial='from' animate='to' whileHover='hover'><a href="#">HOME</a></motion.li>
+                <motion.li variants={liVariants} initial='from' animate='to' whileHover='hover'><a href="#">PROJECTS</a></motion.li>
+                <motion.li variants={liVariants} initial='from' animate='to' whileHover='hover'><a href="#">SKILLS</a></motion.li>
+            </ul>
         </nav>
     );
 };

@@ -10,16 +10,14 @@ const ContactButton: React.FC<ContactButtonProps> = () => {
     const inMainViewport = useAppSelector((state) => state.main.inViewport);
     const hasEnteredProjects = useAppSelector((state) => state.projects.hasEnteredVP);
     const controls = useAnimation();
-    let isOutOfMain = false;
 
     const buttonVariants: Variants = {
         from: {
-            scale: 0,
+            scale: 1,
             //position: 'relative'
         },
         enterMain: {
             scale: 1,
-
             top: '1vh',
             left: '1vw',
             width: '30vh',
@@ -33,6 +31,7 @@ const ContactButton: React.FC<ContactButtonProps> = () => {
         leaveMain: {
             top: 'calc(90vh - 10vh)',
             left: 'calc(95vw - 10vh)',
+            scale: 1,
             right: 0,
             width: '7vh',
             position: 'fixed',
@@ -40,6 +39,10 @@ const ContactButton: React.FC<ContactButtonProps> = () => {
                 duration: 0.5,
                 type: 'spring'
             }
+        },
+        hover: {
+            scale: 1.1,
+            boxShadow: "0px 0px 8px rgb(255,255,255)",
         }
     };
 
@@ -55,7 +58,7 @@ const ContactButton: React.FC<ContactButtonProps> = () => {
     }, [inMainViewport, hasEnteredProjects])
 
     return (
-        <motion.button variants={buttonVariants} initial='from' animate={controls} className="btn contact-button" layout>
+        <motion.button variants={buttonVariants} initial='enterMain' animate={controls} className="btn contact-button" whileHover='hover' layout>
             {showSvg ? <MailSvg /> : 'CONTACT ME'}
         </motion.button>
     );

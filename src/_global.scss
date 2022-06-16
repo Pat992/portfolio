@@ -61,6 +61,12 @@ a {
     font-family: 'Roboto', sans-serif;
 }
 
+button,
+a,
+li {
+    cursor: pointer;
+}
+
 h2 {
     font-size: $header2;
     font-weight: normal;

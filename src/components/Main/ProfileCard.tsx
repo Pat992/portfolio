@@ -28,8 +28,8 @@ const cardVariants: Variants = {
         }
     },
     moveToProjects: {
-        scale: 10,
         y: 500,
+        scale: 10,
         rotateZ: '10deg',
         transition: {
             duration: 1
