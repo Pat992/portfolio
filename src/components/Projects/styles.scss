@@ -2,7 +2,7 @@
 
 .projects {
     width: 90vw;
-    margin: 0 auto;
+    margin: 10vh auto;
     display: flex;
     flex-direction: column;
 
@@ -11,9 +11,15 @@
     }
 }
 
-.project {
+.project,
+.project-reverse {
     width: 90vw;
-    margin: 100px auto;
+    margin: 0 auto;
+    display: flex;
+
+    p {
+        flex-shrink: 2;
+    }
 }
 
 .adwave-project,
@@ -25,35 +31,43 @@
 
 .project-card {
     width: 100%;
-    border-radius: 50px;
+    flex-grow: 2;
+    border-radius: 10px;
+}
+
+.o-hidden {
+    position: relative;
+    border-radius: 10px;
     overflow: hidden;
 }
 
 .insights {
     width: calc(50% + 1vw);
-    max-height: 70vh;
+    max-height: 60vh;
     position: absolute;
-    bottom: -10em;
-    left: 5px;
-    transform: rotateZ(-10deg);
+    left: 0;
+    bottom: 0;
+    transform: rotateZ(-10deg) translate(-20%, 25%);
 }
 
 .public {
     position: absolute;
-    top: -10em;
-    right: -300px;
+    top: 0;
+    right: 0;
     width: calc(50% + 1vw);
     max-height: 70vh;
+    transform: translate(40%, -30%);
 }
 
 .adwave-project {
     svg {
-        fill: #A9CAF7;
+        fill: #FFAF00;
     }
 }
 
 .adwave-card {
-    background: linear-gradient(#2275E8, #428BEB);
+    background: linear-gradient(#FEDD26, #FEC626);
+    height: 100%;
 }
 
 .andfm-project {
@@ -73,9 +87,6 @@
 }
 
 @media screen and (max-width: 1200px) {
-    .project {
-        width: 100vw;
-    }
 
     .adwave-project,
     .andfm-project,
@@ -89,18 +100,16 @@
     .public {
         width: calc(40% + 1vw);
     }
-
-    .insights {
-        bottom: -10em;
-        width: calc(50% + 1vw);
-    }
-
-    .public {
-        right: -100px;
-    }
 }
 
 @media screen and (max-width: 650px) {
+    .project {
+        flex-direction: column;
+    }
+
+    .project-reverse {
+        flex-direction: column-reverse;
+    }
 
     .adwave-project,
     .project-card,
@@ -108,18 +117,9 @@
         height: 30vh;
     }
 
-    .insights,
-    .public {
-        width: calc(40% + 1vw);
-    }
 
+    .public,
     .insights {
-        bottom: -5em;
-        width: calc(60% + 1vw);
-    }
-
-    .public {
-        right: -50px;
-        top: -5em;
+        width: calc(30% + 1vw);
     }
 }
