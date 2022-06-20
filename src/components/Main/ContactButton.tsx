@@ -16,7 +16,7 @@ const buttonVariants: Variants = {
         top: '1vh',
         left: '1vw',
         width: '30vh',
-        height: '7vh',
+        height: 'calc(3rem + 1vw)',
         position: 'relative',
         transition: {
             duration: 0.5,
@@ -25,11 +25,12 @@ const buttonVariants: Variants = {
     },
     leaveMain: {
         opacity: 1,
-        top: 'calc(90vh - 10vh)',
-        left: 'calc(95vw - 10vh)',
+        top: 'calc(90vh - 5rem + 1vw)',
+        left: 'calc(95vw - 3rem + 1vw)',
         scale: 1,
         right: 0,
-        width: '7vh',
+        width: 'calc(3rem + 1vw)',
+        height: 'calc(3rem + 1vw)',
         position: 'fixed',
         transition: {
             duration: 0.5,
