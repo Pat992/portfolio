@@ -1,6 +1,8 @@
 @import '../../global';
 
-aside {
+
+.sidebar {
+    z-index: 2;
     position: fixed;
     display: flex;
     flex-direction: column;

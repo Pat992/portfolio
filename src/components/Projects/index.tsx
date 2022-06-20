@@ -2,8 +2,8 @@ import { motion, Variants } from 'framer-motion';
 import { useAppDispatch } from '../../store/hooks';
 import { setHasEnteredProjects, setHasLeftProjcets } from '../../store/projects-slice';
 import AdWave from "./Adwave/Adwave";
-import AndFm from "./AndFm/And-fm";
-
+import AndFm from "./AndFm/AndFm";
+import './styles.scss';
 const inViewVariants: Variants = {
     from: {
         y: '100px',
