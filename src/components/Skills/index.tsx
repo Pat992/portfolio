@@ -4,7 +4,7 @@ import './styles.scss';
 interface SkillsProps { };
 const Skills: React.FC<SkillsProps> = () => {
     const { scrollYProgress } = useViewportScroll();
-    const scroll = useTransform(scrollYProgress, [0.9, 1], [10, 3]);
+    const scroll = useTransform(scrollYProgress, [0.8, 0.9], [10, 3]);
 
     return (
         <section className="skills">

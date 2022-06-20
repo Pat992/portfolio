@@ -7,7 +7,7 @@ import { useAppSelector } from '../../store/hooks';
 const cardVariants: Variants = {
     from: {
         scale: 0,
-        rotateZ: '-50deg'
+        rotateZ: '-50deg',
     },
     to: {
         scale: 1,

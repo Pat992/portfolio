@@ -7,6 +7,7 @@ import Skills from './components/Skills';
 import ConnectionSidebar from './components/Sidebar/ConnectionSidebar';
 import { useAppDispatch, useAppSelector } from './store/hooks';
 import { setScrollValue } from './store/scroll-slice';
+import Footer from './components/Footer/Footer';
 
 const App = () => {
   const { scrollYProgress } = useViewportScroll();
@@ -19,11 +20,12 @@ const App = () => {
 
   return (
     <div className={isDarkTheme ? 'dark' : 'light'}>
+      <ConnectionSidebar />
       <Nav />
       <Main />
       <Projects />
       <Skills />
-      <ConnectionSidebar />
+      <Footer />
     </div>
   );
 }
