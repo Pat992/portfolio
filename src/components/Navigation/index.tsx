@@ -1,6 +1,7 @@
 import { motion, Variants } from 'framer-motion';
 import Icon from './IconSvg';
 import './styles.scss';
+import ToggleButton from './ToggleButton';
 
 const liVariants: Variants = {
     from: {
@@ -29,6 +30,7 @@ const Nav: React.FC<NavProps> = () => {
                 <motion.li variants={liVariants} initial='from' animate='to' whileHover='hover'><a href="#">PROJECTS</a></motion.li>
                 <motion.li variants={liVariants} initial='from' animate='to' whileHover='hover'><a href="#">SKILLS</a></motion.li>
             </ul>
+            <ToggleButton />
         </nav>
     );
 };
