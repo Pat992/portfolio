@@ -1,4 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit'
+import { MotionValue } from 'framer-motion'
 
 export const scrollSlice = createSlice({
     name: 'scroll',
@@ -7,7 +8,7 @@ export const scrollSlice = createSlice({
     },
     reducers: {
         setScrollValue: (state, action) => {
-            state.value = action.payload
+            state.value = action.payload;
         },
     },
 })

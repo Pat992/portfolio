@@ -9,12 +9,12 @@ import { useAppDispatch, useAppSelector } from './store/hooks';
 import { setScrollValue } from './store/scroll-slice';
 
 const App = () => {
-  const { scrollY } = useViewportScroll();
+  const { scrollYProgress } = useViewportScroll();
   const dispatch = useAppDispatch();
   const isDarkTheme = useAppSelector((state) => state.theme.isDarkTheme);
 
-  scrollY.onChange(() => {
-    dispatch(setScrollValue(scrollY.get()));
+  scrollYProgress.onChange(() => {
+    dispatch(setScrollValue(scrollYProgress.get()));
   });
 
   return (
