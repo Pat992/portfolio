@@ -1,16 +1,18 @@
 import { configureStore } from '@reduxjs/toolkit';
 
-import scrollReducer from './scroll-slice';
+import documentReducer from './document-slice';
 import mainReducer from './main-slice';
 import projectsReducer from './projects-slice';
 import themeReducer from './theme-slice';
+import footerReducer from './footer-slice';
 
 const store = configureStore({
     reducer: {
-        scroll: scrollReducer,
+        doc: documentReducer,
         projects: projectsReducer,
         theme: themeReducer,
         main: mainReducer,
+        footer: footerReducer
         // navigation: navigationReducer,
         // skills: skillsReducer,
     }

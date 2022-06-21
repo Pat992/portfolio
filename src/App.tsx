@@ -6,13 +6,13 @@ import Projects from './components/Projects';
 import Skills from './components/Skills';
 import ConnectionSidebar from './components/Sidebar/ConnectionSidebar';
 import { useAppDispatch, useAppSelector } from './store/hooks';
-import { setScrollValue } from './store/scroll-slice';
-import Footer from './components/Footer/Footer';
+import { setScrollRawValue, setScrollValue } from './store/document-slice';
+import Footer from './components/Footer';
 import { Fragment, useEffect, useState } from 'react';
 
 const App = () => {
   const [loaded, setLoaded] = useState(false);
-  const { scrollYProgress } = useViewportScroll();
+  const { scrollYProgress, scrollY } = useViewportScroll();
   const dispatch = useAppDispatch();
   const isDarkTheme = useAppSelector((state) => state.theme.isDarkTheme);
 
@@ -35,6 +35,7 @@ const App = () => {
 
   scrollYProgress.onChange(() => {
     dispatch(setScrollValue(scrollYProgress.get()));
+    dispatch(setScrollRawValue(scrollY.get()));
   });
 
   return (

@@ -4,6 +4,7 @@ import { setHasEnteredProjects, setHasLeftProjcets } from '../../store/projects-
 import AdWave from "./Adwave/Adwave";
 import AndFm from "./AndFm/AndFm";
 import './styles.scss';
+// TODO: add variants here and send them to the projects
 const inViewVariants: Variants = {
     from: {
         y: '100px',

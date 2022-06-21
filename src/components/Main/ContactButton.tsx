@@ -37,6 +37,15 @@ const buttonVariants: Variants = {
             type: 'spring'
         }
     },
+    enterFooter: {
+        left: 'calc(50vw - 50%)',
+        top: 'calc(70vh - 5rem + 1vw)',
+        width: '30vh',
+        transition: {
+            duration: 0.5,
+            type: 'spring'
+        }
+    },
     hover: {
         scale: 1.1,
         boxShadow: "0px 0px 8px rgb(255,255,255)",
@@ -48,18 +57,25 @@ const ContactButton: React.FC<ContactButtonProps> = () => {
     const [showSvg, setShowSvg] = useState(false);
     const inMainViewport = useAppSelector((state) => state.main.inViewport);
     const hasEnteredProjects = useAppSelector((state) => state.projects.hasEnteredVP);
+    const scroll = useAppSelector((state) => state.doc.value);
     const controls = useAnimation();
 
     useEffect(() => {
-        if (hasEnteredProjects === true) {
+        if (hasEnteredProjects) {
             controls.start('leaveMain');
             setShowSvg(true);
         }
-        else if (inMainViewport === true) {
+        else if (inMainViewport) {
             controls.start('enterMain');
             setShowSvg(false);
+        } else if (scroll > 0.99) {
+            controls.start('enterFooter');
+            setShowSvg(false);
+        } else if (scroll < 0.99) {
+            controls.start('leaveMain');
+            setShowSvg(true);
         }
-    }, [inMainViewport, hasEnteredProjects])
+    }, [inMainViewport, hasEnteredProjects, scroll])
 
     return (
         <motion.button variants={buttonVariants} initial='from' animate={controls} className="btn contact-button" whileHover='hover' layout>
