@@ -78,7 +78,7 @@ const ProfileCard: React.FC<ProfileCardProps> = () => {
             controls.start('to').then(() => {
                 controls.start('idle');
             });
-        }, 2000);
+        }, 500);
         return () => clearTimeout(timer);
     }, []);
 

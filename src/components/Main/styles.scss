@@ -1,11 +1,12 @@
 @import '../../global';
 
 .main {
-    height: 100vh;
+    height: 90vh;
     margin: 0 auto;
     width: 100vw;
     display: flex;
     justify-content: space-between;
+    align-items: center;
     flex-wrap: wrap;
     position: relative;
 }

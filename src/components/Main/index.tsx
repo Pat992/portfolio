@@ -1,7 +1,12 @@
 import { motion, Variants } from 'framer-motion';
+import { useRef } from 'react';
 import { useAppDispatch } from '../../store/hooks';
 import { setHasEnteredMain, setHasLeftMain } from '../../store/main-slice';
+import AzureSkill from '../UI/SkillCircles/AzureSkill';
 import BiztalkSkill from '../UI/SkillCircles/BiztalkSkill';
+import FlutterSkill from '../UI/SkillCircles/FlutterSkill';
+import NodeSkill from '../UI/SkillCircles/NodeSkill';
+import ReactSkill from '../UI/SkillCircles/ReactSkill';
 import ContactButton from './ContactButton';
 import ProfileCard from './ProfileCard';
 import './styles.scss';
@@ -40,6 +45,7 @@ const textVariants: Variants = {
 interface MainProps { };
 const Main: React.FC<MainProps> = () => {
     const dispatch = useAppDispatch();
+
     return (
         <motion.section variants={sectionVariants} initial='from' animate='to' className='main' onViewportEnter={() => dispatch(setHasEnteredMain())} onViewportLeave={() => dispatch(setHasLeftMain())}>
             <motion.div className='introduction'>
@@ -50,6 +56,10 @@ const Main: React.FC<MainProps> = () => {
             </motion.div>
             <div className='profile'>
                 <ProfileCard />
+                <FlutterSkill />
+                <ReactSkill />
+                <AzureSkill />
+                <NodeSkill />
                 <BiztalkSkill />
             </div>
         </motion.section>

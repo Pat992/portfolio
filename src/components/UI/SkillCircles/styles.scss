@@ -1,12 +1,14 @@
 @import '../../../global';
 
 .skill-circle {
-    position: relative;
+    position: absolute;
     display: flex;
+    top: 50%;
+    right: 25%;
     justify-content: center;
     align-items: center;
-    width: calc(6rem + 1vw);
-    height: calc(6rem + 1vw);
+    width: calc(10rem + 1vw);
+    height: calc(10rem + 1vw);
     border-radius: 50%;
 
     * {
@@ -20,5 +22,13 @@
     .biztalk-circle {
         margin-right: calc(0.5rem + 0.5vw);
         margin-top: calc(1rem + 0.5vw);
+    }
+}
+
+@media screen and (max-width: 700px) {
+
+    .skill-circle {
+        top: 25%;
+        right: 50%;
     }
 }

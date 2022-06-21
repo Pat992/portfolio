@@ -6,7 +6,7 @@ import { useEffect } from 'react';
 
 const footerVariants: Variants = {
     from: {
-        opacity: 0
+        opacity: 0,
     },
     idle: {
         opacity: 1,
