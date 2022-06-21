@@ -1,4 +1,3 @@
-import { MutableRefObject } from "react";
 import SkillCircle from ".";
 import NodeSvg from "./NodeSvg";
 
