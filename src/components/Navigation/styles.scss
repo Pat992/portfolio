@@ -43,12 +43,12 @@ ul {
 }
 
 .switch.on {
-    background-color: #FFD143;
+    background-color: $accent-light-blue;
     justify-content: flex-end;
 }
 
 .switch.off {
-    background-color: #39AFC9;
+    background-color: $accent-blue;
     justify-content: flex-start;
 }
 
