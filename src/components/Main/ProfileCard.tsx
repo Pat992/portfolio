@@ -94,7 +94,7 @@ const ProfileCard: React.FC<ProfileCardProps> = () => {
     }, [inMainViewport, hasEnteredProjects]);
 
     return (
-        <motion.div variants={cardVariants} initial='from' animate={controls} className='card profile-card'>
+        <motion.div variants={cardVariants} initial='from' animate={controls} className='card profile-card' id='profile-card'>
             <div className='profile-image-overlay'></div>
             <motion.img variants={imageVariants} className='profile-image' src={profile} alt="profile image" />
         </motion.div>

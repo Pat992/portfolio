@@ -11,6 +11,19 @@ const SkillCircle: React.FC<SkillCircleProps> = ({ color, body }) => {
     const controls = useAnimation();
     const inMainViewport = useAppSelector((state) => state.main.inViewport);
     const hasEnteredProjects = useAppSelector((state) => state.projects.hasEnteredVP);
+    const id = Math.floor(Math.random() * 1000000) + 1;
+
+    const isOverlapping = () => {
+        const skillCirlcles = document.getElementById(`${id}`);
+        const backgroundCard = document.getElementById('profile-card');
+        const skillRect = skillCirlcles?.getBoundingClientRect();
+        const backgroundRect = backgroundCard?.getBoundingClientRect();
+
+        return !(skillRect!.top > backgroundRect!.bottom ||
+            skillRect!.right < backgroundRect!.left ||
+            skillRect!.bottom < backgroundRect!.top ||
+            skillRect!.left > backgroundRect!.right);
+    };
 
     const skillCircleVariants: Variants = {
         from: {
@@ -60,18 +73,6 @@ const SkillCircle: React.FC<SkillCircleProps> = ({ color, body }) => {
         }
     }, [inMainViewport, hasEnteredProjects]);
 
-    // TODO overlapping items
-    // const isOverlapping = () => {
-    //     const skillCirlcles = document.querySelectorAll('.skill-circle');
-    //     const backgroundCard = document.querySelector('.profile-card');
-
-    //     if( skillCirlcles.top > backgroundCard. ||
-    //         skillCirlcles.right < backgroundCard.left ||
-    //         skillCirlcles.bottom < backgroundCard.top ||
-    //         skillCirlcles.left > backgroundCard.right)
-
-    // };
-
     return (
         <motion.div
             drag
@@ -82,7 +83,8 @@ const SkillCircle: React.FC<SkillCircleProps> = ({ color, body }) => {
             initial='from'
             animate={controls}
             style={{ background: color }}
-            className="skill-circle bkg">
+            className="skill-circle bkg"
+            id={`${id}`}>
             {body}
         </motion.div>
     );
