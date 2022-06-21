@@ -1,4 +1,4 @@
-import { MutableRefObject, ReactNode, useEffect } from "react";
+import { ReactNode, useEffect } from "react";
 import { motion, useAnimation, Variants } from 'framer-motion';
 import './styles.scss';
 import { useAppSelector } from "../../../store/hooks";
@@ -16,12 +16,12 @@ const SkillCircle: React.FC<SkillCircleProps> = ({ color, body }) => {
         from: {
             scale: 0,
             opacity: 0,
-            right: 0,
-            top: 0,
+            right: '25%',
+            top: '50%',
         },
         to: {
             right: `${Math.floor(Math.random() * 50) + 1}%`,
-            top: `${Math.floor(Math.random() * 10) + 1}%`,
+            top: `${Math.floor(Math.random() * 50) + 1}%`,
             scale: 1,
             opacity: 1,
             transition: {
@@ -59,6 +59,18 @@ const SkillCircle: React.FC<SkillCircleProps> = ({ color, body }) => {
             });
         }
     }, [inMainViewport, hasEnteredProjects]);
+
+    // TODO overlapping items
+    // const isOverlapping = () => {
+    //     const skillCirlcles = document.querySelectorAll('.skill-circle');
+    //     const backgroundCard = document.querySelector('.profile-card');
+
+    //     if( skillCirlcles.top > backgroundCard. ||
+    //         skillCirlcles.right < backgroundCard.left ||
+    //         skillCirlcles.bottom < backgroundCard.top ||
+    //         skillCirlcles.left > backgroundCard.right)
+
+    // };
 
     return (
         <motion.div
