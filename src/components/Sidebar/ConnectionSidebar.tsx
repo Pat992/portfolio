@@ -11,7 +11,7 @@ const sidebarVariants: Variants = {
         flexDirection: 'column'
     },
     inFooter: {
-        top: 'calc(90vh - 1rem)',
+        top: 'calc(85vh - 1rem)',
         width: '20vh',
         left: 'calc(50vw - 10vh)',
         flexDirection: 'row',
