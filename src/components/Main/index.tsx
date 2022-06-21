@@ -1,6 +1,7 @@
 import { motion, Variants } from 'framer-motion';
 import { useAppDispatch } from '../../store/hooks';
 import { setHasEnteredMain, setHasLeftMain } from '../../store/main-slice';
+import BiztalkSkill from '../UI/SkillCircles/BiztalkSkill';
 import ContactButton from './ContactButton';
 import ProfileCard from './ProfileCard';
 import './styles.scss';
@@ -47,7 +48,10 @@ const Main: React.FC<MainProps> = () => {
                 <motion.h1 variants={textVariants} className='title-2'>cloud engineer</motion.h1>
                 <ContactButton />
             </motion.div>
-            <div className='profile'><ProfileCard /></div>
+            <div className='profile'>
+                <ProfileCard />
+                <BiztalkSkill />
+            </div>
         </motion.section>
     );
 };

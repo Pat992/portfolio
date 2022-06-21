@@ -1,0 +1,24 @@
+@import '../../../global';
+
+.skill-circle {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: calc(6rem + 1vw);
+    height: calc(6rem + 1vw);
+    border-radius: 50%;
+
+    * {
+        position: absolute;
+    }
+
+    .flutter-circle {
+        margin-right: calc(0.1rem + 0.5vw);
+    }
+
+    .biztalk-circle {
+        margin-right: calc(0.5rem + 0.5vw);
+        margin-top: calc(1rem + 0.5vw);
+    }
+}
