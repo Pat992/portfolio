@@ -1,4 +1,5 @@
 import { motion, Variants } from 'framer-motion';
+import { useState } from 'react';
 import { useAppDispatch } from '../../store/hooks';
 import { setHasEnteredProjects, setHasLeftProjcets } from '../../store/projects-slice';
 import AdWave from "./Adwave/Adwave";
@@ -23,13 +24,32 @@ const inViewVariants: Variants = {
 
 interface ProjectsProps { };
 const Projects: React.FC<ProjectsProps> = () => {
+    const [isDoneAdWaveAnim, setIsDoneAdWaveAnim] = useState(false);
+    const [isDoneAndFmAnim, setIsDoneAndFmAnim] = useState(false);
     const dispatch = useAppDispatch();
 
     return (
         <motion.section className="projects" onViewportEnter={() => dispatch(setHasEnteredProjects())} onViewportLeave={() => dispatch(setHasLeftProjcets())}>
             <h2>PROJECTS</h2>
-            <motion.div className='project' variants={inViewVariants} initial='from' whileInView='to' viewport={{ once: false, amount: 0.5 }}><AdWave /></motion.div>
-            <motion.div className='project' variants={inViewVariants} initial='from' whileInView='to' viewport={{ once: false, amount: 0.5 }}><AndFm /></motion.div>
+            <motion.div
+                className='project'
+                variants={inViewVariants}
+                initial='from' whileInView='to'
+                viewport={{ once: false, amount: 0.5 }}
+                onAnimationStart={() => setIsDoneAdWaveAnim(false)}
+                onAnimationComplete={() => setIsDoneAdWaveAnim(true)}>
+                <AdWave startAnimation={isDoneAdWaveAnim} />
+            </motion.div>
+            <motion.div
+                className='project'
+                variants={inViewVariants}
+                initial='from'
+                whileInView='to'
+                viewport={{ once: false, amount: 0.5 }}
+                onAnimationStart={() => setIsDoneAndFmAnim(false)}
+                onAnimationComplete={() => setIsDoneAndFmAnim(true)}>
+                <AndFm startAnimation={isDoneAndFmAnim} />
+            </motion.div>
         </motion.section>
     );
 };

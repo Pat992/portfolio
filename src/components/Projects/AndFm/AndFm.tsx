@@ -3,9 +3,16 @@ import Background from './Bg';
 import light from '../../../assets/andfm/andfm-light.png';
 import dark from '../../../assets/andfm/andfm-dark.png';
 import AndFmSvg from './AndFmSvg';
+import { useEffect } from 'react';
 
-interface AndFmProps { };
-const AndFm: React.FC<AndFmProps> = () => {
+interface AndFmProps {
+    startAnimation: boolean
+};
+const AndFm: React.FC<AndFmProps> = ({ startAnimation }) => {
+    useEffect(() => {
+        console.log(startAnimation);
+    }, [startAnimation]);
+
     return (
         <div className='andfm-project project-reverse'>
             <div className='project-card o-hidden'>

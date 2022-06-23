@@ -8,7 +8,11 @@ const sidebarVariants: Variants = {
     from: {
         top: 'calc(95vh - 10rem + 1vw)',
         left: '2vw',
-        flexDirection: 'column'
+        flexDirection: 'column',
+        transition: {
+            duration: 0.5,
+            type: 'spring'
+        }
     },
     inFooter: {
         top: 'calc(85vh - 1rem)',
@@ -16,6 +20,10 @@ const sidebarVariants: Variants = {
         left: 'calc(50vw - 10vh)',
         flexDirection: 'row',
         justifyContent: 'space-between',
+        transition: {
+            duration: 0.5,
+            type: 'spring'
+        }
     }
 };
 
