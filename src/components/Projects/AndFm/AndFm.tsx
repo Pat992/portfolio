@@ -17,8 +17,7 @@ const projectVariants: Variants = {
         transition: {
             duration: 0.5,
             type: 'easeInOut',
-            when: 'beforeChildren',
-            staggerChildren: 0.1
+            when: 'beforeChildren'
         }
     },
     idle: {
