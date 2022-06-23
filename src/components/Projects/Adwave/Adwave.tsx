@@ -83,7 +83,7 @@ const AdWave: React.FC<AdWaveProps> = ({ startAnimation }) => {
                         <AdwaveSvg />
                         <h2>AdWave</h2>
                     </div>
-                    <PublicSvg />
+                    <PublicSvg startAnimation={startAnimation} />
                     <motion.div className='project-image' variants={projectVariants} animate={controls} initial='from'>
                         <img className='phone' src={phone} alt="phone" />
                         <motion.img variants={estVariants} className='est' src={est} alt="estimate" />
@@ -91,7 +91,7 @@ const AdWave: React.FC<AdWaveProps> = ({ startAnimation }) => {
                     </motion.div>
 
                 </div>
-                <InsightsSvg />
+                <InsightsSvg startAnimation={startAnimation} />
             </div>
         </div>
     );
