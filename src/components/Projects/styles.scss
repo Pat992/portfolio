@@ -1,5 +1,6 @@
 @import '../../global';
 
+$adwave-text-color: #2F2E47;
 
 .projects {
     width: 90vw;
@@ -66,20 +67,46 @@
         fill: #FFAF00;
     }
 
+    .title-row {
+        position: absolute;
+        display: flex;
+        height: 15%;
+        margin-left: 10px;
+        margin-top: 10px;
+
+        h2 {
+            color: $adwave-text-color  !important;
+        }
+
+        .adwave-svg {
+            height: 100%;
+        }
+    }
+
     .project-image {
+        bottom: 0;
         right: 10%;
         position: absolute;
         height: 90%;
-    }
+        margin-right: 5vw;
 
-    .est {
-        height: 32%;
-        transform: translate(-23%, 120%);
-    }
+        .phone {
+            position: absolute;
+            height: 100%;
+            transform: translate(-80%, 0);
+        }
 
-    .app {
-        height: 16.5%;
-        transform: translate(-100%, 110%);
+        .est {
+            position: absolute;
+            height: 32%;
+            transform: translate(-95%, 140%);
+        }
+
+        .app {
+            position: absolute;
+            height: 18%;
+            transform: translate(-140%, 110%);
+        }
     }
 }
 
@@ -118,6 +145,20 @@
     .public {
         width: calc(40% + 1vw);
     }
+
+    .adwave-project {
+        svg {
+            fill: #FFAF00;
+        }
+
+        .title-row {
+            h2 {
+                color: $adwave-text-color  !important;
+                font-size: calc(2rem + 1vw);
+            }
+        }
+    }
+
 }
 
 @media screen and (max-width: 650px) {
@@ -132,7 +173,7 @@
     .adwave-project,
     .project-card,
     .andfm-project {
-        height: 30vh;
+        height: 50vh;
     }
 
 
