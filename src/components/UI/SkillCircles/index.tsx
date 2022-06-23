@@ -11,53 +11,31 @@ const SkillCircle: React.FC<SkillCircleProps> = ({ color, body }) => {
     const controls = useAnimation();
     const inMainViewport = useAppSelector((state) => state.main.inViewport);
     const hasEnteredProjects = useAppSelector((state) => state.projects.hasEnteredVP);
-    const id = Math.floor(Math.random() * 1000000) + 1;
-
-    const isOverlapping = () => {
-        const skillCirlcles = document.getElementById(`${id}`);
-        const backgroundCard = document.getElementById('profile-card');
-        const skillRect = skillCirlcles?.getBoundingClientRect();
-        const backgroundRect = backgroundCard?.getBoundingClientRect();
-
-        return !(skillRect!.top > backgroundRect!.bottom ||
-            skillRect!.right < backgroundRect!.left ||
-            skillRect!.bottom < backgroundRect!.top ||
-            skillRect!.left > backgroundRect!.right);
-    };
+    const right = Math.floor(Math.random() * 20) + 40;
+    const top = Math.floor(Math.random() * 80);
 
     const skillCircleVariants: Variants = {
         from: {
             scale: 0,
             opacity: 0,
-            right: '25%',
+            right: '-120vw',
             top: '50%',
         },
         to: {
-            right: `${Math.floor(Math.random() * 50) + 1}%`,
-            top: `${Math.floor(Math.random() * 50) + 1}%`,
+            right: `${right}vw`,
+            top: `${top}vh`,
             scale: 1,
             opacity: 1,
             transition: {
                 duration: 1
             }
-        },
-        idle: {
-            translateY: [Math.floor(Math.random() * 3), Math.floor(Math.random() * 3), Math.floor(Math.random() * 3)],
-            translateX: [Math.floor(Math.random() * 3), Math.floor(Math.random() * 3), Math.floor(Math.random() * 3)],
-            scale: [Math.floor(Math.random() * 1) + 1, Math.floor(Math.random() * 1) + 1],
-            transition: {
-                yoyo: true,
-                duration: 5
-            }
-        },
+        }
     };
 
 
     useEffect(() => {
         const timer = setTimeout(() => {
-            controls.start('to').then(() => {
-                controls.start('idle');
-            });
+            controls.start('to');
         }, 1000);
         return () => clearTimeout(timer);
     }, []);
@@ -67,9 +45,7 @@ const SkillCircle: React.FC<SkillCircleProps> = ({ color, body }) => {
             controls.start('from');
         }
         else if (inMainViewport) {
-            controls.start('to').then(() => {
-                controls.start('idle');
-            });
+            controls.start('to');
         }
     }, [inMainViewport, hasEnteredProjects]);
 
@@ -84,7 +60,7 @@ const SkillCircle: React.FC<SkillCircleProps> = ({ color, body }) => {
             animate={controls}
             style={{ background: color }}
             className="skill-circle bkg"
-            id={`${id}`}>
+        >
             {body}
         </motion.div>
     );

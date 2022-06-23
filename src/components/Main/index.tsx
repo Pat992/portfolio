@@ -1,5 +1,4 @@
 import { motion, Variants } from 'framer-motion';
-import { useRef } from 'react';
 import { useAppDispatch } from '../../store/hooks';
 import { setHasEnteredMain, setHasLeftMain } from '../../store/main-slice';
 import AzureSkill from '../UI/SkillCircles/AzureSkill';

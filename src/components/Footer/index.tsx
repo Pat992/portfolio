@@ -31,9 +31,11 @@ const Footer: React.FC<FooterProps> = () => {
     }, [scroll])
 
     return (
-        <motion.footer variants={footerVariants} initial='from' animate={controls} className="footer card" onViewportEnter={() => dispatch(setHasEnteredFooter())} onViewportLeave={() => dispatch(setHasLeftFooter())}>
-            <h2>Let's talk!</h2>
-        </motion.footer>
+        <footer className='bkg footer-bkg'>
+            <motion.div variants={footerVariants} initial='from' animate={controls} className="footer card" onViewportEnter={() => dispatch(setHasEnteredFooter())} onViewportLeave={() => dispatch(setHasLeftFooter())}>
+                <h2>Let's talk!</h2>
+            </motion.div>
+        </footer>
     );
 };
 
