@@ -11,7 +11,7 @@ const sidebarVariants: Variants = {
         flexDirection: 'column',
         transition: {
             duration: 0.5,
-            type: 'spring'
+            type: 'spring',
         }
     },
     inFooter: {

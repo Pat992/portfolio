@@ -18,7 +18,7 @@ const SkillCircle: React.FC<SkillCircleProps> = ({ color, body }) => {
         from: {
             scale: 0,
             opacity: 0,
-            right: '-120vw',
+            right: '-200vw',
             top: '50%',
         },
         to: {
@@ -27,7 +27,8 @@ const SkillCircle: React.FC<SkillCircleProps> = ({ color, body }) => {
             scale: 1,
             opacity: 1,
             transition: {
-                duration: 1
+                duration: 1,
+                type: 'spring',
             }
         }
     };
@@ -55,7 +56,6 @@ const SkillCircle: React.FC<SkillCircleProps> = ({ color, body }) => {
             dragSnapToOrigin
             dragElastic={1}
             variants={skillCircleVariants}
-            onDragEnd={() => controls.start('idle')}
             initial='from'
             animate={controls}
             style={{ background: color }}
