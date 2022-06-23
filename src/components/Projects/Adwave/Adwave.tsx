@@ -20,6 +20,7 @@ const projectVariants: Variants = {
             duration: 1,
             type: 'easeInOut',
             when: 'beforeChildren',
+            staggerChildren: 0.1,
         }
     }
 };
