@@ -17,7 +17,7 @@ const projectVariants: Variants = {
         opacity: 1,
         x: 0,
         transition: {
-            duration: 1,
+            duration: 0.5,
             type: 'easeInOut',
             when: 'beforeChildren',
             staggerChildren: 0.1,
