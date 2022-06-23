@@ -62,32 +62,33 @@ $adwave-text-color: #2F2E47;
     transform: translate(40%, -30%);
 }
 
+.title-row {
+    position: absolute;
+    display: flex;
+    height: 15%;
+    margin-left: 10px;
+    margin-top: 10px;
+    z-index: 1;
+}
+
 .adwave-project {
     svg {
         fill: #FFAF00;
     }
 
-    .title-row {
-        position: absolute;
-        display: flex;
-        height: 15%;
-        margin-left: 10px;
-        margin-top: 10px;
+    h2 {
+        color: $adwave-text-color  !important;
+    }
 
-        h2 {
-            color: $adwave-text-color  !important;
-        }
-
-        .adwave-svg {
-            height: 100%;
-        }
+    .adwave-svg {
+        height: 100%;
     }
 
     .project-image {
-        bottom: 0;
+        bottom: -10%;
         right: 10%;
         position: absolute;
-        height: 90%;
+        height: 100%;
         margin-right: 5vw;
 
         .phone {
@@ -116,8 +117,13 @@ $adwave-text-color: #2F2E47;
 }
 
 .andfm-project {
+    .andfm-svg {
+        height: 100%;
+    }
+
     h2 {
-        position: absolute;
+        font-style: italic;
+        font-weight: 600;
     }
 
     .project-card {
@@ -128,6 +134,28 @@ $adwave-text-color: #2F2E47;
         width: 120%;
         position: absolute;
         top: 0;
+    }
+
+    .project-img {
+        bottom: 0;
+        right: 40%;
+        position: absolute;
+        height: 90%;
+        z-index: 1;
+
+        .light {
+            background: transparent;
+            position: absolute;
+            height: 90%;
+            transform: translate(-60%, 5%) rotate(-10deg);
+        }
+
+        .dark {
+            background: transparent;
+            position: absolute;
+            height: 100%;
+            transform: translate(15%, 0) rotate(15deg);
+        }
     }
 }
 
@@ -146,16 +174,17 @@ $adwave-text-color: #2F2E47;
         width: calc(40% + 1vw);
     }
 
+
+    .title-row {
+        h2 {
+            color: $adwave-text-color  !important;
+            font-size: calc(2rem + 1vw);
+        }
+    }
+
     .adwave-project {
         svg {
             fill: #FFAF00;
-        }
-
-        .title-row {
-            h2 {
-                color: $adwave-text-color  !important;
-                font-size: calc(2rem + 1vw);
-            }
         }
     }
 
