@@ -6,7 +6,7 @@ import phone from '../../../assets/adwave/adwave-phone.png';
 import est from '../../../assets/adwave/adwave-est.png';
 import app from '../../../assets/adwave/adwave-app.png';
 import AdwaveSvg from './AdwaveSvg';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
 const projectVariants: Variants = {
     from: {
@@ -25,6 +25,17 @@ const projectVariants: Variants = {
     }
 };
 
+const phoneVariants: Variants = {
+    to: {
+        x: '-80%',
+        y: '0',
+        scale: 1,
+    },
+    hover: {
+        scale: 1.1,
+    }
+};
+
 const estVariants: Variants = {
     from: {
         x: '-95%',
@@ -40,6 +51,10 @@ const estVariants: Variants = {
             mass: 0.4,
             damping: 8,
         }
+    },
+    hover: {
+        x: '-80%',
+        scale: 1.5,
     }
 };
 
@@ -58,6 +73,10 @@ const appVariants: Variants = {
             mass: 0.3,
             damping: 8,
         }
+    },
+    hover: {
+        y: '80%',
+        scale: 1.5,
     }
 };
 
@@ -65,6 +84,7 @@ interface AdWaveProps {
     startAnimation: boolean
 };
 const AdWave: React.FC<AdWaveProps> = ({ startAnimation }) => {
+    const [hover, setHover] = useState(false);
     const controls = useAnimation();
 
     useEffect(() => {
@@ -75,10 +95,18 @@ const AdWave: React.FC<AdWaveProps> = ({ startAnimation }) => {
         }
     }, [startAnimation]);
 
+    useEffect(() => {
+        if (hover) {
+            controls.start('hover');
+        } else {
+            controls.start('to');
+        }
+    }, [hover]);
+
     return (
         <div className='adwave-project project'>
             <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quia iste quos, rem nihil obcaecati quisquam magnam neque? Aliquam, perferendis atque?</p>
-            <div className='project-card'>
+            <motion.div onHoverStart={() => setHover(true)} onHoverEnd={() => setHover(false)} className='project-card'>
                 <div className='adwave-card o-hidden'>
                     <div className='title-row'>
                         <AdwaveSvg />
@@ -86,14 +114,14 @@ const AdWave: React.FC<AdWaveProps> = ({ startAnimation }) => {
                     </div>
                     <PublicSvg startAnimation={startAnimation} />
                     <motion.div className='project-image' variants={projectVariants} animate={controls} initial='from'>
-                        <img className='phone' src={phone} alt="phone" />
+                        <motion.img variants={phoneVariants} className='phone' src={phone} alt="phone" />
                         <motion.img variants={estVariants} className='est' src={est} alt="estimate" />
                         <motion.img variants={appVariants} className='app' src={app} alt="app" />
                     </motion.div>
 
                 </div>
                 <InsightsSvg startAnimation={startAnimation} />
-            </div>
+            </motion.div>
         </div>
     );
 };

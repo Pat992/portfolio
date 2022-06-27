@@ -6,7 +6,7 @@ import Projects from './components/Projects';
 import Skills from './components/Skills';
 import ConnectionSidebar from './components/Sidebar/ConnectionSidebar';
 import { useAppDispatch, useAppSelector } from './store/hooks';
-import { setScrollRawValue, setScrollValue } from './store/document-slice';
+import { setMousePosition, setScrollRawValue, setScrollValue } from './store/document-slice';
 import Footer from './components/Footer';
 import { Fragment, useEffect, useState } from 'react';
 
@@ -31,6 +31,14 @@ const App = () => {
       // Remove the event listener when component unmounts
       return () => window.removeEventListener("load", onPageLoad);
     }
+  }, []);
+
+  useEffect(() => {
+    window.addEventListener("mousemove", (e) => dispatch(setMousePosition({ x: e.clientX, y: e.clientY })));
+
+    return () => {
+      window.removeEventListener("mousemove", (e) => dispatch(setMousePosition({ x: 0, y: 0 })));
+    };
   }, []);
 
   scrollYProgress.onChange(() => {
