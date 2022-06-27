@@ -1,7 +1,6 @@
 @import '../../global';
 
-nav,
-ul {
+nav {
     z-index: 2;
     position: sticky;
     top: 0;
@@ -12,19 +11,22 @@ ul {
     padding: 1rem 0;
     height: 10vh;
     align-items: center;
+
+    ul {
+        justify-content: center;
+        display: flex;
+        align-items: center;
+
+        li {
+            margin: 0 calc(1rem + 0.5vw);
+        }
+
+        a {
+            font-size: calc(1rem + 0.5vw);
+        }
+    }
 }
 
-ul {
-    justify-content: center;
-
-    li {
-        margin: 0 calc(1rem + 0.5vw);
-    }
-
-    a {
-        font-size: calc(1rem + 0.5vw);
-    }
-}
 
 .icon {
     width: 100px;
