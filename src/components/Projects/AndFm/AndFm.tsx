@@ -8,6 +8,7 @@ import { useEffect } from 'react';
 import DescriptionCard from '../Description-card';
 import FlutterSvg from '../../UI/SVGs/FlutterSvg';
 import GooglePlaySvg from '../../UI/SVGs/GooglePlaySvg';
+import AffinityDesignerSvg from '../../UI/SVGs/AffinityDesignerSvg';
 
 const projectVariants: Variants = {
     from: {
@@ -91,6 +92,7 @@ const AndFm: React.FC<AndFmProps> = ({ startAnimation }) => {
                 description='lorem safddsd sofhjsak hkjdsf kjshfdk sdhf kdshfkjshd fkjsdh fkjdshfkdshfkj dshk fjhdsk fj'
                 technologies={[
                     <div><FlutterSvg /><p>Flutter</p></div>,
+                    <div><AffinityDesignerSvg /><p>Affinity Designer</p></div>,
                 ]}
                 links={[
                     <a href="https://play.google.com/store/apps/details?id=com.htth.and_fm" target='_blank'>

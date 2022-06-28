@@ -12,6 +12,7 @@ import FlutterSvg from '../../UI/SVGs/FlutterSvg';
 import AdmobSvg from '../../UI/SVGs/AdmobSvg';
 import GoogleCloudSvg from '../../UI/SVGs/GoogleCloudSvg';
 import GooglePlaySvg from '../../UI/SVGs/GooglePlaySvg';
+import AffinityDesignerSvg from '../../UI/SVGs/AffinityDesignerSvg';
 
 const projectVariants: Variants = {
     from: {
@@ -117,6 +118,7 @@ const AdWave: React.FC<AdWaveProps> = ({ startAnimation }) => {
                     <div><FlutterSvg /><p>Flutter</p></div>,
                     <div><AdmobSvg /><p>AdMob API</p></div>,
                     <div><GoogleCloudSvg /><p>Google Cloud</p></div>,
+                    <div><AffinityDesignerSvg /><p>Affinity Designer</p></div>,
                 ]}
                 links={[
                     <a href="https://play.google.com/store/apps/details?id=htth.admob.android.AdWave" target='_blank'>
