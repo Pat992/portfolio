@@ -1,5 +1,5 @@
 import { Variants } from 'framer-motion';
-import Icon from '../UI/IconSvg';
+import IconSvg from '../UI/IconSvg';
 import './styles.scss';
 
 const svgVariants: Variants = {
@@ -23,7 +23,7 @@ interface LoaderProps {
 const Loader: React.FC<LoaderProps> = ({ onAnimationComepleteHandler }) => {
     return (
         <div className="loader">
-            <Icon animationVariants={svgVariants} onAnimationComepleteHandler={onAnimationComepleteHandler} />
+            <IconSvg animationVariants={svgVariants} onAnimationComepleteHandler={onAnimationComepleteHandler} />
         </div>
     );
 };
