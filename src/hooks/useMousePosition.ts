@@ -1,17 +1,13 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, MutableRefObject } from "react";
 
-export const useMousePosition = () => {
+export const useMousePosition = (ref: any) => {
     const [mousePos, setMousePos] = useState({ posX: 0, posY: 0 });
     useEffect(() => {
         const getMousePos = (e: any) => {
-            const rect = e.target.getBoundingClientRect();
-            const posX: number = e.clientX - rect.left;
-            const posY: number = e.clientY - rect.top;
+            const rect = ref.current.getBoundingClientRect();
+            const posX: number = (e.clientX - rect.left) / rect.width * 100;
+            const posY: number = (e.clientY - rect.top) / rect.height * 100;
             setMousePos({ posX, posY });
-            console.log(mousePos);
-            console.log(e.clientX);
-            console.log(rect.left);
-            console.log(rect.top);
         };
         document.addEventListener("mousemove", getMousePos);
         return function cleanup() {

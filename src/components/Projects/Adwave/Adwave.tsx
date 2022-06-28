@@ -6,13 +6,14 @@ import phone from '../../../assets/adwave/adwave-phone.png';
 import est from '../../../assets/adwave/adwave-est.png';
 import app from '../../../assets/adwave/adwave-app.png';
 import AdwaveSvg from './AdwaveSvg';
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import DescriptionCard from '../Description-card';
 import FlutterSvg from '../../UI/SVGs/FlutterSvg';
 import AdmobSvg from '../../UI/SVGs/AdmobSvg';
 import GoogleCloudSvg from '../../UI/SVGs/GoogleCloudSvg';
 import GooglePlaySvg from '../../UI/SVGs/GooglePlaySvg';
 import AffinityDesignerSvg from '../../UI/SVGs/AffinityDesignerSvg';
+import { useMousePosition } from '../../../hooks/useMousePosition';
 
 const projectVariants: Variants = {
     from: {
@@ -90,6 +91,8 @@ interface AdWaveProps {
     startAnimation: boolean
 };
 const AdWave: React.FC<AdWaveProps> = ({ startAnimation }) => {
+    const cardRef = useRef(null);
+    const { posX, posY } = useMousePosition(cardRef);
     const [hover, setHover] = useState(false);
     const controls = useAnimation();
 
@@ -128,7 +131,7 @@ const AdWave: React.FC<AdWaveProps> = ({ startAnimation }) => {
                 ]}
                 isLeft={true}
             />
-            <motion.div onHoverStart={() => setHover(true)} onHoverEnd={() => setHover(false)} className='project-card'>
+            <motion.div ref={cardRef} onHoverStart={() => setHover(true)} onHoverEnd={() => setHover(false)} className='project-card'>
                 <div className='adwave-card o-hidden'>
                     <div className='title-row'>
                         <AdwaveSvg />
