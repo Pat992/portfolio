@@ -5,7 +5,7 @@ export const useMousePosition = () => {
     useEffect(() => {
         const getMousePos = (e: any) => {
             const rect = e.target.getBoundingClientRect();
-            const posX: number = (e.clientX - rect.left);
+            const posX: number = e.clientX - rect.left;
             const posY: number = e.clientY - rect.top;
             setMousePos({ posX, posY });
             console.log(mousePos);

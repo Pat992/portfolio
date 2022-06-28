@@ -1,5 +1,4 @@
 import { motion, Variants } from 'framer-motion';
-import Icon from '../UI/IconSvg';
 import './styles.scss';
 import ToggleButton from './ToggleButton';
 

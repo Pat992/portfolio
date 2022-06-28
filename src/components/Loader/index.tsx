@@ -9,10 +9,10 @@ const svgVariants: Variants = {
         scale: 100,
     },
     to: {
-        scale: 5,
+        scale: 1,
         transition: {
             duration: 3,
-            type: 'spring',
+            type: 'easeInOut',
         }
     }
 };
