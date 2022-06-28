@@ -113,9 +113,9 @@ const AdWave: React.FC<AdWaveProps> = ({ startAnimation }) => {
                 title='AdWave'
                 description='lorem safddsd sofhjsak hkjdsf kjshfdk sdhf kdshfkjshd fkjsdh fkjdshfkdshfkj dshk fjhdsk fj'
                 technologies={[
-                    <FlutterSvg />,
-                    <AdmobSvg />,
-                    <GoogleCloudSvg />
+                    <div><FlutterSvg /><p>Flutter</p></div>,
+                    <div><AdmobSvg /><p>AdMob API</p></div>,
+                    <div><GoogleCloudSvg /><p>Google Cloud</p></div>,
                 ]}
                 links={[]}
                 isLeft={true}

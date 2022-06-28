@@ -6,6 +6,7 @@ import dark from '../../../assets/andfm/andfm-dark.png';
 import AndFmSvg from './AndFmSvg';
 import { useEffect } from 'react';
 import DescriptionCard from '../Description-card';
+import FlutterSvg from '../../UI/SkillCircles/FlutterSvg';
 
 const projectVariants: Variants = {
     from: {
@@ -84,7 +85,15 @@ const AndFm: React.FC<AndFmProps> = ({ startAnimation }) => {
                 </motion.div>
                 <Background />
             </div>
-            {/* <DescriptionCard /> */}
+            <DescriptionCard
+                title='AdWave'
+                description='lorem safddsd sofhjsak hkjdsf kjshfdk sdhf kdshfkjshd fkjsdh fkjdshfkdshfkj dshk fjhdsk fj'
+                technologies={[
+                    <div><FlutterSvg /><p>Flutter</p></div>,
+                ]}
+                links={[]}
+                isLeft={false}
+            />
         </div>
     );
 };

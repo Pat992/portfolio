@@ -74,15 +74,27 @@ $adwave-text-color: #2F2E47;
 
     ul {
         display: flex;
+        justify-content: space-between;
         padding: 20px 0;
 
         li {
             height: 10%;
+
+            div {
+                flex-direction: column;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            p {
+                scale: 50%;
+            }
         }
 
         svg {
-            height: 10%;
-            width: 10%;
+            height: calc(2rem + 1vh);
+            width: calc(2rem + 1vw);
         }
     }
 }
