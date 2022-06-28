@@ -9,18 +9,18 @@ import { useAppDispatch, useAppSelector } from './store/hooks';
 import { setMousePosition, setScrollRawValue, setScrollValue } from './store/document-slice';
 import Footer from './components/Footer';
 import { Fragment, useEffect, useState } from 'react';
+import Loader from './components/Loader';
 
 const App = () => {
   const [loaded, setLoaded] = useState(false);
+  const [introCompleted, setIntroCompleted] = useState(false);
   const { scrollYProgress, scrollY } = useViewportScroll();
   const dispatch = useAppDispatch();
   const isDarkTheme = useAppSelector((state) => state.theme.isDarkTheme);
 
   useEffect(() => {
     const onPageLoad = () => {
-      setTimeout(() => {
-        setLoaded(true);
-      }, 500);
+      setLoaded(true);
     };
 
     // Check if the page has already loaded
@@ -48,8 +48,8 @@ const App = () => {
 
   return (
     <div className={isDarkTheme ? 'dark' : 'light'}>
-      {!loaded ?
-        <h1>loading now</h1>
+      {!loaded || !introCompleted ?
+        <Loader onAnimationComepleteHandler={() => setIntroCompleted(true)} />
         : <Fragment>
           <ConnectionSidebar />
           <Nav />

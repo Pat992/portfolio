@@ -5,6 +5,7 @@ import light from '../../../assets/andfm/andfm-light.png';
 import dark from '../../../assets/andfm/andfm-dark.png';
 import AndFmSvg from './AndFmSvg';
 import { useEffect } from 'react';
+import DescriptionCard from '../Description-card';
 
 const projectVariants: Variants = {
     from: {
@@ -72,7 +73,7 @@ const AndFm: React.FC<AndFmProps> = ({ startAnimation }) => {
 
     return (
         <div className='andfm-project project-reverse'>
-            <div className='project-card o-hidden'>
+            <div className='project-card o-hidden andfm-card'>
                 <div className='title-row'>
                     <AndFmSvg />
                     <h2>andFM</h2>
@@ -83,7 +84,7 @@ const AndFm: React.FC<AndFmProps> = ({ startAnimation }) => {
                 </motion.div>
                 <Background />
             </div>
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Saepe pariatur dolor sequi provident quis illum nulla recusandae similique labore fugit?</p>
+            {/* <DescriptionCard /> */}
         </div>
     );
 };

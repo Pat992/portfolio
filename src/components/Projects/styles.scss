@@ -19,10 +19,6 @@ $adwave-text-color: #2F2E47;
     width: 90vw;
     margin: 100px auto 0 auto;
     display: flex;
-
-    p {
-        flex-shrink: 2;
-    }
 }
 
 .adwave-project,
@@ -71,13 +67,29 @@ $adwave-text-color: #2F2E47;
     z-index: 1;
 }
 
+.description-card {
+    margin: 0 50px;
+    flex-shrink: 1.5;
+    max-height: 100%;
+
+    ul {
+        display: flex;
+        padding: 20px 0;
+
+        li {
+            height: 10%;
+        }
+
+        svg {
+            height: 10%;
+            width: 10%;
+        }
+    }
+}
+
 .adwave-project {
     svg {
         fill: #FFAF00;
-    }
-
-    h2 {
-        color: $adwave-text-color  !important;
     }
 
     .adwave-svg {
@@ -109,21 +121,20 @@ $adwave-text-color: #2F2E47;
             transform: translate(-140%, 110%);
         }
     }
-}
 
-.adwave-card {
-    background: linear-gradient(#FEDD26, #FEC626);
-    height: 100%;
+    .adwave-card {
+        background: linear-gradient(#FEDD26, #FEC626);
+        height: 100%;
+
+        h2 {
+            color: $adwave-text-color  !important;
+        }
+    }
 }
 
 .andfm-project {
     .andfm-svg {
         height: 100%;
-    }
-
-    h2 {
-        font-style: italic;
-        font-weight: 600;
     }
 
     .project-card {
@@ -155,6 +166,13 @@ $adwave-text-color: #2F2E47;
             position: absolute;
             height: 100%;
             transform: translate(15%, 0) rotate(15deg);
+        }
+    }
+
+    .andfm-card {
+        h2 {
+            font-style: italic;
+            font-weight: 600;
         }
     }
 }

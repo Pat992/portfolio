@@ -7,6 +7,10 @@ import est from '../../../assets/adwave/adwave-est.png';
 import app from '../../../assets/adwave/adwave-app.png';
 import AdwaveSvg from './AdwaveSvg';
 import { useEffect, useState } from 'react';
+import DescriptionCard from '../Description-card';
+import FlutterSvg from '../../UI/SkillCircles/FlutterSvg';
+import AdmobSvg from '../../UI/SkillCircles/AdmobSvg';
+import GoogleCloudSvg from '../../UI/SkillCircles/GoogleCloudSvg';
 
 const projectVariants: Variants = {
     from: {
@@ -105,7 +109,17 @@ const AdWave: React.FC<AdWaveProps> = ({ startAnimation }) => {
 
     return (
         <div className='adwave-project project'>
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quia iste quos, rem nihil obcaecati quisquam magnam neque? Aliquam, perferendis atque?</p>
+            <DescriptionCard
+                title='AdWave'
+                description='lorem safddsd sofhjsak hkjdsf kjshfdk sdhf kdshfkjshd fkjsdh fkjdshfkdshfkj dshk fjhdsk fj'
+                technologies={[
+                    <FlutterSvg />,
+                    <AdmobSvg />,
+                    <GoogleCloudSvg />
+                ]}
+                links={[]}
+                isLeft={true}
+            />
             <motion.div onHoverStart={() => setHover(true)} onHoverEnd={() => setHover(false)} className='project-card'>
                 <div className='adwave-card o-hidden'>
                     <div className='title-row'>
@@ -118,7 +132,6 @@ const AdWave: React.FC<AdWaveProps> = ({ startAnimation }) => {
                         <motion.img variants={estVariants} className='est' src={est} alt="estimate" />
                         <motion.img variants={appVariants} className='app' src={app} alt="app" />
                     </motion.div>
-
                 </div>
                 <InsightsSvg startAnimation={startAnimation} />
             </motion.div>

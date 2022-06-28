@@ -2,7 +2,7 @@
 interface FlutterSvgProps { };
 const FlutterSvg: React.FC<FlutterSvgProps> = () => {
     return (
-        <svg className="flutter-circle" width="50%" height="50%" viewBox="0 0 256 317" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid">
+        <svg className="flutter-circle" viewBox="0 0 256 317" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid">
             <defs>
                 <linearGradient x1="3.9517088%" y1="26.9930287%" x2="75.8970734%" y2="52.9192657%" id="linearGradient-1">
                     <stop stop-color="#000000" offset="0%"></stop>

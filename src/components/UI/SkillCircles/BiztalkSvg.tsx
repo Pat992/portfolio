@@ -2,7 +2,7 @@
 interface BiztalkSvgProps { };
 const BiztalkSvg: React.FC<BiztalkSvgProps> = () => {
     return (
-        <svg className="biztalk-circle" width="100%" height="100%" viewBox="0 -141.54 1478.201 1478.201" xmlns="http://www.w3.org/2000/svg">
+        <svg className="biztalk-circle" viewBox="0 -141.54 1478.201 1478.201" xmlns="http://www.w3.org/2000/svg">
             <g transform="matrix(.569 0 0 .569 199.451 -82.735)">
                 <linearGradient id="a" gradientUnits="userSpaceOnUse" x1="-2901.952" y1="923.573" x2="-2061.249" y2="1420.331" gradientTransform="matrix(.1234 0 0 -.1234 1158.33 1550.273)">
                     <stop offset="0" stop-color="#909ca9" />

@@ -19,7 +19,7 @@ export const documentSlice = createSlice({
         setMousePosition: (state, action) => {
             state.mouseX = action.payload.x;
             state.mouseY = action.payload.y;
-            console.log('Y: ' + state.mouseY + '\nX: ' + state.mouseY);
+            console.log('Y: ' + state.mouseY + '\nX: ' + state.mouseX);
         }
     },
 })

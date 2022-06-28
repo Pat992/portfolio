@@ -2,7 +2,7 @@
 interface AzureSvgProps { };
 const AzureSvg: React.FC<AzureSvgProps> = () => {
     return (
-        <svg width="50%" height="50%" viewBox="0 0 256 242" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid">
+        <svg viewBox="0 0 256 242" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid">
             <title>Azure</title>
             <defs>
                 <linearGradient x1="58.9717389%" y1="7.4114724%" x2="37.1905196%" y2="103.76182%" id="Azure-linearGradient-1">
