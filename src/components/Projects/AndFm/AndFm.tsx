@@ -6,7 +6,8 @@ import dark from '../../../assets/andfm/andfm-dark.png';
 import AndFmSvg from './AndFmSvg';
 import { useEffect } from 'react';
 import DescriptionCard from '../Description-card';
-import FlutterSvg from '../../UI/SkillCircles/FlutterSvg';
+import FlutterSvg from '../../UI/SVGs/FlutterSvg';
+import GooglePlaySvg from '../../UI/SVGs/GooglePlaySvg';
 
 const projectVariants: Variants = {
     from: {
@@ -91,7 +92,12 @@ const AndFm: React.FC<AndFmProps> = ({ startAnimation }) => {
                 technologies={[
                     <div><FlutterSvg /><p>Flutter</p></div>,
                 ]}
-                links={[]}
+                links={[
+                    <a href="https://play.google.com/store/apps/details?id=com.htth.and_fm" target='_blank'>
+                        <GooglePlaySvg />
+                        <p>Download</p>
+                    </a>
+                ]}
                 isLeft={false}
             />
         </div>

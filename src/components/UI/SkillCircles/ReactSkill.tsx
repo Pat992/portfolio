@@ -1,5 +1,5 @@
 import SkillCircle from ".";
-import ReactSvg from "./ReactSvg";
+import ReactSvg from "../SVGs/ReactSvg";
 
 interface ReactSkillProps { };
 const ReactSkill: React.FC<ReactSkillProps> = () => {

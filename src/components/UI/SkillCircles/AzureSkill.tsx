@@ -1,5 +1,5 @@
 import SkillCircle from ".";
-import AzureSvg from "./AzureSvg";
+import AzureSvg from "../SVGs/AzureSvg";
 
 interface AzureSkillProps { };
 const AzureSkill: React.FC<AzureSkillProps> = () => {

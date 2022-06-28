@@ -1,5 +1,5 @@
 import SkillCircle from ".";
-import FlutterSvg from "./FlutterSvg";
+import FlutterSvg from "../SVGs/FlutterSvg";
 
 interface FlutterSkillProps { };
 const FlutterSkill: React.FC<FlutterSkillProps> = () => {

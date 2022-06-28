@@ -11,12 +11,15 @@ const DescriptionCard: React.FC<DescriptionCardProps> = ({ title, technologies, 
     return (
         <div className="description-card">
             <h2>{title}</h2>
+            <h4>Technologies:</h4>
             <ul>
                 {
                     technologies.map(technology => <li>{technology}</li>)
                 }
             </ul>
+            <h4>Description:</h4>
             <p>{description}</p>
+            <h4>Links:</h4>
             <ul>
                 {
                     links.map(link => <li>{link}</li>)

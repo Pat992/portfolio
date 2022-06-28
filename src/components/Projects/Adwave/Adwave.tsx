@@ -8,9 +8,10 @@ import app from '../../../assets/adwave/adwave-app.png';
 import AdwaveSvg from './AdwaveSvg';
 import { useEffect, useState } from 'react';
 import DescriptionCard from '../Description-card';
-import FlutterSvg from '../../UI/SkillCircles/FlutterSvg';
-import AdmobSvg from '../../UI/SkillCircles/AdmobSvg';
-import GoogleCloudSvg from '../../UI/SkillCircles/GoogleCloudSvg';
+import FlutterSvg from '../../UI/SVGs/FlutterSvg';
+import AdmobSvg from '../../UI/SVGs/AdmobSvg';
+import GoogleCloudSvg from '../../UI/SVGs/GoogleCloudSvg';
+import GooglePlaySvg from '../../UI/SVGs/GooglePlaySvg';
 
 const projectVariants: Variants = {
     from: {
@@ -117,7 +118,12 @@ const AdWave: React.FC<AdWaveProps> = ({ startAnimation }) => {
                     <div><AdmobSvg /><p>AdMob API</p></div>,
                     <div><GoogleCloudSvg /><p>Google Cloud</p></div>,
                 ]}
-                links={[]}
+                links={[
+                    <a href="https://play.google.com/store/apps/details?id=htth.admob.android.AdWave" target='_blank'>
+                        <GooglePlaySvg />
+                        <p>Download</p>
+                    </a>
+                ]}
                 isLeft={true}
             />
             <motion.div onHoverStart={() => setHover(true)} onHoverEnd={() => setHover(false)} className='project-card'>

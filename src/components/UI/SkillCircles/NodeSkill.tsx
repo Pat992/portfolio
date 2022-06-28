@@ -1,5 +1,5 @@
 import SkillCircle from ".";
-import NodeSvg from "./NodeSvg";
+import NodeSvg from "../SVGs/NodeSvg";
 
 interface NodeSkillProps { };
 const NodeSkill: React.FC<NodeSkillProps> = () => {

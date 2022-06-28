@@ -1,5 +1,5 @@
 import SkillCircle from ".";
-import BiztalkSvg from "./BiztalkSvg";
+import BiztalkSvg from "../SVGs/BiztalkSvg";
 
 interface BiztalkSkillProps { };
 const BiztalkSkill: React.FC<BiztalkSkillProps> = () => {

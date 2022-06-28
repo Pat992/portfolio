@@ -72,10 +72,13 @@ $adwave-text-color: #2F2E47;
     flex-shrink: 1.5;
     max-height: 100%;
 
+    h4 {
+        margin: 20px 0 10px 0;
+    }
+
     ul {
         display: flex;
         justify-content: space-between;
-        padding: 20px 0;
 
         li {
             height: 10%;
@@ -88,8 +91,16 @@ $adwave-text-color: #2F2E47;
             }
 
             p {
-                scale: 50%;
+                margin-top: 10px;
+                font-size: 50%;
             }
+        }
+
+        a {
+            flex-direction: column;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         svg {
