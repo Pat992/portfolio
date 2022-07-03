@@ -1,11 +1,11 @@
 @import '../../global';
 
 .main {
+    width: 90vw;
     height: 90vh;
     margin: 0 auto;
-    width: 100vw;
     display: flex;
-    justify-content: stretch;
+    justify-content: center;
     align-items: center;
     position: relative;
 }
@@ -24,9 +24,17 @@ h4 {
 
 .introduction,
 .graphic {
-    width: 50%;
+
     height: 90%;
     margin: 2rem auto;
+}
+
+.introduction {
+    width: 40%;
+}
+
+.graphic {
+    width: 60%;
 }
 
 .svg-container {

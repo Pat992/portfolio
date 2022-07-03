@@ -2,7 +2,7 @@
 interface AndFmSvgProps { };
 const AndFmSvg: React.FC<AndFmSvgProps> = () => {
     return (
-        <svg className="andfm-svg" viewBox="0 0 1537 1537" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" xmlSpace="preserve" fillRule="evenodd" clipRule="evenodd" strokeLinejoin="round" strokeMiterlimit={2}>
+        <svg viewBox="0 0 1537 1537" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" xmlSpace="preserve" fillRule="evenodd" clipRule="evenodd" strokeLinejoin="round" strokeMiterlimit={2}>
             <g transform="matrix(1,0,0,1,-12135,-3077)">
                 <g id="Logo-website" transform="matrix(2.24234,0,0,2.28742,8081.15,3171.28)">
                     <rect x="1808" y="-41" width="685" height="671.5" style={{ fill: 'none' }} />

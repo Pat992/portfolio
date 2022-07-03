@@ -157,9 +157,6 @@ $adwave-text-color: #2F2E47;
 }
 
 .andfm-project {
-    .andfm-svg {
-        height: 100%;
-    }
 
     .project-card {
         background: #3453f3;
@@ -199,6 +196,12 @@ $adwave-text-color: #2F2E47;
             font-weight: 600;
         }
     }
+
+    .andfm-svg {
+        background-image: url('../../assets/andfm/Logo-website.svg');
+        width: 10rem;
+        height: 100%;
+    }
 }
 
 @media screen and (max-width: 1200px) {
@@ -223,13 +226,6 @@ $adwave-text-color: #2F2E47;
             font-size: calc(2rem + 1vw);
         }
     }
-
-    .adwave-project {
-        svg {
-            fill: #FFAF00;
-        }
-    }
-
 }
 
 @media screen and (max-width: 650px) {

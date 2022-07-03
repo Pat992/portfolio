@@ -78,7 +78,7 @@ const AndFm: React.FC<AndFmProps> = ({ startAnimation }) => {
         <div className='andfm-project project-reverse'>
             <div className='project-card o-hidden andfm-card'>
                 <div className='title-row'>
-                    <AndFmSvg />
+                    <div className='andfm-svg' />
                     <h2>andFM</h2>
                 </div>
                 <motion.div variants={projectVariants} initial='from' animate={controls} className='project-img'>
