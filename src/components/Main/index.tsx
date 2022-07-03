@@ -1,14 +1,9 @@
 import { motion, Variants } from 'framer-motion';
 import { useAppDispatch } from '../../store/hooks';
 import { setHasEnteredMain, setHasLeftMain } from '../../store/main-slice';
-import AzureSkill from '../UI/SkillCircles/AzureSkill';
-import BiztalkSkill from '../UI/SkillCircles/BiztalkSkill';
-import FlutterSkill from '../UI/SkillCircles/FlutterSkill';
-import NodeSkill from '../UI/SkillCircles/NodeSkill';
-import ReactSkill from '../UI/SkillCircles/ReactSkill';
 import ContactButton from './ContactButton';
-import ProfileCard from './ProfileCard';
 import './styles.scss';
+import SvgShapes from './SvgShapes';
 
 const sectionVariants: Variants = {
     from: {
@@ -53,14 +48,7 @@ const Main: React.FC<MainProps> = () => {
                 <motion.h1 variants={textVariants} className='title-2'>cloud engineer</motion.h1>
                 <ContactButton />
             </motion.div>
-            <div className='profile'>
-                <ProfileCard />
-                <FlutterSkill />
-                <ReactSkill />
-                <AzureSkill />
-                <NodeSkill />
-                <BiztalkSkill />
-            </div>
+            <div className='graphic'><SvgShapes /></div>
         </motion.section>
     );
 };

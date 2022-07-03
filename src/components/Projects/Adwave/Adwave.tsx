@@ -1,4 +1,4 @@
-import { motion, useAnimation, Variants } from 'framer-motion';
+import { motion, useAnimation, useTransform, Variants } from 'framer-motion';
 import '../styles.scss';
 import InsightsSvg from './Insights';
 import PublicSvg from './Public';
@@ -92,7 +92,7 @@ interface AdWaveProps {
 };
 const AdWave: React.FC<AdWaveProps> = ({ startAnimation }) => {
     const cardRef = useRef(null);
-    const { posX, posY } = useMousePosition(cardRef);
+    // const { posX, posY } = useMousePosition(cardRef);
     const [hover, setHover] = useState(false);
     const controls = useAnimation();
 
