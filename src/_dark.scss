@@ -15,7 +15,9 @@
     p,
     a,
     h4,
-    h5 {
+    h5,
+    input,
+    textarea {
         color: $text-color-accent-dark;
     }
 
@@ -50,5 +52,6 @@
 
     .main-color {
         color: $accent-red;
+        stroke: $accent-red;
     }
 }
