@@ -1,5 +1,19 @@
 @import '../../../global';
 
+.skill {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    p {
+        margin-top: 10px;
+        font-size: 50%;
+    }
+}
+
 .skill-circle {
     display: flex;
     justify-content: center;
@@ -26,6 +40,11 @@
 }
 
 @media screen and (max-width: 700px) {
+    .skill {
+        p {
+            font-size: 75%;
+        }
+    }
 
     .skill-circle {
         width: calc(5rem + 1vw);

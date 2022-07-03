@@ -10,7 +10,9 @@ interface SkillCircleProps {
 const SkillCircle: React.FC<SkillCircleProps> = ({ color, body, text = '' }) => {
 
     return (
-        <motion.div drag
+        <motion.div
+            className="skill"
+            drag
             dragSnapToOrigin
             dragElastic={1}>
             <motion.div

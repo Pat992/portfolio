@@ -18,7 +18,7 @@
     }
 
     .expirience-list {
-        min-width: 50%;
+        flex-grow: 2;
 
         li {
             margin: 50px auto;
@@ -41,6 +41,8 @@
     }
 
     .skill-list {
+        flex-shrink: 2;
+
         ul {
             display: flex;
             flex-wrap: wrap;
@@ -48,6 +50,33 @@
 
         li {
             margin: auto 15px;
+        }
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .skills {
+        .expirience-list {
+            h3 {
+                font-size: 75%;
+                margin-bottom: 10px;
+            }
+
+            p,
+            .main-color {
+                font-size: 75%;
+            }
+
+            div {
+                margin-left: 20px;
+            }
+        }
+
+        .skill-list {
+            ul {
+                flex-direction: column;
+                flex-wrap: wrap;
+            }
         }
     }
 }
