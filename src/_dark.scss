@@ -30,6 +30,14 @@
     button {
         background: $accent-red;
         color: $text-color-dark;
+        border: none;
+        border-radius: 10px;
+    }
+
+    .cancel {
+        border: 2px $accent-red solid;
+        background: none;
+        color: $accent-red;
     }
 
     .card {

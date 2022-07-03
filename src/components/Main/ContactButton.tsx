@@ -1,6 +1,7 @@
 import { useAnimation, Variants, motion } from 'framer-motion';
 import { useEffect, useState } from 'react';
-import { useAppSelector } from '../../store/hooks';
+import { useAppDispatch, useAppSelector } from '../../store/hooks';
+import { setShowModal } from '../../store/modal-slice';
 import MailSvg from './MailSvg';
 import './styles.scss';
 
@@ -63,6 +64,7 @@ const ContactButton: React.FC<ContactButtonProps> = () => {
     const scroll = useAppSelector((state) => state.doc.value);
     const hasDoneIconAnim = useAppSelector((state) => state.main.hasDoneIconAnim);
     const controls = useAnimation();
+    const dispatch = useAppDispatch();
 
     useEffect(() => {
         controls.set('from');
@@ -96,7 +98,15 @@ const ContactButton: React.FC<ContactButtonProps> = () => {
     }, [inMainViewport, hasEnteredProjects, scroll, hasDoneIconAnim]);
 
     return (
-        <motion.button variants={buttonVariants} initial='from' animate={controls} className="btn contact-button" whileHover='hover' layout>
+        <motion.button
+            onClick={() => dispatch(setShowModal(true))}
+            variants={buttonVariants}
+            initial='from'
+            animate={controls}
+            className="btn contact-button"
+            whileHover='hover'
+            layout
+        >
             {showSvg ? <MailSvg /> : 'CONTACT ME'}
         </motion.button>
     );

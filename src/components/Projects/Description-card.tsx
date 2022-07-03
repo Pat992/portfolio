@@ -17,8 +17,10 @@ const DescriptionCard: React.FC<DescriptionCardProps> = ({ title, technologies, 
                     technologies.map(technology => <li>{technology}</li>)
                 }
             </ul>
+            <hr />
             <h4>Description:</h4>
             <p>{description}</p>
+            <hr />
             <h4>Links:</h4>
             <ul>
                 {

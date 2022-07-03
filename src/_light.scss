@@ -24,6 +24,14 @@
     button {
         background: $accent-blue;
         color: $text-color-dark;
+        border: none;
+        border-radius: 10px;
+    }
+
+    .cancel {
+        border: 2px $accent-blue solid;
+        background: none;
+        color: $accent-blue;
     }
 
     .card {

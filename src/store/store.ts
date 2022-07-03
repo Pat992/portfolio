@@ -5,6 +5,7 @@ import mainReducer from './main-slice';
 import projectsReducer from './projects-slice';
 import themeReducer from './theme-slice';
 import footerReducer from './footer-slice';
+import modalReducer from './modal-slice';
 
 const store = configureStore({
     reducer: {
@@ -12,7 +13,8 @@ const store = configureStore({
         projects: projectsReducer,
         theme: themeReducer,
         main: mainReducer,
-        footer: footerReducer
+        footer: footerReducer,
+        modal: modalReducer
         // navigation: navigationReducer,
         // skills: skillsReducer,
     }

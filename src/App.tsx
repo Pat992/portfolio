@@ -9,6 +9,7 @@ import { useAppDispatch, useAppSelector } from './store/hooks';
 import { setHasLoaded, setMousePosition, setScrollRawValue, setScrollValue } from './store/document-slice';
 import Footer from './components/Footer';
 import { Fragment, useEffect, useState } from 'react';
+import Modal from './components/Modal/Modal';
 
 const App = () => {
   const { scrollYProgress, scrollY } = useViewportScroll();
@@ -52,6 +53,7 @@ const App = () => {
         <Main />
         {isLoaded && isCompleteAnim &&
           <Fragment>
+            <Modal />
             <ConnectionSidebar />
             <Projects />
             <Skills />

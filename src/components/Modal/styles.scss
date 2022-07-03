@@ -1,0 +1,68 @@
+@import '../../global';
+
+.backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.modal {
+    width: 50vw;
+    max-width: 100vw;
+    min-width: 50vw;
+    min-height: 60vh;
+    margin: 0 auto;
+    padding: 40px 20px;
+    background: white;
+    border-radius: 10px;
+    text-align: center;
+
+    svg {
+        width: 50%;
+        height: 50%;
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+    }
+
+    label {
+        align-self: flex-start;
+    }
+
+    button {
+        border-radius: 10px;
+        padding: 10px;
+        min-width: 15vw;
+    }
+
+    input,
+    textarea {
+        margin-bottom: 20px;
+        border: none;
+        box-shadow: 0 10px 10px rgba($color: #000000, $alpha: 0.2), 0px 20px 40px rgba($color: #000000, $alpha: 0.2);
+        padding: 10px;
+        border-radius: 10px;
+    }
+
+    textarea {
+        height: 30vh;
+        resize: none;
+    }
+
+    div {
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .modal {
+        width: 90vw;
+    }
+}
