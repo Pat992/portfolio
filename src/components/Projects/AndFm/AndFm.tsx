@@ -81,8 +81,8 @@ const AndFm: React.FC<AndFmProps> = ({ startAnimation }) => {
                     <h2>andFM</h2>
                 </div>
                 <motion.div variants={projectVariants} initial='from' animate={controls} className='project-img'>
-                    <motion.img variants={lightVariants} className='light' src={light} alt="phone-light" />
-                    <motion.img variants={darkVariants} className='dark' src={dark} alt="phone-dark" />
+                    <motion.img variants={lightVariants} className='light img-ignore' src={light} alt="phone-light" />
+                    <motion.img variants={darkVariants} className='dark img-ignore' src={dark} alt="phone-dark" />
                 </motion.div>
                 <Background />
             </div>

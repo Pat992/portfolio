@@ -139,9 +139,9 @@ const AdWave: React.FC<AdWaveProps> = ({ startAnimation }) => {
                     </div>
                     <PublicSvg startAnimation={startAnimation} />
                     <motion.div className='project-image' variants={projectVariants} animate={controls} initial='from'>
-                        <motion.img variants={phoneVariants} className='phone' src={phone} alt="phone" />
-                        <motion.img variants={estVariants} className='est' src={est} alt="estimate" />
-                        <motion.img variants={appVariants} className='app' src={app} alt="app" />
+                        <motion.img variants={phoneVariants} className='phone img-ignore' src={phone} alt="phone" />
+                        <motion.img variants={estVariants} className='est img-ignore' src={est} alt="estimate" />
+                        <motion.img variants={appVariants} className='app img-ignore' src={app} alt="app" />
                     </motion.div>
                 </div>
                 <InsightsSvg startAnimation={startAnimation} />

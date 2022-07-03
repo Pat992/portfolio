@@ -108,16 +108,16 @@ const SvgShapes: React.FC<SvgShapesProps> = () => {
         <motion.div className='svg-container' variants={containerVariants} initial='from' animate={controls}>
             {isDarkTheme ?
                 <Fragment>
-                    <motion.img variants={svgsVariantsOne} className='shape-1' src={Shape1D} alt="" />
-                    <motion.img variants={svgsVariants} className='shape-2' src={Shape2D} alt="" />
-                    <motion.img variants={svgsVariants} className='shape-3' src={Shape3D} alt="" />
-                    <motion.img variants={svgsVariants} className='shape-4' src={Shape4D} alt="" onAnimationComplete={() => setHasDoneSvg(true)} />
+                    <motion.img variants={svgsVariantsOne} className='shape-1 img-ignore' src={Shape1D} alt="" />
+                    <motion.img variants={svgsVariants} className='shape-2 img-ignore' src={Shape2D} alt="" />
+                    <motion.img variants={svgsVariants} className='shape-3 img-ignore' src={Shape3D} alt="" />
+                    <motion.img variants={svgsVariants} className='shape-4 img-ignore' src={Shape4D} alt="" onAnimationComplete={() => setHasDoneSvg(true)} />
                 </Fragment> :
                 <Fragment>
-                    <motion.img variants={svgsVariantsOne} className='shape-1' src={Shape1L} alt="" />
-                    <motion.img variants={svgsVariants} className='shape-2' src={Shape2L} alt="" />
-                    <motion.img variants={svgsVariants} className='shape-3' src={Shape3L} alt="" />
-                    <motion.img variants={svgsVariants} className='shape-4' src={Shape4L} alt="" onAnimationComplete={() => setHasDoneSvg(true)} />
+                    <motion.img variants={svgsVariantsOne} className='shape-1 img-ignore' src={Shape1L} alt="" />
+                    <motion.img variants={svgsVariants} className='shape-2 img-ignore' src={Shape2L} alt="" />
+                    <motion.img variants={svgsVariants} className='shape-3 img-ignore' src={Shape3L} alt="" />
+                    <motion.img variants={svgsVariants} className='shape-4 img-ignore' src={Shape4L} alt="" onAnimationComplete={() => setHasDoneSvg(true)} />
                 </Fragment>
 
             }
