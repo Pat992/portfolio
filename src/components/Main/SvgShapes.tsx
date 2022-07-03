@@ -3,6 +3,14 @@ import { Fragment, useEffect, useState } from 'react';
 import { useAppDispatch, useAppSelector } from '../../store/hooks';
 import { setHasDoneIconAnim } from '../../store/main-slice';
 import IconSvg from '../UI/IconSvg';
+import Shape1D from '../../assets/shape-1-dark.png';
+import Shape2D from '../../assets/shape-2-dark.png';
+import Shape3D from '../../assets/shape-3-dark.png';
+import Shape4D from '../../assets/shape-4-dark.png';
+import Shape1L from '../../assets/shape-1-light.png';
+import Shape2L from '../../assets/shape-2-light.png';
+import Shape3L from '../../assets/shape-3-light.png';
+import Shape4L from '../../assets/shape-4-light.png';
 import './styles.scss';
 
 const containerVariants: Variants = {
@@ -100,6 +108,21 @@ const SvgShapes: React.FC<SvgShapesProps> = () => {
         <motion.div className='svg-container' variants={containerVariants} initial='from' animate={controls}>
             {isDarkTheme ?
                 <Fragment>
+                    <motion.img variants={svgsVariantsOne} className='shape-1' src={Shape1D} alt="" />
+                    <motion.img variants={svgsVariants} className='shape-2' src={Shape2D} alt="" />
+                    <motion.img variants={svgsVariants} className='shape-3' src={Shape3D} alt="" />
+                    <motion.img variants={svgsVariants} className='shape-4' src={Shape4D} alt="" onAnimationComplete={() => setHasDoneSvg(true)} />
+                </Fragment> :
+                <Fragment>
+                    <motion.img variants={svgsVariantsOne} className='shape-1' src={Shape1L} alt="" />
+                    <motion.img variants={svgsVariants} className='shape-2' src={Shape2L} alt="" />
+                    <motion.img variants={svgsVariants} className='shape-3' src={Shape3L} alt="" />
+                    <motion.img variants={svgsVariants} className='shape-4' src={Shape4L} alt="" onAnimationComplete={() => setHasDoneSvg(true)} />
+                </Fragment>
+
+            }
+            {/* {isDarkTheme ?
+                <Fragment>
                     <motion.div variants={svgsVariantsOne} className='shape-1 dark-shape' />
                     <motion.div variants={svgsVariants} className='shape-2 dark-shape' />
                     <motion.div variants={svgsVariants} className='shape-3 dark-shape' />
@@ -112,7 +135,7 @@ const SvgShapes: React.FC<SvgShapesProps> = () => {
                     <motion.div variants={svgsVariants} onAnimationComplete={() => setHasDoneSvg(true)} className='shape-4 light-shape' />
                 </Fragment>
 
-            }
+            } */}
             <IconSvg onCompleteAnimation={() => setHasDoneIcon(true)} />
         </motion.div>
     );

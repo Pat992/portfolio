@@ -3,7 +3,6 @@ import '../styles.scss';
 import Background from './Bg';
 import light from '../../../assets/andfm/andfm-light.png';
 import dark from '../../../assets/andfm/andfm-dark.png';
-import AndFmSvg from './AndFmSvg';
 import { useEffect } from 'react';
 import DescriptionCard from '../Description-card';
 import FlutterSvg from '../../UI/SVGs/FlutterSvg';
@@ -89,7 +88,7 @@ const AndFm: React.FC<AndFmProps> = ({ startAnimation }) => {
             </div>
             <DescriptionCard
                 title='AdWave'
-                description='lorem safddsd sofhjsak hkjdsf kjshfdk sdhf kdshfkjshd fkjsdh fkjdshfkdshfkj dshk fjhdsk fj'
+                description='Radio online FM with more than 28000 Stations, including music, news, and podcasts in one App. Using the Radio Browser API'
                 technologies={[
                     <div><FlutterSvg /><p>Flutter</p></div>,
                     <div><AffinityDesignerSvg /><p>Affinity Designer</p></div>,

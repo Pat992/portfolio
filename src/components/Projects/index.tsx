@@ -8,8 +8,8 @@ import './styles.scss';
 // TODO: add variants here and send them to the projects
 const inViewVariants: Variants = {
     from: {
-        y: '100px',
-        x: '10px',
+        y: 0,
+        x: 500,
         opacity: 0
     },
     to: {
@@ -34,7 +34,8 @@ const Projects: React.FC<ProjectsProps> = () => {
             <motion.div
                 className='project'
                 variants={inViewVariants}
-                initial='from' whileInView='to'
+                initial={{ y: 0, x: -50, opacity: 0 }}
+                whileInView='to'
                 viewport={{ once: false, amount: 0.5 }}
                 onAnimationStart={() => setIsDoneAdWaveAnim(false)}
                 onAnimationComplete={() => setIsDoneAdWaveAnim(true)}>
@@ -43,9 +44,9 @@ const Projects: React.FC<ProjectsProps> = () => {
             <motion.div
                 className='project'
                 variants={inViewVariants}
-                initial='from'
-                whileInView='to'
+                initial={{ y: 0, x: 50, opacity: 0 }}
                 viewport={{ once: false, amount: 0.5 }}
+                whileInView='to'
                 onAnimationStart={() => setIsDoneAndFmAnim(false)}
                 onAnimationComplete={() => setIsDoneAndFmAnim(true)}>
                 <AndFm startAnimation={isDoneAndFmAnim} />

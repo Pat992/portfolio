@@ -6,6 +6,16 @@ import ContactButton from './ContactButton';
 import './styles.scss';
 import SvgShapes from './SvgShapes';
 
+const mainVariants: Variants = {
+    from: {},
+    to: {
+        transition: {
+            when: 'beforeChildren',
+            staggerChildren: 0.5
+        }
+    }
+};
+
 const textVariants: Variants = {
     from: {
         y: '10vh',
@@ -16,7 +26,6 @@ const textVariants: Variants = {
         opacity: 1,
         transition: {
             type: 'easeOut',
-            duration: 1,
         }
     }
 }
@@ -41,11 +50,11 @@ const Main: React.FC<MainProps> = () => {
     }, [hasDoneIcon]);
 
     return (
-        <motion.section className='main' onViewportEnter={() => dispatch(setHasEnteredMain())} onViewportLeave={() => dispatch(setHasLeftMain())}>
+        <motion.section animate={controls} variants={mainVariants} className='main' onViewportEnter={() => dispatch(setHasEnteredMain())} onViewportLeave={() => dispatch(setHasLeftMain())}>
             <motion.div className='introduction'>
-                <motion.h4 animate={controls} variants={textVariants} >Patrick Hettich</motion.h4>
-                <motion.h1 animate={controls} variants={textVariants} >software developer \</motion.h1>
-                <motion.h1 animate={controls} variants={textVariants} className='title-2'>cloud engineer</motion.h1>
+                <motion.h4 variants={textVariants} >Patrick Hettich</motion.h4>
+                <motion.h1 variants={textVariants} >software developer \</motion.h1>
+                <motion.h1 variants={textVariants} className='title-2'>cloud engineer</motion.h1>
                 <ContactButton />
             </motion.div>
             <div className='graphic'><SvgShapes /></div>

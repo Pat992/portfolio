@@ -61,7 +61,7 @@ const ContactButton: React.FC<ContactButtonProps> = () => {
     const inMainViewport = useAppSelector((state) => state.main.inViewport);
     const hasEnteredProjects = useAppSelector((state) => state.projects.hasEnteredVP);
     const scroll = useAppSelector((state) => state.doc.value);
-    const hasDoneIcon = useAppSelector((state) => state.main.hasDoneIconAnim);
+    const hasDoneIconAnim = useAppSelector((state) => state.main.hasDoneIconAnim);
     const controls = useAnimation();
 
     useEffect(() => {
@@ -69,16 +69,15 @@ const ContactButton: React.FC<ContactButtonProps> = () => {
     }, []);
 
     useEffect(() => {
-        if (hasDoneIcon) {
-            console.log('done')
+        if (hasDoneIconAnim) {
             controls.start('enterMain');
         } else {
             controls.start('from');
         }
-    }, [hasDoneIcon]);
+    }, [hasDoneIconAnim]);
 
     useEffect(() => {
-        if (hasDoneIcon) {
+        if (hasDoneIconAnim) {
             if (hasEnteredProjects) {
                 controls.start('leaveMain');
                 setShowSvg(true);
@@ -94,7 +93,7 @@ const ContactButton: React.FC<ContactButtonProps> = () => {
                 controls.start('leaveMain');
             }
         }
-    }, [inMainViewport, hasEnteredProjects, scroll, hasDoneIcon]);
+    }, [inMainViewport, hasEnteredProjects, scroll, hasDoneIconAnim]);
 
     return (
         <motion.button variants={buttonVariants} initial='from' animate={controls} className="btn contact-button" whileHover='hover' layout>
