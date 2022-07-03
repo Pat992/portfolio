@@ -74,8 +74,8 @@ const ContactButton: React.FC<ContactButtonProps> = () => {
             controls.start('enterFooter');
             setShowSvg(false);
         } else if (scroll < 0.97) {
-            controls.start('leaveMain');
             setShowSvg(true);
+            controls.start('leaveMain');
         }
     }, [inMainViewport, hasEnteredProjects, scroll])
 
