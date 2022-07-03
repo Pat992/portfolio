@@ -116,7 +116,7 @@ const AdWave: React.FC<AdWaveProps> = ({ startAnimation }) => {
         <div className='adwave-project project'>
             <DescriptionCard
                 title='AdWave'
-                description='Android application to check AdMob earnings as the official one has been in early access for some time. '
+                description='Android application to check AdMob earnings as the official mobile-app has been in early access for some time. '
                 technologies={[
                     <div><FlutterSvg /><p>Flutter</p></div>,
                     <div><AdmobSvg /><p>AdMob API</p></div>,

@@ -87,8 +87,8 @@ const AndFm: React.FC<AndFmProps> = ({ startAnimation }) => {
                 <Background />
             </div>
             <DescriptionCard
-                title='AdWave'
-                description='Radio online FM with more than 28000 Stations, including music, news, and podcasts in one App. Using the Radio Browser API'
+                title='andFM'
+                description='Radio android app with more than 28000 Stations, including music, news, and podcasts in one App. Using the Radio Browser API'
                 technologies={[
                     <div><FlutterSvg /><p>Flutter</p></div>,
                     <div><AffinityDesignerSvg /><p>Affinity Designer</p></div>,

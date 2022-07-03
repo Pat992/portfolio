@@ -5,12 +5,13 @@ const svgVariants: Variants = {
     loading: {
         originX: '50%',
         originY: '50%',
-        rotate: ['0deg', '365deg'],
+        rotate: '365deg',
         transition: {
-            duration: 2,
+            ease: 'linear',
             repeatDelay: 0,
+            duration: 2,
             delay: 0,
-            type: 'none',
+            type: 'tween',
             repeatType: 'loop',
             repeat: Infinity
         }

@@ -11,6 +11,10 @@
 }
 
 .modal {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
     width: 50vw;
     max-width: 100vw;
     min-width: 50vw;
@@ -22,8 +26,9 @@
     text-align: center;
 
     svg {
-        width: 50%;
-        height: 50%;
+        width: 25%;
+        height: 25%;
+        align-self: center;
     }
 
     form {
