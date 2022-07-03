@@ -1,4 +1,10 @@
 import { motion, useTransform, useViewportScroll } from 'framer-motion';
+import { Fragment } from 'react';
+import AzureSkill from '../UI/SkillCircles/AzureSkill';
+import BiztalkSkill from '../UI/SkillCircles/BiztalkSkill';
+import FlutterSkill from '../UI/SkillCircles/FlutterSkill';
+import NodeSkill from '../UI/SkillCircles/NodeSkill';
+import ReactSkill from '../UI/SkillCircles/ReactSkill';
 import './styles.scss';
 
 interface SkillsProps { };
@@ -7,10 +13,70 @@ const Skills: React.FC<SkillsProps> = () => {
     const scroll = useTransform(scrollYProgress, [0.8, 0.9], [10, 3]);
 
     return (
-        <section className="skills">
-            <motion.div className='skills-bkg bkg' style={{ rotate: scroll }} />
-            <h2>SKILLS</h2>
-        </section>
+        <Fragment>
+            <h2>SKILLS &amp; EXPERIENCE</h2>
+            <section className="skills">
+                <motion.div className='skills-bkg bkg' style={{ rotate: scroll }} />
+                <div className='expirience-list'>
+                    <ul>
+                        <li>
+                            <p>2021 - Now</p>
+                            <div>
+                                <h3>Developer III</h3>
+                                <h3 className='main-color'>QUIBIQ AG</h3>
+                            </div>
+                        </li>
+                        <li>
+                            <p>2020 - 2021</p>
+                            <div>
+                                <h3>Developer I</h3>
+                                <h3 className='main-color'>QUIBIQ AG</h3>
+                            </div>
+                        </li>
+                        <li>
+                            <p>2019 - 2020</p>
+                            <div>
+                                <h3>Web Developer</h3>
+                                <h3 className='main-color'>Andeo AG</h3>
+                            </div>
+                        </li>
+                        <li>
+                            <p>2019 - 2021</p>
+                            <div>
+                                <h3>Computer science EFZ</h3>
+                                <h3 className='main-color'>ZLI: Zurich Training Association ICT</h3>
+                            </div>
+                        </li>
+                        <li>
+                            <p>2017 - 2020</p>
+                            <div>
+                                <h3>Computer science HAF</h3>
+                                <h3 className='main-color'>Hamburg Academy for distance learning</h3>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div className='skill-list'>
+                    <ul>
+                        <li>
+                            <FlutterSkill />
+                        </li>
+                        <li>
+                            <NodeSkill />
+                        </li>
+                        <li>
+                            <AzureSkill />
+                        </li>
+                        <li>
+                            <ReactSkill />
+                        </li>
+                        <li>
+                            <BiztalkSkill />
+                        </li>
+                    </ul>
+                </div>
+            </section>
+        </Fragment>
     );
 };
 

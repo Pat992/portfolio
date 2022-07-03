@@ -1,19 +1,12 @@
 @import '../../../global';
 
 .skill-circle {
-    position: absolute;
     display: flex;
-    top: 50%;
-    right: 25%;
     justify-content: center;
     align-items: center;
     width: calc(8rem + 1vw);
     height: calc(8rem + 1vw);
     border-radius: 50%;
-
-    * {
-        position: absolute;
-    }
 
     .flutter-circle {
         margin-right: calc(0.1rem + 0.5vw);
@@ -35,7 +28,7 @@
 @media screen and (max-width: 700px) {
 
     .skill-circle {
-        top: 25%;
-        right: 50%;
+        width: calc(5rem + 1vw);
+        height: calc(5rem + 1vw);
     }
 }

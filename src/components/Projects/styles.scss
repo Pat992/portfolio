@@ -25,12 +25,11 @@ $adwave-text-color: #2F2E47;
 .andfm-project,
 .project-card {
     position: relative;
-    height: 70vh;
 }
 
 .project-card {
     width: 100%;
-    flex-grow: 2;
+    flex-grow: 1.5;
     border-radius: 10px;
 }
 
@@ -68,7 +67,7 @@ $adwave-text-color: #2F2E47;
 }
 
 .description-card {
-    margin: 0 50px;
+    margin: 0 20px;
     flex-shrink: 1.5;
     max-height: 100%;
 
@@ -78,11 +77,11 @@ $adwave-text-color: #2F2E47;
 
     ul {
         display: flex;
-        justify-content: stretch;
+        justify-content: start;
+        flex-wrap: wrap;
 
         li {
             height: 10%;
-            margin-right: 50px;
 
             div {
                 flex-direction: column;
@@ -92,6 +91,7 @@ $adwave-text-color: #2F2E47;
             }
 
             p {
+                margin: 10px 10px 0 0;
                 margin-top: 10px;
                 font-size: 50%;
             }
@@ -194,13 +194,16 @@ $adwave-text-color: #2F2E47;
         h2 {
             font-style: italic;
             font-weight: 600;
+            color: white;
         }
     }
 
     .andfm-svg {
         background-image: url('../../assets/andfm/Logo-website.svg');
-        width: 10rem;
-        height: 100%;
+        background-repeat: no-repeat;
+        background-size: contain;
+        width: 5vw;
+        height: 120%;
     }
 }
 
@@ -211,7 +214,6 @@ $adwave-text-color: #2F2E47;
     .project-card {
         width: 100%;
         position: relative;
-        height: 40vh;
     }
 
     .insights,
@@ -222,7 +224,6 @@ $adwave-text-color: #2F2E47;
 
     .title-row {
         h2 {
-            color: $adwave-text-color  !important;
             font-size: calc(2rem + 1vw);
         }
     }
@@ -230,22 +231,37 @@ $adwave-text-color: #2F2E47;
 
 @media screen and (max-width: 650px) {
     .project {
-        flex-direction: column;
+        flex-direction: column-reverse;
     }
 
     .project-reverse {
-        flex-direction: column-reverse;
+        flex-direction: column;
     }
 
     .adwave-project,
     .project-card,
     .andfm-project {
-        height: 50vh;
+        height: 700px;
     }
 
 
     .public,
     .insights {
         width: calc(30% + 1vw);
+    }
+
+    .description-card {
+        text-align: center;
+
+        ul {
+            justify-content: center;
+        }
+    }
+
+    .andfm-project {
+        .andfm-svg {
+            width: 10vw;
+            height: 150%;
+        }
     }
 }
