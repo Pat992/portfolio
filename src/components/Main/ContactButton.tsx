@@ -27,7 +27,7 @@ const buttonVariants: Variants = {
     leaveMain: {
         opacity: 1,
         top: 'auto',
-        bottom: 'calc(1rem - 1vw)',
+        bottom: 20,
         left: 'calc(90vw - 3rem + 1vw)',
         scale: 1,
         right: 0,
