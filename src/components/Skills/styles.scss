@@ -1,13 +1,19 @@
 @import '../../global';
 
 .skills {
-    display: flex;
     position: relative;
     justify-content: space-between;
     z-index: 1;
     overflow: hidden;
     margin: 10vh auto;
-    width: 90vw;
+    width: 100vw;
+    height: 100%;
+    margin: 0;
+    padding-top: 50vh;
+
+    .skill-body {
+        display: flex;
+    }
 
     .skills-bkg {
         z-index: -1;

@@ -6,21 +6,20 @@ import Projects from './components/Projects';
 import Skills from './components/Skills';
 import ConnectionSidebar from './components/Sidebar/ConnectionSidebar';
 import { useAppDispatch, useAppSelector } from './store/hooks';
-import { setMousePosition, setScrollRawValue, setScrollValue } from './store/document-slice';
+import { setHasLoaded, setMousePosition, setScrollRawValue, setScrollValue } from './store/document-slice';
 import Footer from './components/Footer';
 import { Fragment, useEffect, useState } from 'react';
-import Loader from './components/Loader';
 
 const App = () => {
-  const [loaded, setLoaded] = useState(false);
-  const [introCompleted, setIntroCompleted] = useState(false);
   const { scrollYProgress, scrollY } = useViewportScroll();
   const dispatch = useAppDispatch();
   const isDarkTheme = useAppSelector((state) => state.theme.isDarkTheme);
+  const isLoaded = useAppSelector((state) => state.doc.hasLoaded);
+  const isCompleteAnim = useAppSelector((state) => state.main.hasDoneIconAnim);
 
   useEffect(() => {
     const onPageLoad = () => {
-      setLoaded(true);
+      dispatch(setHasLoaded());
     };
 
     // Check if the page has already loaded
@@ -48,17 +47,18 @@ const App = () => {
 
   return (
     <div className={isDarkTheme ? 'dark' : 'light'}>
-      {!loaded || !introCompleted ?
-        <Loader onAnimationComepleteHandler={() => setIntroCompleted(true)} />
-        : <Fragment>
-          <ConnectionSidebar />
-          <Nav />
-          <Main />
-          <Projects />
-          <Skills />
-          <Footer />
-        </Fragment>
-      }
+      <Fragment>
+        <Nav />
+        <Main />
+        {isLoaded && isCompleteAnim &&
+          <Fragment>
+            <ConnectionSidebar />
+            <Projects />
+            <Skills />
+            <Footer />
+          </Fragment>
+        }
+      </Fragment>
     </div>
   );
 }

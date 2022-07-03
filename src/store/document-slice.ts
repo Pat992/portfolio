@@ -3,6 +3,7 @@ import { createSlice } from '@reduxjs/toolkit'
 export const documentSlice = createSlice({
     name: 'doc',
     initialState: {
+        hasLoaded: false,
         mouseY: 0,
         mouseX: 0,
         value: 0,
@@ -19,11 +20,14 @@ export const documentSlice = createSlice({
         setMousePosition: (state, action) => {
             state.mouseX = action.payload.x;
             state.mouseY = action.payload.y;
+        },
+        setHasLoaded: (state) => {
+            state.hasLoaded = true;
         }
     },
 })
 
 // Action creators are generated for each case reducer function
-export const { setScrollValue, setScrollRawValue, setMousePosition } = documentSlice.actions
+export const { setScrollValue, setScrollRawValue, setMousePosition, setHasLoaded } = documentSlice.actions
 
 export default documentSlice.reducer

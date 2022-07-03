@@ -10,13 +10,13 @@ import './styles.scss';
 interface SkillsProps { };
 const Skills: React.FC<SkillsProps> = () => {
     const { scrollYProgress } = useViewportScroll();
-    const scroll = useTransform(scrollYProgress, [0.8, 0.9], [10, 3]);
+    const scroll = useTransform(scrollYProgress, [0.8, 0.9], [5, 3]);
 
     return (
-        <Fragment>
+        <section className="skills">
+            <motion.div className='skills-bkg bkg' style={{ rotate: scroll }} />
             <h2>SKILLS &amp; EXPERIENCE</h2>
-            <section className="skills">
-                <motion.div className='skills-bkg bkg' style={{ rotate: scroll }} />
+            <div className='skill-body'>
                 <div className='expirience-list'>
                     <ul>
                         <li>
@@ -75,8 +75,8 @@ const Skills: React.FC<SkillsProps> = () => {
                         </li>
                     </ul>
                 </div>
-            </section>
-        </Fragment>
+            </div>
+        </section>
     );
 };
 

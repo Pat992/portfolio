@@ -7,6 +7,7 @@ export const mainSlice = createSlice({
         inViewport: false,
         hasLeftVP: false,
         scrollValue: 0,
+        hasDoneIconAnim: false,
     },
     reducers: {
         setHasEnteredMain: (state) => {
@@ -19,10 +20,13 @@ export const mainSlice = createSlice({
             state.inViewport = false;
             state.hasLeftVP = true;
         },
+        setHasDoneIconAnim: (state) => {
+            state.hasDoneIconAnim = true;
+        }
     },
 })
 
 // Action creators are generated for each case reducer function
-export const { setHasEnteredMain, setHasLeftMain } = mainSlice.actions
+export const { setHasEnteredMain, setHasLeftMain, setHasDoneIconAnim } = mainSlice.actions
 
 export default mainSlice.reducer

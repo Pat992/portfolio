@@ -1,14 +1,54 @@
-import { motion, Variants } from 'framer-motion';
+import { motion, useAnimation, Variants } from 'framer-motion';
+import { useEffect } from 'react';
+import { useAppSelector } from '../../store/hooks';
 import './styles.scss';
 
+const iconVariants: Variants = {
+    from: {
+        originY: '50%',
+        originX: '50%',
+        scale: 100,
+    },
+    to: {
+        y: 0,
+        scale: 1,
+        top: '35%',
+        left: '20%',
+        width: '25%',
+        height: '25%',
+        transition: {
+            duration: 1.5
+        }
+    },
+    leaveMain: {
+        y: 200,
+        scale: 0,
+    }
+}
+
 interface IconSvgProps {
-    animationVariants: Variants,
-    onAnimationComepleteHandler: Function
+    onCompleteAnimation: Function
 };
-const IconSvg: React.FC<IconSvgProps> = ({ animationVariants, onAnimationComepleteHandler }) => {
+const IconSvg: React.FC<IconSvgProps> = ({ onCompleteAnimation }) => {
+    const inMainViewport = useAppSelector((state) => state.main.inViewport);
+    const hasEnteredProjects = useAppSelector((state) => state.projects.hasEnteredVP);
+    const controls = useAnimation();
+
+    useEffect(() => {
+        controls.start('to');
+    }, []);
+
+    useEffect(() => {
+        if (hasEnteredProjects) {
+            controls.start('leaveMain');
+        }
+        else if (inMainViewport) {
+            controls.start('to');
+        }
+    }, [inMainViewport, hasEnteredProjects]);
 
     return (
-        <motion.svg variants={animationVariants} initial='from' animate='to' onAnimationComplete={() => onAnimationComepleteHandler()} className="IconSvg" viewBox="0 0 200 200" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlSpace="preserve">
+        <motion.svg variants={iconVariants} onAnimationComplete={() => onCompleteAnimation()} initial='from' animate={controls} className="IconSvg" viewBox="0 0 200 200" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlSpace="preserve">
             <g transform="matrix(1,0,0,1,-5087,-1162)">
                 <g id="icon" transform="matrix(0.104167,0,0,0.185185,5087,1162.68)">
                     <rect x="0" y="0" width="1920" height="1080" style={{ fill: 'none' }} />

@@ -7,7 +7,8 @@ import './styles.scss';
 const buttonVariants: Variants = {
     from: {
         scale: 1,
-        bottom: '-100vh',
+        left: '100vw',
+        top: '10vh',
         opacity: 0,
     },
     enterMain: {
@@ -60,24 +61,40 @@ const ContactButton: React.FC<ContactButtonProps> = () => {
     const inMainViewport = useAppSelector((state) => state.main.inViewport);
     const hasEnteredProjects = useAppSelector((state) => state.projects.hasEnteredVP);
     const scroll = useAppSelector((state) => state.doc.value);
+    const hasDoneIcon = useAppSelector((state) => state.main.hasDoneIconAnim);
     const controls = useAnimation();
 
     useEffect(() => {
-        if (hasEnteredProjects) {
-            controls.start('leaveMain');
-            setShowSvg(true);
-        }
-        else if (inMainViewport) {
+        controls.set('from');
+    }, []);
+
+    useEffect(() => {
+        if (hasDoneIcon) {
+            console.log('done')
             controls.start('enterMain');
-            setShowSvg(false);
-        } else if (scroll > 0.97) {
-            controls.start('enterFooter');
-            setShowSvg(false);
-        } else if (scroll < 0.97) {
-            setShowSvg(true);
-            controls.start('leaveMain');
+        } else {
+            controls.start('from');
         }
-    }, [inMainViewport, hasEnteredProjects, scroll])
+    }, [hasDoneIcon]);
+
+    useEffect(() => {
+        if (hasDoneIcon) {
+            if (hasEnteredProjects) {
+                controls.start('leaveMain');
+                setShowSvg(true);
+            }
+            else if (inMainViewport) {
+                controls.start('enterMain');
+                setShowSvg(false);
+            } else if (scroll > 0.97) {
+                controls.start('enterFooter');
+                setShowSvg(false);
+            } else if (scroll < 0.97) {
+                setShowSvg(true);
+                controls.start('leaveMain');
+            }
+        }
+    }, [inMainViewport, hasEnteredProjects, scroll, hasDoneIcon]);
 
     return (
         <motion.button variants={buttonVariants} initial='from' animate={controls} className="btn contact-button" whileHover='hover' layout>
