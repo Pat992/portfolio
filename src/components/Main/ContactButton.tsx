@@ -7,13 +7,14 @@ import './styles.scss';
 const buttonVariants: Variants = {
     from: {
         scale: 1,
-        top: '100vh',
+        bottom: '-100vh',
         opacity: 0,
     },
     enterMain: {
         scale: 1,
         opacity: 1,
         top: '1vh',
+        bottom: 'auto',
         left: '1vw',
         width: '30vh',
         height: 'calc(3rem + 1vw)',
@@ -25,8 +26,9 @@ const buttonVariants: Variants = {
     },
     leaveMain: {
         opacity: 1,
-        top: 'calc(90vh - 5rem + 1vw)',
-        left: 'calc(95vw - 3rem + 1vw)',
+        top: 'auto',
+        bottom: 'calc(1rem - 1vw)',
+        left: 'calc(90vw - 3rem + 1vw)',
         scale: 1,
         right: 0,
         width: 'calc(3rem + 1vw)',
@@ -68,10 +70,10 @@ const ContactButton: React.FC<ContactButtonProps> = () => {
         else if (inMainViewport) {
             controls.start('enterMain');
             setShowSvg(false);
-        } else if (scroll > 0.99) {
+        } else if (scroll > 0.97) {
             controls.start('enterFooter');
             setShowSvg(false);
-        } else if (scroll < 0.99) {
+        } else if (scroll < 0.97) {
             controls.start('leaveMain');
             setShowSvg(true);
         }

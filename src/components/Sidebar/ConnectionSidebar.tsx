@@ -6,7 +6,8 @@ import Linkedin from "./Linkedin";
 
 const sidebarVariants: Variants = {
     from: {
-        top: 'calc(95vh - 10rem + 1vw)',
+        top: 'auto',
+        bottom: 20,
         left: '2vw',
         flexDirection: 'column',
         transition: {
@@ -33,9 +34,9 @@ const ConnectionSidebar: React.FC<ConnectionSidebarProps> = () => {
     const controls = useAnimation();
 
     useEffect(() => {
-        if (scroll > 0.99) {
+        if (scroll > 0.97) {
             controls.start('inFooter');
-        } else if (scroll < 0.99) {
+        } else if (scroll < 0.97) {
             controls.start('from');
         }
     }, [scroll])

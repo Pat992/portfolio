@@ -23,9 +23,9 @@ const Footer: React.FC<FooterProps> = () => {
     const controls = useAnimation();
 
     useEffect(() => {
-        if (scroll > 0.99) {
+        if (scroll > 0.97) {
             controls.start('idle');
-        } else if (scroll < 0.99) {
+        } else if (scroll < 0.97) {
             controls.start('from');
         }
     }, [scroll])
