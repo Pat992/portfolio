@@ -2,6 +2,7 @@ import { AnimatePresence, motion, Variants } from "framer-motion";
 import { useEffect } from "react";
 import { useAppDispatch } from "../../store/hooks";
 import { setShowModal } from "../../store/modal-slice";
+import Button from "../UI/Button";
 import LoadingSvg from "./LoadingSvg";
 import './styles.scss';
 
@@ -34,13 +35,13 @@ const LoadingContainer: React.FC<LoadingContainerProps> = ({ isError, isSuccess,
             {loadingParagraph}
             {
                 isSuccess &&
-                <button type="button" onClick={() => dispatch(setShowModal(false))}>CLOSE</button>
+                <Button type="button" onClick={() => dispatch(setShowModal(false))} body={'CLOSE'} isCancel={false} />
             }
             {
                 isError &&
                 <div>
-                    <button type="button" onClick={() => retry()}>RETRY</button>
-                    <button className="cancel" type="button" onClick={() => dispatch(setShowModal(false))}>CANCEL</button>
+                    <Button body={'RETRY'} isCancel={false} onClick={() => retry()} />
+                    <Button isCancel={true} type="button" onClick={() => dispatch(setShowModal(false))} body={'CANCEL'} />
                 </div>
             }
         </div>

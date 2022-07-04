@@ -6,6 +6,7 @@ import { setShowModal } from "../../store/modal-slice";
 import LoadingSvg from "./LoadingSvg";
 import LoadingContainer from "./LoadingContainer";
 import './styles.scss';
+import Button from "../UI/Button";
 
 const backdropVariants: Variants = {
     from: {
@@ -81,8 +82,8 @@ const Modal: React.FC<ModalProps> = () => {
                             <label htmlFor="message">Message</label>
                             <textarea className="bkg" id="message" name="message" required />
                             <div>
-                                <button type="submit">SEND</button>
-                                <button className="cancel" type="button" onClick={() => dispatch(setShowModal(false))}>CANCEL</button>
+                                <Button body={'SEND'} isCancel={false} onClick={() => { }} type={'submit'} />
+                                <Button isCancel={true} body={'CANCEL'} onClick={() => dispatch(setShowModal(false))} />
                             </div>
                         </form>
                     </motion.div>
