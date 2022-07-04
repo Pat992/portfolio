@@ -12,6 +12,7 @@
 .github,
 .linkedin {
     width: calc(2rem + 1vw);
-    margin: 1rem 1rem;
-    min-width: 3rem;
+    margin: 0 0 1rem 0;
+    min-width: 4vh;
+    min-height: 4vh;
 }

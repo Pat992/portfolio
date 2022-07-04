@@ -15,12 +15,13 @@ const buttonVariants: Variants = {
     enterMain: {
         scale: 1,
         opacity: 1,
-        top: '1vh',
-        bottom: 'auto',
-        left: '1vw',
         right: 'auto',
+        bottom: 'auto',
+        top: '1vh',
+        minHeight: '4vh',
+        left: 0,
         width: '30vh',
-        height: 'calc(3rem + 1vw)',
+        height: 'calc(4rem + 1vw)',
         position: 'relative',
         transition: {
             duration: 0.5,
@@ -29,14 +30,15 @@ const buttonVariants: Variants = {
     },
     leaveMain: {
         opacity: 1,
-        top: 'auto',
-        bottom: 20,
-        left: 'auto',
+        bottom: 30,
         scale: 1,
         right: 10,
+        minWidth: '4vh',
         width: 'calc(3rem + 1vw)',
         height: 'calc(3rem + 1vw)',
         position: 'fixed',
+        top: 'auto',
+        left: 'auto',
         transition: {
             duration: 0.5,
             type: 'spring'
@@ -81,12 +83,12 @@ const ContactButton: React.FC<ContactButtonProps> = () => {
     useEffect(() => {
         if (hasDoneIconAnim) {
             if (hasEnteredProjects) {
-                controls.start('leaveMain');
                 setShowSvg(true);
+                controls.start('leaveMain');
             }
             else if (inMainViewport) {
-                controls.start('enterMain');
                 setShowSvg(false);
+                controls.start('enterMain');
             } else if (scroll > 0.97) {
                 controls.start('enterFooter');
                 setShowSvg(false);

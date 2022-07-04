@@ -8,7 +8,7 @@ const sidebarVariants: Variants = {
     from: {
         top: 'auto',
         bottom: 20,
-        left: 0,
+        left: 5,
         flexDirection: 'column',
         transition: {
             duration: 0.5,

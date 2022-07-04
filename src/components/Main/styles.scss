@@ -24,7 +24,6 @@
 
 .introduction,
 .graphic {
-
     height: 90%;
     margin: 2rem auto;
 }
@@ -51,13 +50,13 @@
         background-size: contain;
     }
 
-    .shape-1.dark-shape {
-        background-image: url('../../assets/shape-1-dark.svg');
-    }
+    // .shape-1.dark-shape {
+    //     background-image: url('../../assets/shape-1-dark.svg');
+    // }
 
-    .shape-1.light-shape {
-        background-image: url('../../assets/shape-1-light.svg');
-    }
+    // .shape-1.light-shape {
+    //     background-image: url('../../assets/shape-1-light.svg');
+    // }
 
     .shape-2 {
         top: 10%;
@@ -135,22 +134,31 @@
     width: 30vh;
     border-radius: 1vh;
     border: none;
-    z-index: 2;
-    margin: auto auto;
+    z-index: 10;
+    margin: 0 0;
 }
 
 @media screen and (max-width: 1200px) {
     .main {
         flex-direction: column-reverse;
+        align-items: center;
 
         h1 {
             font-size: $header4;
         }
     }
 
+    .contact-button {
+        margin: auto auto;
+    }
+
     .graphic,
     .introduction {
         margin: 5rem 0;
         width: 100%;
+    }
+
+    .introduction {
+        text-align: center;
     }
 }
