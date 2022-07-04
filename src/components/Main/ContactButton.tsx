@@ -18,6 +18,7 @@ const buttonVariants: Variants = {
         top: '1vh',
         bottom: 'auto',
         left: '1vw',
+        right: 'auto',
         width: '30vh',
         height: 'calc(3rem + 1vw)',
         position: 'relative',
@@ -30,9 +31,9 @@ const buttonVariants: Variants = {
         opacity: 1,
         top: 'auto',
         bottom: 20,
-        left: 'calc(90vw - 3rem + 1vw)',
+        left: 'auto',
         scale: 1,
-        right: 0,
+        right: 10,
         width: 'calc(3rem + 1vw)',
         height: 'calc(3rem + 1vw)',
         position: 'fixed',
@@ -43,17 +44,16 @@ const buttonVariants: Variants = {
     },
     enterFooter: {
         left: 'calc(50vw - 50%)',
-        top: 'calc(70vh - 5rem + 1vw)',
+        top: 'calc(60vh - 5rem + 1vw)',
         width: '30vh',
         transition: {
             duration: 0.5,
             type: 'spring'
         }
     },
-    // hover: {
-    //     scale: 1.1,
-    //     boxShadow: "0px 0px 8px rgb(255,255,255)",
-    // }
+    hover: {
+        y: -2
+    }
 };
 
 interface ContactButtonProps { };
@@ -104,7 +104,8 @@ const ContactButton: React.FC<ContactButtonProps> = () => {
             initial='from'
             animate={controls}
             className="btn contact-button"
-            //whileHover='hover'
+            whileHover='hover'
+            whileTap='hover'
             layout
         >
             {showSvg ? <MailSvg /> : 'CONTACT ME'}

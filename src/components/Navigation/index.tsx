@@ -1,6 +1,7 @@
-import { motion, useAnimation, Variants } from 'framer-motion';
-import { useEffect } from 'react';
+import { AnimatePresence, AnimateSharedLayout, motion, useAnimation, Variants } from 'framer-motion';
+import { useEffect, useState } from 'react';
 import { useAppSelector } from '../../store/hooks';
+import NavigationItem from './NavigationItem';
 import './styles.scss';
 import ToggleButton from './ToggleButton';
 
@@ -14,14 +15,21 @@ const liVariants: Variants = {
             duration: 0.5,
         }
     },
+    hover: {}
+}
+
+const aVariants: Variants = {
+    from: {},
+    to: {},
     hover: {
-        scale: 1.1
+        className: 'hover'
     }
 }
 
 
 interface NavProps { };
 const Nav: React.FC<NavProps> = () => {
+    const [selected, setSelected] = useState(-1);
     const hasDoneIconAnim = useAppSelector((state) => state.main.hasDoneIconAnim);
     const controls = useAnimation();
 
@@ -39,11 +47,60 @@ const Nav: React.FC<NavProps> = () => {
 
     return (
         <nav>
-            <ul>
-                <motion.li variants={liVariants} initial='from' animate={controls} whileHover='hover'><a href="#">HOME</a></motion.li>
-                <motion.li variants={liVariants} initial='from' animate={controls} whileHover='hover'><a href="#">PROJECTS</a></motion.li>
-                <motion.li variants={liVariants} initial='from' animate={controls} whileHover='hover'><a href="#">SKILLS</a></motion.li>
+            {/* <ul>
+                <motion.li variants={liVariants} initial='to' animate={controls} whileHover='hover'>
+                    <motion.a variants={aVariants} whileHover='hover' className='active' href="#">HOME</motion.a>
+                </motion.li>
+                <motion.li variants={liVariants} initial='to' animate={controls} whileHover='hover'>
+                    <a href="#">PROJECTS</a>
+                </motion.li>
+                <motion.li variants={liVariants} initial='to' animate={controls} whileHover='hover'>
+                    <a href="#">SKILLS</a>
+                </motion.li>
             </ul>
+            <motion.div variants={liVariants} initial='from' animate={controls}>
+                <ToggleButton />
+            </motion.div> */}
+            <motion.div className="navigation">
+                <ul className="wrapper">
+                    <motion.li variants={liVariants} initial='to' animate={controls}>
+                        <NavigationItem
+                            child={<a href="#">HOME</a>}
+                            key={0}
+                            selected={selected === 0}
+                            onHover={() => setSelected(0)}
+                            onLeave={() => setSelected(-1)}
+                        />
+                    </motion.li>
+                    <motion.li variants={liVariants} initial='to' animate={controls}>
+                        <NavigationItem
+                            child={<a href="#">PROJECTS</a>}
+                            key={1}
+                            selected={selected === 1}
+                            onHover={() => setSelected(1)}
+                            onLeave={() => setSelected(-1)}
+                        />
+                    </motion.li>
+                    <motion.li variants={liVariants} initial='to' animate={controls}>
+                        <NavigationItem
+                            child={<a href="#">SKILLS</a>}
+                            key={2}
+                            selected={selected === 2}
+                            onHover={() => setSelected(2)}
+                            onLeave={() => setSelected(-1)}
+                        />
+                    </motion.li>
+                    <motion.li variants={liVariants} initial='to' animate={controls}>
+                        <NavigationItem
+                            child={<a href="#">CONTACT</a>}
+                            key={3}
+                            selected={selected === 3}
+                            onHover={() => setSelected(3)}
+                            onLeave={() => setSelected(-1)}
+                        />
+                    </motion.li>
+                </ul>
+            </motion.div>
             <motion.div variants={liVariants} initial='from' animate={controls}>
                 <ToggleButton />
             </motion.div>

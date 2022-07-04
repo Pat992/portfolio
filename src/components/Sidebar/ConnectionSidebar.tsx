@@ -8,7 +8,7 @@ const sidebarVariants: Variants = {
     from: {
         top: 'auto',
         bottom: 20,
-        left: '2vw',
+        left: 0,
         flexDirection: 'column',
         transition: {
             duration: 0.5,
@@ -25,7 +25,7 @@ const sidebarVariants: Variants = {
             duration: 0.5,
             type: 'spring'
         }
-    }
+    },
 };
 
 interface ConnectionSidebarProps { };
@@ -43,8 +43,8 @@ const ConnectionSidebar: React.FC<ConnectionSidebarProps> = () => {
 
     return (
         <motion.aside className="sidebar" variants={sidebarVariants} animate={controls} initial='from'>
-            <Github />
-            <Linkedin />
+            <a href="https://github.com/Pat992" target='_blank'><Github /></a>
+            <a href="https://www.linkedin.com/in/patrick-hettich/" target='_blank'><Linkedin /></a>
         </motion.aside>
     );
 };

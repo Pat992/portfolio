@@ -1,5 +1,7 @@
 @import './global';
 
+
+
 .dark {
     background: $bg-color-dark;
     overflow: hidden;
@@ -60,5 +62,13 @@
     .inactive-color {
         stroke: $text-color-accent-dark;
         fill: $text-color-accent-dark;
+    }
+
+    .active {
+        color: $text-color-dark;
+    }
+
+    .underline {
+        background: $accent-red;
     }
 }

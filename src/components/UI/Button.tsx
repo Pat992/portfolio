@@ -1,4 +1,14 @@
-import { ButtonHTMLAttributes } from "react";
+import { Variants, motion } from "framer-motion";
+
+
+const buttonVariants: Variants = {
+    from: {
+        y: 0,
+    },
+    hover: {
+        y: -2,
+    }
+}
 
 interface ButtonProps {
     onClick: Function,
@@ -8,7 +18,16 @@ interface ButtonProps {
 };
 const Button: React.FC<ButtonProps> = ({ onClick, body, type, isCancel }) => {
     return (
-        <button className={isCancel ? 'cancel' : ''} type={type || 'button'} onClick={() => onClick()}>{body}</button>
+        <motion.button
+            variants={buttonVariants}
+            whileHover='hover'
+            whileTap='hover'
+            initial='from'
+            className={isCancel ? 'cancel' : ''}
+            type={type || 'button'}
+            onClick={() => onClick()}>
+            {body}
+        </motion.button>
     );
 };
 

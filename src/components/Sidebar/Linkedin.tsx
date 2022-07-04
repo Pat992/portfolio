@@ -1,12 +1,44 @@
+import { Variants, motion } from 'framer-motion';
+import { useState } from 'react';
 import './styles.scss';
+
+const svgVariants: Variants = {
+    from: {
+        y: 0
+    },
+    hover: {
+        y: -5
+    },
+}
 
 interface LinkedinProps { };
 const Linkedin: React.FC<LinkedinProps> = () => {
+    const [isHover, setIsHover] = useState(false);
+
     return (
-        <svg className="linkedin" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-            viewBox="0 0 112.196 112.196" enableBackground={'new 0 0 112.196 112.196'} xmlSpace="preserve">
+        <motion.svg
+            variants={svgVariants}
+            initial='from'
+            whileHover='hover'
+            className="linkedin"
+            onHoverStart={() => setIsHover(true)}
+            onHoverEnd={() => setIsHover(false)}
+            version="1.1"
+            id="Capa_1"
+            xmlns="http://www.w3.org/2000/svg"
+            xmlnsXlink="http://www.w3.org/1999/xlink"
+            x="0px"
+            y="0px"
+            viewBox="0 0 112.196 112.196"
+            enableBackground={'new 0 0 112.196 112.196'}
+            xmlSpace="preserve">
             <g>
-                <circle className='inactive-color' cx="56.098" cy="56.097" r="56.098" />
+                <circle
+                    className={isHover ? 'main-color' : "inactive-color"}
+                    cx="56.098"
+                    cy="56.097"
+                    r="56.098"
+                />
                 <g>
                     <path className='bkg' d="M89.616,60.611v23.128H76.207V62.161c0-5.418-1.936-9.118-6.791-9.118
 			c-3.705,0-5.906,2.491-6.878,4.903c-0.353,0.862-0.444,2.059-0.444,3.268v22.524H48.684c0,0,0.18-36.546,0-40.329h13.411v5.715
@@ -46,7 +78,7 @@ const Linkedin: React.FC<LinkedinProps> = () => {
             </g>
             <g>
             </g>
-        </svg>
+        </motion.svg>
     );
 };
 

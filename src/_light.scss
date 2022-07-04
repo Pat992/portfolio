@@ -53,4 +53,12 @@
         stroke: $text-color-accent-light;
         fill: $text-color-accent-light;
     }
+
+    .active {
+        color: $text-color-light;
+    }
+
+    .underline {
+        background: $accent-blue;
+    }
 }

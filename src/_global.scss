@@ -66,6 +66,14 @@ a {
     cursor: pointer;
 }
 
+button:hover {
+    box-shadow: 0 10px 10px rgba($color: #000000, $alpha: 0.1), 0px 20px 40px rgba($color: #000000, $alpha: 0.1);
+}
+
+button:active {
+    box-shadow: 0 10px 10px rgba($color: #000000, $alpha: 0.1), 0px 20px 40px rgba($color: #000000, $alpha: 0.1);
+}
+
 h2 {
     font-size: $header2;
     font-weight: normal;
