@@ -78,22 +78,20 @@ const successVariants: Variants = {
 interface LoadingSvgProps {
     isError: boolean,
     isSuccess: boolean,
+    isLoading: boolean
 };
-const LoadingSvg: React.FC<LoadingSvgProps> = ({ isError, isSuccess }) => {
+const LoadingSvg: React.FC<LoadingSvgProps> = ({ isError, isSuccess, isLoading }) => {
     const controls = useAnimation();
 
-    useEffect(() => {
+    if (isLoading) {
         controls.start('loading');
-    }, []);
-
-    useEffect(() => {
-        if (isSuccess) {
-            controls.start('success');
-        }
-        else if (isError) {
-            controls.start('error');
-        }
-    }, [isError, isSuccess]);
+    }
+    if (isSuccess) {
+        controls.start('success');
+    }
+    if (isError) {
+        controls.start('error');
+    }
 
     return (
         <motion.svg variants={svgVariants} animate={controls} viewBox="0 0 200 201" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" xmlSpace="preserve" fillRule="evenodd" clipRule='evenodd' strokeLinecap="round" strokeLinejoin="round" strokeMiterlimit={1.5}>
