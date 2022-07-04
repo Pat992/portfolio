@@ -40,10 +40,17 @@
 
     .bkg {
         background: $bg-color-light;
+        fill: $bg-color-light;
     }
 
     .main-color {
         color: $accent-blue;
         stroke: $accent-blue;
+        fill: $accent-blue;
+    }
+
+    .inactive-color {
+        stroke: $text-color-accent-light;
+        fill: $text-color-accent-light;
     }
 }

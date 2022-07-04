@@ -48,10 +48,17 @@
 
     .bkg {
         background: $bg-color-dark;
+        fill: $bg-color-dark;
     }
 
     .main-color {
         color: $accent-red;
         stroke: $accent-red;
+        fill: $accent-red;
+    }
+
+    .inactive-color {
+        stroke: $text-color-accent-dark;
+        fill: $text-color-accent-dark;
     }
 }

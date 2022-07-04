@@ -13,7 +13,6 @@ import AdmobSvg from '../../UI/SVGs/AdmobSvg';
 import GoogleCloudSvg from '../../UI/SVGs/GoogleCloudSvg';
 import GooglePlaySvg from '../../UI/SVGs/GooglePlaySvg';
 import AffinityDesignerSvg from '../../UI/SVGs/AffinityDesignerSvg';
-import { useMousePosition } from '../../../hooks/useMousePosition';
 
 const projectVariants: Variants = {
     from: {

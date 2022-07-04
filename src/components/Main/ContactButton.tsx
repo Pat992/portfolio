@@ -50,10 +50,10 @@ const buttonVariants: Variants = {
             type: 'spring'
         }
     },
-    hover: {
-        scale: 1.1,
-        boxShadow: "0px 0px 8px rgb(255,255,255)",
-    }
+    // hover: {
+    //     scale: 1.1,
+    //     boxShadow: "0px 0px 8px rgb(255,255,255)",
+    // }
 };
 
 interface ContactButtonProps { };
@@ -104,7 +104,7 @@ const ContactButton: React.FC<ContactButtonProps> = () => {
             initial='from'
             animate={controls}
             className="btn contact-button"
-            whileHover='hover'
+            //whileHover='hover'
             layout
         >
             {showSvg ? <MailSvg /> : 'CONTACT ME'}
