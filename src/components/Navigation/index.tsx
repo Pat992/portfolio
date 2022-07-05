@@ -31,6 +31,9 @@ interface NavProps { };
 const Nav: React.FC<NavProps> = () => {
     const [selected, setSelected] = useState(-1);
     const hasDoneIconAnim = useAppSelector((state) => state.main.hasDoneIconAnim);
+    const navigationHome = useAppSelector((state) => state.navigation.home);
+    const navigationProjects = useAppSelector((state) => state.navigation.projects);
+    const navigationSkills = useAppSelector((state) => state.navigation.skills);
     const controls = useAnimation();
 
     useEffect(() => {
@@ -47,25 +50,11 @@ const Nav: React.FC<NavProps> = () => {
 
     return (
         <nav className={hasDoneIconAnim ? 'bkg-transparent bkg-bottom-border' : ''}>
-            {/* <ul>
-                <motion.li variants={liVariants} initial='to' animate={controls} whileHover='hover'>
-                    <motion.a variants={aVariants} whileHover='hover' className='active' href="#">HOME</motion.a>
-                </motion.li>
-                <motion.li variants={liVariants} initial='to' animate={controls} whileHover='hover'>
-                    <a href="#">PROJECTS</a>
-                </motion.li>
-                <motion.li variants={liVariants} initial='to' animate={controls} whileHover='hover'>
-                    <a href="#">SKILLS</a>
-                </motion.li>
-            </ul>
-            <motion.div variants={liVariants} initial='from' animate={controls}>
-                <ToggleButton />
-            </motion.div> */}
             <motion.div className="navigation">
                 <ul className="wrapper">
                     <motion.li variants={liVariants} initial='to' animate={controls}>
                         <NavigationItem
-                            child={<a href="#">HOME</a>}
+                            child={<a className={navigationHome ? 'active' : ''} href="#home">HOME</a>}
                             key={0}
                             selected={selected === 0}
                             onHover={() => setSelected(0)}
@@ -74,7 +63,7 @@ const Nav: React.FC<NavProps> = () => {
                     </motion.li>
                     <motion.li variants={liVariants} initial='to' animate={controls}>
                         <NavigationItem
-                            child={<a href="#projects">PROJECTS</a>}
+                            child={<a className={navigationProjects ? 'active' : ''} href="#projects">PROJECTS</a>}
                             key={1}
                             selected={selected === 1}
                             onHover={() => setSelected(1)}
@@ -83,7 +72,7 @@ const Nav: React.FC<NavProps> = () => {
                     </motion.li>
                     <motion.li variants={liVariants} initial='to' animate={controls}>
                         <NavigationItem
-                            child={<a href="#skills">SKILLS</a>}
+                            child={<a className={navigationSkills ? 'active' : ''} href="#skills">SKILLS</a>}
                             key={2}
                             selected={selected === 2}
                             onHover={() => setSelected(2)}

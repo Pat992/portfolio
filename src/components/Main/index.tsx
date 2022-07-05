@@ -52,7 +52,7 @@ const Main: React.FC<MainProps> = () => {
 
     return (
         <motion.section
-            id=''
+            id='home'
             animate={controls}
             variants={mainVariants}
             className='main'

@@ -15,9 +15,9 @@ const Skills: React.FC<SkillsProps> = () => {
     const dispatch = useAppDispatch();
 
     return (
-        <motion.section id='skills' className="skills" onViewportEnter={() => dispatch(setSkills)}>
+        <motion.section id='skills' className="skills" onViewportEnter={() => dispatch(setSkills())} viewport={{ amount: 0.5 }}>
             <motion.div className='skills-bkg bkg' style={{ rotate: scroll }} />
-            <h2>SKILLS &amp; EXPERIENCE</h2>
+            <h2 className='title'>SKILLS &amp; EXPERIENCE</h2>
             <div className='skill-body'>
                 <div className='expirience-list'>
                     <ul>
