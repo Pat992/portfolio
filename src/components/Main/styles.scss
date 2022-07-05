@@ -19,7 +19,7 @@
 }
 
 .title-2 {
-    margin-left: 10rem;
+    margin-left: 10rem !important;
 }
 
 .introduction,
@@ -135,7 +135,7 @@
     border-radius: 1vh;
     border: none;
     z-index: 10;
-    margin: 0 0;
+    margin: auto;
 }
 
 @media screen and (max-width: 1200px) {
@@ -148,10 +148,6 @@
         }
     }
 
-    .contact-button {
-        margin: auto auto;
-    }
-
     .graphic,
     .introduction {
         margin: 5rem 0;
@@ -160,5 +156,9 @@
 
     .introduction {
         text-align: center;
+    }
+
+    .title-2 {
+        margin-left: 0 !important;
     }
 }

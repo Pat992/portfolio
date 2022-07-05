@@ -45,6 +45,7 @@ const buttonVariants: Variants = {
         left: 'calc(50vw - 50%)',
         top: 'calc(60vh - 5rem + 1vw)',
         width: '30vh',
+        minHeight: '4vh',
         transition: {
             duration: 0.5,
             type: 'spring'

@@ -65,9 +65,10 @@
 
     input,
     textarea {
+        margin: 10px 0 30px 0;
         border: none;
-        box-shadow: 0 10px 10px rgba($color: #000000, $alpha: 0.2), 0px 20px 40px rgba($color: #000000, $alpha: 0.2);
-        padding: 10px;
+        box-shadow: 0 10px 10px rgba($color: #000000, $alpha: 0.1), 0px 20px 40px rgba($color: #000000, $alpha: 0.1), 0 -5px 5px rgba($color: #FFF, $alpha: 0.1);
+        padding: 15px;
         border-radius: 10px;
     }
 
@@ -86,5 +87,11 @@
 @media screen and (max-width: 1200px) {
     .modal {
         width: 90vw;
+
+
+        input,
+        textarea {
+            padding: 3vw;
+        }
     }
 }
