@@ -25,6 +25,9 @@ const Nav: React.FC<NavProps> = () => {
     const navigationHome = useAppSelector((state) => state.navigation.home);
     const navigationProjects = useAppSelector((state) => state.navigation.projects);
     const navigationSkills = useAppSelector((state) => state.navigation.skills);
+    const home = document.getElementById('home');
+    const projects = document.getElementById('projects');
+    const skills = document.getElementById('skills');
     const controls = useAnimation();
 
     if (hasDoneIconAnim) {
@@ -39,7 +42,7 @@ const Nav: React.FC<NavProps> = () => {
                 <ul className="wrapper">
                     <motion.li variants={liVariants} initial='to' animate={controls}>
                         <NavigationItem
-                            child={<a className={navigationHome ? 'active' : ''} href="#home">HOME</a>}
+                            child={<a className={navigationHome ? 'active' : ''} onClick={() => home?.scrollIntoView()}>HOME</a>}
                             key={0}
                             selected={selected === 0}
                             onHover={() => setSelected(0)}
@@ -48,7 +51,7 @@ const Nav: React.FC<NavProps> = () => {
                     </motion.li>
                     <motion.li variants={liVariants} initial='to' animate={controls}>
                         <NavigationItem
-                            child={<a className={navigationProjects ? 'active' : ''} href="#projects">PROJECTS</a>}
+                            child={<a className={navigationProjects ? 'active' : ''} onClick={() => projects?.scrollIntoView()}>PROJECTS</a>}
                             key={1}
                             selected={selected === 1}
                             onHover={() => setSelected(1)}
@@ -57,7 +60,7 @@ const Nav: React.FC<NavProps> = () => {
                     </motion.li>
                     <motion.li variants={liVariants} initial='to' animate={controls}>
                         <NavigationItem
-                            child={<a className={navigationSkills ? 'active' : ''} href="#skills">SKILLS</a>}
+                            child={<a className={navigationSkills ? 'active' : ''} onClick={() => skills?.scrollIntoView()}>SKILLS</a>}
                             key={2}
                             selected={selected === 2}
                             onHover={() => setSelected(2)}
