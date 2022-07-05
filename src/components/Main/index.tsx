@@ -2,6 +2,7 @@ import { motion, useAnimation, Variants } from 'framer-motion';
 import { useEffect } from 'react';
 import { useAppDispatch, useAppSelector } from '../../store/hooks';
 import { setHasEnteredMain, setHasLeftMain } from '../../store/main-slice';
+import { setMain } from '../../store/navigation-slice';
 import ContactButton from './ContactButton';
 import './styles.scss';
 import SvgShapes from './SvgShapes';
@@ -50,7 +51,17 @@ const Main: React.FC<MainProps> = () => {
     }, [hasDoneIcon]);
 
     return (
-        <motion.section id='' animate={controls} variants={mainVariants} className='main' onViewportEnter={() => dispatch(setHasEnteredMain())} onViewportLeave={() => dispatch(setHasLeftMain())}>
+        <motion.section
+            id=''
+            animate={controls}
+            variants={mainVariants}
+            className='main'
+            onViewportEnter={() => {
+                dispatch(setHasEnteredMain());
+                dispatch(setMain());
+            }}
+            onViewportLeave={() => dispatch(setHasLeftMain())}
+        >
             <motion.div className='introduction'>
                 <motion.h4 variants={textVariants} >Patrick Hettich</motion.h4>
                 <motion.h1 variants={textVariants} >software developer \</motion.h1>

@@ -43,6 +43,14 @@
         fill: $bg-color-light;
     }
 
+    .bkg-bottom-border {
+        border-bottom: 1px solid $bg-color-light;
+    }
+
+    .bkg-transparent {
+        background: $bg-color-light-transparent;
+    }
+
     .main-color {
         color: $accent-blue;
         stroke: $accent-blue;

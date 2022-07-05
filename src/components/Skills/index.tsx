@@ -1,5 +1,6 @@
 import { motion, useTransform, useViewportScroll } from 'framer-motion';
-import { Fragment } from 'react';
+import { useAppDispatch } from '../../store/hooks';
+import { setSkills } from '../../store/navigation-slice';
 import AzureSkill from '../UI/SkillCircles/AzureSkill';
 import BiztalkSkill from '../UI/SkillCircles/BiztalkSkill';
 import FlutterSkill from '../UI/SkillCircles/FlutterSkill';
@@ -11,9 +12,10 @@ interface SkillsProps { };
 const Skills: React.FC<SkillsProps> = () => {
     const { scrollYProgress } = useViewportScroll();
     const scroll = useTransform(scrollYProgress, [0.8, 0.9], [5, 3]);
+    const dispatch = useAppDispatch();
 
     return (
-        <section id='skills' className="skills">
+        <motion.section id='skills' className="skills" onViewportEnter={() => dispatch(setSkills)}>
             <motion.div className='skills-bkg bkg' style={{ rotate: scroll }} />
             <h2>SKILLS &amp; EXPERIENCE</h2>
             <div className='skill-body'>
@@ -76,7 +78,7 @@ const Skills: React.FC<SkillsProps> = () => {
                     </ul>
                 </div>
             </div>
-        </section>
+        </motion.section>
     );
 };
 

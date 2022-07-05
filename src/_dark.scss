@@ -53,6 +53,14 @@
         fill: $bg-color-dark;
     }
 
+    .bkg-bottom-border {
+        border-bottom: 1px solid $bg-color-dark;
+    }
+
+    .bkg-transparent {
+        background: $bg-color-dark-transparent;
+    }
+
     .main-color {
         color: $accent-red;
         stroke: $accent-red;

@@ -13,8 +13,8 @@ const buttonVariants: Variants = {
         opacity: 0,
     },
     enterMain: {
-        opacity: 1,
         position: 'relative',
+        opacity: 1,
         right: 'auto',
         bottom: 'auto',
         top: '1vh',

@@ -1,6 +1,7 @@
 import { motion, Variants } from 'framer-motion';
 import { useState } from 'react';
 import { useAppDispatch } from '../../store/hooks';
+import { setProjects } from '../../store/navigation-slice';
 import { setHasEnteredProjects, setHasLeftProjcets } from '../../store/projects-slice';
 import AdWave from "./Adwave/Adwave";
 import AndFm from "./AndFm/AndFm";
@@ -29,7 +30,15 @@ const Projects: React.FC<ProjectsProps> = () => {
     const dispatch = useAppDispatch();
 
     return (
-        <motion.section id='projects' className="projects" onViewportEnter={() => dispatch(setHasEnteredProjects())} onViewportLeave={() => dispatch(setHasLeftProjcets())}>
+        <motion.section
+            id='projects'
+            className="projects"
+            onViewportEnter={() => {
+                dispatch(setHasEnteredProjects());
+                dispatch(setProjects());
+            }}
+            onViewportLeave={() => dispatch(setHasLeftProjcets())}
+        >
             <h2>PROJECTS</h2>
             <motion.div
                 className='project'

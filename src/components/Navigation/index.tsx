@@ -46,7 +46,7 @@ const Nav: React.FC<NavProps> = () => {
     }, [hasDoneIconAnim]);
 
     return (
-        <nav>
+        <nav className={hasDoneIconAnim ? 'bkg-transparent bkg-bottom-border' : ''}>
             {/* <ul>
                 <motion.li variants={liVariants} initial='to' animate={controls} whileHover='hover'>
                     <motion.a variants={aVariants} whileHover='hover' className='active' href="#">HOME</motion.a>
