@@ -65,13 +65,11 @@ interface AndFmProps {
 const AndFm: React.FC<AndFmProps> = ({ startAnimation }) => {
     const controls = useAnimation();
 
-    useEffect(() => {
-        if (startAnimation) {
-            controls.start('to');
-        } else {
-            controls.start('from');
-        }
-    }, [startAnimation]);
+    if (startAnimation) {
+        controls.start('to');
+    } else {
+        controls.start('from');
+    }
 
     return (
         <div className='andfm-project project-reverse'>

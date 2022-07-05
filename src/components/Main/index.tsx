@@ -43,7 +43,6 @@ const Main: React.FC<MainProps> = () => {
 
     useEffect(() => {
         if (hasDoneIcon) {
-            console.log('done')
             controls.start('to');
         } else {
             controls.start('from');
@@ -65,7 +64,7 @@ const Main: React.FC<MainProps> = () => {
             <motion.div className='introduction'>
                 <motion.h4 variants={textVariants} >Patrick Hettich</motion.h4>
                 <motion.h1 variants={textVariants} >software developer \</motion.h1>
-                <motion.h1 variants={textVariants} className='title-2'>cloud engineer</motion.h1>
+                <motion.h1 variants={textVariants} className='title-2'>data engineer</motion.h1>
                 <ContactButton />
             </motion.div>
             <div className='graphic'><SvgShapes /></div>

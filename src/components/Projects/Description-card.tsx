@@ -1,4 +1,4 @@
-import { ReactHTML, ReactNode } from "react";
+import { ReactNode } from "react";
 
 interface DescriptionCardProps {
     title: string,

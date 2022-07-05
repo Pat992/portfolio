@@ -1,4 +1,4 @@
-import { AnimatePresence, AnimateSharedLayout, motion, useAnimation, Variants } from 'framer-motion';
+import { motion, useAnimation, Variants } from 'framer-motion';
 import { useEffect, useState } from 'react';
 import { useAppSelector } from '../../store/hooks';
 import NavigationItem from './NavigationItem';
@@ -18,15 +18,6 @@ const liVariants: Variants = {
     hover: {}
 }
 
-const aVariants: Variants = {
-    from: {},
-    to: {},
-    hover: {
-        className: 'hover'
-    }
-}
-
-
 interface NavProps { };
 const Nav: React.FC<NavProps> = () => {
     const [selected, setSelected] = useState(-1);
@@ -36,17 +27,11 @@ const Nav: React.FC<NavProps> = () => {
     const navigationSkills = useAppSelector((state) => state.navigation.skills);
     const controls = useAnimation();
 
-    useEffect(() => {
-        controls.set('from');
-    }, []);
-
-    useEffect(() => {
-        if (hasDoneIconAnim) {
-            controls.start('to');
-        } else {
-            controls.start('from');
-        }
-    }, [hasDoneIconAnim]);
+    if (hasDoneIconAnim) {
+        controls.start('to');
+    } else {
+        controls.start('from');
+    }
 
     return (
         <nav className={hasDoneIconAnim ? 'bkg-transparent bkg-bottom-border' : ''}>

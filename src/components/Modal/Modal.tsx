@@ -1,9 +1,8 @@
 import { AnimatePresence, motion, Variants } from "framer-motion";
-import { FormEvent, Fragment, useEffect, useRef, useState } from "react";
+import { FormEvent, useEffect, useRef, useState } from "react";
 import emailjs from '@emailjs/browser';
 import { useAppDispatch, useAppSelector } from "../../store/hooks";
 import { setShowModal } from "../../store/modal-slice";
-import LoadingSvg from "./LoadingSvg";
 import LoadingContainer from "./LoadingContainer";
 import './styles.scss';
 import Button from "../UI/Button";

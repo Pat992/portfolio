@@ -1,5 +1,4 @@
-import { AnimatePresence, motion, Variants } from "framer-motion";
-import { useEffect } from "react";
+import { motion } from "framer-motion";
 import { useAppDispatch } from "../../store/hooks";
 import { setShowModal } from "../../store/modal-slice";
 import Button from "../UI/Button";

@@ -6,7 +6,7 @@ import phone from '../../../assets/adwave/adwave-phone.png';
 import est from '../../../assets/adwave/adwave-est.png';
 import app from '../../../assets/adwave/adwave-app.png';
 import AdwaveSvg from './AdwaveSvg';
-import { useEffect, useRef, useState } from 'react';
+import { useRef } from 'react';
 import DescriptionCard from '../Description-card';
 import FlutterSvg from '../../UI/SVGs/FlutterSvg';
 import AdmobSvg from '../../UI/SVGs/AdmobSvg';

@@ -35,10 +35,6 @@ const IconSvg: React.FC<IconSvgProps> = ({ onCompleteAnimation }) => {
     const controls = useAnimation();
 
     useEffect(() => {
-        controls.start('to');
-    }, []);
-
-    useEffect(() => {
         if (hasEnteredProjects) {
             controls.start('leaveMain');
         }

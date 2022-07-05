@@ -33,13 +33,11 @@ const ConnectionSidebar: React.FC<ConnectionSidebarProps> = () => {
     const scroll = useAppSelector((state) => state.doc.value);
     const controls = useAnimation();
 
-    useEffect(() => {
-        if (scroll > 0.97) {
-            controls.start('inFooter');
-        } else if (scroll < 0.97) {
-            controls.start('from');
-        }
-    }, [scroll])
+    if (scroll > 0.97) {
+        controls.start('inFooter');
+    } else if (scroll < 0.97) {
+        controls.start('from');
+    }
 
     return (
         <motion.aside className="sidebar" variants={sidebarVariants} animate={controls} initial='from'>

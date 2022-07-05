@@ -1,5 +1,4 @@
 import { motion, useAnimation, Variants } from 'framer-motion';
-import { useEffect } from 'react';
 import '../styles.scss';
 
 // rotateZ(-10deg) translate(-20%, 25%)

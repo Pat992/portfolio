@@ -1,5 +1,4 @@
 import { useAnimation, Variants, motion } from "framer-motion";
-import { useEffect } from "react";
 import './styles.scss';
 
 const svgVariants: Variants = {
@@ -23,14 +22,6 @@ const svgVariants: Variants = {
     error: {
         rotate: '0deg'
     },
-}
-
-const circleVariants: Variants = {
-    loading: {
-
-    },
-    success: {},
-    error: {},
 }
 
 const errorVariants: Variants = {
