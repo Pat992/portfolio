@@ -1,0 +1,29 @@
+{
+  "files": {
+    "main.css": "/static/css/main.199ebd98.css",
+    "main.js": "/static/js/main.cd81b3f6.js",
+    "static/js/787.1ed0c42c.chunk.js": "/static/js/787.1ed0c42c.chunk.js",
+    "static/media/Logo-website.svg": "/static/media/Logo-website.32d81c1c4b06a1b3d4d9.svg",
+    "static/media/adwave-phone.png": "/static/media/adwave-phone.faeb95172cce3117c202.png",
+    "static/media/shape-2-light.png": "/static/media/shape-2-light.71bd23ff56d1490e9ab6.png",
+    "static/media/adwave-est.png": "/static/media/adwave-est.5c46a479a1b0c8914855.png",
+    "static/media/andfm-light.png": "/static/media/andfm-light.f1a2a4c1d783726493a8.png",
+    "static/media/andfm-dark.png": "/static/media/andfm-dark.8a86c2bdfd72293ac50c.png",
+    "static/media/shape-2-dark.png": "/static/media/shape-2-dark.55fc48b18fbe391204ee.png",
+    "static/media/shape-3-light.png": "/static/media/shape-3-light.5ab9f98d5de4243bb0c6.png",
+    "static/media/shape-1-light.png": "/static/media/shape-1-light.fa69781ac27c68183e25.png",
+    "static/media/shape-3-dark.png": "/static/media/shape-3-dark.8bc27f85829edc4614e2.png",
+    "static/media/shape-1-dark.png": "/static/media/shape-1-dark.047481fe52620f1d0cf6.png",
+    "static/media/shape-4-light.png": "/static/media/shape-4-light.fae54e53881fcff2a53f.png",
+    "static/media/shape-4-dark.png": "/static/media/shape-4-dark.f722040f5a34731c7459.png",
+    "static/media/adwave-app.png": "/static/media/adwave-app.8a8ca6d33fd2b7db0bf9.png",
+    "index.html": "/index.html",
+    "main.199ebd98.css.map": "/static/css/main.199ebd98.css.map",
+    "main.cd81b3f6.js.map": "/static/js/main.cd81b3f6.js.map",
+    "787.1ed0c42c.chunk.js.map": "/static/js/787.1ed0c42c.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.199ebd98.css",
+    "static/js/main.cd81b3f6.js"
+  ]
+}
