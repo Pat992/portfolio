@@ -1,5 +1,4 @@
 import { motion, useAnimation, Variants } from 'framer-motion';
-import { useEffect } from 'react';
 import { useAppSelector } from '../../store/hooks';
 import './styles.scss';
 
@@ -34,14 +33,12 @@ const IconSvg: React.FC<IconSvgProps> = ({ onCompleteAnimation }) => {
     const hasEnteredProjects = useAppSelector((state) => state.projects.hasEnteredVP);
     const controls = useAnimation();
 
-    useEffect(() => {
-        if (hasEnteredProjects) {
-            controls.start('leaveMain');
-        }
-        else if (inMainViewport) {
-            controls.start('to');
-        }
-    }, [inMainViewport, hasEnteredProjects]);
+    if (hasEnteredProjects) {
+        controls.start('leaveMain');
+    }
+    else if (inMainViewport) {
+        controls.start('to');
+    }
 
     return (
         <motion.svg variants={iconVariants} onAnimationComplete={() => onCompleteAnimation()} initial='from' animate={controls} className="IconSvg" viewBox="0 0 200 200" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlSpace="preserve">

@@ -38,16 +38,12 @@ const Main: React.FC<MainProps> = () => {
     const hasDoneIcon = useAppSelector((state) => state.main.hasDoneIconAnim);
 
     useEffect(() => {
-        controls.set('from');
-    }, []);
-
-    useEffect(() => {
         if (hasDoneIcon) {
             controls.start('to');
         } else {
             controls.start('from');
         }
-    }, [hasDoneIcon]);
+    }, [hasDoneIcon, controls]);
 
     return (
         <motion.section

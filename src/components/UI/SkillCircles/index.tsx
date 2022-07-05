@@ -1,5 +1,5 @@
-import { ReactNode, useEffect } from "react";
-import { motion, useAnimation, Variants } from 'framer-motion';
+import { ReactNode } from "react";
+import { motion } from 'framer-motion';
 import './styles.scss';
 
 interface SkillCircleProps {

@@ -1,5 +1,4 @@
 import { useAnimation, Variants, motion } from 'framer-motion';
-import { useEffect } from 'react';
 import { useAppSelector } from '../../store/hooks';
 import Github from "./Github";
 import Linkedin from "./Linkedin";
@@ -41,8 +40,8 @@ const ConnectionSidebar: React.FC<ConnectionSidebarProps> = () => {
 
     return (
         <motion.aside className="sidebar" variants={sidebarVariants} animate={controls} initial='from'>
-            <a href="https://github.com/Pat992" target='_blank'><Github /></a>
-            <a href="https://www.linkedin.com/in/patrick-hettich/" target='_blank'><Linkedin /></a>
+            <a href="https://github.com/Pat992" target='_blank' rel="noreferrer"><Github /></a>
+            <a href="https://www.linkedin.com/in/patrick-hettich/" target='_blank' rel="noreferrer"><Linkedin /></a>
         </motion.aside>
     );
 };

@@ -2,7 +2,6 @@ import { useAppDispatch, useAppSelector } from '../../store/hooks';
 import { motion, useAnimation, Variants } from 'framer-motion';
 import './styles.scss';
 import { setHasEnteredFooter, setHasLeftFooter } from '../../store/footer-slice';
-import { useEffect } from 'react';
 
 const footerVariants: Variants = {
     from: {
@@ -22,13 +21,11 @@ const Footer: React.FC<FooterProps> = () => {
     const scroll = useAppSelector((state) => state.doc.value);
     const controls = useAnimation();
 
-    useEffect(() => {
-        if (scroll > 0.97) {
-            controls.start('idle');
-        } else if (scroll < 0.97) {
-            controls.start('from');
-        }
-    }, [scroll])
+    if (scroll > 0.97) {
+        controls.start('idle');
+    } else if (scroll < 0.97) {
+        controls.start('from');
+    }
 
     return (
         <footer className='bkg footer-bkg'>

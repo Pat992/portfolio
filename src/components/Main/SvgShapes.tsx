@@ -85,13 +85,13 @@ const SvgShapes: React.FC<SvgShapesProps> = () => {
         if (hasDoneIcon && hasLoaded) {
             controls.start('to');
         }
-    }, [hasLoaded, hasDoneIcon]);
+    }, [hasLoaded, hasDoneIcon, controls]);
 
     useEffect(() => {
         if (hasDoneSvg) {
             dispatch(setHasDoneIconAnim());
         }
-    }, [hasDoneSvg]);
+    }, [hasDoneSvg, dispatch]);
 
     useEffect(() => {
         if (hasDoneIcon) {
@@ -102,7 +102,7 @@ const SvgShapes: React.FC<SvgShapesProps> = () => {
                 controls.start('to');
             }
         }
-    }, [inMainViewport, hasEnteredProjects, hasDoneIcon]);
+    }, [inMainViewport, hasEnteredProjects, hasDoneIcon, controls]);
 
     return (
         <motion.div className='svg-container' variants={containerVariants} initial='from' animate={controls}>

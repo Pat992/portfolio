@@ -33,7 +33,6 @@ const Projects: React.FC<ProjectsProps> = () => {
         <motion.section
             id='projects'
             className="projects"
-            viewport={{ amount: 0.5 }}
             onViewportEnter={() => {
                 dispatch(setHasEnteredProjects());
                 dispatch(setProjects());

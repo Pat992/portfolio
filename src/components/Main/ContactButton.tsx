@@ -67,16 +67,12 @@ const ContactButton: React.FC<ContactButtonProps> = () => {
     const dispatch = useAppDispatch();
 
     useEffect(() => {
-        controls.set('from');
-    }, []);
-
-    useEffect(() => {
         if (hasDoneIconAnim) {
             controls.start('enterMain');
         } else {
             controls.start('from');
         }
-    }, [hasDoneIconAnim]);
+    }, [hasDoneIconAnim, controls]);
 
     useEffect(() => {
         if (hasDoneIconAnim) {
@@ -95,7 +91,7 @@ const ContactButton: React.FC<ContactButtonProps> = () => {
                 controls.start('leaveMain');
             }
         }
-    }, [inMainViewport, hasEnteredProjects, scroll, hasDoneIconAnim]);
+    }, [inMainViewport, hasEnteredProjects, scroll, hasDoneIconAnim, controls]);
 
     return (
         <motion.button

@@ -1,4 +1,4 @@
-import { motion, useAnimation, useTransform, Variants } from 'framer-motion';
+import { motion, useAnimation, Variants } from 'framer-motion';
 import '../styles.scss';
 import InsightsSvg from './Insights';
 import PublicSvg from './Public';
@@ -112,7 +112,7 @@ const AdWave: React.FC<AdWaveProps> = ({ startAnimation }) => {
                     <div><AffinityDesignerSvg /><p>Affinity Designer</p></div>,
                 ]}
                 links={[
-                    <a href="https://play.google.com/store/apps/details?id=htth.admob.android.AdWave" target='_blank'>
+                    <a href="https://play.google.com/store/apps/details?id=htth.admob.android.AdWave" target='_blank' rel="noreferrer">
                         <GooglePlaySvg />
                         <p>Download</p>
                     </a>
