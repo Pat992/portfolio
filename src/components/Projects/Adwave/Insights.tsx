@@ -28,13 +28,11 @@ interface InsightsSvgProps {
 const InsightsSvg: React.FC<InsightsSvgProps> = ({ startAnimation }) => {
     const controls = useAnimation();
 
-    useEffect(() => {
-        if (startAnimation) {
-            controls.start('to');
-        } else {
-            controls.start('from');
-        }
-    }, [startAnimation]);
+    if (startAnimation) {
+        controls.start('to');
+    } else {
+        controls.start('from');
+    }
 
     return (
         <motion.svg variants={svgVariants} initial='from' animate={controls} className='insights' xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" viewBox="0 0 24 24" fill="#000000">

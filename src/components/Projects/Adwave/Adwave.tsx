@@ -32,11 +32,12 @@ const projectVariants: Variants = {
 };
 
 const phoneVariants: Variants = {
-    to: {
+    from: {
         x: '-80%',
         y: '0',
         scale: 1,
     },
+    to: {},
     hover: {
         scale: 1.1,
     }
@@ -91,25 +92,13 @@ interface AdWaveProps {
 };
 const AdWave: React.FC<AdWaveProps> = ({ startAnimation }) => {
     const cardRef = useRef(null);
-    // const { posX, posY } = useMousePosition(cardRef);
-    const [hover, setHover] = useState(false);
     const controls = useAnimation();
 
-    useEffect(() => {
-        if (startAnimation) {
-            controls.start('to');
-        } else {
-            controls.start('from');
-        }
-    }, [startAnimation]);
-
-    useEffect(() => {
-        if (hover) {
-            controls.start('hover');
-        } else {
-            controls.start('to');
-        }
-    }, [hover]);
+    if (startAnimation) {
+        controls.start('to');
+    } else {
+        controls.start('from');
+    }
 
     return (
         <div className='adwave-project project'>
@@ -130,7 +119,7 @@ const AdWave: React.FC<AdWaveProps> = ({ startAnimation }) => {
                 ]}
                 isLeft={true}
             />
-            <motion.div ref={cardRef} onHoverStart={() => setHover(true)} onHoverEnd={() => setHover(false)} className='project-card'>
+            <motion.div ref={cardRef} className='project-card'>
                 <div className='adwave-card o-hidden'>
                     <div className='title-row'>
                         <AdwaveSvg />

@@ -50,7 +50,7 @@ const Main: React.FC<MainProps> = () => {
     }, [hasDoneIcon]);
 
     return (
-        <motion.section animate={controls} variants={mainVariants} className='main' onViewportEnter={() => dispatch(setHasEnteredMain())} onViewportLeave={() => dispatch(setHasLeftMain())}>
+        <motion.section id='' animate={controls} variants={mainVariants} className='main' onViewportEnter={() => dispatch(setHasEnteredMain())} onViewportLeave={() => dispatch(setHasLeftMain())}>
             <motion.div className='introduction'>
                 <motion.h4 variants={textVariants} >Patrick Hettich</motion.h4>
                 <motion.h1 variants={textVariants} >software developer \</motion.h1>

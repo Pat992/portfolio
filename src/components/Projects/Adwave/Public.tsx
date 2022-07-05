@@ -26,13 +26,11 @@ interface PublicSvgProps {
 const PublicSvg: React.FC<PublicSvgProps> = ({ startAnimation }) => {
     const controls = useAnimation();
 
-    useEffect(() => {
-        if (startAnimation) {
-            controls.start('to');
-        } else {
-            controls.start('from');
-        }
-    }, [startAnimation]);
+    if (startAnimation) {
+        controls.start('to');
+    } else {
+        controls.start('from');
+    }
 
     return (
         <motion.svg variants={svgVariants} initial='from' animate={controls} className='public' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">

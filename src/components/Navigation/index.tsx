@@ -74,7 +74,7 @@ const Nav: React.FC<NavProps> = () => {
                     </motion.li>
                     <motion.li variants={liVariants} initial='to' animate={controls}>
                         <NavigationItem
-                            child={<a href="#">PROJECTS</a>}
+                            child={<a href="#projects">PROJECTS</a>}
                             key={1}
                             selected={selected === 1}
                             onHover={() => setSelected(1)}
@@ -83,19 +83,10 @@ const Nav: React.FC<NavProps> = () => {
                     </motion.li>
                     <motion.li variants={liVariants} initial='to' animate={controls}>
                         <NavigationItem
-                            child={<a href="#">SKILLS</a>}
+                            child={<a href="#skills">SKILLS</a>}
                             key={2}
                             selected={selected === 2}
                             onHover={() => setSelected(2)}
-                            onLeave={() => setSelected(-1)}
-                        />
-                    </motion.li>
-                    <motion.li variants={liVariants} initial='to' animate={controls}>
-                        <NavigationItem
-                            child={<a href="#">CONTACT</a>}
-                            key={3}
-                            selected={selected === 3}
-                            onHover={() => setSelected(3)}
                             onLeave={() => setSelected(-1)}
                         />
                     </motion.li>

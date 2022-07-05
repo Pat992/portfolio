@@ -13,8 +13,8 @@ const buttonVariants: Variants = {
         opacity: 0,
     },
     enterMain: {
-        scale: 1,
         opacity: 1,
+        position: 'relative',
         right: 'auto',
         bottom: 'auto',
         top: '1vh',
@@ -22,23 +22,20 @@ const buttonVariants: Variants = {
         left: 0,
         width: '30vh',
         height: 'calc(4rem + 1vw)',
-        position: 'relative',
         transition: {
             duration: 0.5,
             type: 'spring'
         }
     },
     leaveMain: {
-        opacity: 1,
+        position: 'fixed',
+        top: 'auto',
+        left: 'auto',
         bottom: 30,
-        scale: 1,
         right: 10,
         minWidth: '4vh',
         width: 'calc(3rem + 1vw)',
         height: 'calc(3rem + 1vw)',
-        position: 'fixed',
-        top: 'auto',
-        left: 'auto',
         transition: {
             duration: 0.5,
             type: 'spring'

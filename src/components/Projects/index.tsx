@@ -29,7 +29,7 @@ const Projects: React.FC<ProjectsProps> = () => {
     const dispatch = useAppDispatch();
 
     return (
-        <motion.section className="projects" onViewportEnter={() => dispatch(setHasEnteredProjects())} onViewportLeave={() => dispatch(setHasLeftProjcets())}>
+        <motion.section id='projects' className="projects" onViewportEnter={() => dispatch(setHasEnteredProjects())} onViewportLeave={() => dispatch(setHasLeftProjcets())}>
             <h2>PROJECTS</h2>
             <motion.div
                 className='project'
@@ -37,8 +37,8 @@ const Projects: React.FC<ProjectsProps> = () => {
                 initial={{ y: 0, x: -50, opacity: 0 }}
                 whileInView='to'
                 viewport={{ once: false, amount: 0.5 }}
-                onAnimationStart={() => setIsDoneAdWaveAnim(false)}
-                onAnimationComplete={() => setIsDoneAdWaveAnim(true)}>
+                onAnimationStart={() => setIsDoneAdWaveAnim(() => false)}
+                onAnimationComplete={() => setIsDoneAdWaveAnim(() => true)}>
                 <AdWave startAnimation={isDoneAdWaveAnim} />
             </motion.div>
             <motion.div
@@ -47,8 +47,8 @@ const Projects: React.FC<ProjectsProps> = () => {
                 initial={{ y: 0, x: 50, opacity: 0 }}
                 viewport={{ once: false, amount: 0.5 }}
                 whileInView='to'
-                onAnimationStart={() => setIsDoneAndFmAnim(false)}
-                onAnimationComplete={() => setIsDoneAndFmAnim(true)}>
+                onAnimationStart={() => setIsDoneAndFmAnim(() => false)}
+                onAnimationComplete={() => setIsDoneAndFmAnim(() => true)}>
                 <AndFm startAnimation={isDoneAndFmAnim} />
             </motion.div>
         </motion.section>

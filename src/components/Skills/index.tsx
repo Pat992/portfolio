@@ -13,7 +13,7 @@ const Skills: React.FC<SkillsProps> = () => {
     const scroll = useTransform(scrollYProgress, [0.8, 0.9], [5, 3]);
 
     return (
-        <section className="skills">
+        <section id='skills' className="skills">
             <motion.div className='skills-bkg bkg' style={{ rotate: scroll }} />
             <h2>SKILLS &amp; EXPERIENCE</h2>
             <div className='skill-body'>
