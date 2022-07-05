@@ -40,7 +40,7 @@ const Nav: React.FC<NavProps> = () => {
         <nav className={hasDoneIconAnim ? 'bkg-transparent bkg-bottom-border' : ''}>
             <motion.div className="navigation">
                 <ul className="wrapper">
-                    <motion.li variants={liVariants} initial='to' animate={controls}>
+                    <motion.li variants={liVariants} initial='from' animate={controls}>
                         <NavigationItem
                             child={<a className={navigationHome ? 'active' : ''} href="#home">HOME</a>}
                             key={0}
@@ -49,7 +49,7 @@ const Nav: React.FC<NavProps> = () => {
                             onLeave={() => setSelected(-1)}
                         />
                     </motion.li>
-                    <motion.li variants={liVariants} initial='to' animate={controls}>
+                    <motion.li variants={liVariants} initial='from' animate={controls}>
                         <NavigationItem
                             child={<a className={navigationProjects ? 'active' : ''} href="#projects">PROJECTS</a>}
                             key={1}
@@ -58,7 +58,7 @@ const Nav: React.FC<NavProps> = () => {
                             onLeave={() => setSelected(-1)}
                         />
                     </motion.li>
-                    <motion.li variants={liVariants} initial='to' animate={controls}>
+                    <motion.li variants={liVariants} initial='from' animate={controls}>
                         <NavigationItem
                             child={<a className={navigationSkills ? 'active' : ''} href="#skills">SKILLS</a>}
                             key={2}
