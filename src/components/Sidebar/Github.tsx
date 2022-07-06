@@ -7,7 +7,7 @@ const svgVariants: Variants = {
         y: 0
     },
     hover: {
-        y: -5
+        y: -2
     },
 }
 
