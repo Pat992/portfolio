@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/portfolio/static/css/main.42feed9d.css",
-    "main.js": "/portfolio/static/js/main.88301a56.js",
+    "main.js": "/portfolio/static/js/main.5a199f8e.js",
     "static/js/787.1ed0c42c.chunk.js": "/portfolio/static/js/787.1ed0c42c.chunk.js",
     "static/media/Logo-website.svg": "/portfolio/static/media/Logo-website.32d81c1c4b06a1b3d4d9.svg",
     "static/media/adwave-phone.png": "/portfolio/static/media/adwave-phone.faeb95172cce3117c202.png",
@@ -19,11 +19,11 @@
     "static/media/adwave-app.png": "/portfolio/static/media/adwave-app.8a8ca6d33fd2b7db0bf9.png",
     "index.html": "/portfolio/index.html",
     "main.42feed9d.css.map": "/portfolio/static/css/main.42feed9d.css.map",
-    "main.88301a56.js.map": "/portfolio/static/js/main.88301a56.js.map",
+    "main.5a199f8e.js.map": "/portfolio/static/js/main.5a199f8e.js.map",
     "787.1ed0c42c.chunk.js.map": "/portfolio/static/js/787.1ed0c42c.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.42feed9d.css",
-    "static/js/main.88301a56.js"
+    "static/js/main.5a199f8e.js"
   ]
 }
