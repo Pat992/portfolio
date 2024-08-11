@@ -6,9 +6,12 @@ import com.pat.portfolio.components.contactSection.ContactContent
 import com.pat.portfolio.models.Section
 
 @Composable
-fun ContactSection() {
+fun ContactSection(
+    onViewportEntered: Boolean
+) {
     SectionWrapper(
-        section = Section.Contact
+        section = Section.Contact,
+        onViewportEntered = onViewportEntered
     ) {
         ContactContent()
     }

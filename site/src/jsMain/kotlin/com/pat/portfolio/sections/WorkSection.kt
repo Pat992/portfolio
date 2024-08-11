@@ -6,10 +6,13 @@ import com.pat.portfolio.components.workSection.WorkContent
 import com.pat.portfolio.models.Section
 
 @Composable
-fun WorkSection() {
+fun WorkSection(
+    onViewportEntered: Boolean
+) {
     SectionWrapper(
-        section = Section.Work
-    ) { onViewportEntered ->
+        section = Section.Work,
+        onViewportEntered = onViewportEntered
+    ) {
         WorkContent(
             onViewportEntered = onViewportEntered
         )

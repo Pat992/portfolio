@@ -1,9 +1,10 @@
 package com.pat.portfolio.pages
 
-import androidx.compose.runtime.Composable
+import androidx.compose.runtime.*
 import com.pat.portfolio.components._widgets.Navigation
 import com.pat.portfolio.core.styles.Theme
-import com.pat.portfolio.core.utils.SectionViewportObserver
+import com.pat.portfolio.core.utils.ObserveViewport
+import com.pat.portfolio.models.Section
 import com.pat.portfolio.sections.*
 import com.varabyte.kobweb.compose.css.Overflow
 import com.varabyte.kobweb.compose.foundation.layout.Box
@@ -21,12 +22,14 @@ import org.jetbrains.compose.web.css.percent
 @Page
 @Composable
 fun HomePage() {
-    SectionViewportObserver(
-        threshold = window.innerHeight * 0.5,
+    var sectionViewportEntered by remember { mutableStateOf("home") }
+    ObserveViewport(
+        threshold = window.innerHeight * 0.3,
         onViewportChanged = { elementId ->
-            println(elementId)
+            sectionViewportEntered = elementId
         }
     )
+
     Box(
         modifier = Modifier
             .fillMaxSize()
@@ -38,12 +41,12 @@ fun HomePage() {
             modifier = Modifier.fillMaxWidth(90.percent)
         ) {
             Navigation()
-            MainSection()
-            LanguagesSection()
-            ProjectsSection()
-            WorkSection()
-            EducationSection()
-            ContactSection()
+            MainSection(onViewportEntered = sectionViewportEntered == Section.Main.id)
+            LanguagesSection(onViewportEntered = sectionViewportEntered == Section.Languages.id)
+            ProjectsSection(onViewportEntered = sectionViewportEntered == Section.Projects.id)
+            WorkSection(onViewportEntered = sectionViewportEntered == Section.Work.id)
+            EducationSection(onViewportEntered = sectionViewportEntered == Section.Education.id)
+            ContactSection(onViewportEntered = sectionViewportEntered == Section.Contact.id)
             FooterSection()
         }
     }
