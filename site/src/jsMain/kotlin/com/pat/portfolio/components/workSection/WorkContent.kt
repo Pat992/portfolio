@@ -13,16 +13,22 @@ import com.varabyte.kobweb.silk.components.layout.numColumns
 import org.jetbrains.compose.web.css.px
 
 @Composable
-fun WorkContent() {
+fun WorkContent(
+    onViewportEntered: Boolean
+) {
     SimpleGrid(
         modifier = Modifier.fillMaxWidth(),
-        numColumns = numColumns(base = 1, md = 2)
+        numColumns = numColumns(base = 1, md = 2),
     ) {
         Column(
             modifier = Modifier.fillMaxWidth()
         ) {
             WorkExperience.entries.forEach { we ->
-                WorkItem(workExperience = we)
+                WorkItem(
+                    workExperience = we,
+                    onViewportEntered = onViewportEntered,
+                    index = we.ordinal
+                )
             }
         }
         Card(

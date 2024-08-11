@@ -9,7 +9,9 @@ import com.pat.portfolio.models.Section
 fun WorkSection() {
     SectionWrapper(
         section = Section.Work
-    ) {
-        WorkContent()
+    ) { onViewportEntered ->
+        WorkContent(
+            onViewportEntered = onViewportEntered
+        )
     }
 }

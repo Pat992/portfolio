@@ -9,7 +9,9 @@ import com.pat.portfolio.models.Section
 fun EducationSection() {
     SectionWrapper(
         section = Section.Education
-    ) {
-        EducationContent()
+    ) { onViewportEntered ->
+        EducationContent(
+            onViewportEntered = onViewportEntered
+        )
     }
 }

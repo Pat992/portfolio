@@ -20,7 +20,7 @@ enum class Education(
     ),
     efz(
         school = "ZLI - Zurich",
-        educationTitle = "Computer science EFZ/Swiss federal certificate of competence",
+        educationTitle = "Computer science EFZ / Swiss federal certificate of competence",
         dateFrom = Date(year = 2019, month = 8, day = 1),
         dateTo = Date(year = 2021, month = 8, day = 1),
         programmingLanguages = listOf(

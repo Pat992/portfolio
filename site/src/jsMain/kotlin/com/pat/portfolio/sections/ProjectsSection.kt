@@ -9,7 +9,7 @@ import com.pat.portfolio.models.Section
 fun ProjectsSection() {
     SectionWrapper(
         section = Section.Projects
-    ) {
-        ProjectsContent()
+    ) { onViewportEntered ->
+        ProjectsContent(onViewportEntered = onViewportEntered)
     }
 }

@@ -6,12 +6,16 @@ import com.pat.portfolio.models.WorkExperience
 
 @Composable
 fun WorkItem(
-    workExperience: WorkExperience
+    workExperience: WorkExperience,
+    onViewportEntered: Boolean,
+    index: Int
 ) {
     ExperienceItem(
         title = workExperience.companyName,
         subtitle = workExperience.jobTitle,
         dateFrom = workExperience.dateFrom,
-        dateTo = workExperience.dateTo
+        dateTo = workExperience.dateTo,
+        onViewportEntered = onViewportEntered,
+        index = index
     )
 }

@@ -6,12 +6,16 @@ import com.pat.portfolio.models.Education
 
 @Composable
 fun EducationItem(
-    education: Education
+    education: Education,
+    onViewportEntered: Boolean,
+    index: Int
 ) {
     ExperienceItem(
         title = education.school,
         subtitle = education.educationTitle,
         dateFrom = education.dateFrom,
-        dateTo = education.dateTo
+        dateTo = education.dateTo,
+        onViewportEntered = onViewportEntered,
+        index = index
     )
 }
