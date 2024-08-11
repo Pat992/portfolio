@@ -7,10 +7,7 @@ import com.pat.portfolio.models.Section
 import com.varabyte.kobweb.compose.foundation.layout.Box
 import com.varabyte.kobweb.compose.foundation.layout.Column
 import com.varabyte.kobweb.compose.ui.Modifier
-import com.varabyte.kobweb.compose.ui.modifiers.fillMaxWidth
-import com.varabyte.kobweb.compose.ui.modifiers.id
-import com.varabyte.kobweb.compose.ui.modifiers.minHeight
-import com.varabyte.kobweb.compose.ui.modifiers.padding
+import com.varabyte.kobweb.compose.ui.modifiers.*
 import org.jetbrains.compose.web.css.px
 import org.jetbrains.compose.web.css.vh
 
@@ -36,6 +33,7 @@ fun SectionWrapper(
         modifier = modifier
             .padding(top = 100.px)
             .id(section.id)
+            .classNames("section")
             .fillMaxWidth()
             .minHeight(100.vh)
     ) {
