@@ -1,46 +1,53 @@
-# Getting Started with Create React App
+This is a [Kobweb](https://github.com/varabyte/kobweb) project bootstrapped with the `app/empty` template.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This template is useful if you already know what you're doing and just want a clean slate. By default, it
+just creates a blank home page (which prints to the console so you can confirm it's working)
 
-## Available Scripts
+If you are still learning, consider instantiating the `app` template (or one of the examples) to see actual,
+working projects.
 
-In the project directory, you can run:
+## Getting Started
 
-### `npm start`
+First, run the development server by typing the following command in a terminal under the `site` folder:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+```bash
+$ cd site
+$ kobweb run
+```
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+Open [http://localhost:8080](http://localhost:8080) with your browser to see the result.
 
-### `npm test`
+You can use any editor you want for the project, but we recommend using **IntelliJ IDEA Community Edition** downloaded
+using the [Toolbox App](https://www.jetbrains.com/toolbox-app/).
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Press `Q` in the terminal to gracefully stop the server.
 
-### `npm run build`
+### Live Reload
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Feel free to edit / add / delete new components, pages, and API endpoints! When you make any changes, the site will
+indicate the status of the build and automatically reload when ready.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Exporting the Project
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+When you are ready to ship, you should shutdown the development server and then export the project using:
 
-### `npm run eject`
+```bash
+kobweb export
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+When finished, you can run a Kobweb server in production mode:
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```bash
+kobweb run --env prod
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+If you want to run this command in the Cloud provider of your choice, consider disabling interactive mode since nobody
+is sitting around watching the console in that case anyway. To do that, use:
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+```bash
+kobweb run --env prod --notty
+```
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+Kobweb also supports exporting to a static layout which is compatible with static hosting providers, such as GitHub
+Pages, Netlify, Firebase, any presumably all the others. You can read more about that approach here:
+https://bitspittle.dev/blog/2022/staticdeploy

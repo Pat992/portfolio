@@ -1,0 +1,15 @@
+@import '../../global';
+
+.footer {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    height: 50vh;
+    margin: 0 auto;
+    padding-top: 5vh;
+}
+
+.footer-bkg {
+    position: relative;
+    z-index: 1;
+}
