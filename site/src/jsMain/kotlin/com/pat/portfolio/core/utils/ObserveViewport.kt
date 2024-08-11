@@ -21,7 +21,7 @@ fun ObserveViewport(
                 val rect = element.getBoundingClientRect()
                 val top = rect.top
 
-                if ((top + threshold) >= 0 && (top + threshold) <= windowHeight) {
+                if ((top + threshold) >= 0 && (top + threshold) < windowHeight) {
                     if (sectionViewportEntered != element.id) {
                         sectionViewportEntered = element.id
                         onViewportChanged(sectionViewportEntered)

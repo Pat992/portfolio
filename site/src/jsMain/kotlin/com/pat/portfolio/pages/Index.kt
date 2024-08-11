@@ -24,7 +24,7 @@ import org.jetbrains.compose.web.css.percent
 fun HomePage() {
     var sectionViewportEntered by remember { mutableStateOf("home") }
     ObserveViewport(
-        threshold = window.innerHeight * 0.3,
+        threshold = window.innerHeight * 0.5,
         onViewportChanged = { elementId ->
             sectionViewportEntered = elementId
         }

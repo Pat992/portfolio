@@ -13,6 +13,8 @@ import com.varabyte.kobweb.compose.foundation.layout.Box
 import com.varabyte.kobweb.compose.foundation.layout.Column
 import com.varabyte.kobweb.compose.ui.Modifier
 import com.varabyte.kobweb.compose.ui.modifiers.*
+import com.varabyte.kobweb.silk.style.breakpoint.Breakpoint
+import com.varabyte.kobweb.silk.theme.breakpoint.rememberBreakpoint
 import org.jetbrains.compose.web.css.ms
 import org.jetbrains.compose.web.css.percent
 import org.jetbrains.compose.web.css.px
@@ -24,6 +26,7 @@ fun ProjectCard(
     index: Int,
     onViewportEntered: Boolean = false
 ) {
+    val breakpoint = rememberBreakpoint()
     Box {
         Card(
             modifier = Modifier
@@ -36,8 +39,8 @@ fun ProjectCard(
             ) {
                 SvgWidget(
                     path = project.svgPath,
-                    height = 250.0,
-                    width = 250.0,
+                    height = if (breakpoint >= Breakpoint.MD) 250.0 else 100.0,
+                    width = if (breakpoint >= Breakpoint.MD) 250.0 else 100.0,
                     color = Theme.SecondaryColor.hex,
                     viewBoxValue = if (project == Projects.Mobile) "0 0 512 512" else "0 -960 960 960",
                     modifier = Modifier.margin(bottom = 50.px)

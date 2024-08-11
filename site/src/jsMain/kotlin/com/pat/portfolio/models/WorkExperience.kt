@@ -12,7 +12,7 @@ enum class WorkExperience(
 ) {
     FamedlyFrontend(
         companyName = "Famedly",
-        jobTitle = "Frontend developer",
+        jobTitle = "Frontend Developer",
         programmingLanguages = listOf("Dart", "Flutter"),
         tools = listOf("Matrix", "FHIR", "Android Studio", "Git", "GitHub", "Notion", "Visual Studio Code"),
         dateFrom = Date(year = 2024, month = 1, day = 1),
@@ -60,7 +60,7 @@ enum class WorkExperience(
     ),
     AndeoIntern(
         companyName = "Andeo AG",
-        jobTitle = "Intern",
+        jobTitle = "Intern Web Developer",
         programmingLanguages = listOf("PHP", "JavaScript", "HTML", "CSS", "SCSS", "jQuery", "SQL"),
         tools = listOf("PHP Storm", "Maria DB"),
         dateFrom = Date(year = 2019, month = 8, day = 1),

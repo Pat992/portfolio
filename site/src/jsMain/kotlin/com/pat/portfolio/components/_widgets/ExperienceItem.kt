@@ -34,7 +34,13 @@ fun ExperienceItem(
 ) {
     val breakpoint = rememberBreakpoint()
     Row(
-        modifier = Modifier.minHeight(if (breakpoint <= Breakpoint.SM) 150.px else 200.px),
+        modifier = Modifier.height(
+            when {
+                breakpoint > Breakpoint.LG -> 120.px
+                breakpoint >= Breakpoint.SM -> 160.px
+                else -> 100.px
+            }
+        ),
         verticalAlignment = Alignment.CenterVertically
     ) {
         Box(
@@ -73,13 +79,13 @@ fun ExperienceItem(
         }
         SimpleGrid(
             modifier = Modifier.alignContent(AlignContent.Center),
-            numColumns = numColumns(base = 1, lg = 2)
+            numColumns = numColumns(base = 1, xl = 2)
         ) {
             Box(
                 contentAlignment = Alignment.CenterStart
             ) {
                 Paragraph(
-                    modifier = Modifier.width(if (breakpoint >= Breakpoint.MD) 200.px else 150.px),
+                    modifier = Modifier.width(if (breakpoint >= Breakpoint.MD) 500.px else 150.px),
                     text = "${
                         dateFrom.toLocaleDateString(window.navigator.language, options = dateLocaleOptions {
                             year = "numeric"
