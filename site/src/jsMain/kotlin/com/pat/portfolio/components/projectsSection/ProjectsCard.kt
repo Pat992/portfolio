@@ -5,7 +5,9 @@ import com.pat.portfolio.components._widgets.cards.Card
 import com.pat.portfolio.components._widgets.svgs.SvgWidget
 import com.pat.portfolio.components._widgets.text.Subtitle
 import com.pat.portfolio.core.styles.Theme
+import com.pat.portfolio.core.utils.ObserveSection
 import com.pat.portfolio.models.Projects
+import com.pat.portfolio.models.Section
 import com.varabyte.kobweb.compose.css.TextAlign
 import com.varabyte.kobweb.compose.css.Transition
 import com.varabyte.kobweb.compose.foundation.layout.Arrangement
@@ -24,9 +26,9 @@ import org.jetbrains.compose.web.css.times
 fun ProjectCard(
     project: Projects,
     index: Int,
-    onViewportEntered: Boolean = false
 ) {
     val breakpoint = rememberBreakpoint()
+    val onViewportEntered = ObserveSection.sectionId == Section.Projects.id
     Box {
         Card(
             modifier = Modifier

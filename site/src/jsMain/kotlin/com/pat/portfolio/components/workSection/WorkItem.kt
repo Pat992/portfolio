@@ -2,12 +2,12 @@ package com.pat.portfolio.components.workSection
 
 import androidx.compose.runtime.Composable
 import com.pat.portfolio.components._widgets.ExperienceItem
+import com.pat.portfolio.models.Section
 import com.pat.portfolio.models.WorkExperience
 
 @Composable
 fun WorkItem(
     workExperience: WorkExperience,
-    onViewportEntered: Boolean,
     index: Int
 ) {
     ExperienceItem(
@@ -15,7 +15,7 @@ fun WorkItem(
         subtitle = workExperience.jobTitle,
         dateFrom = workExperience.dateFrom,
         dateTo = workExperience.dateTo,
-        onViewportEntered = onViewportEntered,
-        index = index
+        index = index,
+        section = Section.Work
     )
 }

@@ -5,6 +5,8 @@ import com.pat.portfolio.components._widgets.text.Paragraph
 import com.pat.portfolio.components._widgets.text.Subtitle
 import com.pat.portfolio.components._widgets.text.Title
 import com.pat.portfolio.core.styles.Theme
+import com.pat.portfolio.core.utils.ObserveSection
+import com.pat.portfolio.models.Section
 import com.varabyte.kobweb.compose.css.TextAlign
 import com.varabyte.kobweb.compose.css.Transition
 import com.varabyte.kobweb.compose.css.TransitionProperty
@@ -29,10 +31,11 @@ fun ExperienceItem(
     subtitle: String,
     dateFrom: Date,
     dateTo: Date?,
-    onViewportEntered: Boolean,
-    index: Int
+    index: Int,
+    section: Section
 ) {
     val breakpoint = rememberBreakpoint()
+    val onViewportEntered = ObserveSection.sectionId == section.id
     Row(
         modifier = Modifier.height(
             when {

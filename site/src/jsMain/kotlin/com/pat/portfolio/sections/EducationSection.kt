@@ -6,15 +6,10 @@ import com.pat.portfolio.components.eductationSection.EducationContent
 import com.pat.portfolio.models.Section
 
 @Composable
-fun EducationSection(
-    onViewportEntered: Boolean
-) {
+fun EducationSection() {
     SectionWrapper(
         section = Section.Education,
-        onViewportEntered = onViewportEntered
     ) {
-        EducationContent(
-            onViewportEntered = onViewportEntered
-        )
+        EducationContent()
     }
 }

@@ -14,8 +14,7 @@ import org.jetbrains.compose.web.css.vh
 fun SectionWrapper(
     modifier: Modifier = Modifier,
     section: Section,
-    onViewportEntered: Boolean,
-    content: @Composable (Boolean) -> Unit
+    content: @Composable () -> Unit
 ) {
     Box(
         modifier = modifier
@@ -30,9 +29,8 @@ fun SectionWrapper(
         ) {
             SectionTitle(
                 section = section,
-                onViewportEntered = onViewportEntered
             )
-            content(onViewportEntered)
+            content()
         }
     }
 }

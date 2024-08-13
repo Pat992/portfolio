@@ -9,9 +9,7 @@ import com.varabyte.kobweb.silk.components.layout.SimpleGrid
 import com.varabyte.kobweb.silk.components.layout.numColumns
 
 @Composable
-fun ProjectsContent(
-    onViewportEntered: Boolean
-) {
+fun ProjectsContent() {
     SimpleGrid(
         modifier = Modifier
             .fillMaxSize()
@@ -23,8 +21,7 @@ fun ProjectsContent(
         Projects.entries.forEach { project ->
             ProjectCard(
                 project = project,
-                index = project.ordinal,
-                onViewportEntered = onViewportEntered
+                index = project.ordinal
             )
         }
     }

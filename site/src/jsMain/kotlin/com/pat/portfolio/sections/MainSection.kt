@@ -16,13 +16,10 @@ import com.varabyte.kobweb.silk.components.text.SpanText
 import com.varabyte.kobweb.silk.theme.breakpoint.rememberBreakpoint
 
 @Composable
-fun MainSection(
-    onViewportEntered: Boolean
-) {
+fun MainSection() {
     val breakpoint = rememberBreakpoint()
     SectionWrapper(
-        section = Section.Main,
-        onViewportEntered = onViewportEntered
+        section = Section.Main
     ) {
         MainTitle(breakpoint = breakpoint)
         MainSubtitle(breakpoint = breakpoint)

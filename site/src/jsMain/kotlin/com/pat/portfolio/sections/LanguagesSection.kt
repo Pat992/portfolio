@@ -6,12 +6,9 @@ import com.pat.portfolio.components.languagesSection.LanguagesContent
 import com.pat.portfolio.models.Section
 
 @Composable
-fun LanguagesSection(
-    onViewportEntered: Boolean
-) {
+fun LanguagesSection() {
     SectionWrapper(
         section = Section.Languages,
-        onViewportEntered = onViewportEntered
     ) {
         LanguagesContent()
     }

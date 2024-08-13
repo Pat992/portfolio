@@ -13,9 +13,7 @@ import com.varabyte.kobweb.silk.components.layout.numColumns
 import org.jetbrains.compose.web.css.px
 
 @Composable
-fun EducationContent(
-    onViewportEntered: Boolean
-) {
+fun EducationContent() {
     SimpleGrid(
         modifier = Modifier.fillMaxWidth(),
         numColumns = numColumns(base = 1, md = 2)
@@ -26,7 +24,6 @@ fun EducationContent(
             Education.entries.forEach { education ->
                 EducationItem(
                     education = education,
-                    onViewportEntered = onViewportEntered,
                     index = education.ordinal
                 )
             }

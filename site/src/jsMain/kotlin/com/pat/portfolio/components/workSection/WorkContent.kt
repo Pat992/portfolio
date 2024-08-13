@@ -13,9 +13,7 @@ import com.varabyte.kobweb.silk.components.layout.numColumns
 import org.jetbrains.compose.web.css.px
 
 @Composable
-fun WorkContent(
-    onViewportEntered: Boolean
-) {
+fun WorkContent() {
     SimpleGrid(
         modifier = Modifier.fillMaxWidth(),
         numColumns = numColumns(base = 1, md = 2),
@@ -26,7 +24,6 @@ fun WorkContent(
             WorkExperience.entries.forEach { we ->
                 WorkItem(
                     workExperience = we,
-                    onViewportEntered = onViewportEntered,
                     index = we.ordinal
                 )
             }

@@ -3,11 +3,11 @@ package com.pat.portfolio.components.eductationSection
 import androidx.compose.runtime.Composable
 import com.pat.portfolio.components._widgets.ExperienceItem
 import com.pat.portfolio.models.Education
+import com.pat.portfolio.models.Section
 
 @Composable
 fun EducationItem(
     education: Education,
-    onViewportEntered: Boolean,
     index: Int
 ) {
     ExperienceItem(
@@ -15,7 +15,7 @@ fun EducationItem(
         subtitle = education.educationTitle,
         dateFrom = education.dateFrom,
         dateTo = education.dateTo,
-        onViewportEntered = onViewportEntered,
-        index = index
+        index = index,
+        section = Section.Education
     )
 }
