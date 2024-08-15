@@ -16,7 +16,7 @@ fun ProjectsContent() {
             .styleModifier {
                 property("grid-gap", "15px")
             },
-        numColumns = numColumns(base = 1, md = 3),
+        numColumns = numColumns(base = 1, md = 2),
     ) {
         Projects.entries.forEach { project ->
             ProjectCard(

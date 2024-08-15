@@ -3,6 +3,7 @@ package com.pat.portfolio.components.workSection
 import androidx.compose.runtime.Composable
 import com.pat.portfolio.components._widgets.cards.Card
 import com.pat.portfolio.components._widgets.text.Paragraph
+import com.pat.portfolio.core.styles.Theme
 import com.pat.portfolio.models.WorkExperience
 import com.varabyte.kobweb.compose.foundation.layout.Column
 import com.varabyte.kobweb.compose.ui.Modifier
@@ -29,9 +30,11 @@ fun WorkContent() {
             }
         }
         Card(
-            modifier = Modifier.margin(left = 25.px)
-        ) {
-            Paragraph(text = "some description will be here")
-        }
+            modifier = Modifier.margin(left = 25.px),
+            theme = Theme.HighlightColor3,
+            content = {
+                Paragraph(text = "some description will be here")
+            }
+        )
     }
 }

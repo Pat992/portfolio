@@ -10,7 +10,9 @@ object Font {
     val SUBTITLE_SIZE_SMALL = (0.9).cssRem
     val PARAGRAPH_SIZE = (1).cssRem
     val PARAGRAPH_SIZE_SMALL = (0.8).cssRem
-    val MAIN_TITLE_SIZE_LARGE = (10).cssRem
-    val MAIN_TITLE_SIZE = (8.5).cssRem
-    val MAIN_TITLE_SIZE_SMALL = (3).cssRem
+    val MAIN_TITLE_SIZE = (2.5).cssRem
+    val MAIN_TITLE_SIZE_SMALL = (1.5).cssRem
+    val MAIN_SUBTITLE_SIZE_LARGE = (10).cssRem
+    val MAIN_SUBTITLE_SIZE = (8.5).cssRem
+    val MAIN_SUBTITLE_SIZE_SMALL = (3).cssRem
 }

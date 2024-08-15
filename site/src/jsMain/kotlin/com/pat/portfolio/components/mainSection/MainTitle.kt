@@ -1,8 +1,8 @@
 package com.pat.portfolio.components.mainSection
 
 import androidx.compose.runtime.Composable
-import com.pat.portfolio.core.constants.Font.TITLE_SIZE
-import com.pat.portfolio.core.constants.Font.TITLE_SIZE_SMALL
+import com.pat.portfolio.core.constants.Font.MAIN_TITLE_SIZE
+import com.pat.portfolio.core.constants.Font.MAIN_TITLE_SIZE_SMALL
 import com.pat.portfolio.core.styles.MainSectionTitleStyle
 import com.pat.portfolio.core.styles.titleText
 import com.varabyte.kobweb.compose.css.CSSFloat
@@ -35,7 +35,7 @@ fun MainTitle(
                 .toModifier()
                 .padding(0.px)
                 .margin(0.px)
-                .fontSize(if (breakpoint >= Breakpoint.MD) TITLE_SIZE else TITLE_SIZE_SMALL)
+                .fontSize(if (breakpoint >= Breakpoint.MD) MAIN_TITLE_SIZE else MAIN_TITLE_SIZE_SMALL)
                 .titleText()
                 .toAttrs()
         ) {
@@ -46,7 +46,11 @@ fun MainTitle(
                     .overflow(Overflow.Hidden)
                     .position(Position.Relative)
                     .float(CSSFloat.Right)
-                    .height(if (breakpoint >= Breakpoint.MD) TITLE_SIZE.times(1.5) else TITLE_SIZE_SMALL.times(1.5))
+                    .height(
+                        if (breakpoint >= Breakpoint.MD) MAIN_TITLE_SIZE.times(1.5) else MAIN_TITLE_SIZE_SMALL.times(
+                            1.5
+                        )
+                    )
             ) {
                 Ul(
                     attrs = Modifier

@@ -1,7 +1,7 @@
 package com.pat.portfolio.components.footerSection
 
 import androidx.compose.runtime.Composable
-import com.pat.portfolio.components._widgets.cards.SecondaryCard
+import com.pat.portfolio.components._widgets.cards.GlassCard
 import com.pat.portfolio.components._widgets.text.Paragraph
 import com.varabyte.kobweb.compose.foundation.layout.Column
 import com.varabyte.kobweb.compose.foundation.layout.Row
@@ -13,7 +13,7 @@ import org.jetbrains.compose.web.css.px
 
 @Composable
 fun FooterContent() {
-    SecondaryCard(
+    GlassCard(
         modifier = Modifier
             .padding(all = 25.px)
             .bottom((-5).px)

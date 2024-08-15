@@ -7,7 +7,7 @@ import com.varabyte.kobweb.compose.ui.Alignment
 import com.varabyte.kobweb.compose.ui.Modifier
 
 @Composable
-fun SecondaryCard(
+fun GlassCard(
     modifier: Modifier = Modifier,
     content: @Composable () -> Unit
 ) {

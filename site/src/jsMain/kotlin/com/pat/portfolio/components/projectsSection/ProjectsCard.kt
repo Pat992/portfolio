@@ -33,30 +33,33 @@ fun ProjectCard(
         Card(
             modifier = Modifier
                 .padding(all = 25.px)
-                .fillMaxWidth()
-        ) {
-            Column(
-                modifier = Modifier.textAlign(TextAlign.Center),
-                verticalArrangement = Arrangement.Center
-            ) {
-                SvgWidget(
-                    path = project.svgPath,
-                    height = if (breakpoint >= Breakpoint.MD) 250.0 else 100.0,
-                    width = if (breakpoint >= Breakpoint.MD) 250.0 else 100.0,
-                    color = Theme.HighlightColor1.hex,
-                    viewBoxValue = if (project == Projects.Mobile) "0 0 512 512" else "0 -960 960 960",
-                    modifier = Modifier.margin(bottom = 50.px)
-                )
-                Subtitle(
-                    modifier = Modifier
-                        .fillMaxWidth(),
-                    text = project.title
-                )
+                .fillMaxWidth(),
+            theme = Theme.HighlightColor2,
+            content = {
+                Column(
+                    modifier = Modifier.textAlign(TextAlign.Center),
+                    verticalArrangement = Arrangement.Center
+                ) {
+                    SvgWidget(
+                        path = project.svgPath,
+                        height = if (breakpoint >= Breakpoint.MD) 250.0 else 100.0,
+                        width = if (breakpoint >= Breakpoint.MD) 250.0 else 100.0,
+                        color = Theme.SecondaryTextColor.hex,
+                        viewBoxValue = if (project == Projects.Mobile) "0 0 512 512" else "0 -960 960 960",
+                        modifier = Modifier.margin(bottom = 50.px)
+                    )
+                    Subtitle(
+                        modifier = Modifier
+                            .fillMaxWidth(),
+                        text = project.title
+                    )
+                }
             }
-        }
+        )
         Box(
             modifier = Modifier
                 .backgroundColor(Theme.BackgroundColor.rgb)
+                .zIndex(1)
                 .fillMaxHeight()
                 .width(if (!onViewportEntered) 100.percent else 0.percent)
                 .transition(Transition.of("width", duration = 500.ms, delay = 100.ms * index))

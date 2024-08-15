@@ -4,6 +4,7 @@ import androidx.compose.runtime.Composable
 import com.pat.portfolio.components._widgets.cards.Card
 import com.pat.portfolio.components._widgets.svgs.GithubSvg
 import com.pat.portfolio.components._widgets.text.Subtitle
+import com.pat.portfolio.core.styles.Theme
 import com.varabyte.kobweb.compose.css.TextAlign
 import com.varabyte.kobweb.compose.foundation.layout.Arrangement
 import com.varabyte.kobweb.compose.foundation.layout.Column
@@ -22,19 +23,21 @@ fun LanguagesGithubCard() {
         modifier = Modifier
             .padding(all = 25.px)
             .flex(1)
-            .maxWidth(if (breakpoint >= Breakpoint.MD) 60.percent else 100.percent)
-    ) {
-        Column(
-            modifier = Modifier.fillMaxSize()
-                .textAlign(TextAlign.Center),
-            verticalArrangement = Arrangement.SpaceAround,
-            horizontalAlignment = Alignment.CenterHorizontally
-        ) {
-            GithubSvg(
-                height = if (breakpoint >= Breakpoint.LG) 210.0 else 180.0,
-                width = if (breakpoint >= Breakpoint.LG) 210.0 else 180.0,
-            )
-            Subtitle(text = "My most used languages on GitHub")
+            .maxWidth(if (breakpoint >= Breakpoint.MD) 60.percent else 100.percent),
+        theme = Theme.HighlightColor1,
+        content = {
+            Column(
+                modifier = Modifier.fillMaxSize()
+                    .textAlign(TextAlign.Center),
+                verticalArrangement = Arrangement.SpaceAround,
+                horizontalAlignment = Alignment.CenterHorizontally
+            ) {
+                GithubSvg(
+                    height = if (breakpoint >= Breakpoint.LG) 210.0 else 180.0,
+                    width = if (breakpoint >= Breakpoint.LG) 210.0 else 180.0,
+                )
+                Subtitle(text = "My most used languages on GitHub")
+            }
         }
-    }
+    )
 }

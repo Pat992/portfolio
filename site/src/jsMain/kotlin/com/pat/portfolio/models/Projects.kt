@@ -25,5 +25,11 @@ enum class Projects(
         shortDescription = "Developed landing pages.",
         description = "",
         svgPath = SvgPaths.WEBSITE_PATH
+    ),
+    OpenSource(
+        title = "Dart Open Source Packages",
+        shortDescription = "Open source packages for Dart and Azure.",
+        description = "",
+        svgPath = SvgPaths.BRACKETS_PATH
     )
 }

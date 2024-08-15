@@ -37,7 +37,7 @@ fun LanguageCodeGraph(
             LanguageBarProgress(
                 percentage = 100.percent,
                 index = index,
-                color = Theme.SecondaryBackgroundColor.rgb
+                color = Theme.BackgroundColor.rgb
             )
             LanguageBarProgress(
                 percentage = percentage,
@@ -57,6 +57,7 @@ private fun LanguageBarProgress(
     Box(
         modifier = Modifier
             .height(10.px)
+            .borderRadius(10.px)
             .fillMaxWidth(percentage)
             .backgroundColor(color)
             .transition(
