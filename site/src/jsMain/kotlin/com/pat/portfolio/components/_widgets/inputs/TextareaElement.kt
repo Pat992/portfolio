@@ -43,6 +43,7 @@ fun TextareaElement(
                 .fontSize(if (breakpoint >= Breakpoint.MD) PARAGRAPH_SIZE else PARAGRAPH_SIZE_SMALL)
                 .height(400.px)
                 .titleText()
+                .padding(leftRight = 15.px, topBottom = 10.px)
                 .attrsModifier {
                     if (isRequired)
                         attr("required", "true")

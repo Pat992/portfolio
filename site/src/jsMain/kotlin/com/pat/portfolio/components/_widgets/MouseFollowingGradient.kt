@@ -15,7 +15,9 @@ import org.jetbrains.compose.web.css.minus
 import org.jetbrains.compose.web.css.px
 
 @Composable
-fun MouseFollowingGradient() {
+fun MouseFollowingGradient(
+    modifier: Modifier = Modifier
+) {
     Box(
         modifier = Modifier
             .size(1200.px)
@@ -28,5 +30,6 @@ fun MouseFollowingGradient() {
                     "radial-gradient(800px, ${Theme.SecondaryBackgroundColor.hex}, transparent 80%)"
                 )
             }
+            .then(modifier)
     )
 }
