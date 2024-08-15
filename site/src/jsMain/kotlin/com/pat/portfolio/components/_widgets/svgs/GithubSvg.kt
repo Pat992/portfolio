@@ -13,7 +13,7 @@ fun GithubSvg(
         path = GITHUB_PATH,
         height = height,
         width = width,
-        color = Theme.SecondaryColor.hex,
+        color = Theme.HighlightColor1.hex,
         viewBoxValue = "0 0 256 250"
     )
 }

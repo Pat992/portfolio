@@ -4,12 +4,11 @@ import androidx.compose.runtime.Composable
 import com.pat.portfolio.core.constants.Font.SUBTITLE_SIZE
 import com.pat.portfolio.core.constants.Font.SUBTITLE_SIZE_SMALL
 import com.pat.portfolio.core.styles.Theme
+import com.pat.portfolio.core.styles.linearGradient
 import com.pat.portfolio.core.styles.titleText
-import com.pat.portfolio.core.utils.ObserveSection
+import com.pat.portfolio.core.utils.ObserveViewportData
 import com.pat.portfolio.models.Section
 import com.varabyte.kobweb.compose.css.Transition
-import com.varabyte.kobweb.compose.css.functions.LinearGradient
-import com.varabyte.kobweb.compose.css.functions.linearGradient
 import com.varabyte.kobweb.compose.foundation.layout.Box
 import com.varabyte.kobweb.compose.foundation.layout.Column
 import com.varabyte.kobweb.compose.ui.Modifier
@@ -28,7 +27,7 @@ fun SectionTitle(
     section: Section,
 ) {
     val breakpoint = rememberBreakpoint()
-    val onViewportEntered = ObserveSection.sectionId == section.id
+    val onViewportEntered = ObserveViewportData.sectionId == section.id
     Column {
         H3(
             attrs = Modifier
@@ -42,14 +41,7 @@ fun SectionTitle(
             Box(
                 modifier = Modifier
                     .width(if (!onViewportEntered) 0.percent else 100.percent)
-                    .height(5.px)
-                    .backgroundImage(
-                        linearGradient(
-                            LinearGradient.Direction.ToRight,
-                            Theme.HighlightColor3.rgb,
-                            Theme.HighlightColor4.rgb
-                        )
-                    )
+                    .linearGradient()
                     .backgroundColor(Theme.MainTextColor.rgb)
                     .transition(Transition.of("width", duration = 500.ms))
             )

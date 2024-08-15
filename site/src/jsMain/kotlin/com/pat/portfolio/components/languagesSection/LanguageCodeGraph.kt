@@ -37,12 +37,12 @@ fun LanguageCodeGraph(
             LanguageBarProgress(
                 percentage = 100.percent,
                 index = index,
-                color = Theme.SecondaryColor.rgb
+                color = Theme.SecondaryBackgroundColor.rgb
             )
             LanguageBarProgress(
                 percentage = percentage,
                 index = index,
-                color = Theme.BorderColor.rgb
+                color = Theme.HighlightColor1.rgb
             )
         }
     }

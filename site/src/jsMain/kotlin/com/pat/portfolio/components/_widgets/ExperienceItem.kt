@@ -5,7 +5,7 @@ import com.pat.portfolio.components._widgets.text.Paragraph
 import com.pat.portfolio.components._widgets.text.Subtitle
 import com.pat.portfolio.components._widgets.text.Title
 import com.pat.portfolio.core.styles.Theme
-import com.pat.portfolio.core.utils.ObserveSection
+import com.pat.portfolio.core.utils.ObserveViewportData
 import com.pat.portfolio.models.Section
 import com.varabyte.kobweb.compose.css.TextAlign
 import com.varabyte.kobweb.compose.css.Transition
@@ -35,7 +35,7 @@ fun ExperienceItem(
     section: Section
 ) {
     val breakpoint = rememberBreakpoint()
-    val onViewportEntered = ObserveSection.sectionId == section.id
+    val onViewportEntered = ObserveViewportData.sectionId == section.id
     Row(
         modifier = Modifier.height(
             when {
@@ -60,7 +60,7 @@ fun ExperienceItem(
             )
             Box(
                 modifier = Modifier
-                    .backgroundColor(Theme.SecondaryColor.rgb)
+                    .backgroundColor(Theme.HighlightColor1.rgb)
                     .size(if (!onViewportEntered) 0.px else 25.px)
                     .transition(
                         Transition.of(
@@ -76,7 +76,7 @@ fun ExperienceItem(
                     .width(1.px)
                     .margin(0.px)
                     .padding(0.px)
-                    .backgroundColor(Theme.SecondaryColor.rgb)
+                    .backgroundColor(Theme.HighlightColor1.rgb)
                     .fillMaxHeight()
             )
         }

@@ -13,24 +13,20 @@ enum class Theme(
         rgb = rgb(r = 255, g = 255, b = 255)
     ),
     SecondaryTextColor(
-        hex = "#C8CBCC",
-        rgb = rgb(r = 200, g = 203, b = 204)
+        hex = "#EDEDED",
+        rgb = rgb(r = 237, g = 237, b = 237)
     ),
     BackgroundColor(
-        hex = "#07001c",
-        rgb = rgb(r = 7, g = 0, b = 28)
+        hex = "#1D1B36",
+        rgb = rgb(r = 29, g = 27, b = 54)
     ),
-    PrimaryColor(
-        hex = "#10003d",
-        rgb = rgb(r = 16, g = 0, b = 61)
-    ),
-    SecondaryColor(
-        hex = "#150050",
-        rgb = rgb(r = 21, g = 0, b = 80)
+    SecondaryBackgroundColor(
+        hex = "#2F2D46",
+        rgb = rgb(r = 47, g = 45, b = 70)
     ),
     BorderColor(
-        hex = "#3F0071",
-        rgb = rgb(r = 63, g = 0, b = 113)
+        hex = "#EDEDED",
+        rgb = rgba(r = 237, g = 237, b = 237, a = 0.5)
     ),
     GlassBackgroundColor(
         hex = "#FFFFFF",
@@ -38,22 +34,22 @@ enum class Theme(
     ),
     GlassBorderColor(
         hex = "#FFFFFF",
-        rgb = rgba(r = 255, g = 255, b = 255, a = 0.125)
+        rgb = rgba(r = 255, g = 255, b = 255, a = 0.1)
     ),
     HighlightColor1(
-        hex = "#080DCB",
-        rgb = rgb(r = 13, g = 203, b = 100)
+        hex = "#F1ED97",
+        rgb = rgb(r = 241, g = 237, b = 151)
     ),
     HighlightColor2(
-        hex = "#9D89DE",
-        rgb = rgb(r = 157, g = 137, b = 222)
+        hex = "#EF9571",
+        rgb = rgb(r = 239, g = 149, b = 113)
     ),
     HighlightColor3(
-        hex = "#F0D42F",
-        rgb = rgb(r = 240, g = 212, b = 47)
+        hex = "#E46D97",
+        rgb = rgb(r = 149, g = 168, b = 234)
     ),
     HighlightColor4(
-        hex = "#E95640",
+        hex = "#95A8EA",
         rgb = rgb(r = 233, g = 86, b = 64)
     ),
 }

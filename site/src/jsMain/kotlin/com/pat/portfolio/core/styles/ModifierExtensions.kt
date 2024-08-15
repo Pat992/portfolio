@@ -9,6 +9,7 @@ import com.varabyte.kobweb.compose.css.functions.blur
 import com.varabyte.kobweb.compose.css.functions.saturate
 import com.varabyte.kobweb.compose.ui.Modifier
 import com.varabyte.kobweb.compose.ui.modifiers.*
+import com.varabyte.kobweb.compose.ui.styleModifier
 import org.jetbrains.compose.web.css.LineStyle
 import org.jetbrains.compose.web.css.percent
 import org.jetbrains.compose.web.css.px
@@ -47,4 +48,20 @@ fun Modifier.primaryButton(): Modifier {
         .height(Height.MaxContent)
         .width(Width.MaxContent)
         .textAlign(TextAlign.Center)
+}
+
+fun Modifier.linearGradient(): Modifier {
+    return this
+        .height(4.px)
+        .borderRadius(2.px)
+        .styleModifier {
+            property(
+                "background",
+                "linear-gradient(90deg, " +
+                        "${Theme.HighlightColor1.hex} 0%, " +
+                        "${Theme.HighlightColor2.hex} 25%, " +
+                        "${Theme.HighlightColor3.hex} 50%, " +
+                        "${Theme.HighlightColor4.hex} 100%)"
+            )
+        }
 }

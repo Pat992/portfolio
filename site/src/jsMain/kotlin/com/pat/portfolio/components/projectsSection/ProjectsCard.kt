@@ -5,7 +5,7 @@ import com.pat.portfolio.components._widgets.cards.Card
 import com.pat.portfolio.components._widgets.svgs.SvgWidget
 import com.pat.portfolio.components._widgets.text.Subtitle
 import com.pat.portfolio.core.styles.Theme
-import com.pat.portfolio.core.utils.ObserveSection
+import com.pat.portfolio.core.utils.ObserveViewportData
 import com.pat.portfolio.models.Projects
 import com.pat.portfolio.models.Section
 import com.varabyte.kobweb.compose.css.TextAlign
@@ -28,7 +28,7 @@ fun ProjectCard(
     index: Int,
 ) {
     val breakpoint = rememberBreakpoint()
-    val onViewportEntered = ObserveSection.sectionId == Section.Projects.id
+    val onViewportEntered = ObserveViewportData.sectionId == Section.Projects.id
     Box {
         Card(
             modifier = Modifier
@@ -43,7 +43,7 @@ fun ProjectCard(
                     path = project.svgPath,
                     height = if (breakpoint >= Breakpoint.MD) 250.0 else 100.0,
                     width = if (breakpoint >= Breakpoint.MD) 250.0 else 100.0,
-                    color = Theme.SecondaryColor.hex,
+                    color = Theme.HighlightColor1.hex,
                     viewBoxValue = if (project == Projects.Mobile) "0 0 512 512" else "0 -960 960 960",
                     modifier = Modifier.margin(bottom = 50.px)
                 )

@@ -18,7 +18,7 @@ fun Card(
 ) {
     Box(
         modifier = modifier
-            .backgroundColor(Theme.PrimaryColor.rgb)
+            .backgroundColor(Theme.SecondaryBackgroundColor.rgb)
             .borderRadius(4.px)
             .border(width = 1.px, style = LineStyle.Solid, color = Theme.BorderColor.rgb),
         contentAlignment = Alignment.Center
