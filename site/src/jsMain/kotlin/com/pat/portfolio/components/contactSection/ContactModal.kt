@@ -3,12 +3,12 @@ package com.pat.portfolio.components.contactSection
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.rememberCoroutineScope
 import com.pat.portfolio.components._widgets.Modal
+import com.pat.portfolio.components._widgets.buttons.PrimaryButton
+import com.pat.portfolio.components._widgets.buttons.SecondaryButton
 import com.pat.portfolio.components._widgets.cards.Card
-import com.pat.portfolio.components._widgets.inputs.PrimaryButton
-import com.pat.portfolio.components._widgets.inputs.SecondaryButton
-import com.pat.portfolio.components._widgets.svgs.SvgWidget
+import com.pat.portfolio.components._widgets.svgs.SvgElement
 import com.pat.portfolio.components._widgets.text.Subtitle
-import com.pat.portfolio.core.constants.Font.SUBTITLE_SIZE
+import com.pat.portfolio.core.constants.FontSizes.SUBTITLE_SIZE
 import com.pat.portfolio.core.constants.SvgPaths.ERROR_PATH
 import com.pat.portfolio.core.constants.SvgPaths.SENDING_PATH
 import com.pat.portfolio.core.constants.SvgPaths.SUCCESS_PATH
@@ -43,7 +43,7 @@ fun ContactModal() {
                         .padding(all = 15.px),
                     horizontalAlignment = Alignment.CenterHorizontally
                 ) {
-                    SvgWidget(
+                    SvgElement(
                         path = when (sendingStatus) {
                             SendingStatus.SENDING -> SENDING_PATH
                             SendingStatus.SUCCESS -> SUCCESS_PATH

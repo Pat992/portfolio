@@ -1,8 +1,8 @@
 package com.pat.portfolio.components._widgets.inputs
 
 import androidx.compose.runtime.Composable
-import com.pat.portfolio.core.constants.Font.PARAGRAPH_SIZE
-import com.pat.portfolio.core.constants.Font.PARAGRAPH_SIZE_SMALL
+import com.pat.portfolio.core.constants.FontSizes.PARAGRAPH_SIZE
+import com.pat.portfolio.core.constants.FontSizes.PARAGRAPH_SIZE_SMALL
 import com.pat.portfolio.core.styles.glass
 import com.pat.portfolio.core.styles.paragraphText
 import com.pat.portfolio.core.styles.titleText

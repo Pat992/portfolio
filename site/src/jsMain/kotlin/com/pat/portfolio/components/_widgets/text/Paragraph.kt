@@ -1,8 +1,8 @@
 package com.pat.portfolio.components._widgets.text
 
 import androidx.compose.runtime.Composable
-import com.pat.portfolio.core.constants.Font.PARAGRAPH_SIZE
-import com.pat.portfolio.core.constants.Font.PARAGRAPH_SIZE_SMALL
+import com.pat.portfolio.core.constants.FontSizes.PARAGRAPH_SIZE
+import com.pat.portfolio.core.constants.FontSizes.PARAGRAPH_SIZE_SMALL
 import com.pat.portfolio.core.styles.paragraphText
 import com.varabyte.kobweb.compose.ui.Modifier
 import com.varabyte.kobweb.compose.ui.modifiers.fontSize

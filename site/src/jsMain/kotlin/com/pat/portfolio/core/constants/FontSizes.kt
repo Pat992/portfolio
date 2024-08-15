@@ -2,7 +2,7 @@ package com.pat.portfolio.core.constants
 
 import org.jetbrains.compose.web.css.cssRem
 
-object Font {
+data object FontSizes {
     const val FONT_FAMILY = "Roboto"
     val TITLE_SIZE = (1.5).cssRem
     val TITLE_SIZE_SMALL = (1.25).cssRem

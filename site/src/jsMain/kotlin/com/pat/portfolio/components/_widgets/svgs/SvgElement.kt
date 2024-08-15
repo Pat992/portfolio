@@ -13,7 +13,7 @@ import org.jetbrains.compose.web.css.percent
 import org.jetbrains.compose.web.css.px
 
 @Composable
-fun SvgWidget(
+fun SvgElement(
     path: String,
     height: Double,
     width: Double,

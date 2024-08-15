@@ -1,9 +1,9 @@
 package com.pat.portfolio.components.mainSection
 
 import androidx.compose.runtime.Composable
-import com.pat.portfolio.core.constants.Font.MAIN_SUBTITLE_SIZE
-import com.pat.portfolio.core.constants.Font.MAIN_SUBTITLE_SIZE_LARGE
-import com.pat.portfolio.core.constants.Font.MAIN_SUBTITLE_SIZE_SMALL
+import com.pat.portfolio.core.constants.FontSizes.MAIN_SUBTITLE_SIZE
+import com.pat.portfolio.core.constants.FontSizes.MAIN_SUBTITLE_SIZE_LARGE
+import com.pat.portfolio.core.constants.FontSizes.MAIN_SUBTITLE_SIZE_SMALL
 import com.pat.portfolio.core.styles.titleText
 import com.varabyte.kobweb.compose.ui.Modifier
 import com.varabyte.kobweb.compose.ui.modifiers.fontSize

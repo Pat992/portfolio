@@ -1,8 +1,8 @@
 package com.pat.portfolio.components._widgets.text
 
 import androidx.compose.runtime.Composable
-import com.pat.portfolio.core.constants.Font.SUBTITLE_SIZE
-import com.pat.portfolio.core.constants.Font.SUBTITLE_SIZE_SMALL
+import com.pat.portfolio.core.constants.FontSizes.SUBTITLE_SIZE
+import com.pat.portfolio.core.constants.FontSizes.SUBTITLE_SIZE_SMALL
 import com.pat.portfolio.core.styles.Theme
 import com.pat.portfolio.core.styles.linearGradientSmall
 import com.pat.portfolio.core.styles.titleText

@@ -9,7 +9,7 @@ fun GithubSvg(
     height: Double,
     width: Double
 ) {
-    SvgWidget(
+    SvgElement(
         path = GITHUB_PATH,
         height = height,
         width = width,

@@ -1,4 +1,4 @@
-package com.pat.portfolio.components._widgets.inputs
+package com.pat.portfolio.components._widgets.buttons
 
 import androidx.compose.runtime.Composable
 import androidx.compose.web.events.SyntheticMouseEvent

@@ -1,6 +1,6 @@
 package com.pat.portfolio.core.styles
 
-import com.pat.portfolio.core.constants.Font.FONT_FAMILY
+import com.pat.portfolio.core.constants.FontSizes.FONT_FAMILY
 import com.varabyte.kobweb.compose.css.*
 import com.varabyte.kobweb.compose.css.functions.blur
 import com.varabyte.kobweb.compose.css.functions.saturate

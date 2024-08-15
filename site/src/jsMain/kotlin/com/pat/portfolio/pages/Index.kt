@@ -2,7 +2,7 @@ package com.pat.portfolio.pages
 
 import androidx.compose.runtime.Composable
 import com.pat.portfolio.components._widgets.MouseFollowingGradient
-import com.pat.portfolio.components._widgets.Navigation
+import com.pat.portfolio.components._widgets.navigation.Navigation
 import com.pat.portfolio.components.contactSection.ContactModal
 import com.pat.portfolio.core.styles.Theme
 import com.pat.portfolio.core.utils.ObserveViewport

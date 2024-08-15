@@ -2,10 +2,10 @@ package com.pat.portfolio.components.contactSection
 
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.rememberCoroutineScope
+import com.pat.portfolio.components._widgets.buttons.PrimaryButton
 import com.pat.portfolio.components._widgets.inputs.InputElement
-import com.pat.portfolio.components._widgets.inputs.PrimaryButton
 import com.pat.portfolio.components._widgets.inputs.TextareaElement
-import com.pat.portfolio.core.constants.Font.SUBTITLE_SIZE
+import com.pat.portfolio.core.constants.FontSizes.SUBTITLE_SIZE
 import com.pat.portfolio.dtos.EmailJsFormDto
 import com.pat.portfolio.infrastructure.emailJsInfrastructureSendForm
 import com.pat.portfolio.observables.EmailJsObservable

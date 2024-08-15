@@ -2,7 +2,7 @@ package com.pat.portfolio.components.projectsSection
 
 import androidx.compose.runtime.Composable
 import com.pat.portfolio.components._widgets.cards.Card
-import com.pat.portfolio.components._widgets.svgs.SvgWidget
+import com.pat.portfolio.components._widgets.svgs.SvgElement
 import com.pat.portfolio.components._widgets.text.Subtitle
 import com.pat.portfolio.core.styles.Theme
 import com.pat.portfolio.models.Projects
@@ -40,7 +40,7 @@ fun ProjectCard(
                     modifier = Modifier.textAlign(TextAlign.Center),
                     verticalArrangement = Arrangement.Center
                 ) {
-                    SvgWidget(
+                    SvgElement(
                         path = project.svgPath,
                         height = if (breakpoint >= Breakpoint.MD) 250.0 else 100.0,
                         width = if (breakpoint >= Breakpoint.MD) 250.0 else 100.0,

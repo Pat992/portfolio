@@ -1,8 +1,8 @@
 package com.pat.portfolio.components.mainSection
 
 import androidx.compose.runtime.Composable
-import com.pat.portfolio.core.constants.Font.MAIN_TITLE_SIZE
-import com.pat.portfolio.core.constants.Font.MAIN_TITLE_SIZE_SMALL
+import com.pat.portfolio.core.constants.FontSizes.MAIN_TITLE_SIZE
+import com.pat.portfolio.core.constants.FontSizes.MAIN_TITLE_SIZE_SMALL
 import com.pat.portfolio.core.styles.MainSectionTitleStyle
 import com.pat.portfolio.core.styles.titleText
 import com.varabyte.kobweb.compose.css.CSSFloat
