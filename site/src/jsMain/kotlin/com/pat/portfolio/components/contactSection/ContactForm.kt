@@ -2,13 +2,16 @@ package com.pat.portfolio.components.contactSection
 
 import androidx.compose.runtime.*
 import com.pat.portfolio.components._widgets.inputs.InputElement
-import com.pat.portfolio.components._widgets.inputs.InputSubmitElement
+import com.pat.portfolio.components._widgets.inputs.PrimaryButton
 import com.pat.portfolio.components._widgets.inputs.TextareaElement
+import com.pat.portfolio.core.constants.Font.SUBTITLE_SIZE
 import com.varabyte.kobweb.compose.foundation.layout.Column
 import com.varabyte.kobweb.compose.ui.Modifier
 import com.varabyte.kobweb.compose.ui.modifiers.fillMaxWidth
+import com.varabyte.kobweb.compose.ui.modifiers.fontSize
 import com.varabyte.kobweb.compose.ui.modifiers.margin
 import com.varabyte.kobweb.compose.ui.toAttrs
+import com.varabyte.kobweb.silk.components.text.SpanText
 import kotlinx.browser.document
 import org.jetbrains.compose.web.attributes.InputType
 import org.jetbrains.compose.web.css.px
@@ -55,13 +58,18 @@ fun ContactForm() {
                 text = "Message *",
                 isRequired = true
             )
-            InputSubmitElement(
+            PrimaryButton(
                 onSubmit = { event ->
                     message = (document.getElementById("message-textarea") as HTMLTextAreaElement).value
                     println(message)
                     event.preventDefault()
                 },
-                value = "Send message"
+                content = {
+                    SpanText(
+                        modifier = Modifier.fontSize(SUBTITLE_SIZE),
+                        text = "SEND MESSAGE"
+                    )
+                }
             )
         }
     }

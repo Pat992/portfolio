@@ -4,7 +4,7 @@ import androidx.compose.runtime.Composable
 import com.pat.portfolio.core.constants.Font.SUBTITLE_SIZE
 import com.pat.portfolio.core.constants.Font.SUBTITLE_SIZE_SMALL
 import com.pat.portfolio.core.styles.Theme
-import com.pat.portfolio.core.styles.linearGradient
+import com.pat.portfolio.core.styles.linearGradientSmall
 import com.pat.portfolio.core.styles.titleText
 import com.pat.portfolio.core.utils.ObserveViewportData
 import com.pat.portfolio.models.Section
@@ -41,7 +41,7 @@ fun SectionTitle(
             Box(
                 modifier = Modifier
                     .width(if (!onViewportEntered) 0.percent else 100.percent)
-                    .linearGradient()
+                    .linearGradientSmall()
                     .backgroundColor(Theme.MainTextColor.rgb)
                     .transition(Transition.of("width", duration = 500.ms))
             )

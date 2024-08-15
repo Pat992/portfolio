@@ -1,6 +1,7 @@
 package com.pat.portfolio.components._widgets
 
 import androidx.compose.runtime.Composable
+import com.pat.portfolio.core.styles.NavItemStyle
 import com.pat.portfolio.core.styles.glass
 import com.pat.portfolio.core.styles.linearGradient
 import com.pat.portfolio.core.styles.link
@@ -17,6 +18,7 @@ import com.varabyte.kobweb.compose.ui.modifiers.*
 import com.varabyte.kobweb.compose.ui.thenIf
 import com.varabyte.kobweb.compose.ui.toAttrs
 import com.varabyte.kobweb.silk.components.navigation.Link
+import com.varabyte.kobweb.silk.style.toModifier
 import org.jetbrains.compose.web.css.Position
 import org.jetbrains.compose.web.css.percent
 import org.jetbrains.compose.web.css.px
@@ -52,7 +54,8 @@ fun Navigation() {
             modifier = Modifier
                 .fillMaxWidth()
                 .padding(topBottom = 10.px),
-            horizontalArrangement = Arrangement.SpaceBetween
+            horizontalArrangement = Arrangement.SpaceBetween,
+            verticalAlignment = Alignment.CenterVertically
         ) {
             Section
                 .entries
@@ -84,7 +87,8 @@ private fun NavigationItem(section: Section) {
             .borderRadius(20.px)
     ) {
         Link(
-            modifier = Modifier
+            modifier = NavItemStyle
+                .toModifier()
                 .width(250.px)
                 .textAlign(TextAlign.Center)
                 .link(),
