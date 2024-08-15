@@ -31,7 +31,7 @@ fun FooterTechLink(
                 ImageElement(
                     modifier = Modifier.size(25.px),
                     src = tech.iconPath,
-                    alt = tech.techName
+                    alt = ""
                 )
                 Paragraph(text = tech.techName)
             }

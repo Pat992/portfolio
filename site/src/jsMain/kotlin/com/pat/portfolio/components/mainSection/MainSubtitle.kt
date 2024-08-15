@@ -31,7 +31,7 @@ fun MainSubtitle(
                     else -> MAIN_SUBTITLE_SIZE_SMALL
                 }
             )
-            .letterSpacing(1.5.cssRem)
+            .letterSpacing(if (breakpoint >= Breakpoint.MD) 1.5.cssRem else 1.2.cssRem)
             .toAttrs()
     ) {
         Text("PATRICK HETTICH")
