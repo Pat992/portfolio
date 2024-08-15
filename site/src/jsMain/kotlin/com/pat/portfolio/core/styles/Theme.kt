@@ -20,9 +20,9 @@ enum class Theme(
         rgba = null
     ),
     BackgroundColor(
-        hex = "#1D1B36",
-        rgb = rgb(r = 29, g = 27, b = 54),
-        rgba = null
+        hex = "#100F1D",
+        rgb = rgb(r = 16, g = 15, b = 29),
+        rgba = rgba(r = 16, g = 15, b = 29, a = 0.5)
     ),
     SecondaryBackgroundColor(
         hex = "#2F2D46",

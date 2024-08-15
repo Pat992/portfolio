@@ -2,7 +2,7 @@ package com.pat.portfolio.components._widgets
 
 import androidx.compose.runtime.Composable
 import com.pat.portfolio.core.styles.Theme
-import com.pat.portfolio.core.utils.ObserveViewportData
+import com.pat.portfolio.observables.ViewportDataObservable
 import com.varabyte.kobweb.compose.foundation.layout.Box
 import com.varabyte.kobweb.compose.ui.Modifier
 import com.varabyte.kobweb.compose.ui.modifiers.left
@@ -22,8 +22,8 @@ fun MouseFollowingGradient(
         modifier = Modifier
             .size(1200.px)
             .position(Position.Fixed)
-            .top((ObserveViewportData.mousePositionY).px.minus(600.px))
-            .left((ObserveViewportData.mousePositionX).px.minus(600.px))
+            .top((ViewportDataObservable.mousePositionY).px.minus(600.px))
+            .left((ViewportDataObservable.mousePositionX).px.minus(600.px))
             .styleModifier {
                 property(
                     "background",

@@ -5,9 +5,9 @@ import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.mutableStateListOf
 import androidx.compose.runtime.remember
 import com.pat.portfolio.components._widgets.cards.GlassCard
-import com.pat.portfolio.core.utils.ObserveViewportData
 import com.pat.portfolio.core.utils.animateNumber
 import com.pat.portfolio.models.Section
+import com.pat.portfolio.observables.ViewportDataObservable
 import com.varabyte.kobweb.compose.foundation.layout.Column
 import com.varabyte.kobweb.compose.ui.Modifier
 import com.varabyte.kobweb.compose.ui.modifiers.fillMaxSize
@@ -20,13 +20,12 @@ import org.jetbrains.compose.web.css.px
 
 @Composable
 fun LanguagesContent() {
-    val onViewportEntered = ObserveViewportData.sectionId == Section.Languages.id
+    val onViewportEntered = ViewportDataObservable.sectionId == Section.Languages.id
     val animatedPercentage = remember { mutableStateListOf(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0) }
 
     LaunchedEffect(onViewportEntered) {
         if (onViewportEntered) {
             for (i in 0..<animatedPercentage.size) {
-                println(i)
                 animateNumber(
                     number = 50,
                     delay = 1L,

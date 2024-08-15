@@ -5,8 +5,8 @@ import com.pat.portfolio.components._widgets.text.Paragraph
 import com.pat.portfolio.components._widgets.text.Subtitle
 import com.pat.portfolio.components._widgets.text.Title
 import com.pat.portfolio.core.styles.Theme
-import com.pat.portfolio.core.utils.ObserveViewportData
 import com.pat.portfolio.models.Section
+import com.pat.portfolio.observables.ViewportDataObservable
 import com.varabyte.kobweb.compose.css.TextAlign
 import com.varabyte.kobweb.compose.css.Transition
 import com.varabyte.kobweb.compose.css.TransitionProperty
@@ -35,7 +35,7 @@ fun ExperienceItem(
     section: Section
 ) {
     val breakpoint = rememberBreakpoint()
-    val onViewportEntered = ObserveViewportData.sectionId == section.id
+    val onViewportEntered = ViewportDataObservable.sectionId == section.id
     Row(
         modifier = Modifier.height(
             when {

@@ -18,7 +18,7 @@ fun Card(
     theme: Theme = Theme.HighlightColor2
 ) {
     Box(
-        modifier = modifier
+        modifier = Modifier
             .glass()
             .backgroundImage(
                 gradient = radialGradient(
@@ -26,7 +26,8 @@ fun Card(
                     to = Colors.Transparent,
                     position = CSSPosition.BottomRight
                 )
-            ),
+            )
+            .then(modifier),
         contentAlignment = Alignment.Center
     ) {
         content()

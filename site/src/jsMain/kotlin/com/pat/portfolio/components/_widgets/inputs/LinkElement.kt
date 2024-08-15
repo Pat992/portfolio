@@ -1,7 +1,6 @@
 package com.pat.portfolio.components._widgets.inputs
 
 import androidx.compose.runtime.Composable
-import com.pat.portfolio.core.styles.PrimaryButtonStyle
 import com.pat.portfolio.core.styles.PrimaryButtonStyleGradient
 import com.pat.portfolio.core.styles.primaryButton
 import com.pat.portfolio.core.styles.primaryButtonGradient
@@ -22,10 +21,9 @@ fun LinkElement(
     path: String,
 ) {
     Link(
-        modifier = PrimaryButtonStyle
-            .toModifier()
-            .then(modifier)
-            .primaryButton(),
+        modifier = Modifier
+            .primaryButton()
+            .then(modifier),
         path = path,
     ) {
         Box(

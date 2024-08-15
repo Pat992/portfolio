@@ -22,11 +22,12 @@ fun Paragraph(
 ) {
     val breakpoint = rememberBreakpoint()
     P(
-        attrs = modifier
+        attrs = Modifier
             .padding(0.px)
             .margin(0.px)
             .paragraphText()
             .fontSize(if (breakpoint >= Breakpoint.MD) PARAGRAPH_SIZE else PARAGRAPH_SIZE_SMALL)
+            .then(modifier)
             .toAttrs()
     ) {
         Text(text)

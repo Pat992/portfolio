@@ -7,6 +7,7 @@ import com.pat.portfolio.core.styles.glass
 import com.pat.portfolio.core.styles.paragraphText
 import com.pat.portfolio.core.styles.titleText
 import com.varabyte.kobweb.compose.css.Resize
+import com.varabyte.kobweb.compose.foundation.layout.Column
 import com.varabyte.kobweb.compose.ui.Modifier
 import com.varabyte.kobweb.compose.ui.attrsModifier
 import com.varabyte.kobweb.compose.ui.modifiers.*
@@ -14,7 +15,6 @@ import com.varabyte.kobweb.compose.ui.toAttrs
 import com.varabyte.kobweb.silk.style.breakpoint.Breakpoint
 import com.varabyte.kobweb.silk.theme.breakpoint.rememberBreakpoint
 import org.jetbrains.compose.web.css.px
-import org.jetbrains.compose.web.dom.Br
 import org.jetbrains.compose.web.dom.Label
 import org.jetbrains.compose.web.dom.Text
 import org.jetbrains.compose.web.dom.TextArea
@@ -27,14 +27,18 @@ fun TextareaElement(
     isRequired: Boolean = false
 ) {
     val breakpoint = rememberBreakpoint()
-    Label(
-        attrs = Modifier
-            .fillMaxWidth()
-            .paragraphText()
-            .toAttrs()
+    Column(
+        modifier = Modifier.fillMaxWidth()
     ) {
-        Text(text)
-        Br()
+        Label(
+            attrs = Modifier
+                .padding(bottom = 5.px)
+                .paragraphText()
+                .toAttrs(),
+            forId = id
+        ) {
+            Text(text)
+        }
         TextArea(
             attrs = modifier
                 .glass()

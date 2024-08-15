@@ -2,13 +2,25 @@ package com.pat.portfolio.core.styles
 
 import com.varabyte.kobweb.compose.css.Transition
 import com.varabyte.kobweb.compose.ui.Modifier
+import com.varabyte.kobweb.compose.ui.modifiers.color
 import com.varabyte.kobweb.compose.ui.modifiers.opacity
 import com.varabyte.kobweb.compose.ui.modifiers.transition
 import com.varabyte.kobweb.silk.style.CssStyle
 import com.varabyte.kobweb.silk.style.selectors.hover
 import org.jetbrains.compose.web.css.ms
 
-val PrimaryButtonStyleGradient = CssStyle {
+val SecondaryButtonStyle = CssStyle {
+    base {
+        Modifier
+            .color(Theme.MainTextColor.rgb)
+            .transition(Transition.of("color", duration = 200.ms))
+    }
+    hover {
+        Modifier.color(Theme.BackgroundColor.rgb)
+    }
+}
+
+val SecondaryButtonStyleGradient = CssStyle {
     base {
         Modifier
             .opacity(0)

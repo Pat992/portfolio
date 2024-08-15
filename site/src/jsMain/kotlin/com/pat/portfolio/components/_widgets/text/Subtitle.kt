@@ -22,13 +22,14 @@ fun Subtitle(
 ) {
     val breakpoint = rememberBreakpoint()
     H4(
-        attrs = modifier
+        attrs = Modifier
             .padding(0.px)
             .margin(0.px)
             .paragraphText()
             .color(Theme.SecondaryTextColor.rgb)
             .fontWeight(FontWeight.Normal)
             .fontSize(if (breakpoint >= Breakpoint.MD) SUBTITLE_SIZE else SUBTITLE_SIZE_SMALL)
+            .then(modifier)
             .toAttrs()
     ) {
         Text(text)

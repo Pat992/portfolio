@@ -5,9 +5,9 @@ import com.pat.portfolio.components._widgets.cards.Card
 import com.pat.portfolio.components._widgets.svgs.SvgWidget
 import com.pat.portfolio.components._widgets.text.Subtitle
 import com.pat.portfolio.core.styles.Theme
-import com.pat.portfolio.core.utils.ObserveViewportData
 import com.pat.portfolio.models.Projects
 import com.pat.portfolio.models.Section
+import com.pat.portfolio.observables.ViewportDataObservable
 import com.varabyte.kobweb.compose.css.TextAlign
 import com.varabyte.kobweb.compose.css.Transition
 import com.varabyte.kobweb.compose.foundation.layout.Arrangement
@@ -28,7 +28,7 @@ fun ProjectCard(
     index: Int,
 ) {
     val breakpoint = rememberBreakpoint()
-    val onViewportEntered = ObserveViewportData.sectionId == Section.Projects.id
+    val onViewportEntered = ViewportDataObservable.sectionId == Section.Projects.id
     Box {
         Card(
             modifier = Modifier

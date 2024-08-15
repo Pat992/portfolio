@@ -6,8 +6,8 @@ import com.pat.portfolio.core.constants.Font.SUBTITLE_SIZE_SMALL
 import com.pat.portfolio.core.styles.Theme
 import com.pat.portfolio.core.styles.linearGradientSmall
 import com.pat.portfolio.core.styles.titleText
-import com.pat.portfolio.core.utils.ObserveViewportData
 import com.pat.portfolio.models.Section
+import com.pat.portfolio.observables.ViewportDataObservable
 import com.varabyte.kobweb.compose.css.Transition
 import com.varabyte.kobweb.compose.foundation.layout.Box
 import com.varabyte.kobweb.compose.foundation.layout.Column
@@ -27,7 +27,7 @@ fun SectionTitle(
     section: Section,
 ) {
     val breakpoint = rememberBreakpoint()
-    val onViewportEntered = ObserveViewportData.sectionId == section.id
+    val onViewportEntered = ViewportDataObservable.sectionId == section.id
     Column {
         H3(
             attrs = Modifier

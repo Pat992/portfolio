@@ -5,8 +5,8 @@ import com.pat.portfolio.core.styles.NavItemStyle
 import com.pat.portfolio.core.styles.glass
 import com.pat.portfolio.core.styles.linearGradient
 import com.pat.portfolio.core.styles.link
-import com.pat.portfolio.core.utils.ObserveViewportData
 import com.pat.portfolio.models.Section
+import com.pat.portfolio.observables.ViewportDataObservable
 import com.varabyte.kobweb.compose.css.TextAlign
 import com.varabyte.kobweb.compose.foundation.layout.Arrangement
 import com.varabyte.kobweb.compose.foundation.layout.Box
@@ -28,7 +28,7 @@ import org.jetbrains.compose.web.dom.Nav
 fun Navigation() {
     Nav(
         attrs = Modifier
-            .zIndex(100)
+            .zIndex(50)
             .glass()
             .borderRadius(50.px)
             .padding(leftRight = 10.px)
@@ -46,7 +46,7 @@ fun Navigation() {
             Box(
                 modifier = Modifier
                     .backgroundColor(Colors.Red)
-                    .width((ObserveViewportData.scrollPercentage * 100).percent)
+                    .width((ViewportDataObservable.scrollPercentage * 100).percent)
                     .linearGradient()
             )
         }
@@ -76,7 +76,7 @@ fun Navigation() {
 
 @Composable
 private fun NavigationItem(section: Section) {
-    val isCurrentSection = ObserveViewportData.sectionId == section.id
+    val isCurrentSection = ViewportDataObservable.sectionId == section.id
     Box(
         modifier = Modifier
             .thenIf(

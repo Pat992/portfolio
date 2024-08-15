@@ -3,9 +3,12 @@ package com.pat.portfolio.pages
 import androidx.compose.runtime.Composable
 import com.pat.portfolio.components._widgets.MouseFollowingGradient
 import com.pat.portfolio.components._widgets.Navigation
+import com.pat.portfolio.components.contactSection.ContactModal
 import com.pat.portfolio.core.styles.Theme
 import com.pat.portfolio.core.utils.ObserveViewport
-import com.pat.portfolio.core.utils.ObserveViewportData
+import com.pat.portfolio.observables.EmailJsObservable
+import com.pat.portfolio.observables.SendingStatus
+import com.pat.portfolio.observables.ViewportDataObservable
 import com.pat.portfolio.sections.*
 import com.varabyte.kobweb.compose.css.Overflow
 import com.varabyte.kobweb.compose.foundation.layout.Box
@@ -26,17 +29,16 @@ fun HomePage() {
     ObserveViewport(
         threshold = window.innerHeight * 0.5,
         onScrollChanged = { elementId ->
-            ObserveViewportData.sectionId = elementId
+            ViewportDataObservable.sectionId = elementId
         },
         onScrollPercentageChanged = { scrollPercentage ->
-            ObserveViewportData.scrollPercentage = scrollPercentage
+            ViewportDataObservable.scrollPercentage = scrollPercentage
         },
         onMousePositionChanged = { posY, posX ->
-            ObserveViewportData.mousePositionY = posY
-            ObserveViewportData.mousePositionX = posX
+            ViewportDataObservable.mousePositionY = posY
+            ViewportDataObservable.mousePositionX = posX
         }
     )
-
     Box(
         modifier = Modifier
             .fillMaxSize()
@@ -44,6 +46,8 @@ fun HomePage() {
             .overflow(Overflow.Hidden),
         contentAlignment = Alignment.Center
     ) {
+        if (EmailJsObservable.sendingStatus != SendingStatus.NULL)
+            ContactModal()
         MouseFollowingGradient()
         Column(
             modifier = Modifier.fillMaxWidth(90.percent)

@@ -43,7 +43,25 @@ fun Modifier.glass(): Modifier {
         .borderRadius(15.px)
 }
 
+fun Modifier.darkGlass(): Modifier {
+    return this
+        .backdropFilter(blur(10.px), saturate(180.percent))
+        .backgroundColor(Theme.BackgroundColor.rgba!!)
+}
+
 fun Modifier.primaryButton(): Modifier {
+    return this
+        .glass()
+        .backgroundColor(Theme.HighlightColor1.rgb)
+        .color(Theme.BackgroundColor.rgb)
+        .link()
+        .padding(all = 20.px)
+        .height(Height.MaxContent)
+        .width(Width.MaxContent)
+        .textAlign(TextAlign.Center)
+}
+
+fun Modifier.secondaryButton(): Modifier {
     return this
         .glass()
         .link()
