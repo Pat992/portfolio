@@ -1,4 +1,4 @@
-package com.pat.portfolio.components.languagesSection
+package com.pat.portfolio.components.indexPage.languagesSection
 
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect

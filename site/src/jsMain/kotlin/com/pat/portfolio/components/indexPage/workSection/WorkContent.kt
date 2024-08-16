@@ -1,10 +1,10 @@
-package com.pat.portfolio.components.eductationSection
+package com.pat.portfolio.components.indexPage.workSection
 
 import androidx.compose.runtime.Composable
 import com.pat.portfolio.components._widgets.cards.Card
 import com.pat.portfolio.components._widgets.text.Paragraph
 import com.pat.portfolio.core.styles.Theme
-import com.pat.portfolio.models.Education
+import com.pat.portfolio.models.WorkExperience
 import com.varabyte.kobweb.compose.foundation.layout.Column
 import com.varabyte.kobweb.compose.ui.Modifier
 import com.varabyte.kobweb.compose.ui.modifiers.fillMaxWidth
@@ -14,18 +14,18 @@ import com.varabyte.kobweb.silk.components.layout.numColumns
 import org.jetbrains.compose.web.css.px
 
 @Composable
-fun EducationContent() {
+fun WorkContent() {
     SimpleGrid(
         modifier = Modifier.fillMaxWidth(),
-        numColumns = numColumns(base = 1, md = 2)
+        numColumns = numColumns(base = 1, md = 2),
     ) {
         Column(
             modifier = Modifier.fillMaxWidth()
         ) {
-            Education.entries.forEach { education ->
-                EducationItem(
-                    education = education,
-                    index = education.ordinal
+            WorkExperience.entries.forEach { we ->
+                WorkItem(
+                    workExperience = we,
+                    index = we.ordinal
                 )
             }
         }

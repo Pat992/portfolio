@@ -1,4 +1,4 @@
-package com.pat.portfolio.components.mainSection
+package com.pat.portfolio.components.indexPage.mainSection
 
 import androidx.compose.runtime.Composable
 import com.pat.portfolio.core.constants.FontSizes.MAIN_TITLE_SIZE

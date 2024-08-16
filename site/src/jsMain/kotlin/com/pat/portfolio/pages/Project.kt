@@ -1,26 +1,28 @@
 package com.pat.portfolio.pages
 
-import androidx.compose.runtime.Composable
-import androidx.compose.runtime.LaunchedEffect
-import com.pat.portfolio.components._widgets.navigation.Navigation
+import androidx.compose.runtime.*
 import com.pat.portfolio.components._widgets.wrappers.PageWrapper
+import com.pat.portfolio.components.projectPage.ProjectContent
 import com.pat.portfolio.core.utils.ObserveViewport
-import com.pat.portfolio.observables.GithubObservable
-import com.pat.portfolio.observables.RequestStatus
+import com.pat.portfolio.models.Projects
 import com.pat.portfolio.observables.ViewportDataObservable
-import com.pat.portfolio.repositories.githubRepositoryGetLanguages
-import com.pat.portfolio.sections.*
 import com.varabyte.kobweb.core.Page
+import com.varabyte.kobweb.core.rememberPageContext
 import kotlinx.browser.window
 
-@Page
+@Page("project/{project-id}")
 @Composable
-fun HomePage() {
-    LaunchedEffect(Unit) {
-        if (GithubObservable.requestStatus != RequestStatus.SUCCESS)
-            githubRepositoryGetLanguages()
-    }
+fun ProjectPage() {
+    val context = rememberPageContext()
+    val projectId = context.route.params.getValue("project-id")
+    var project: Projects? by remember { mutableStateOf(null) }
 
+    LaunchedEffect(Unit) {
+        project = Projects.entries.firstOrNull { it.id == projectId }
+        if (project == null) {
+            context.router.navigateTo("/")
+        }
+    }
     ObserveViewport(
         threshold = window.innerHeight * 0.5,
         onScrollChanged = { elementId ->
@@ -35,13 +37,8 @@ fun HomePage() {
         }
     )
     PageWrapper {
-        Navigation()
-        MainSection()
-        LanguagesSection()
-        ProjectsSection()
-        WorkSection()
-        EducationSection()
-        ContactSection()
-        FooterSection()
+        if (project != null) {
+            ProjectContent(project = project!!)
+        }
     }
 }

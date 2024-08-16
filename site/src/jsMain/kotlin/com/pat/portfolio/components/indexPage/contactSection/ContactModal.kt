@@ -1,4 +1,4 @@
-package com.pat.portfolio.components.contactSection
+package com.pat.portfolio.components.indexPage.contactSection
 
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.rememberCoroutineScope

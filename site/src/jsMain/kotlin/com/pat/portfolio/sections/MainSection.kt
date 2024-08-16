@@ -1,10 +1,10 @@
 package com.pat.portfolio.sections
 
 import androidx.compose.runtime.Composable
-import com.pat.portfolio.components._widgets.SectionWrapper
 import com.pat.portfolio.components._widgets.buttons.PrimaryLinkElement
-import com.pat.portfolio.components.mainSection.MainSubtitle
-import com.pat.portfolio.components.mainSection.MainTitle
+import com.pat.portfolio.components._widgets.wrappers.SectionWrapper
+import com.pat.portfolio.components.indexPage.mainSection.MainSubtitle
+import com.pat.portfolio.components.indexPage.mainSection.MainTitle
 import com.pat.portfolio.core.constants.FontSizes.SUBTITLE_SIZE
 import com.pat.portfolio.models.Section
 import com.varabyte.kobweb.compose.foundation.layout.Box
@@ -22,7 +22,7 @@ fun MainSection() {
         section = Section.Main
     ) {
         MainTitle(breakpoint = breakpoint)
-        MainSubtitle(breakpoint = breakpoint)
+        MainSubtitle(title = "PATRICK HETTICH", breakpoint = breakpoint)
         Box(
             modifier = Modifier.fillMaxWidth(),
             contentAlignment = Alignment.Center

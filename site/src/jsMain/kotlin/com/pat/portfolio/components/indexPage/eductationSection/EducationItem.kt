@@ -1,4 +1,4 @@
-package com.pat.portfolio.components.eductationSection
+package com.pat.portfolio.components.indexPage.eductationSection
 
 import androidx.compose.runtime.Composable
 import com.pat.portfolio.components._widgets.ExperienceItem

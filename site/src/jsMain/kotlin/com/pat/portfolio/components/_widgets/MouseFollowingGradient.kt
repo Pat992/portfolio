@@ -20,7 +20,7 @@ fun MouseFollowingGradient(
 ) {
     Box(
         modifier = Modifier
-            .size(1200.px)
+            .size(1250.px)
             .position(Position.Fixed)
             .top((ViewportDataObservable.mousePositionY).px.minus(600.px))
             .left((ViewportDataObservable.mousePositionX).px.minus(600.px))

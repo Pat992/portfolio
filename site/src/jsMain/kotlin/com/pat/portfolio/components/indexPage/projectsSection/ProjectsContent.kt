@@ -1,4 +1,4 @@
-package com.pat.portfolio.components.projectsSection
+package com.pat.portfolio.components.indexPage.projectsSection
 
 import androidx.compose.runtime.Composable
 import com.pat.portfolio.models.Projects

@@ -1,4 +1,4 @@
-package com.pat.portfolio.components.footerSection
+package com.pat.portfolio.components.indexPage.footerSection
 
 import androidx.compose.runtime.Composable
 import com.pat.portfolio.components._widgets.ImageElement

@@ -1,7 +1,7 @@
 package com.pat.portfolio.sections
 
 import androidx.compose.runtime.Composable
-import com.pat.portfolio.components.footerSection.FooterContent
+import com.pat.portfolio.components.indexPage.footerSection.FooterContent
 import com.varabyte.kobweb.compose.css.Overflow
 import com.varabyte.kobweb.compose.foundation.layout.Box
 import com.varabyte.kobweb.compose.ui.Modifier

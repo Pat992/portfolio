@@ -15,7 +15,7 @@ enum class Section(
     Languages(
         id = "languages",
         title = "PROGRAMMING LANGUAGES",
-        subtitle = "Most used programming languages according to my Github public repositories",
+        subtitle = "Most used languages on my public GitHub repositories.",
         path = "#languages"
     ),
     Projects(

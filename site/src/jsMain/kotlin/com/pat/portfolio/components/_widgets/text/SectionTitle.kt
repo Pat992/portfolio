@@ -6,7 +6,6 @@ import com.pat.portfolio.core.constants.FontSizes.SUBTITLE_SIZE_SMALL
 import com.pat.portfolio.core.styles.Theme
 import com.pat.portfolio.core.styles.linearGradientSmall
 import com.pat.portfolio.core.styles.titleText
-import com.pat.portfolio.models.Section
 import com.pat.portfolio.observables.ViewportDataObservable
 import com.varabyte.kobweb.compose.css.Transition
 import com.varabyte.kobweb.compose.foundation.layout.Box
@@ -24,10 +23,11 @@ import org.jetbrains.compose.web.dom.Text
 
 @Composable
 fun SectionTitle(
-    section: Section,
+    id: String,
+    title: String
 ) {
     val breakpoint = rememberBreakpoint()
-    val onViewportEntered = ViewportDataObservable.sectionId == section.id
+    val onViewportEntered = ViewportDataObservable.sectionId == id
     Column {
         H3(
             attrs = Modifier
@@ -37,7 +37,7 @@ fun SectionTitle(
                 .fontSize(if (breakpoint >= Breakpoint.MD) SUBTITLE_SIZE else SUBTITLE_SIZE_SMALL)
                 .toAttrs(),
         ) {
-            Text(section.title)
+            Text(title)
             Box(
                 modifier = Modifier
                     .width(if (!onViewportEntered) 0.percent else 100.percent)

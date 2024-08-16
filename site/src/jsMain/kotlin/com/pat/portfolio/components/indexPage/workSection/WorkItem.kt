@@ -1,4 +1,4 @@
-package com.pat.portfolio.components.workSection
+package com.pat.portfolio.components.indexPage.workSection
 
 import androidx.compose.runtime.Composable
 import com.pat.portfolio.components._widgets.ExperienceItem

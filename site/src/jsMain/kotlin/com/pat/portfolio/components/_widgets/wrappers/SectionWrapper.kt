@@ -1,4 +1,4 @@
-package com.pat.portfolio.components._widgets
+package com.pat.portfolio.components._widgets.wrappers
 
 import androidx.compose.runtime.Composable
 import com.pat.portfolio.components._widgets.text.SectionTitle
@@ -31,7 +31,8 @@ fun SectionWrapper(
             modifier = Modifier.fillMaxWidth()
         ) {
             SectionTitle(
-                section = section,
+                id = section.id,
+                title = section.title
             )
             content()
         }

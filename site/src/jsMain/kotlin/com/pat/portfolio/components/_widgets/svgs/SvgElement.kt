@@ -22,9 +22,10 @@ fun SvgElement(
     modifier: Modifier = Modifier
 ) {
     Svg(
-        attrs = modifier
+        attrs = Modifier
             .height(height.px)
             .width(width.px)
+            .then(modifier)
             .toAttrs {
                 attr("viewBox", viewBoxValue)
             }

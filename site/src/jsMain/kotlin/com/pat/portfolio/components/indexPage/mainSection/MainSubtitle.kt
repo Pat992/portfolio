@@ -1,4 +1,4 @@
-package com.pat.portfolio.components.mainSection
+package com.pat.portfolio.components.indexPage.mainSection
 
 import androidx.compose.runtime.Composable
 import com.pat.portfolio.core.constants.FontSizes.MAIN_SUBTITLE_SIZE
@@ -18,7 +18,9 @@ import org.jetbrains.compose.web.dom.Text
 
 @Composable
 fun MainSubtitle(
-    breakpoint: Breakpoint
+    breakpoint: Breakpoint,
+    title: String,
+    modifier: Modifier = Modifier
 ) {
     H2(
         attrs = Modifier
@@ -32,8 +34,9 @@ fun MainSubtitle(
                 }
             )
             .letterSpacing(if (breakpoint >= Breakpoint.MD) 1.5.cssRem else 1.2.cssRem)
+            .then(modifier)
             .toAttrs()
     ) {
-        Text("PATRICK HETTICH")
+        Text(title)
     }
 }

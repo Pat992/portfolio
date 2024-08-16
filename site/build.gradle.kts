@@ -1,4 +1,6 @@
 import com.varabyte.kobweb.gradle.application.util.configAsKobwebApplication
+import kotlinx.html.style
+import kotlinx.html.unsafe
 import org.jetbrains.kotlin.gradle.ExperimentalKotlinGradlePluginApi
 
 plugins {
@@ -16,6 +18,13 @@ kobweb {
     app {
         index {
             description.set("Powered by Kobweb")
+            head.add {
+                style {
+                    unsafe {
+                        raw("@import url(\"/styles/splide-min.css\") layer(splide)")
+                    }
+                }
+            }
         }
 
     }
@@ -38,9 +47,9 @@ kotlin {
             implementation(libs.kobweb.core)
             implementation(libs.kobweb.silk)
             implementation(libs.kotlinx.serialization)
+            implementation(npm("@splidejs/splide", "4.1.4"))
             // implementation(libs.silk.icons.fa)
             // implementation(libs.kobwebx.markdown)
-
         }
     }
 }

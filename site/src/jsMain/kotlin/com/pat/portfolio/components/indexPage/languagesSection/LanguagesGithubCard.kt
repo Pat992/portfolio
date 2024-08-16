@@ -1,10 +1,11 @@
-package com.pat.portfolio.components.languagesSection
+package com.pat.portfolio.components.indexPage.languagesSection
 
 import androidx.compose.runtime.Composable
 import com.pat.portfolio.components._widgets.cards.Card
 import com.pat.portfolio.components._widgets.svgs.GithubSvg
 import com.pat.portfolio.components._widgets.text.Subtitle
 import com.pat.portfolio.core.styles.Theme
+import com.pat.portfolio.models.Section
 import com.varabyte.kobweb.compose.css.TextAlign
 import com.varabyte.kobweb.compose.foundation.layout.Arrangement
 import com.varabyte.kobweb.compose.foundation.layout.Column
@@ -36,7 +37,7 @@ fun LanguagesGithubCard() {
                     height = if (breakpoint >= Breakpoint.LG) 210.0 else 180.0,
                     width = if (breakpoint >= Breakpoint.LG) 210.0 else 180.0,
                 )
-                Subtitle(text = "My most used languages on GitHub")
+                Subtitle(text = Section.Languages.subtitle)
             }
         }
     )
