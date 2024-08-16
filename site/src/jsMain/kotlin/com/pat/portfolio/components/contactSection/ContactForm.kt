@@ -6,10 +6,8 @@ import com.pat.portfolio.components._widgets.buttons.PrimaryButton
 import com.pat.portfolio.components._widgets.inputs.InputElement
 import com.pat.portfolio.components._widgets.inputs.TextareaElement
 import com.pat.portfolio.core.constants.FontSizes.SUBTITLE_SIZE
-import com.pat.portfolio.dtos.EmailJsFormDto
-import com.pat.portfolio.infrastructure.emailJsInfrastructureSendForm
 import com.pat.portfolio.observables.EmailJsObservable
-import com.pat.portfolio.observables.SendingStatus
+import com.pat.portfolio.repositories.emailJsRepositorySendEmail
 import com.varabyte.kobweb.compose.foundation.layout.Column
 import com.varabyte.kobweb.compose.ui.Modifier
 import com.varabyte.kobweb.compose.ui.modifiers.fillMaxWidth
@@ -24,7 +22,6 @@ import org.jetbrains.compose.web.attributes.InputType
 import org.jetbrains.compose.web.css.px
 import org.jetbrains.compose.web.dom.Form
 import org.w3c.dom.HTMLFormElement
-import org.w3c.dom.HTMLTextAreaElement
 
 @Composable
 fun ContactForm() {
@@ -72,18 +69,8 @@ fun ContactForm() {
                     event.preventDefault()
                     val form = (document.getElementById("contact_form") as HTMLFormElement)
                     if (form.checkValidity()) {
-                        EmailJsObservable.message = (document.getElementById("message") as HTMLTextAreaElement).value
-
-                        val emailJsFormDto = EmailJsFormDto(
-                            name = EmailJsObservable.name,
-                            email = EmailJsObservable.email,
-                            message = EmailJsObservable.message
-                        )
                         scope.launch {
-                            EmailJsObservable.sendingStatus = SendingStatus.SENDING
-                            val res = emailJsInfrastructureSendForm(emailJsFormDto)
-                            if (res) EmailJsObservable.sendingStatus = SendingStatus.SUCCESS
-                            else EmailJsObservable.sendingStatus = SendingStatus.FAILURE
+                            emailJsRepositorySendEmail()
                         }
                     } else {
                         form.reportValidity()

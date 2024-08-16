@@ -3,7 +3,7 @@ package com.pat.portfolio.components.footerSection
 import androidx.compose.runtime.Composable
 import com.pat.portfolio.components._widgets.cards.GlassCard
 import com.pat.portfolio.components._widgets.text.Subtitle
-import com.pat.portfolio.models.Tech
+import com.pat.portfolio.models.IconLinks
 import com.varabyte.kobweb.compose.foundation.layout.Arrangement
 import com.varabyte.kobweb.compose.foundation.layout.Column
 import com.varabyte.kobweb.compose.foundation.layout.Row
@@ -33,11 +33,15 @@ fun FooterContent() {
                 horizontalAlignment = Alignment.CenterHorizontally
             ) {
                 Subtitle(modifier = Modifier.margin(bottom = 25.px), text = "Built with")
-                FooterTechLink(Tech.Kotlin)
-                FooterTechLink(Tech.Kobweb)
+                FooterLinkItem(IconLinks.Kotlin)
+                FooterLinkItem(IconLinks.Kobweb)
             }
-            Column {
-                Subtitle(text = "Contact")
+            Column(
+                horizontalAlignment = Alignment.CenterHorizontally
+            ) {
+                Subtitle(modifier = Modifier.margin(bottom = 25.px), text = "Contact")
+                FooterLinkItem(IconLinks.Github)
+                FooterLinkItem(IconLinks.Linkedin)
             }
         }
     }

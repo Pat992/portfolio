@@ -13,10 +13,11 @@ import com.pat.portfolio.core.constants.SvgPaths.ERROR_PATH
 import com.pat.portfolio.core.constants.SvgPaths.SENDING_PATH
 import com.pat.portfolio.core.constants.SvgPaths.SUCCESS_PATH
 import com.pat.portfolio.core.styles.Theme
-import com.pat.portfolio.dtos.EmailJsFormDto
-import com.pat.portfolio.infrastructure.emailJsInfrastructureSendForm
 import com.pat.portfolio.observables.EmailJsObservable
 import com.pat.portfolio.observables.SendingStatus
+import com.pat.portfolio.repositories.emailJsRepositoryCancelRetry
+import com.pat.portfolio.repositories.emailJsRepositoryOnSuccessResetForm
+import com.pat.portfolio.repositories.emailJsRepositorySendEmail
 import com.varabyte.kobweb.compose.foundation.layout.Arrangement
 import com.varabyte.kobweb.compose.foundation.layout.Column
 import com.varabyte.kobweb.compose.foundation.layout.Row
@@ -24,10 +25,8 @@ import com.varabyte.kobweb.compose.ui.Alignment
 import com.varabyte.kobweb.compose.ui.Modifier
 import com.varabyte.kobweb.compose.ui.modifiers.*
 import com.varabyte.kobweb.silk.components.text.SpanText
-import kotlinx.browser.document
 import kotlinx.coroutines.launch
 import org.jetbrains.compose.web.css.px
-import org.w3c.dom.HTMLTextAreaElement
 
 @Composable
 fun ContactModal() {
@@ -68,11 +67,7 @@ fun ContactModal() {
                         PrimaryButton(
                             modifier = Modifier.fillMaxWidth(),
                             onSubmit = {
-                                (document.getElementById("message") as HTMLTextAreaElement).value = ""
-                                EmailJsObservable.name = ""
-                                EmailJsObservable.email = ""
-                                EmailJsObservable.message = ""
-                                EmailJsObservable.sendingStatus = SendingStatus.NULL
+                                emailJsRepositoryOnSuccessResetForm()
                             },
                             content = {
                                 SpanText(modifier = Modifier.fontSize(SUBTITLE_SIZE), text = "Close")
@@ -86,16 +81,8 @@ fun ContactModal() {
                             PrimaryButton(
                                 modifier = Modifier.fillMaxWidth().margin(right = 7.5.px),
                                 onSubmit = {
-                                    val emailJsFormDto = EmailJsFormDto(
-                                        name = EmailJsObservable.name,
-                                        email = EmailJsObservable.email,
-                                        message = EmailJsObservable.message
-                                    )
                                     scope.launch {
-                                        EmailJsObservable.sendingStatus = SendingStatus.SENDING
-                                        val res = emailJsInfrastructureSendForm(emailJsFormDto)
-                                        if (res) EmailJsObservable.sendingStatus = SendingStatus.SUCCESS
-                                        else EmailJsObservable.sendingStatus = SendingStatus.FAILURE
+                                        emailJsRepositorySendEmail()
                                     }
                                 },
                                 content = {
@@ -105,7 +92,7 @@ fun ContactModal() {
                             SecondaryButton(
                                 modifier = Modifier.fillMaxWidth().margin(left = 7.5.px),
                                 onSubmit = {
-                                    EmailJsObservable.sendingStatus = SendingStatus.NULL
+                                    emailJsRepositoryCancelRetry()
                                 },
                                 content = {
                                     SpanText(modifier = Modifier.fontSize(SUBTITLE_SIZE), text = "Cancel")
