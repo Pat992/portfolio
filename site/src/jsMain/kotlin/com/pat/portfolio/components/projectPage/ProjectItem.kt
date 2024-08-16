@@ -49,8 +49,6 @@ fun ProjectItem(
                                         modifier = Modifier
                                             .borderRadius(15.px)
                                             .width(100.percent),
-                                        //.objectFit(ObjectFit.Cover)
-                                        // .height(300.px),
                                         src = image,
                                         alt = ""
                                     )
@@ -64,7 +62,7 @@ fun ProjectItem(
                         ImageElement(
                             modifier = Modifier
                                 .borderRadius(15.px)
-                                .size(70.px),
+                                .width(70.px),
                             src = subProject.icon,
                             alt = subProject.title
                         )

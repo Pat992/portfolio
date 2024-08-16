@@ -10,11 +10,11 @@ import com.varabyte.kobweb.core.Page
 import com.varabyte.kobweb.core.rememberPageContext
 import kotlinx.browser.window
 
-@Page("project/{project-id}")
+@Page("project")
 @Composable
 fun ProjectPage() {
     val context = rememberPageContext()
-    val projectId = context.route.params.getValue("project-id")
+    val projectId = context.route.params["id"]
     var project: Projects? by remember { mutableStateOf(null) }
 
     LaunchedEffect(Unit) {

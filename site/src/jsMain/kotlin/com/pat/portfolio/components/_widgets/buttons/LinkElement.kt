@@ -17,6 +17,7 @@ import org.jetbrains.compose.web.css.px
 @Composable
 fun LinkElement(
     modifier: Modifier = Modifier,
+    linkModifier: Modifier = Modifier,
     path: String,
     content: @Composable () -> Unit
 ) {
@@ -31,7 +32,8 @@ fun LinkElement(
             modifier = NavItemStyle
                 .toModifier()
                 .textAlign(TextAlign.Center)
-                .link(),
+                .link()
+                .then(linkModifier),
             path = path,
         ) {
             content()

@@ -40,7 +40,7 @@ fun ProjectCard(
             .onMouseEnter { svgColor = Theme.HighlightColor4.hex }
             .onMouseLeave { svgColor = Theme.SecondaryTextColor.hex }
             .onClick {
-                context.router.navigateTo("/project/${project.id}")
+                context.router.navigateTo("/project?id=${project.id}")
             }
     ) {
         Card(
