@@ -14,7 +14,7 @@ import com.pat.portfolio.core.constants.SvgPaths.SENDING_PATH
 import com.pat.portfolio.core.constants.SvgPaths.SUCCESS_PATH
 import com.pat.portfolio.core.styles.Theme
 import com.pat.portfolio.observables.EmailJsObservable
-import com.pat.portfolio.observables.SendingStatus
+import com.pat.portfolio.observables.RequestStatus
 import com.pat.portfolio.repositories.emailJsRepositoryCancelRetry
 import com.pat.portfolio.repositories.emailJsRepositoryOnSuccessResetForm
 import com.pat.portfolio.repositories.emailJsRepositorySendEmail
@@ -44,9 +44,9 @@ fun ContactModal() {
                 ) {
                     SvgElement(
                         path = when (sendingStatus) {
-                            SendingStatus.SENDING -> SENDING_PATH
-                            SendingStatus.SUCCESS -> SUCCESS_PATH
-                            SendingStatus.FAILURE -> ERROR_PATH
+                            RequestStatus.LOADING -> SENDING_PATH
+                            RequestStatus.SUCCESS -> SUCCESS_PATH
+                            RequestStatus.FAILURE -> ERROR_PATH
                             else -> ""
                         },
                         height = 200.0,
@@ -57,13 +57,13 @@ fun ContactModal() {
                     Subtitle(
                         modifier = Modifier.padding(topBottom = 15.px),
                         text = when (sendingStatus) {
-                            SendingStatus.SENDING -> "Sending message..."
-                            SendingStatus.SUCCESS -> "Your message has been sent successfully."
-                            SendingStatus.FAILURE -> "Failed to send your message, please try again."
-                            SendingStatus.NULL -> ""
+                            RequestStatus.LOADING -> "Sending message..."
+                            RequestStatus.SUCCESS -> "Your message has been sent successfully."
+                            RequestStatus.FAILURE -> "Failed to send your message, please try again."
+                            RequestStatus.NULL -> ""
                         }
                     )
-                    if (sendingStatus == SendingStatus.SUCCESS)
+                    if (sendingStatus == RequestStatus.SUCCESS)
                         PrimaryButton(
                             modifier = Modifier.fillMaxWidth(),
                             onSubmit = {
@@ -73,7 +73,7 @@ fun ContactModal() {
                                 SpanText(modifier = Modifier.fontSize(SUBTITLE_SIZE), text = "Close")
                             }
                         )
-                    if (sendingStatus == SendingStatus.FAILURE)
+                    if (sendingStatus == RequestStatus.FAILURE)
                         Row(
                             modifier = Modifier.fillMaxWidth(),
                             horizontalArrangement = Arrangement.SpaceBetween

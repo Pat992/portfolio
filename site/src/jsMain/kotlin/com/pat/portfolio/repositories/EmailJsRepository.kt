@@ -1,9 +1,9 @@
 package com.pat.portfolio.repositories
 
 import com.pat.portfolio.dtos.EmailJsFormDto
-import com.pat.portfolio.infrastructure.emailJsInfrastructureSendForm
+import com.pat.portfolio.infrastructure.emailJsInfrastructurePostForm
 import com.pat.portfolio.observables.EmailJsObservable
-import com.pat.portfolio.observables.SendingStatus
+import com.pat.portfolio.observables.RequestStatus
 import kotlinx.browser.document
 import org.w3c.dom.HTMLTextAreaElement
 
@@ -16,14 +16,14 @@ suspend fun emailJsRepositorySendEmail() {
         message = EmailJsObservable.message
     )
 
-    EmailJsObservable.sendingStatus = SendingStatus.SENDING
-    val res = emailJsInfrastructureSendForm(emailJsFormDto)
-    if (res) EmailJsObservable.sendingStatus = SendingStatus.SUCCESS
-    else EmailJsObservable.sendingStatus = SendingStatus.FAILURE
+    EmailJsObservable.sendingStatus = RequestStatus.LOADING
+    val res = emailJsInfrastructurePostForm(emailJsFormDto)
+    if (res) EmailJsObservable.sendingStatus = RequestStatus.SUCCESS
+    else EmailJsObservable.sendingStatus = RequestStatus.FAILURE
 }
 
 fun emailJsRepositoryCancelRetry() {
-    EmailJsObservable.sendingStatus = SendingStatus.NULL
+    EmailJsObservable.sendingStatus = RequestStatus.NULL
 }
 
 fun emailJsRepositoryOnSuccessResetForm() {
@@ -31,5 +31,5 @@ fun emailJsRepositoryOnSuccessResetForm() {
     EmailJsObservable.name = ""
     EmailJsObservable.email = ""
     EmailJsObservable.message = ""
-    EmailJsObservable.sendingStatus = SendingStatus.NULL
+    EmailJsObservable.sendingStatus = RequestStatus.NULL
 }

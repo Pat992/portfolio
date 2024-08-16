@@ -8,12 +8,5 @@ data object EmailJsObservable {
     var name by mutableStateOf("")
     var email by mutableStateOf("")
     var message by mutableStateOf("")
-    var sendingStatus by mutableStateOf(SendingStatus.NULL)
-}
-
-enum class SendingStatus {
-    NULL,
-    SENDING,
-    SUCCESS,
-    FAILURE
+    var sendingStatus by mutableStateOf(RequestStatus.NULL)
 }

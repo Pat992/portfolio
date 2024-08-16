@@ -7,6 +7,7 @@ import androidx.compose.runtime.remember
 import com.pat.portfolio.components._widgets.cards.GlassCard
 import com.pat.portfolio.core.utils.animateNumber
 import com.pat.portfolio.models.Section
+import com.pat.portfolio.observables.GithubObservable
 import com.pat.portfolio.observables.ViewportDataObservable
 import com.varabyte.kobweb.compose.foundation.layout.Column
 import com.varabyte.kobweb.compose.ui.Modifier
@@ -17,17 +18,22 @@ import com.varabyte.kobweb.silk.components.layout.SimpleGrid
 import com.varabyte.kobweb.silk.components.layout.numColumns
 import org.jetbrains.compose.web.css.percent
 import org.jetbrains.compose.web.css.px
+import kotlin.math.roundToInt
 
 @Composable
 fun LanguagesContent() {
     val onViewportEntered = ViewportDataObservable.sectionId == Section.Languages.id
-    val animatedPercentage = remember { mutableStateListOf(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0) }
+    val githubObservable = GithubObservable
+    val animatedPercentage = remember { mutableStateListOf(0, 0, 0, 0, 0, 0, 0, 0, 0, 0) }
 
-    LaunchedEffect(onViewportEntered) {
+    LaunchedEffect(key1 = onViewportEntered, key2 = githubObservable.requestStatus) {
         if (onViewportEntered) {
-            for (i in 0..<animatedPercentage.size) {
+            for (i in 0..<githubObservable.languages.size) {
+                val language = githubObservable.languages[i]
+                val totalCount = githubObservable.languagesCount
+                val percentage = ((language.count * 100) / totalCount.toDouble()).roundToInt()
                 animateNumber(
-                    number = 50,
+                    number = percentage,
                     delay = 1L,
                     onUpdate = {
                         animatedPercentage[i] = it
@@ -54,66 +60,17 @@ fun LanguagesContent() {
             Column(
                 modifier = Modifier.fillMaxWidth()
             ) {
-                LanguageCodeGraph(
-                    language = "Test",
-                    index = 0,
-                    percentage = if (onViewportEntered) 50.percent else 0.percent,
-                    animatedPercentage = if (onViewportEntered) animatedPercentage[0] else 0
-                )
-                LanguageCodeGraph(
-                    language = "Test",
-                    index = 1,
-                    percentage = if (onViewportEntered) 50.percent else 0.percent,
-                    animatedPercentage = if (onViewportEntered) animatedPercentage[1] else 0
-                )
-                LanguageCodeGraph(
-                    language = "Test",
-                    index = 2,
-                    percentage = if (onViewportEntered) 50.percent else 0.percent,
-                    animatedPercentage = if (onViewportEntered) animatedPercentage[2] else 0
-                )
-                LanguageCodeGraph(
-                    language = "Test",
-                    index = 3,
-                    percentage = if (onViewportEntered) 50.percent else 0.percent,
-                    animatedPercentage = if (onViewportEntered) animatedPercentage[3] else 0
-                )
-                LanguageCodeGraph(
-                    language = "Test",
-                    index = 4,
-                    percentage = if (onViewportEntered) 50.percent else 0.percent,
-                    animatedPercentage = if (onViewportEntered) animatedPercentage[4] else 0
-                )
-                LanguageCodeGraph(
-                    language = "Test",
-                    index = 5,
-                    percentage = if (onViewportEntered) 50.percent else 0.percent,
-                    animatedPercentage = if (onViewportEntered) animatedPercentage[5] else 0
-                )
-                LanguageCodeGraph(
-                    language = "Test",
-                    index = 6,
-                    percentage = if (onViewportEntered) 50.percent else 0.percent,
-                    animatedPercentage = if (onViewportEntered) animatedPercentage[6] else 0
-                )
-                LanguageCodeGraph(
-                    language = "Test",
-                    index = 7,
-                    percentage = if (onViewportEntered) 50.percent else 0.percent,
-                    animatedPercentage = if (onViewportEntered) animatedPercentage[7] else 0
-                )
-                LanguageCodeGraph(
-                    language = "Test",
-                    index = 8,
-                    percentage = if (onViewportEntered) 50.percent else 0.percent,
-                    animatedPercentage = if (onViewportEntered) animatedPercentage[8] else 0
-                )
-                LanguageCodeGraph(
-                    language = "Test",
-                    index = 9,
-                    percentage = if (onViewportEntered) 50.percent else 0.percent,
-                    animatedPercentage = if (onViewportEntered) animatedPercentage[9] else 0
-                )
+                for (i in 0..<githubObservable.languages.size) {
+                    val language = githubObservable.languages[i]
+                    val totalCount = githubObservable.languagesCount
+                    val percentage = ((language.count * 100) / totalCount.toDouble()).roundToInt()
+                    LanguageCodeGraph(
+                        language = language.language,
+                        index = i,
+                        percentage = if (onViewportEntered) percentage.percent else 0.percent,
+                        animatedPercentage = if (onViewportEntered) animatedPercentage[i] else 0
+                    )
+                }
             }
         }
     }

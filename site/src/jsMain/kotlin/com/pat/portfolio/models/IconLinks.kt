@@ -1,5 +1,9 @@
 package com.pat.portfolio.models
 
+import com.pat.portfolio.core.constants.ExternalUrls.GITHUB_CONTACT_URL
+import com.pat.portfolio.core.constants.ExternalUrls.KOBWEB_URL
+import com.pat.portfolio.core.constants.ExternalUrls.KOTLIN_URL
+import com.pat.portfolio.core.constants.ExternalUrls.LINKEDIN_CONTACT_URL
 import com.pat.portfolio.core.constants.Icons.GITHUB_ICON
 import com.pat.portfolio.core.constants.Icons.KOBWEB_ICON
 import com.pat.portfolio.core.constants.Icons.KOTLIN_ICON
@@ -13,21 +17,21 @@ enum class IconLinks(
     Kotlin(
         itemName = "Kotlin",
         iconPath = KOTLIN_ICON,
-        url = "https://kotlinlang.org/"
+        url = KOTLIN_URL
     ),
     Kobweb(
         itemName = "Kobweb",
         iconPath = KOBWEB_ICON,
-        url = "https://kobweb.varabyte.com/"
+        url = KOBWEB_URL
     ),
     Linkedin(
         itemName = "LinkedIn",
         iconPath = LINKEDIN_ICON,
-        url = "https://www.linkedin.com/in/patrick-hettich/"
+        url = LINKEDIN_CONTACT_URL
     ),
     Github(
         itemName = "Github",
         iconPath = GITHUB_ICON,
-        url = "https://github.com/Pat992/"
+        url = GITHUB_CONTACT_URL
     )
 }
