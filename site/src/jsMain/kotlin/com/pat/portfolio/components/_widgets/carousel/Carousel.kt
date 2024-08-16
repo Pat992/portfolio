@@ -23,7 +23,7 @@ fun Carousel(
                 "rewind" to true,
                 "lazyLoad" to "nearby",
                 "perPage" to 3,
-                "width" to "800px",
+                "width" to "1000px",
                 "gap" to "25px",
                 "autoplay" to true,
                 "focus" to "center",
