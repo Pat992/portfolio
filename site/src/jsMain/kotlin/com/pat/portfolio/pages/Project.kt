@@ -6,6 +6,7 @@ import com.pat.portfolio.components.projectPage.ProjectContent
 import com.pat.portfolio.core.utils.ObserveViewport
 import com.pat.portfolio.models.Projects
 import com.pat.portfolio.observables.ViewportDataObservable
+import com.pat.portfolio.sections.FooterSection
 import com.varabyte.kobweb.core.Page
 import com.varabyte.kobweb.core.rememberPageContext
 import kotlinx.browser.window
@@ -41,5 +42,6 @@ fun ProjectPage() {
         if (project != null) {
             ProjectContent(project = project!!)
         }
+        FooterSection()
     }
 }

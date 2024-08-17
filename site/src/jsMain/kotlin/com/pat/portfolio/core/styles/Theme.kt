@@ -39,24 +39,45 @@ enum class Theme(
         rgb = rgba(r = 255, g = 255, b = 255, a = 0.1),
         rgba = rgba(r = 255, g = 255, b = 255, a = 0.1)
     ),
+
+    //    HighlightColor1(
+//        hex = "#F1ED97",
+//        rgb = rgb(r = 241, g = 237, b = 151),
+//        rgba = rgba(r = 241, g = 237, b = 151, a = 0.25)
+//    ),
+//    HighlightColor2(
+//        hex = "#EF9571",
+//        rgb = rgb(r = 239, g = 149, b = 113),
+//        rgba = rgba(r = 239, g = 149, b = 113, a = 0.25)
+//    ),
+//    HighlightColor3(
+//        hex = "#E46D97",
+//        rgb = rgb(r = 228, g = 109, b = 151),
+//        rgba = rgba(r = 228, g = 109, b = 151, a = 0.25)
+//    ),
+//    HighlightColor4(
+//        hex = "#95A8EA",
+//        rgb = rgb(r = 149, g = 168, b = 234),
+//        rgba = rgba(r = 149, g = 168, b = 234, a = 0.25)
+//    ),
     HighlightColor1(
-        hex = "#F1ED97",
-        rgb = rgb(r = 241, g = 237, b = 151),
-        rgba = rgba(r = 241, g = 237, b = 151, a = 0.25)
+        hex = "#F7C64D",
+        rgb = rgb(r = 247, g = 198, b = 77),
+        rgba = rgba(r = 247, g = 198, b = 77, a = 0.25)
     ),
     HighlightColor2(
-        hex = "#EF9571",
-        rgb = rgb(r = 239, g = 149, b = 113),
-        rgba = rgba(r = 239, g = 149, b = 113, a = 0.25)
+        hex = "#F24C69",
+        rgb = rgb(r = 242, g = 76, b = 105),
+        rgba = rgba(r = 242, g = 76, b = 105, a = 0.25)
     ),
     HighlightColor3(
-        hex = "#E46D97",
-        rgb = rgb(r = 228, g = 109, b = 151),
-        rgba = rgba(r = 228, g = 109, b = 151, a = 0.25)
+        hex = "#F22E9D",
+        rgb = rgb(r = 242, g = 46, b = 157),
+        rgba = rgba(r = 242, g = 46, b = 157, a = 0.25)
     ),
     HighlightColor4(
-        hex = "#95A8EA",
-        rgb = rgb(r = 149, g = 168, b = 234),
-        rgba = rgba(r = 149, g = 168, b = 234, a = 0.25)
+        hex = "#7E8EFF",
+        rgb = rgb(r = 126, g = 142, b = 255),
+        rgba = rgba(r = 126, g = 142, b = 255, a = 0.25)
     ),
 }

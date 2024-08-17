@@ -17,11 +17,12 @@ fun ProjectContent(project: Projects) {
         breakpoint = breakpoint
     )
     project.projects.forEach { subProject ->
-        if (colorIndex >= 9) colorIndex = 6
-        else colorIndex += 1
         ProjectItem(
             subProject = subProject,
             colorIndex = colorIndex
         )
+
+        if (colorIndex >= 9) colorIndex = 6
+        else colorIndex += 1
     }
 }
