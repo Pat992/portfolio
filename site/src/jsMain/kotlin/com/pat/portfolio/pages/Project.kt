@@ -18,6 +18,7 @@ fun ProjectPage() {
     var project: Projects? by remember { mutableStateOf(null) }
 
     LaunchedEffect(Unit) {
+        ViewportDataObservable.hasVisitedProjects = true
         project = Projects.entries.firstOrNull { it.id == projectId }
         if (project == null) {
             context.router.navigateTo("/")

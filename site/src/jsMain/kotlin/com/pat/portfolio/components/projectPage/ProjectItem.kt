@@ -37,32 +37,33 @@ fun ProjectItem(
                     modifier = Modifier.fillMaxSize(),
                     horizontalAlignment = Alignment.CenterHorizontally
                 ) {
-                    Carousel(
-                        modifier = Modifier
-                            .fillMaxWidth()
-                            .margin(bottom = 25.px),
-                        id = "splide-${subProject.id}",
-                        content = {
-                            subProject.images.forEach { image ->
-                                CarouselItem {
-                                    ImageElement(
-                                        modifier = Modifier
-                                            .borderRadius(15.px)
-                                            .width(100.percent),
-                                        src = image,
-                                        alt = ""
-                                    )
+                    if (subProject.images.isNotEmpty())
+                        Carousel(
+                            modifier = Modifier
+                                .fillMaxWidth()
+                                .margin(bottom = 25.px),
+                            id = "splide-${subProject.id}",
+                            content = {
+                                subProject.images.forEach { image ->
+                                    CarouselItem {
+                                        ImageElement(
+                                            modifier = Modifier
+                                                .borderRadius(15.px)
+                                                .width(100.percent),
+                                            src = image,
+                                            alt = ""
+                                        )
+                                    }
                                 }
                             }
-                        }
-                    )
+                        )
                     SimpleGrid(
                         numColumns = numColumns(base = 1, md = 2)
                     ) {
                         ImageElement(
                             modifier = Modifier
                                 .borderRadius(15.px)
-                                .width(70.px),
+                                .height(70.px),
                             src = subProject.icon,
                             alt = subProject.title
                         )
