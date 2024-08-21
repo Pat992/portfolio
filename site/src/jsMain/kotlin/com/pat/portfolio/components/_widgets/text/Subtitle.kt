@@ -3,11 +3,13 @@ package com.pat.portfolio.components._widgets.text
 import androidx.compose.runtime.Composable
 import com.pat.portfolio.core.constants.FontSizes.SUBTITLE_SIZE
 import com.pat.portfolio.core.constants.FontSizes.SUBTITLE_SIZE_SMALL
-import com.pat.portfolio.core.styles.Theme
-import com.pat.portfolio.core.styles.paragraphText
+import com.pat.portfolio.core.styles.titleText
 import com.varabyte.kobweb.compose.css.FontWeight
 import com.varabyte.kobweb.compose.ui.Modifier
-import com.varabyte.kobweb.compose.ui.modifiers.*
+import com.varabyte.kobweb.compose.ui.modifiers.fontSize
+import com.varabyte.kobweb.compose.ui.modifiers.fontWeight
+import com.varabyte.kobweb.compose.ui.modifiers.margin
+import com.varabyte.kobweb.compose.ui.modifiers.padding
 import com.varabyte.kobweb.compose.ui.toAttrs
 import com.varabyte.kobweb.silk.style.breakpoint.Breakpoint
 import com.varabyte.kobweb.silk.theme.breakpoint.rememberBreakpoint
@@ -25,8 +27,7 @@ fun Subtitle(
         attrs = Modifier
             .padding(0.px)
             .margin(0.px)
-            .paragraphText()
-            .color(Theme.SecondaryTextColor.rgb)
+            .titleText()
             .fontWeight(FontWeight.Normal)
             .fontSize(if (breakpoint >= Breakpoint.MD) SUBTITLE_SIZE else SUBTITLE_SIZE_SMALL)
             .then(modifier)

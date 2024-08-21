@@ -3,7 +3,7 @@ package com.pat.portfolio.components._widgets.text
 import androidx.compose.runtime.Composable
 import com.pat.portfolio.core.constants.FontSizes.TITLE_SIZE
 import com.pat.portfolio.core.constants.FontSizes.TITLE_SIZE_SMALL
-import com.pat.portfolio.core.styles.paragraphText
+import com.pat.portfolio.core.styles.titleText
 import com.varabyte.kobweb.compose.ui.Modifier
 import com.varabyte.kobweb.compose.ui.modifiers.fontSize
 import com.varabyte.kobweb.compose.ui.modifiers.margin
@@ -25,7 +25,7 @@ fun Title(
         attrs = modifier
             .padding(0.px)
             .margin(0.px)
-            .paragraphText()
+            .titleText()
             .fontSize(if (breakpoint >= Breakpoint.MD) TITLE_SIZE else TITLE_SIZE_SMALL)
             .toAttrs()
     ) {
