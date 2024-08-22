@@ -11,10 +11,8 @@ suspend fun emailJsInfrastructurePostForm(emailJsFormDto: EmailJsFormDto): Boole
     formData.append("template_id", "template_kegh07c")
     formData.append("user_id", "FmDwq3RDXB_tZZNm0")
 
-    val res = window.http.tryPost(
+    return window.http.tryPost(
         resource = EMAILJS_FORM_URL,
         body = formData.unsafeCast<ByteArray>()
-    )
-
-    return res != null
+    ) != null
 }

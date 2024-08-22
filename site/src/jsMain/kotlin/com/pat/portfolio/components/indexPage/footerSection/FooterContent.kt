@@ -35,6 +35,7 @@ fun FooterContent() {
                 Subtitle(modifier = Modifier.margin(bottom = 25.px), text = "Built with")
                 FooterLinkItem(IconLinks.Kotlin)
                 FooterLinkItem(IconLinks.Kobweb)
+                FooterLinkItem(IconLinks.ComposeHtml)
             }
             Column(
                 horizontalAlignment = Alignment.CenterHorizontally

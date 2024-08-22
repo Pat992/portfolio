@@ -4,6 +4,7 @@ data object ExternalUrls {
     // Programming languages
     const val KOTLIN_URL = "https://kotlinlang.org/"
     const val KOBWEB_URL = "https://kobweb.varabyte.com/"
+    const val COMPOSE_HTML_URL = "https://github.com/JetBrains/compose-multiplatform/#compose-html"
 
     // Contact urls
     const val LINKEDIN_CONTACT_URL = "https://www.linkedin.com/in/patrick-hettich/"

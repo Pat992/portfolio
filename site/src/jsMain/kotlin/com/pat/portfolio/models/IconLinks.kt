@@ -1,9 +1,11 @@
 package com.pat.portfolio.models
 
+import com.pat.portfolio.core.constants.ExternalUrls.COMPOSE_HTML_URL
 import com.pat.portfolio.core.constants.ExternalUrls.GITHUB_CONTACT_URL
 import com.pat.portfolio.core.constants.ExternalUrls.KOBWEB_URL
 import com.pat.portfolio.core.constants.ExternalUrls.KOTLIN_URL
 import com.pat.portfolio.core.constants.ExternalUrls.LINKEDIN_CONTACT_URL
+import com.pat.portfolio.core.constants.Icons.COMPOSE_HTML
 import com.pat.portfolio.core.constants.Icons.GITHUB_ICON
 import com.pat.portfolio.core.constants.Icons.KOBWEB_ICON
 import com.pat.portfolio.core.constants.Icons.KOTLIN_ICON
@@ -23,6 +25,11 @@ enum class IconLinks(
         itemName = "Kobweb",
         iconPath = KOBWEB_ICON,
         url = KOBWEB_URL
+    ),
+    ComposeHtml(
+        itemName = "Compose HTML",
+        iconPath = COMPOSE_HTML,
+        url = COMPOSE_HTML_URL
     ),
     Linkedin(
         itemName = "LinkedIn",
