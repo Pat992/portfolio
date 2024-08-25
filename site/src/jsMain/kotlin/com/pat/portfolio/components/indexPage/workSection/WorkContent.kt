@@ -1,9 +1,7 @@
 package com.pat.portfolio.components.indexPage.workSection
 
 import androidx.compose.runtime.Composable
-import com.pat.portfolio.components._widgets.cards.Card
-import com.pat.portfolio.components._widgets.text.Paragraph
-import com.pat.portfolio.core.styles.Theme
+import com.pat.portfolio.components._widgets.ToolsTechCard
 import com.pat.portfolio.models.WorkExperience
 import com.varabyte.kobweb.compose.foundation.layout.Column
 import com.varabyte.kobweb.compose.ui.Modifier
@@ -11,30 +9,40 @@ import com.varabyte.kobweb.compose.ui.modifiers.fillMaxWidth
 import com.varabyte.kobweb.compose.ui.modifiers.margin
 import com.varabyte.kobweb.silk.components.layout.SimpleGrid
 import com.varabyte.kobweb.silk.components.layout.numColumns
+import com.varabyte.kobweb.silk.style.breakpoint.Breakpoint
+import com.varabyte.kobweb.silk.theme.breakpoint.rememberBreakpoint
 import org.jetbrains.compose.web.css.px
 
 @Composable
 fun WorkContent() {
-    SimpleGrid(
-        modifier = Modifier.fillMaxWidth(),
-        numColumns = numColumns(base = 1, md = 2),
+    Column(
+        modifier = Modifier.fillMaxWidth()
     ) {
-        Column(
-            modifier = Modifier.fillMaxWidth()
-        ) {
-            WorkExperience.entries.forEach { we ->
-                WorkItem(
-                    workExperience = we,
-                    index = we.ordinal
+        val breakpoint = rememberBreakpoint()
+
+        WorkExperience.entries.forEach { we ->
+            SimpleGrid(
+                modifier = Modifier.fillMaxWidth(),
+                numColumns = numColumns(base = 1, md = 2)
+            ) {
+                ToolsTechCard(
+                    technologies = we.technologies,
+                    tools = we.tools
                 )
+                Column(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .margin(left = if (breakpoint >= Breakpoint.MD) 50.px else 0.px)
+                ) {
+                    we.positions.forEach { pos ->
+                        JobPositionItem(
+                            workExperience = we,
+                            position = pos,
+                            index = pos.ordinal
+                        )
+                    }
+                }
             }
         }
-        Card(
-            modifier = Modifier.margin(left = 25.px),
-            theme = Theme.HighlightColor3,
-            content = {
-                Paragraph(text = "some description will be here")
-            }
-        )
     }
 }

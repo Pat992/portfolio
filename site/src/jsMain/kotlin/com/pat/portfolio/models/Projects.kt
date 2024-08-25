@@ -190,7 +190,9 @@ enum class SubProjects(
         icon = "https://rapidapi.com/hub/_next/image?url=https%3A%2F%2Frapidapi-prod-apis.s3.amazonaws.com%2F45a489a1-f7de-45f9-8fa2-f735baa58fd2.png&w=1920&q=75",
         images = listOf(),
         technologies = listOf(
+            IconLinks.Json,
             IconLinks.NextJs,
+            IconLinks.NodeJs,
             IconLinks.Typescript,
         ),
         tools = listOf(
@@ -208,7 +210,9 @@ enum class SubProjects(
         icon = "https://rapidapi.com/hub/_next/image?url=https%3A%2F%2Frapidapi-prod-apis.s3.amazonaws.com%2Ffca6cad1-5c2e-4887-abf1-5750c062bacd.png&w=1920&q=75",
         images = listOf(),
         technologies = listOf(
+            IconLinks.Json,
             IconLinks.NextJs,
+            IconLinks.NodeJs,
             IconLinks.Typescript,
         ),
         tools = listOf(
@@ -226,7 +230,9 @@ enum class SubProjects(
         icon = "https://rapidapi.com/hub/_next/image?url=https%3A%2F%2Frapidapi-prod-apis.s3.amazonaws.com%2F0183b8c7-e5fe-464a-92f2-f5a5528c1f94.png&w=1920&q=75",
         images = listOf(),
         technologies = listOf(
+            IconLinks.Json,
             IconLinks.NextJs,
+            IconLinks.NodeJs,
             IconLinks.Typescript,
         ),
         tools = listOf(
@@ -244,7 +250,9 @@ enum class SubProjects(
         icon = "https://rapidapi.com/hub/_next/image?url=https%3A%2F%2Frapidapi-prod-apis.s3.amazonaws.com%2F98ebf6f3-e615-446a-9e18-168a986576df.png&w=1920&q=75",
         images = listOf(),
         technologies = listOf(
+            IconLinks.Json,
             IconLinks.NextJs,
+            IconLinks.NodeJs,
             IconLinks.Typescript,
         ),
         tools = listOf(
@@ -305,6 +313,7 @@ enum class SubProjects(
             IconLinks.HTML,
             IconLinks.React,
             IconLinks.Redux,
+            IconLinks.NodeJs,
             IconLinks.Typescript,
         ),
         tools = listOf(

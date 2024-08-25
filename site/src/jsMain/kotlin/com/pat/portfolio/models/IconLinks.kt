@@ -10,6 +10,7 @@ import com.pat.portfolio.core.constants.ExternalUrls.AZ_CLI_URL
 import com.pat.portfolio.core.constants.ExternalUrls.BICEP_URL
 import com.pat.portfolio.core.constants.ExternalUrls.BIZTALK_URL
 import com.pat.portfolio.core.constants.ExternalUrls.COMPOSE_HTML_URL
+import com.pat.portfolio.core.constants.ExternalUrls.CONFLUENCE_URL
 import com.pat.portfolio.core.constants.ExternalUrls.COSMOSDB_URL
 import com.pat.portfolio.core.constants.ExternalUrls.CSHARP_URL
 import com.pat.portfolio.core.constants.ExternalUrls.CSS_URL
@@ -40,6 +41,7 @@ import com.pat.portfolio.core.constants.ExternalUrls.MS_SUITE_URL
 import com.pat.portfolio.core.constants.ExternalUrls.NEXT_JS_URL
 import com.pat.portfolio.core.constants.ExternalUrls.NODEJS_URL
 import com.pat.portfolio.core.constants.ExternalUrls.NOTION_URL
+import com.pat.portfolio.core.constants.ExternalUrls.PHPSTORM_URL
 import com.pat.portfolio.core.constants.ExternalUrls.PHP_URL
 import com.pat.portfolio.core.constants.ExternalUrls.POWERSHELL_URL
 import com.pat.portfolio.core.constants.ExternalUrls.REACT_URL
@@ -92,6 +94,7 @@ import com.pat.portfolio.core.constants.Icons.MS_SUITE_ICON
 import com.pat.portfolio.core.constants.Icons.NEXT_JS_ICON
 import com.pat.portfolio.core.constants.Icons.NODEJS_ICON
 import com.pat.portfolio.core.constants.Icons.NOTION_ICON
+import com.pat.portfolio.core.constants.Icons.PHPSTORM_ICON
 import com.pat.portfolio.core.constants.Icons.PHP_ICON
 import com.pat.portfolio.core.constants.Icons.POWERSHELL_ICON
 import com.pat.portfolio.core.constants.Icons.REACT_ICON
@@ -291,7 +294,7 @@ enum class IconLinks(
     Confluence(
         itemName = "Confluence",
         iconPath = CONFLUENCE_ICON,
-        url = COSMOSDB_URL
+        url = CONFLUENCE_URL
     ),
     CosmosDb(
         itemName = "Azure Cosmos DB",
@@ -352,6 +355,11 @@ enum class IconLinks(
         itemName = "Notion",
         iconPath = NOTION_ICON,
         url = NOTION_URL
+    ),
+    PhpStorm(
+        itemName = "PhpStorm",
+        iconPath = PHPSTORM_ICON,
+        url = PHPSTORM_URL
     ),
     Vercel(
         itemName = "Vercel",

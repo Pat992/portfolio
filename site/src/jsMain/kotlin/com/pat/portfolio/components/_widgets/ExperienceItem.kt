@@ -46,39 +46,41 @@ fun ExperienceItem(
         ),
         verticalAlignment = Alignment.CenterVertically
     ) {
-        Box(
-            modifier = Modifier
-                .fillMaxHeight()
-                .margin(right = 15.px),
-            contentAlignment = Alignment.Center
-        ) {
+        if (breakpoint >= Breakpoint.MD) {
             Box(
                 modifier = Modifier
-                    .backgroundColor(Colors.Transparent)
-                    .size(25.px)
-                    .borderRadius(50.percent)
-            )
-            Box(
-                modifier = Modifier
-                    .backgroundColor(Theme.HighlightColor1.rgb)
-                    .size(if (!onViewportEntered) 0.px else 25.px)
-                    .transition(
-                        Transition.of(
-                            TransitionProperty.All.toString(),
-                            duration = 500.ms,
-                            delay = 100.ms * index,
-                        )
-                    )
-                    .borderRadius(50.percent)
-            )
-            Box(
-                modifier = Modifier
-                    .width(1.px)
-                    .margin(0.px)
-                    .padding(0.px)
-                    .backgroundColor(Theme.HighlightColor1.rgb)
                     .fillMaxHeight()
-            )
+                    .margin(right = 15.px),
+                contentAlignment = Alignment.Center
+            ) {
+                Box(
+                    modifier = Modifier
+                        .backgroundColor(Colors.Transparent)
+                        .size(25.px)
+                        .borderRadius(50.percent)
+                )
+                Box(
+                    modifier = Modifier
+                        .backgroundColor(Theme.HighlightColor1.rgb)
+                        .size(if (!onViewportEntered) 0.px else 25.px)
+                        .transition(
+                            Transition.of(
+                                TransitionProperty.All.toString(),
+                                duration = 500.ms,
+                                delay = 100.ms * index,
+                            )
+                        )
+                        .borderRadius(50.percent)
+                )
+                Box(
+                    modifier = Modifier
+                        .width(1.px)
+                        .margin(0.px)
+                        .padding(0.px)
+                        .backgroundColor(Theme.HighlightColor1.rgb)
+                        .fillMaxHeight()
+                )
+            }
         }
         SimpleGrid(
             modifier = Modifier.alignContent(AlignContent.Center),
@@ -125,6 +127,5 @@ fun ExperienceItem(
                 )
             }
         }
-
     }
 }

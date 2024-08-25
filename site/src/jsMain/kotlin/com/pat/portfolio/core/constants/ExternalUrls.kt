@@ -53,6 +53,7 @@ data object ExternalUrls {
     const val MSSQL_URL = "https://www.microsoft.com/sql-server"
     const val MS_SUITE_URL = "https://www.microsoft.com/Microsoft-365"
     const val NOTION_URL = "https://www.notion.so/"
+    const val PHPSTORM_URL = "https://www.jetbrains.com/phpstorm/"
     const val VERCEL_URL = "https://vercel.com/"
     const val VS_CODE_URL = "https://code.visualstudio.com/"
     const val VS_URL = "https://visualstudio.microsoft.com/"

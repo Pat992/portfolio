@@ -23,10 +23,19 @@ fun EducationContent() {
             modifier = Modifier.fillMaxWidth()
         ) {
             Education.entries.forEach { education ->
-                EducationItem(
-                    education = education,
-                    index = education.ordinal
-                )
+                SimpleGrid(
+                    modifier = Modifier.fillMaxWidth(),
+                    numColumns = numColumns(base = 1, md = 2)
+                ) {
+//                    ToolsTechCard(
+//                        technologies = we.technologies,
+//                        tools = we.tools
+//                    )
+                    EducationItem(
+                        education = education,
+                        index = education.ordinal
+                    )
+                }
             }
         }
         Card(

@@ -53,6 +53,7 @@ object Icons {
     const val MSSQL_ICON = "$BASE_ICON_PATH/tools/mssql.svg"
     const val MS_SUITE_ICON = "$BASE_ICON_PATH/tools/mssuite.svg"
     const val NOTION_ICON = "$BASE_ICON_PATH/tools/notion.svg"
+    const val PHPSTORM_ICON = "$BASE_ICON_PATH/tools/phpstorm.svg"
     const val VERCEL_ICON = "$BASE_ICON_PATH/tools/vercel.svg"
     const val VS_CODE_ICON = "$BASE_ICON_PATH/tools/visual-studio-code.svg"
     const val VS_ICON = "$BASE_ICON_PATH/tools/vs.svg"
