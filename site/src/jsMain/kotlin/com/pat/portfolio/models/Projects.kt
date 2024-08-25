@@ -27,7 +27,7 @@ enum class Projects(
     Mobile(
         id = "mobile",
         title = "MOBILE",
-        shortDescription = "With Flutter, I created several mobile apps and put them up on the Google Play Store.",
+        shortDescription = "Several mobile apps created with Flutter and put them up on the Google Play Store.",
         svgPath = SvgPaths.PLAY_STORE_PATH,
         projects = listOf(
             SubProjects.Atlas,
@@ -193,7 +193,8 @@ enum class SubProjects(
     VolarinkWebsite(
         id = "volarink-website",
         title = "Volarink Tattoo Studio",
-        description = "Atlas is an app built to find work globally.<br>Instead of being bound to certain regions this app allows for global job search.<br>",
+        description = "I revamped the landing page for Volarink Tattoo Studio, using vanilla JavaScript for core functionality, SCSS for styling, Alpine.js for dynamic content changes (like translations), and GSAP for smooth animations." +
+                "|The original site was a basic HTML page with just text and a link to the Instagram profile. Now, it features a rich user experience with images, animations, a tattoo gallery, an about section, a contact section with links to Instagram, a Google Maps location, and an FAQ section. The site is also available in both English and Norwegian.",
         externalUrl = "https://www.volarink.no/",
         icon = "https://www.volarink.no/assets/images/main/logo-min.webp",
         images = listOf(),
@@ -202,7 +203,8 @@ enum class SubProjects(
     PortfolioV2(
         id = "portfolio-v2-website",
         title = "Portfolio Website V2",
-        description = "Atlas is an app built to find work globally.<br>Instead of being bound to certain regions this app allows for global job search.<br>",
+        description = "I decided to rewrite my portfolio website because the original version was built with React, which isn’t very SEO-friendly." +
+                "|Since I have some experience with Jetpack Compose and Kotlin, I wanted to use a similar approach for the rebuild. After some research, I found Kobweb to be the perfect solution. Kobweb uses HTML Compose to create static websites, offering a development experience similar to Jetpack Compose.",
         externalUrl = "",
         icon = "",
         images = listOf(),
@@ -211,7 +213,7 @@ enum class SubProjects(
     PortfolioV1(
         id = "portfolio-v1-website",
         title = "Portfolio Website V1",
-        description = "Atlas is an app built to find work globally.<br>Instead of being bound to certain regions this app allows for global job search.<br>",
+        description = "The initial version of my portfolio website was built using React, with Redux handling state management, Framer Motion powering animations, and EmailJS enabling the contact form functionality.",
         externalUrl = "",
         icon = "",
         images = listOf(),
@@ -222,7 +224,9 @@ enum class SubProjects(
     DartAzureSignIn(
         id = "dart-azure-sign-in",
         title = "Dart package for Azure AD Sign In",
-        description = "Atlas is an app built to find work globally.<br>Instead of being bound to certain regions this app allows for global job search.<br>",
+        description = "I developed a Dart package that allows users to sign in to Azure with a Microsoft account, using the same default scopes as the AZ CLI, if not configured." +
+                "|I created this package while planning to build a tool for configuring and managing Azure resources, but I wanted to avoid the hassle of registering an app. After a deep dive into the AZ CLI code, I discovered the scopes and settings it uses for authentication." +
+                "|Although I never ended up creating the tool, I was happy with the package and decided to release it. An intern later used it to develop a Flutter app for Azure cost analysis.",
         externalUrl = "https://pub.dev/packages/dart_azure_ad_sign_in",
         icon = "https://pub.dev/static/hash-95guep1u/img/pub-dev-logo.svg",
         images = listOf(),
@@ -231,7 +235,9 @@ enum class SubProjects(
     DartCosmosDb(
         id = "dart-cosmos-db",
         title = "Dart package for the Azure Cosmos Database",
-        description = "Atlas is an app built to find work globally.\nInstead of being bound to certain regions this app allows for global job search.<br>",
+        description = "I developed another Dart package for a project that never saw the light of day, but since I was satisfied with the outcome, I decided to release the package anyway. This package uses the Azure API but significantly simplifies its usage." +
+                "|The package includes functionality for managing databases, collections, documents, stored procedures, user-defined functions, triggers, users, and permissions, all with full CRUD (Create, Read, Update, Delete) operations. " +
+                "|It also supports the execution of stored procedures and user-defined functions.",
         externalUrl = "https://pub.dev/packages/dart_azure_cosmosdb",
         icon = "https://pub.dev/static/hash-95guep1u/img/pub-dev-logo.svg",
         images = listOf(),
