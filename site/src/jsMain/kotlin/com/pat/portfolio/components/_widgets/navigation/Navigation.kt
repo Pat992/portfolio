@@ -1,9 +1,15 @@
 package com.pat.portfolio.components._widgets.navigation
 
 import androidx.compose.runtime.Composable
+import com.pat.portfolio.components._widgets.ImageElement
+import com.pat.portfolio.core.constants.Icons.PORTFOLIO_V2_ICON
+import com.pat.portfolio.core.styles.NavItemStyle
 import com.pat.portfolio.core.styles.glass
 import com.pat.portfolio.core.styles.linearGradient
+import com.pat.portfolio.core.styles.link
+import com.pat.portfolio.models.Section
 import com.pat.portfolio.observables.ViewportDataObservable
+import com.varabyte.kobweb.compose.css.TextAlign
 import com.varabyte.kobweb.compose.foundation.layout.Arrangement
 import com.varabyte.kobweb.compose.foundation.layout.Box
 import com.varabyte.kobweb.compose.foundation.layout.Row
@@ -12,6 +18,10 @@ import com.varabyte.kobweb.compose.ui.Modifier
 import com.varabyte.kobweb.compose.ui.graphics.Colors
 import com.varabyte.kobweb.compose.ui.modifiers.*
 import com.varabyte.kobweb.compose.ui.toAttrs
+import com.varabyte.kobweb.silk.components.navigation.Link
+import com.varabyte.kobweb.silk.style.breakpoint.Breakpoint
+import com.varabyte.kobweb.silk.style.toModifier
+import com.varabyte.kobweb.silk.theme.breakpoint.rememberBreakpoint
 import org.jetbrains.compose.web.css.Position
 import org.jetbrains.compose.web.css.percent
 import org.jetbrains.compose.web.css.px
@@ -21,8 +31,9 @@ import org.jetbrains.compose.web.dom.Nav
 fun Navigation(
     navigationItems: @Composable () -> Unit
 ) {
-    val scrollPercentage = ViewportDataObservable.scrollPercentage
-    NavigationHomeItem()
+    val breakpoint = rememberBreakpoint()
+    if (breakpoint > Breakpoint.MD)
+        NavigationHomeItem()
     Nav(
         attrs = Modifier
             .glass()
@@ -50,12 +61,31 @@ fun Navigation(
         }
         Row(
             modifier = Modifier
-                .fillMaxWidth()
+                .fillMaxSize()
+                .margin(top = (-4).px)
                 .padding(topBottom = 10.px),
             horizontalArrangement = Arrangement.SpaceBetween,
             verticalAlignment = Alignment.CenterVertically
         ) {
-            navigationItems()
+            if (breakpoint > Breakpoint.MD)
+                navigationItems()
+            if (breakpoint <= Breakpoint.MD) {
+                Link(
+                    modifier = NavItemStyle
+                        .toModifier()
+                        .height(40.px)
+                        .textAlign(TextAlign.Center)
+                        .link(),
+                    path = "/${Section.Main.path}",
+                ) {
+                    ImageElement(
+                        modifier = Modifier.height(40.px),
+                        src = PORTFOLIO_V2_ICON,
+                        alt = "Home link"
+                    )
+                }
+                BurgerNavItem()
+            }
         }
     }
 }
