@@ -34,4 +34,8 @@ object Icons {
     // Social platforms
     const val LINKEDIN_ICON = "$BASE_ICON_PATH/social/linkedin-icon.svg"
     const val GITHUB_ICON = "$BASE_ICON_PATH/social/github-icon.svg"
+
+    // General icons
+    const val PORTFOLIO_V1_ICON = "$BASE_ICON_PATH/web/portfolio-v1.svg"
+    const val PORTFOLIO_V2_ICON = "$BASE_ICON_PATH/web/Icon.svg"
 }

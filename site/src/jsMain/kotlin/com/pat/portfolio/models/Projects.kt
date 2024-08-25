@@ -1,5 +1,7 @@
 package com.pat.portfolio.models
 
+import com.pat.portfolio.core.constants.Icons.PORTFOLIO_V1_ICON
+import com.pat.portfolio.core.constants.Icons.PORTFOLIO_V2_ICON
 import com.pat.portfolio.core.constants.SvgPaths
 
 private const val ICONS_BASE_PATH = "/icons"
@@ -278,7 +280,7 @@ enum class SubProjects(
         description = "I decided to rewrite my portfolio website because the original version was built with React, which isn’t very SEO-friendly." +
                 "|Since I have some experience with Jetpack Compose and Kotlin, I wanted to use a similar approach for the rebuild. After some research, I found Kobweb to be the perfect solution. Kobweb uses HTML Compose to create static websites, offering a development experience similar to Jetpack Compose.",
         externalUrl = "https://pat992.github.io/portfolio/",
-        icon = "",
+        icon = PORTFOLIO_V2_ICON,
         images = listOf(),
         technologies = listOf(
             IconLinks.ComposeHtml,
@@ -295,7 +297,7 @@ enum class SubProjects(
         title = "Portfolio Website V1",
         description = "The initial version of my portfolio website was built using React, with Redux handling state management, Framer Motion powering animations, and EmailJS enabling the contact form functionality.",
         externalUrl = "https://github.com/Pat992/portfolio/tree/master/_V1-React",
-        icon = "",
+        icon = PORTFOLIO_V1_ICON,
         images = listOf(),
         technologies = listOf(
             IconLinks.CSS,
