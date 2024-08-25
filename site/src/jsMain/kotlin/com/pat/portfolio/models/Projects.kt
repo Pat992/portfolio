@@ -317,8 +317,8 @@ enum class SubProjects(
     DartAzureSignIn(
         id = "dart-azure-sign-in",
         title = "Dart package for Azure AD Sign In",
-        description = "I developed a Dart package that allows users to sign in to Azure with a Microsoft account, using the same default scopes as the AZ CLI, if not configured." +
-                "|I created this package while planning to build a tool for configuring and managing Azure resources, but I wanted to avoid the hassle of registering an app. After a deep dive into the AZ CLI code, I discovered the scopes and settings it uses for authentication." +
+        description = "I developed a Dart package that allows users to sign in to Azure with a Microsoft account, using the same default scopes as the Azure CLI, if not configured." +
+                "|I created this package while planning to build a tool for configuring and managing Azure resources, but I wanted to avoid the hassle of registering an app. After a deep dive into the Azure CLI code, I discovered the scopes and settings it uses for authentication." +
                 "|Although I never ended up creating the tool, I was happy with the package and decided to release it. An intern later used it to develop a Flutter app for Azure cost analysis.",
         externalUrl = "https://pub.dev/packages/dart_azure_ad_sign_in",
         icon = "https://pub.dev/static/hash-95guep1u/img/pub-dev-logo.svg",

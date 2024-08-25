@@ -87,7 +87,7 @@ private val quibiqLanguages: List<String> = listOf(
 )
 
 private val quibiqTools: List<String> = listOf(
-    "AZ CLI",
+    "Azure CLI",
     "Azure PowerShell",
     "Confluence",
     "GitHub",
