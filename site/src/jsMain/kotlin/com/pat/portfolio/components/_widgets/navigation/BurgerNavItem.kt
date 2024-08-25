@@ -24,6 +24,7 @@ fun BurgerNavItem() {
             .margin(0.px)
             .padding(0.px)
             .backgroundColor(Colors.Transparent)
+            .ariaLabel("Open navigation menu")
             .border(width = 0.px, color = Colors.Transparent, style = LineStyle.None),
         onClick = {
             BurgerMenuObservable.isOpen = !BurgerMenuObservable.isOpen

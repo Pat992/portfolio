@@ -58,7 +58,7 @@ enum class Projects(
             SubProjects.DartAzureSignIn,
             SubProjects.DartCosmosDb
         )
-    )
+    ),
 }
 
 enum class SubProjects(

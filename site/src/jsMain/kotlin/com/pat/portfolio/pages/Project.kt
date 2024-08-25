@@ -40,7 +40,7 @@ fun ProjectPage() {
         }
     )
     PageWrapper {
-        Navigation(navigationItems = {})
+        Navigation(navigationItems = {}, showBurgerMenu = false)
         if (project != null) {
             ProjectContent(project = project!!)
         }

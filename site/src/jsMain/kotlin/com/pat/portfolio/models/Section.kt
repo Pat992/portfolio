@@ -47,5 +47,5 @@ enum class Section(
         title = "FOOTER",
         subtitle = "",
         path = "#footer"
-    )
+    ),
 }

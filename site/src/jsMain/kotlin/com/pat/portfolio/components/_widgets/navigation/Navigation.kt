@@ -29,10 +29,11 @@ import org.jetbrains.compose.web.dom.Nav
 
 @Composable
 fun Navigation(
+    showBurgerMenu: Boolean = true,
     navigationItems: @Composable () -> Unit
 ) {
     val breakpoint = rememberBreakpoint()
-    if (breakpoint > Breakpoint.MD)
+    if (breakpoint >= Breakpoint.XL)
         NavigationHomeItem()
     Nav(
         attrs = Modifier
@@ -67,9 +68,9 @@ fun Navigation(
             horizontalArrangement = Arrangement.SpaceBetween,
             verticalAlignment = Alignment.CenterVertically
         ) {
-            if (breakpoint > Breakpoint.MD)
+            if (breakpoint >= Breakpoint.XL)
                 navigationItems()
-            if (breakpoint <= Breakpoint.MD) {
+            if (breakpoint < Breakpoint.XL) {
                 Link(
                     modifier = NavItemStyle
                         .toModifier()
@@ -84,7 +85,8 @@ fun Navigation(
                         alt = "Home link"
                     )
                 }
-                BurgerNavItem()
+                if (showBurgerMenu)
+                    BurgerNavItem()
             }
         }
     }
