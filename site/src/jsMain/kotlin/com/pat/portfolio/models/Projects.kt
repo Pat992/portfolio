@@ -151,7 +151,8 @@ enum class SubProjects(
     JobsApi(
         id = "jobs-api",
         title = "Jobs API",
-        description = "Atlas is an app built to find work globally.<br>Instead of being bound to certain regions this app allows for global job search.<br>",
+        description = "Jobs API searches for job postings across Google, aggregating results from providers like LinkedIn, Indeed, Jooble, ZipRecruiter, Glassdoor, and many others. The collected data is unified and converted into JSON format for easy integration." +
+                "|Users can search for jobs globally using criteria, like job title, company, location, distance, remote-only options, posting date, and employment type. Additionally, the API provides endpoints to retrieve job details by ID or to find salary ranges for specific job titles and locations.",
         externalUrl = "https://rapidapi.com/Pat92/api/jobs-api14",
         icon = "https://rapidapi.com/hub/_next/image?url=https%3A%2F%2Frapidapi-prod-apis.s3.amazonaws.com%2F45a489a1-f7de-45f9-8fa2-f735baa58fd2.png&w=1920&q=75",
         images = listOf(),
@@ -160,7 +161,8 @@ enum class SubProjects(
     ForexApi(
         id = "forex-api",
         title = "Forex API",
-        description = "Atlas is an app built to find work globally.<br>Instead of being bound to certain regions this app allows for global job search.<br>",
+        description = "Forex API gathers sentiment data, including trader sentiment (the ratio of traders currently selling versus buying) and technical sentiment based on various indicators. Additionally, the API offers an economic calendar endpoint, allowing users to track upcoming economic events and speeches that could impact currency pairs." +
+                "|The data is sourced from multiple resources, unified into a consistent JSON format, and accessible through user-friendly endpoints.",
         externalUrl = "https://rapidapi.com/Pat92/api/forex-api2",
         icon = "https://rapidapi.com/hub/_next/image?url=https%3A%2F%2Frapidapi-prod-apis.s3.amazonaws.com%2Ffca6cad1-5c2e-4887-abf1-5750c062bacd.png&w=1920&q=75",
         images = listOf(),
@@ -169,7 +171,8 @@ enum class SubProjects(
     SoundcloudApi(
         id = "soundcloud-api",
         title = "Soundcloud API",
-        description = "Atlas is an app built to find work globally.<br>Instead of being bound to certain regions this app allows for global job search.<br>",
+        description = "The Soundcloud API allows users to search for albums, artists, tracks, and playlists. Each of these search endpoints is complemented by a \"get\" endpoint, which retrieves detailed information for a specific item using its unique ID." +
+                "|Additionally, there’s an endpoint that provides the streaming or download URL for any specific track.",
         externalUrl = "https://rapidapi.com/Pat92/api/soundcloud-api3",
         icon = "https://rapidapi.com/hub/_next/image?url=https%3A%2F%2Frapidapi-prod-apis.s3.amazonaws.com%2F0183b8c7-e5fe-464a-92f2-f5a5528c1f94.png&w=1920&q=75",
         images = listOf(),
@@ -178,7 +181,8 @@ enum class SubProjects(
     GoogleTranslateApi(
         id = "google-translate-api",
         title = "Google Translate API",
-        description = "Atlas is an app built to find work globally.<br>Instead of being bound to certain regions this app allows for global job search.<br>",
+        description = "The Google Translate API is relatively straightforward. It features a simplified \"Translate\" endpoint that takes a word or sentence and an output language, with an optional input language (if not provided, Google will automatically detect the input language). The endpoint then returns the translated word or sentence." +
+                "|Additionally, there's a more advanced \"Translate\" endpoint that accepts the same input but provides a richer response. This includes translation alternatives, synonyms for both the input and output languages, and a definition of the input term.",
         externalUrl = "https://rapidapi.com/Pat92/api/google-translate-api9",
         icon = "https://rapidapi.com/hub/_next/image?url=https%3A%2F%2Frapidapi-prod-apis.s3.amazonaws.com%2F98ebf6f3-e615-446a-9e18-168a986576df.png&w=1920&q=75",
         images = listOf(),
