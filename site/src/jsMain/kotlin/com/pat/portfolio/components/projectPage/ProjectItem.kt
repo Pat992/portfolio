@@ -5,8 +5,6 @@ import com.pat.portfolio.components._widgets.ImageElement
 import com.pat.portfolio.components._widgets.cards.Card
 import com.pat.portfolio.components._widgets.carousel.Carousel
 import com.pat.portfolio.components._widgets.carousel.CarouselItem
-import com.pat.portfolio.components._widgets.text.Paragraph
-import com.pat.portfolio.components._widgets.text.Subtitle
 import com.pat.portfolio.components._widgets.wrappers.ProjectsWrapper
 import com.pat.portfolio.core.styles.Theme
 import com.pat.portfolio.models.SubProjects
@@ -68,16 +66,7 @@ fun ProjectItem(
                             alt = subProject.title
                         )
                         Column {
-                            Subtitle(
-                                modifier = Modifier.margin(bottom = 25.px),
-                                text = "Overview"
-                            )
-                            subProject.description.split("|").forEach { part ->
-                                Paragraph(
-                                    modifier = Modifier.margin(bottom = 15.px),
-                                    text = part
-                                )
-                            }
+                            Overview(subProject = subProject)
                         }
                     }
                 }

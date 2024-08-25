@@ -66,7 +66,8 @@ enum class SubProjects(
     val externalUrl: String,
     val icon: String,
     val images: List<String>,
-    val technologies: List<IconLinks>
+    val technologies: List<IconLinks>,
+    val tools: List<IconLinks>
 ) {
     // Mobile projects
     Atlas(
@@ -88,7 +89,14 @@ enum class SubProjects(
             "$IMAGES_BASE_PATH/atlas/image7.webp",
             "$IMAGES_BASE_PATH/atlas/image8.webp"
         ),
-        technologies = listOf(),
+        technologies = listOf(
+            IconLinks.Dart,
+            IconLinks.Flutter,
+        ),
+        tools = listOf(
+            IconLinks.AffinityDesigner,
+            IconLinks.AndroidStudio,
+        )
     ),
     RemoteXpress(
         id = "remote-xpress",
@@ -107,7 +115,14 @@ enum class SubProjects(
             "$IMAGES_BASE_PATH/remotexpress/Ad-6.webp",
             "$IMAGES_BASE_PATH/remotexpress/Ad-7.webp"
         ),
-        technologies = listOf(),
+        technologies = listOf(
+            IconLinks.Dart,
+            IconLinks.Flutter,
+        ),
+        tools = listOf(
+            IconLinks.AffinityDesigner,
+            IconLinks.AndroidStudio,
+        )
     ),
     AdWave(
         id = "adwave",
@@ -127,7 +142,16 @@ enum class SubProjects(
             "$IMAGES_BASE_PATH/adwave/Ad-7.webp",
             "$IMAGES_BASE_PATH/adwave/Ad-8.webp"
         ),
-        technologies = listOf(),
+        technologies = listOf(
+            IconLinks.Dart,
+            IconLinks.Flutter,
+            IconLinks.Admob,
+            IconLinks.GoogleCloud
+        ),
+        tools = listOf(
+            IconLinks.AffinityDesigner,
+            IconLinks.AndroidStudio,
+        )
     ),
     AndFm(
         id = "andfm",
@@ -144,7 +168,14 @@ enum class SubProjects(
             "$IMAGES_BASE_PATH/andfm/Ad-4.webp",
             "$IMAGES_BASE_PATH/andfm/Ad-5.webp"
         ),
-        technologies = listOf(),
+        technologies = listOf(
+            IconLinks.Dart,
+            IconLinks.Flutter,
+        ),
+        tools = listOf(
+            IconLinks.AffinityDesigner,
+            IconLinks.AndroidStudio,
+        )
     ),
 
     // Data integration projects
@@ -156,7 +187,15 @@ enum class SubProjects(
         externalUrl = "https://rapidapi.com/Pat92/api/jobs-api14",
         icon = "https://rapidapi.com/hub/_next/image?url=https%3A%2F%2Frapidapi-prod-apis.s3.amazonaws.com%2F45a489a1-f7de-45f9-8fa2-f735baa58fd2.png&w=1920&q=75",
         images = listOf(),
-        technologies = listOf(),
+        technologies = listOf(
+            IconLinks.NextJs,
+            IconLinks.Typescript,
+        ),
+        tools = listOf(
+            IconLinks.AffinityDesigner,
+            IconLinks.Vercel,
+            IconLinks.VsCode,
+        )
     ),
     ForexApi(
         id = "forex-api",
@@ -166,7 +205,15 @@ enum class SubProjects(
         externalUrl = "https://rapidapi.com/Pat92/api/forex-api2",
         icon = "https://rapidapi.com/hub/_next/image?url=https%3A%2F%2Frapidapi-prod-apis.s3.amazonaws.com%2Ffca6cad1-5c2e-4887-abf1-5750c062bacd.png&w=1920&q=75",
         images = listOf(),
-        technologies = listOf(),
+        technologies = listOf(
+            IconLinks.NextJs,
+            IconLinks.Typescript,
+        ),
+        tools = listOf(
+            IconLinks.AffinityDesigner,
+            IconLinks.Vercel,
+            IconLinks.VsCode,
+        )
     ),
     SoundcloudApi(
         id = "soundcloud-api",
@@ -176,7 +223,15 @@ enum class SubProjects(
         externalUrl = "https://rapidapi.com/Pat92/api/soundcloud-api3",
         icon = "https://rapidapi.com/hub/_next/image?url=https%3A%2F%2Frapidapi-prod-apis.s3.amazonaws.com%2F0183b8c7-e5fe-464a-92f2-f5a5528c1f94.png&w=1920&q=75",
         images = listOf(),
-        technologies = listOf(),
+        technologies = listOf(
+            IconLinks.NextJs,
+            IconLinks.Typescript,
+        ),
+        tools = listOf(
+            IconLinks.AffinityDesigner,
+            IconLinks.Vercel,
+            IconLinks.VsCode,
+        )
     ),
     GoogleTranslateApi(
         id = "google-translate-api",
@@ -186,7 +241,15 @@ enum class SubProjects(
         externalUrl = "https://rapidapi.com/Pat92/api/google-translate-api9",
         icon = "https://rapidapi.com/hub/_next/image?url=https%3A%2F%2Frapidapi-prod-apis.s3.amazonaws.com%2F98ebf6f3-e615-446a-9e18-168a986576df.png&w=1920&q=75",
         images = listOf(),
-        technologies = listOf(),
+        technologies = listOf(
+            IconLinks.NextJs,
+            IconLinks.Typescript,
+        ),
+        tools = listOf(
+            IconLinks.AffinityDesigner,
+            IconLinks.Vercel,
+            IconLinks.VsCode,
+        )
     ),
 
     // Website projects
@@ -198,7 +261,16 @@ enum class SubProjects(
         externalUrl = "https://www.volarink.no/",
         icon = "https://www.volarink.no/assets/images/main/logo-min.webp",
         images = listOf(),
-        technologies = listOf(),
+        technologies = listOf(
+            IconLinks.CSS,
+            IconLinks.GSAP,
+            IconLinks.HTML,
+            IconLinks.JavaScript,
+        ),
+        tools = listOf(
+            IconLinks.Figma,
+            IconLinks.VsCode,
+        )
     ),
     PortfolioV2(
         id = "portfolio-v2-website",
@@ -208,7 +280,15 @@ enum class SubProjects(
         externalUrl = "",
         icon = "",
         images = listOf(),
-        technologies = listOf(),
+        technologies = listOf(
+            IconLinks.ComposeHtml,
+            IconLinks.Kobweb,
+            IconLinks.Kotlin,
+        ),
+        tools = listOf(
+            IconLinks.Figma,
+            IconLinks.IntelliJ,
+        )
     ),
     PortfolioV1(
         id = "portfolio-v1-website",
@@ -217,7 +297,18 @@ enum class SubProjects(
         externalUrl = "",
         icon = "",
         images = listOf(),
-        technologies = listOf(),
+        technologies = listOf(
+            IconLinks.CSS,
+            IconLinks.Framer,
+            IconLinks.HTML,
+            IconLinks.React,
+            IconLinks.Redux,
+            IconLinks.Typescript,
+        ),
+        tools = listOf(
+            IconLinks.AffinityDesigner,
+            IconLinks.VsCode,
+        )
     ),
 
     // Open source projects
@@ -230,7 +321,13 @@ enum class SubProjects(
         externalUrl = "https://pub.dev/packages/dart_azure_ad_sign_in",
         icon = "https://pub.dev/static/hash-95guep1u/img/pub-dev-logo.svg",
         images = listOf(),
-        technologies = listOf(),
+        technologies = listOf(
+            IconLinks.Dart,
+        ),
+        tools = listOf(
+            IconLinks.AndroidStudio,
+            IconLinks.Azure,
+        )
     ),
     DartCosmosDb(
         id = "dart-cosmos-db",
@@ -241,6 +338,13 @@ enum class SubProjects(
         externalUrl = "https://pub.dev/packages/dart_azure_cosmosdb",
         icon = "https://pub.dev/static/hash-95guep1u/img/pub-dev-logo.svg",
         images = listOf(),
-        technologies = listOf(),
+        technologies = listOf(
+            IconLinks.Dart,
+        ),
+        tools = listOf(
+            IconLinks.AndroidStudio,
+            IconLinks.Azure,
+            IconLinks.CosmosDb,
+        )
     ),
 }
