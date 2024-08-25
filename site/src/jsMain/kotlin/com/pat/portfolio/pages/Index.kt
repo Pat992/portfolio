@@ -2,6 +2,7 @@ package com.pat.portfolio.pages
 
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
+import com.pat.portfolio.components._widgets.navigation.BurgerNavModal
 import com.pat.portfolio.components._widgets.navigation.Navigation
 import com.pat.portfolio.components._widgets.navigation.NavigationItem
 import com.pat.portfolio.components._widgets.wrappers.PageWrapper
@@ -45,23 +46,29 @@ fun HomePage() {
             ViewportDataObservable.mousePositionX = posX
         }
     )
-    PageWrapper {
-        Navigation(
-            navigationItems = {
-                Section
-                    .entries
-                    .filter { entry ->
-                        entry != Section.Main &&
-                                entry != Section.Footer &&
-                                entry != Section.Contact
-                    }
-                    .forEach { section ->
-                        if (section.ordinal == (Section.entries.size) / 2)
-                            Box()
-                        NavigationItem(section)
-                    }
+    BurgerNavModal(navigationItems = {
+        Section
+            .entries
+            .filter { entry -> entry != Section.Footer }
+            .forEach { section ->
+                NavigationItem(section)
             }
-        )
+    })
+    PageWrapper {
+        Navigation(navigationItems = {
+            Section
+                .entries
+                .filter { entry ->
+                    entry != Section.Main &&
+                            entry != Section.Footer &&
+                            entry != Section.Contact
+                }
+                .forEach { section ->
+                    if (section.ordinal == (Section.entries.size) / 2)
+                        Box()
+                    NavigationItem(section)
+                }
+        })
         MainSection()
         LanguagesSection()
         ProjectsSection()
