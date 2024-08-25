@@ -277,7 +277,7 @@ enum class SubProjects(
         title = "Portfolio Website V2",
         description = "I decided to rewrite my portfolio website because the original version was built with React, which isn’t very SEO-friendly." +
                 "|Since I have some experience with Jetpack Compose and Kotlin, I wanted to use a similar approach for the rebuild. After some research, I found Kobweb to be the perfect solution. Kobweb uses HTML Compose to create static websites, offering a development experience similar to Jetpack Compose.",
-        externalUrl = "",
+        externalUrl = "https://pat992.github.io/portfolio/",
         icon = "",
         images = listOf(),
         technologies = listOf(
@@ -294,7 +294,7 @@ enum class SubProjects(
         id = "portfolio-v1-website",
         title = "Portfolio Website V1",
         description = "The initial version of my portfolio website was built using React, with Redux handling state management, Framer Motion powering animations, and EmailJS enabling the contact form functionality.",
-        externalUrl = "",
+        externalUrl = "https://github.com/Pat992/portfolio/tree/master/_V1-React",
         icon = "",
         images = listOf(),
         technologies = listOf(

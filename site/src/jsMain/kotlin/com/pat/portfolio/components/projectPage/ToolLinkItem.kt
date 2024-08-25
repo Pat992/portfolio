@@ -33,7 +33,7 @@ fun ToolLinkItem(iconLink: IconLinks) {
                     alt = ""
                 )
                 Paragraph(
-                    modifier = Modifier.margin(left = 5.px),
+                    modifier = Modifier.margin(top = 5.px),
                     text = iconLink.itemName
                 )
             }
