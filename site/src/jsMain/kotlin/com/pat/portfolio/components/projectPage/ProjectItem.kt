@@ -43,6 +43,7 @@ fun ProjectItem(
                         modifier = Modifier
                             .fillMaxWidth()
                             .justifyContent(JustifyContent.SpaceBetween)
+                            .margin(bottom = 100.px)
                             .styleModifier {
                                 property("grid-template-columns", "[first] 100px [line2] auto [line3] 100px")
                             },
@@ -51,16 +52,13 @@ fun ProjectItem(
                         ImageElement(
                             modifier = Modifier
                                 .borderRadius(15.px)
-                                .margin(bottom = 25.px)
                                 .height(70.px),
                             src = subProject.icon,
                             alt = subProject.title
                         )
                         if (subProject.images.isNotEmpty())
                             Carousel(
-                                modifier = Modifier
-                                    .fillMaxWidth()
-                                    .margin(bottom = 25.px),
+                                modifier = Modifier.fillMaxWidth(),
                                 id = "splide-${subProject.id}",
                                 content = {
                                     subProject.images.forEach { image ->
@@ -78,7 +76,7 @@ fun ProjectItem(
                             )
                     }
                     SimpleGrid(
-                        numColumns = numColumns(base = 1, md = 2)
+                        numColumns = numColumns(base = 1, lg = 2)
                     ) {
                         Tools(subProject = subProject)
                         Overview(subProject = subProject)

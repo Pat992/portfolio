@@ -3,7 +3,6 @@ package com.pat.portfolio.components._widgets.navigation
 import androidx.compose.runtime.Composable
 import com.pat.portfolio.core.styles.glass
 import com.pat.portfolio.core.styles.linearGradient
-import com.pat.portfolio.models.Section
 import com.pat.portfolio.observables.ViewportDataObservable
 import com.varabyte.kobweb.compose.foundation.layout.Arrangement
 import com.varabyte.kobweb.compose.foundation.layout.Box
@@ -19,14 +18,19 @@ import org.jetbrains.compose.web.css.px
 import org.jetbrains.compose.web.dom.Nav
 
 @Composable
-fun Navigation() {
+fun Navigation(
+    navigationItems: @Composable () -> Unit
+) {
+    val scrollPercentage = ViewportDataObservable.scrollPercentage
+    NavigationHomeItem()
     Nav(
         attrs = Modifier
-            .zIndex(50)
             .glass()
+            .height(70.px)
+            .zIndex(50)
             .borderRadius(50.px)
             .padding(leftRight = 10.px)
-            .margin(top = 20.px)
+            .margin(top = 25.px)
             .fillMaxWidth(90.percent)
             .position(Position.Fixed)
             .toAttrs(),
@@ -51,18 +55,7 @@ fun Navigation() {
             horizontalArrangement = Arrangement.SpaceBetween,
             verticalAlignment = Alignment.CenterVertically
         ) {
-            Section
-                .entries
-                .filter { entry ->
-                    entry != Section.Main &&
-                            entry != Section.Footer &&
-                            entry != Section.Contact
-                }
-                .forEach { section ->
-                    if (section.ordinal == (Section.entries.size) / 2)
-                        NavigationHomeItem()
-                    NavigationItem(section)
-                }
+            navigationItems()
         }
     }
 }

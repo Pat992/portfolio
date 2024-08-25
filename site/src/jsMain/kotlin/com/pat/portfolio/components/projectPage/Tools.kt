@@ -1,6 +1,7 @@
 package com.pat.portfolio.components.projectPage
 
 import androidx.compose.runtime.Composable
+import com.pat.portfolio.components._widgets.HorizontalRule
 import com.pat.portfolio.components._widgets.text.Subtitle
 import com.pat.portfolio.models.IconLinks
 import com.pat.portfolio.models.SubProjects
@@ -9,13 +10,14 @@ import com.varabyte.kobweb.compose.foundation.layout.Row
 import com.varabyte.kobweb.compose.ui.Modifier
 import com.varabyte.kobweb.compose.ui.modifiers.fillMaxWidth
 import com.varabyte.kobweb.compose.ui.modifiers.margin
-import com.varabyte.kobweb.compose.ui.toAttrs
+import com.varabyte.kobweb.silk.style.breakpoint.Breakpoint
+import com.varabyte.kobweb.silk.theme.breakpoint.rememberBreakpoint
 import org.jetbrains.compose.web.css.percent
 import org.jetbrains.compose.web.css.px
-import org.jetbrains.compose.web.dom.Hr
 
 @Composable
 fun Tools(subProject: SubProjects) {
+    val breakpoint = rememberBreakpoint()
     Column(
         modifier = Modifier.fillMaxWidth(),
     ) {
@@ -23,21 +25,15 @@ fun Tools(subProject: SubProjects) {
             title = "Technologies",
             iconLinks = subProject.technologies
         )
-        Hr(
-            attrs = Modifier
-                .fillMaxWidth(90.percent)
-                .margin(topBottom = 25.px)
-                .toAttrs()
+        HorizontalRule(
+            modifier = Modifier.fillMaxWidth(if (breakpoint >= Breakpoint.MD) 90.percent else 100.percent)
         )
         ToolsItem(
             title = "Tools",
             iconLinks = subProject.tools
         )
-        Hr(
-            attrs = Modifier
-                .fillMaxWidth(90.percent)
-                .margin(topBottom = 25.px)
-                .toAttrs()
+        HorizontalRule(
+            modifier = Modifier.fillMaxWidth(if (breakpoint >= Breakpoint.MD) 90.percent else 100.percent)
         )
     }
 }

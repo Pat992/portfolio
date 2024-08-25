@@ -9,13 +9,12 @@ import com.pat.portfolio.observables.ViewportDataObservable
 import com.varabyte.kobweb.compose.css.TextAlign
 import com.varabyte.kobweb.compose.foundation.layout.Box
 import com.varabyte.kobweb.compose.ui.Modifier
-import com.varabyte.kobweb.compose.ui.modifiers.borderRadius
-import com.varabyte.kobweb.compose.ui.modifiers.padding
-import com.varabyte.kobweb.compose.ui.modifiers.textAlign
-import com.varabyte.kobweb.compose.ui.modifiers.width
+import com.varabyte.kobweb.compose.ui.graphics.Colors
+import com.varabyte.kobweb.compose.ui.modifiers.*
 import com.varabyte.kobweb.compose.ui.thenIf
 import com.varabyte.kobweb.silk.components.navigation.Link
 import com.varabyte.kobweb.silk.style.toModifier
+import org.jetbrains.compose.web.css.LineStyle
 import org.jetbrains.compose.web.css.px
 
 @Composable
@@ -23,6 +22,7 @@ fun NavigationItem(section: Section) {
     val isCurrentSection = ViewportDataObservable.sectionId == section.id
     Box(
         modifier = Modifier
+            .border(width = 1.px, color = Colors.Transparent, style = LineStyle.Solid)
             .thenIf(
                 condition = isCurrentSection,
                 Modifier.glass()

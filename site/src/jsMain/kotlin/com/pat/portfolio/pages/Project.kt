@@ -1,6 +1,7 @@
 package com.pat.portfolio.pages
 
 import androidx.compose.runtime.*
+import com.pat.portfolio.components._widgets.navigation.Navigation
 import com.pat.portfolio.components._widgets.wrappers.PageWrapper
 import com.pat.portfolio.components.projectPage.ProjectContent
 import com.pat.portfolio.core.utils.ObserveViewport
@@ -39,6 +40,7 @@ fun ProjectPage() {
         }
     )
     PageWrapper {
+        Navigation(navigationItems = {})
         if (project != null) {
             ProjectContent(project = project!!)
         }

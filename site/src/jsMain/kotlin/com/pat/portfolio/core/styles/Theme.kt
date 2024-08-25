@@ -27,7 +27,7 @@ enum class Theme(
     SecondaryBackgroundColor(
         hex = "#2F2D46",
         rgb = rgb(r = 47, g = 45, b = 70),
-        rgba = null
+        rgba = rgba(r = 47, g = 45, b = 70, a = 0.75),
     ),
     GlassBackgroundColor(
         hex = "#FFFFFF",
