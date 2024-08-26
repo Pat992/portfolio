@@ -27,6 +27,8 @@ import kotlin.js.Date
 
 @Composable
 fun ExperienceItem(
+    modifier: Modifier = Modifier,
+    showCompany: Boolean = true,
     title: String,
     subtitle: String,
     dateFrom: Date,
@@ -37,16 +39,13 @@ fun ExperienceItem(
     val breakpoint = rememberBreakpoint()
     val onViewportEntered = ViewportDataObservable.sectionId == section.id
     Row(
-        modifier = Modifier.height(
-            when {
-                breakpoint > Breakpoint.LG -> 120.px
-                breakpoint >= Breakpoint.SM -> 160.px
-                else -> 100.px
-            }
-        ),
+        modifier = Modifier
+            .fillMaxWidth()
+            .height(100.percent)
+            .then(modifier),
         verticalAlignment = Alignment.CenterVertically
     ) {
-        if (breakpoint >= Breakpoint.MD) {
+        if (breakpoint > Breakpoint.MD) {
             Box(
                 modifier = Modifier
                     .fillMaxHeight()
@@ -83,14 +82,19 @@ fun ExperienceItem(
             }
         }
         SimpleGrid(
-            modifier = Modifier.alignContent(AlignContent.Center),
+            modifier = Modifier
+                .fillMaxWidth()
+                .margin(bottom = if (breakpoint > Breakpoint.MD) 0.px else 15.px)
+                .alignContent(AlignContent.SpaceBetween),
             numColumns = numColumns(base = 1, xl = 2)
         ) {
             Box(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .order(if (breakpoint < Breakpoint.LG) 1 else -1),
                 contentAlignment = Alignment.CenterStart
             ) {
                 Paragraph(
-                    modifier = Modifier.width(if (breakpoint >= Breakpoint.MD) 500.px else 150.px),
                     text = "${
                         dateFrom.toLocaleDateString(window.navigator.language, options = dateLocaleOptions {
                             year = "numeric"
@@ -112,10 +116,9 @@ fun ExperienceItem(
                 )
             }
             Box {
-                Column(
-                    modifier = Modifier.width(if (breakpoint >= Breakpoint.LG) 70.percent else if (breakpoint >= Breakpoint.MD) 50.percent else 100.percent)
-                ) {
-                    Title(modifier = Modifier.textAlign(TextAlign.Left), text = title)
+                Column {
+                    if (breakpoint > Breakpoint.MD || showCompany)
+                        Title(modifier = Modifier.textAlign(TextAlign.Left), text = title)
                     Subtitle(modifier = Modifier.textAlign(TextAlign.Left), text = subtitle)
                 }
                 Box(

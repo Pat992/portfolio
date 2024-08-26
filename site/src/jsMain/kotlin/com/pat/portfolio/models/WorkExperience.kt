@@ -16,11 +16,11 @@ enum class WorkExperience(
             IconLinks.Flutter
         ),
         tools = listOf(
-            IconLinks.Matrix,
-            IconLinks.FHIR,
             IconLinks.AndroidStudio,
+            IconLinks.FHIR,
             IconLinks.Git,
             IconLinks.Github,
+            IconLinks.Matrix,
             IconLinks.Notion,
             IconLinks.VsCode
         ),
@@ -35,11 +35,11 @@ enum class WorkExperience(
             Position.QuibiqDev1
         ),
         technologies = listOf(
+            IconLinks.DotNet,
             IconLinks.Angular,
             IconLinks.Bicep,
             IconLinks.CSharp,
             IconLinks.CSS,
-            IconLinks.DotNet,
             IconLinks.HTML,
             IconLinks.JavaScript,
             IconLinks.Json,
@@ -66,7 +66,7 @@ enum class WorkExperience(
             IconLinks.VsCode
         ),
     ),
-    AndeoIntern(
+    Andeo(
         companyName = "Andeo AG",
         positions = listOf(Position.AndeoIntern),
         technologies = listOf(
@@ -85,9 +85,10 @@ enum class WorkExperience(
 }
 
 enum class Position(
-    jobTitle: String,
+    val jobTitle: String,
     val dateFrom: Date,
     val dateTo: Date?,
+    val showCompany: Boolean = true
 ) {
     FamedlyFrontend(
         jobTitle = "Frontend Developer",
@@ -103,21 +104,25 @@ enum class Position(
         jobTitle = "Lead Developer",
         dateFrom = Date(year = 2023, month = 1, day = 1),
         dateTo = Date(year = 2023, month = 10, day = 31),
+        showCompany = false
     ),
     QuibiqSeniorDev(
         jobTitle = "Senior Developer",
         dateFrom = Date(year = 2022, month = 7, day = 1),
         dateTo = Date(year = 2022, month = 12, day = 31),
+        showCompany = false
     ),
     QuibiqDev3(
         jobTitle = "Developer D3",
         dateFrom = Date(year = 2021, month = 7, day = 1),
         dateTo = Date(year = 2022, month = 6, day = 30),
+        showCompany = false
     ),
     QuibiqDev1(
         jobTitle = "Developer D1",
         dateFrom = Date(year = 2020, month = 3, day = 1),
         dateTo = Date(year = 2021, month = 6, day = 30),
+        showCompany = false
     ),
     AndeoIntern(
         jobTitle = "Intern Web Developer",

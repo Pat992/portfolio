@@ -2,6 +2,7 @@ package com.pat.portfolio.components.projectPage
 
 import androidx.compose.runtime.Composable
 import com.pat.portfolio.components._widgets.HorizontalRule
+import com.pat.portfolio.components._widgets.buttons.VerticalLinkItem
 import com.pat.portfolio.components._widgets.text.Subtitle
 import com.pat.portfolio.models.IconLinks
 import com.pat.portfolio.models.SubProjects
@@ -51,7 +52,7 @@ private fun ToolsItem(
         modifier = Modifier.fillMaxWidth(),
     ) {
         iconLinks.forEach { iconLink ->
-            ToolLinkItem(iconLink = iconLink)
+            VerticalLinkItem(iconLink = iconLink)
         }
     }
 }

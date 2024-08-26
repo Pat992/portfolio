@@ -2,6 +2,7 @@ package com.pat.portfolio.components._widgets.text
 
 import androidx.compose.runtime.Composable
 import com.pat.portfolio.core.constants.FontSizes.PARAGRAPH_SIZE
+import com.pat.portfolio.core.constants.FontSizes.PARAGRAPH_SIZE_MEDIUM
 import com.pat.portfolio.core.constants.FontSizes.PARAGRAPH_SIZE_SMALL
 import com.pat.portfolio.core.styles.paragraphText
 import com.varabyte.kobweb.compose.ui.Modifier
@@ -26,7 +27,13 @@ fun Paragraph(
             .padding(0.px)
             .margin(0.px)
             .paragraphText()
-            .fontSize(if (breakpoint >= Breakpoint.MD) PARAGRAPH_SIZE else PARAGRAPH_SIZE_SMALL)
+            .fontSize(
+                when {
+                    breakpoint > Breakpoint.LG -> PARAGRAPH_SIZE
+                    breakpoint >= Breakpoint.MD -> PARAGRAPH_SIZE_MEDIUM
+                    else -> PARAGRAPH_SIZE_SMALL
+                }
+            )
             .then(modifier)
             .toAttrs()
     ) {

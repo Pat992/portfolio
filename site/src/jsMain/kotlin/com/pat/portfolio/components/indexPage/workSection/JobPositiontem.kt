@@ -8,13 +8,15 @@ import com.pat.portfolio.models.WorkExperience
 
 @Composable
 fun JobPositionItem(
+    showCompany: Boolean,
     workExperience: WorkExperience,
     position: Position,
     index: Int
 ) {
     ExperienceItem(
+        showCompany = showCompany,
         title = workExperience.companyName,
-        subtitle = position.name,
+        subtitle = position.jobTitle,
         dateFrom = position.dateFrom,
         dateTo = position.dateTo,
         index = index,

@@ -23,7 +23,7 @@ fun WorkContent() {
         WorkExperience.entries.forEach { we ->
             SimpleGrid(
                 modifier = Modifier.fillMaxWidth(),
-                numColumns = numColumns(base = 1, md = 2)
+                numColumns = numColumns(base = 1, lg = 2)
             ) {
                 ToolsTechCard(
                     technologies = we.technologies,
@@ -32,10 +32,11 @@ fun WorkContent() {
                 Column(
                     modifier = Modifier
                         .fillMaxWidth()
-                        .margin(left = if (breakpoint >= Breakpoint.MD) 50.px else 0.px)
+                        .margin(left = if (breakpoint > Breakpoint.MD) 50.px else 0.px)
                 ) {
                     we.positions.forEach { pos ->
                         JobPositionItem(
+                            showCompany = pos.showCompany,
                             workExperience = we,
                             position = pos,
                             index = pos.ordinal

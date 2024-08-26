@@ -9,7 +9,8 @@ data object FontSizes {
     val SUBTITLE_SIZE = (1.25).cssRem
     val SUBTITLE_SIZE_SMALL = (0.9).cssRem
     val PARAGRAPH_SIZE = (1).cssRem
-    val PARAGRAPH_SIZE_SMALL = (0.8).cssRem
+    val PARAGRAPH_SIZE_MEDIUM = (0.75).cssRem
+    val PARAGRAPH_SIZE_SMALL = (0.65).cssRem
     val MAIN_TITLE_SIZE = (2.5).cssRem
     val MAIN_TITLE_SIZE_SMALL = (1.25).cssRem
     val MAIN_SUBTITLE_SIZE_LARGE = (10).cssRem

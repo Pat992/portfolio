@@ -12,10 +12,13 @@ import com.pat.portfolio.core.constants.ExternalUrls.BIZTALK_URL
 import com.pat.portfolio.core.constants.ExternalUrls.COMPOSE_HTML_URL
 import com.pat.portfolio.core.constants.ExternalUrls.CONFLUENCE_URL
 import com.pat.portfolio.core.constants.ExternalUrls.COSMOSDB_URL
+import com.pat.portfolio.core.constants.ExternalUrls.CPP_URL
 import com.pat.portfolio.core.constants.ExternalUrls.CSHARP_URL
 import com.pat.portfolio.core.constants.ExternalUrls.CSS_URL
+import com.pat.portfolio.core.constants.ExternalUrls.C_URL
 import com.pat.portfolio.core.constants.ExternalUrls.DART_URL
 import com.pat.portfolio.core.constants.ExternalUrls.DOTNET_URL
+import com.pat.portfolio.core.constants.ExternalUrls.ECLIPSE_URL
 import com.pat.portfolio.core.constants.ExternalUrls.FHIR_URL
 import com.pat.portfolio.core.constants.ExternalUrls.FIGMA_URL
 import com.pat.portfolio.core.constants.ExternalUrls.FLUTTER_URL
@@ -28,6 +31,7 @@ import com.pat.portfolio.core.constants.ExternalUrls.GREENSOCK_URL
 import com.pat.portfolio.core.constants.ExternalUrls.HTML_URL
 import com.pat.portfolio.core.constants.ExternalUrls.INTELLIJ_URL
 import com.pat.portfolio.core.constants.ExternalUrls.JAVASCRIPT_URL
+import com.pat.portfolio.core.constants.ExternalUrls.JAVA_URL
 import com.pat.portfolio.core.constants.ExternalUrls.JQUERY_URL
 import com.pat.portfolio.core.constants.ExternalUrls.JSON_URL
 import com.pat.portfolio.core.constants.ExternalUrls.KOBWEB_URL
@@ -40,6 +44,7 @@ import com.pat.portfolio.core.constants.ExternalUrls.MSSQL_URL
 import com.pat.portfolio.core.constants.ExternalUrls.MS_SUITE_URL
 import com.pat.portfolio.core.constants.ExternalUrls.NEXT_JS_URL
 import com.pat.portfolio.core.constants.ExternalUrls.NODEJS_URL
+import com.pat.portfolio.core.constants.ExternalUrls.NOTEPAD_PP_URL
 import com.pat.portfolio.core.constants.ExternalUrls.NOTION_URL
 import com.pat.portfolio.core.constants.ExternalUrls.PHPSTORM_URL
 import com.pat.portfolio.core.constants.ExternalUrls.PHP_URL
@@ -48,6 +53,7 @@ import com.pat.portfolio.core.constants.ExternalUrls.REACT_URL
 import com.pat.portfolio.core.constants.ExternalUrls.REDUX_URL
 import com.pat.portfolio.core.constants.ExternalUrls.SQL_URL
 import com.pat.portfolio.core.constants.ExternalUrls.TYPESCRIPT_URL
+import com.pat.portfolio.core.constants.ExternalUrls.VBA_URL
 import com.pat.portfolio.core.constants.ExternalUrls.VERCEL_URL
 import com.pat.portfolio.core.constants.ExternalUrls.VS_CODE_URL
 import com.pat.portfolio.core.constants.ExternalUrls.VS_URL
@@ -66,10 +72,13 @@ import com.pat.portfolio.core.constants.Icons.BICEP_ICON
 import com.pat.portfolio.core.constants.Icons.COMPOSE_HTML_ICON
 import com.pat.portfolio.core.constants.Icons.CONFLUENCE_ICON
 import com.pat.portfolio.core.constants.Icons.COSMOSDB_ICON
+import com.pat.portfolio.core.constants.Icons.CPP_ICON
 import com.pat.portfolio.core.constants.Icons.CSHARP_ICON
 import com.pat.portfolio.core.constants.Icons.CSS_ICON
+import com.pat.portfolio.core.constants.Icons.C_ICON
 import com.pat.portfolio.core.constants.Icons.DART_ICON
 import com.pat.portfolio.core.constants.Icons.DOTNET_ICON
+import com.pat.portfolio.core.constants.Icons.ECLIPSE_ICON
 import com.pat.portfolio.core.constants.Icons.FHIR_ICON
 import com.pat.portfolio.core.constants.Icons.FIGMA_ICON
 import com.pat.portfolio.core.constants.Icons.FLUTTER_ICON
@@ -81,6 +90,7 @@ import com.pat.portfolio.core.constants.Icons.GREENSOCK_ICON
 import com.pat.portfolio.core.constants.Icons.HTML_ICON
 import com.pat.portfolio.core.constants.Icons.INTELLIJ_ICON
 import com.pat.portfolio.core.constants.Icons.JAVASCRIPT_ICON
+import com.pat.portfolio.core.constants.Icons.JAVA_ICON
 import com.pat.portfolio.core.constants.Icons.JQUERY_ICON
 import com.pat.portfolio.core.constants.Icons.JSON_ICON
 import com.pat.portfolio.core.constants.Icons.KOBWEB_ICON
@@ -93,6 +103,7 @@ import com.pat.portfolio.core.constants.Icons.MSSQL_ICON
 import com.pat.portfolio.core.constants.Icons.MS_SUITE_ICON
 import com.pat.portfolio.core.constants.Icons.NEXT_JS_ICON
 import com.pat.portfolio.core.constants.Icons.NODEJS_ICON
+import com.pat.portfolio.core.constants.Icons.NOTEPAD_PP_ICON
 import com.pat.portfolio.core.constants.Icons.NOTION_ICON
 import com.pat.portfolio.core.constants.Icons.PHPSTORM_ICON
 import com.pat.portfolio.core.constants.Icons.PHP_ICON
@@ -101,6 +112,7 @@ import com.pat.portfolio.core.constants.Icons.REACT_ICON
 import com.pat.portfolio.core.constants.Icons.REDUX_ICON
 import com.pat.portfolio.core.constants.Icons.SQL_ICON
 import com.pat.portfolio.core.constants.Icons.TYPESCRIPT_ICON
+import com.pat.portfolio.core.constants.Icons.VBA_ICON
 import com.pat.portfolio.core.constants.Icons.VERCEL_ICON
 import com.pat.portfolio.core.constants.Icons.VS_CODE_ICON
 import com.pat.portfolio.core.constants.Icons.VS_ICON
@@ -124,10 +136,20 @@ enum class IconLinks(
         iconPath = BICEP_ICON,
         url = BICEP_URL
     ),
+    C(
+        itemName = "C",
+        iconPath = C_ICON,
+        url = C_URL
+    ),
     CSharp(
         itemName = "C#",
         iconPath = CSHARP_ICON,
         url = CSHARP_URL
+    ),
+    CPP(
+        itemName = "C++",
+        iconPath = CPP_ICON,
+        url = CPP_URL
     ),
     Kotlin(
         itemName = "Kotlin",
@@ -178,6 +200,11 @@ enum class IconLinks(
         itemName = "HTML",
         iconPath = HTML_ICON,
         url = HTML_URL
+    ),
+    Java(
+        itemName = "Java",
+        iconPath = JAVA_ICON,
+        url = JAVA_URL
     ),
     JavaScript(
         itemName = "JavaScript",
@@ -238,6 +265,11 @@ enum class IconLinks(
         itemName = "TypeScript",
         iconPath = TYPESCRIPT_ICON,
         url = TYPESCRIPT_URL
+    ),
+    VBA(
+        itemName = "VBA",
+        iconPath = VBA_ICON,
+        url = VBA_URL
     ),
     XML(
         itemName = "XML",
@@ -301,6 +333,11 @@ enum class IconLinks(
         iconPath = COSMOSDB_ICON,
         url = COSMOSDB_URL
     ),
+    Eclipse(
+        itemName = "Eclipse",
+        iconPath = ECLIPSE_ICON,
+        url = ECLIPSE_URL
+    ),
     FHIR(
         itemName = "FHIR",
         iconPath = FHIR_ICON,
@@ -350,6 +387,11 @@ enum class IconLinks(
         itemName = "Microsoft 365 Suite",
         iconPath = MS_SUITE_ICON,
         url = MS_SUITE_URL
+    ),
+    NotepadPP(
+        itemName = "Notepad++",
+        iconPath = NOTEPAD_PP_ICON,
+        url = NOTEPAD_PP_URL
     ),
     Notion(
         itemName = "Notion",

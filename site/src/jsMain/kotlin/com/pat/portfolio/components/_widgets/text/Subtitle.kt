@@ -29,7 +29,7 @@ fun Subtitle(
             .margin(0.px)
             .titleText()
             .fontWeight(FontWeight.Normal)
-            .fontSize(if (breakpoint >= Breakpoint.MD) SUBTITLE_SIZE else SUBTITLE_SIZE_SMALL)
+            .fontSize(if (breakpoint >= Breakpoint.LG) SUBTITLE_SIZE else SUBTITLE_SIZE_SMALL)
             .then(modifier)
             .toAttrs()
     ) {

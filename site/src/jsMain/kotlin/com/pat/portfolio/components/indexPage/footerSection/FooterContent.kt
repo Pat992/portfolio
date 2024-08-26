@@ -1,6 +1,7 @@
 package com.pat.portfolio.components.indexPage.footerSection
 
 import androidx.compose.runtime.Composable
+import com.pat.portfolio.components._widgets.buttons.HorizontalLinkItem
 import com.pat.portfolio.components._widgets.cards.GlassCard
 import com.pat.portfolio.components._widgets.text.Subtitle
 import com.pat.portfolio.models.IconLinks
@@ -33,16 +34,16 @@ fun FooterContent() {
                 horizontalAlignment = Alignment.CenterHorizontally
             ) {
                 Subtitle(modifier = Modifier.margin(bottom = 25.px), text = "Built with")
-                FooterLinkItem(IconLinks.Kotlin)
-                FooterLinkItem(IconLinks.Kobweb)
-                FooterLinkItem(IconLinks.ComposeHtml)
+                HorizontalLinkItem(IconLinks.Kotlin)
+                HorizontalLinkItem(IconLinks.Kobweb)
+                HorizontalLinkItem(IconLinks.ComposeHtml)
             }
             Column(
                 horizontalAlignment = Alignment.CenterHorizontally
             ) {
                 Subtitle(modifier = Modifier.margin(bottom = 25.px), text = "Contact")
-                FooterLinkItem(IconLinks.Github)
-                FooterLinkItem(IconLinks.Linkedin)
+                HorizontalLinkItem(IconLinks.Github)
+                HorizontalLinkItem(IconLinks.Linkedin)
             }
         }
     }
