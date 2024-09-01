@@ -9,7 +9,6 @@ import com.pat.portfolio.components._widgets.carousel.CarouselItem
 import com.pat.portfolio.components._widgets.wrappers.ProjectsWrapper
 import com.pat.portfolio.core.styles.Theme
 import com.pat.portfolio.models.SubProjects
-import com.varabyte.kobweb.compose.foundation.layout.Box
 import com.varabyte.kobweb.compose.foundation.layout.Column
 import com.varabyte.kobweb.compose.ui.Alignment
 import com.varabyte.kobweb.compose.ui.Modifier
@@ -50,7 +49,7 @@ fun ProjectItem(
                             modifier = Modifier
                                 .borderRadius(15.px)
                                 .margin(bottom = 25.px)
-                                .size(70.px),
+                                .height(100.px),
                             src = subProject.icon,
                             alt = subProject.title
                         )
@@ -72,7 +71,6 @@ fun ProjectItem(
                                     }
                                 }
                             )
-                        Box(modifier = Modifier.width(70.px))
                     }
                     SimpleGrid(
                         numColumns = numColumns(base = 1, lg = 2)
