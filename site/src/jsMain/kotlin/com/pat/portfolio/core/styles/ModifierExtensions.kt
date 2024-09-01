@@ -59,6 +59,7 @@ fun Modifier.primaryButton(): Modifier {
         .height(Height.MaxContent)
         .width(Width.MaxContent)
         .textAlign(TextAlign.Center)
+        .borderRadius(50.px)
 }
 
 fun Modifier.secondaryButton(): Modifier {
@@ -69,6 +70,7 @@ fun Modifier.secondaryButton(): Modifier {
         .height(Height.MaxContent)
         .width(Width.MaxContent)
         .textAlign(TextAlign.Center)
+        .borderRadius(50.px)
 }
 
 fun Modifier.primaryButtonGradient(): Modifier {
@@ -79,6 +81,7 @@ fun Modifier.primaryButtonGradient(): Modifier {
         .borderRadius(15.px)
         .top(0.px)
         .left(0.px)
+        .borderRadius(50.px)
 }
 
 fun Modifier.linearGradient(): Modifier {
