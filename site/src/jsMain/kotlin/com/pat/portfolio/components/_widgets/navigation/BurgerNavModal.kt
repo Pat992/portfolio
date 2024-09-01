@@ -31,7 +31,7 @@ fun BurgerNavModal(
             .width(100.vw)
             .overflow(Overflow.Hidden)
             .clip(if (BurgerMenuObservable.isOpen) Circle(150, 50 to -10) else Circle(0, 50 to -10))
-            .backgroundColor(Theme.HighlightColor4.rgb)
+            .backgroundColor(Theme.SecondaryBackgroundColor.rgb)
             .transition(Transition.of(TransitionProperty.All.toString(), duration = 500.ms))
     ) {
         Column(

@@ -26,6 +26,7 @@ fun WorkContent() {
                 numColumns = numColumns(base = 1, lg = 2)
             ) {
                 ToolsTechCard(
+                    description = we.shortDescription,
                     technologies = we.technologies,
                     tools = we.tools
                 )

@@ -4,12 +4,14 @@ import kotlin.js.Date
 
 enum class WorkExperience(
     val companyName: String,
+    val shortDescription: String,
     val positions: List<Position>,
     val technologies: List<IconLinks>,
     val tools: List<IconLinks>
 ) {
     Famedly(
         companyName = "Famedly",
+        shortDescription = "Famedly is building software using Matrix and FHIR to make communication and data exchange in the healthcare industry better.",
         positions = listOf(Position.FamedlyFrontend),
         technologies = listOf(
             IconLinks.Dart,
@@ -27,6 +29,7 @@ enum class WorkExperience(
     ),
     Quibiq(
         companyName = "QUIBIQ AG",
+        shortDescription = "QUIBIQ is the leading Microsoft partner for integration solutions (EAI, EDI, PM and ESB) based on the Microsoft technologies BizTalk Server, Azure, API management, LogicApps and .Net.",
         positions = listOf(
             Position.QuibiqArchitect,
             Position.QuibiqLeadDev,
@@ -68,6 +71,7 @@ enum class WorkExperience(
     ),
     Andeo(
         companyName = "Andeo AG",
+        shortDescription = "Andeo AG is a small IT company that has been developing applications, websites and mobile apps since 2006. It also offers IT infrastructure operation and training and further education.",
         positions = listOf(Position.AndeoIntern),
         technologies = listOf(
             IconLinks.CSS,
@@ -78,6 +82,7 @@ enum class WorkExperience(
             IconLinks.SQL
         ),
         tools = listOf(
+            IconLinks.Git,
             IconLinks.MariaDB,
             IconLinks.PhpStorm
         ),

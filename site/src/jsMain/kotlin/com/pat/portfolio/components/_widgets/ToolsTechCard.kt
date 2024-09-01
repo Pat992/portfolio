@@ -3,6 +3,7 @@ package com.pat.portfolio.components._widgets
 import androidx.compose.runtime.Composable
 import com.pat.portfolio.components._widgets.buttons.HorizontalLinkItem
 import com.pat.portfolio.components._widgets.cards.Card
+import com.pat.portfolio.components._widgets.text.Paragraph
 import com.pat.portfolio.components._widgets.text.Subtitle
 import com.pat.portfolio.core.styles.Theme
 import com.pat.portfolio.models.IconLinks
@@ -22,6 +23,7 @@ import org.jetbrains.compose.web.css.px
 
 @Composable
 fun ToolsTechCard(
+    description: String? = null,
     technologies: List<IconLinks>,
     tools: List<IconLinks>
 ) {
@@ -34,18 +36,31 @@ fun ToolsTechCard(
             .order(if (breakpoint < Breakpoint.LG) 1 else -1),
         theme = Theme.HighlightColor3,
         content = {
-            Row(
-                modifier = Modifier.fillMaxWidth(),
-                horizontalArrangement = Arrangement.SpaceBetween
+            Column(
+                modifier = Modifier.fillMaxWidth()
             ) {
-                ToolsTechCardGrid(
-                    title = "Technologies",
-                    iconLinks = technologies
-                )
-                ToolsTechCardGrid(
-                    title = "Tools",
-                    iconLinks = tools
-                )
+                if (description != null)
+                    Card(
+                        modifier = Modifier
+                            .padding(all = 15.px)
+                            .margin(bottom = 25.px),
+                        content = {
+                            Paragraph(text = description)
+                        }
+                    )
+                Row(
+                    modifier = Modifier.fillMaxWidth(),
+                    horizontalArrangement = Arrangement.SpaceBetween
+                ) {
+                    ToolsTechCardGrid(
+                        title = "Technologies",
+                        iconLinks = technologies
+                    )
+                    ToolsTechCardGrid(
+                        title = "Tools",
+                        iconLinks = tools
+                    )
+                }
             }
         }
     )

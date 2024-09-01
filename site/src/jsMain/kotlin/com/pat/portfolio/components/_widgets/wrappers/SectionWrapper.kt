@@ -20,7 +20,7 @@ fun SectionWrapper(
     Section(
         attrs = modifier
             .zIndex(1)
-            .padding(top = 100.px)
+            .padding(top = 150.px)
             .id(section.id)
             .classNames("section")
             .fillMaxWidth()

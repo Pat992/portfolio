@@ -6,8 +6,8 @@ data object FontSizes {
     const val FONT_FAMILY = "Roboto"
     val TITLE_SIZE = (1.5).cssRem
     val TITLE_SIZE_SMALL = (1.25).cssRem
-    val SUBTITLE_SIZE = (1.25).cssRem
-    val SUBTITLE_SIZE_SMALL = (0.9).cssRem
+    val SUBTITLE_SIZE = (1.5).cssRem
+    val SUBTITLE_SIZE_SMALL = (1.25).cssRem
     val PARAGRAPH_SIZE = (1).cssRem
     val PARAGRAPH_SIZE_MEDIUM = (0.75).cssRem
     val PARAGRAPH_SIZE_SMALL = (0.65).cssRem
