@@ -37,6 +37,7 @@ fun Navigation(
         NavigationHomeItem()
     Nav(
         attrs = Modifier
+            .maxWidth(1920.px)
             .glass()
             .height(70.px)
             .zIndex(50)

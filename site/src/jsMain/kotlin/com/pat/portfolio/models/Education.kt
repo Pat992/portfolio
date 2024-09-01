@@ -13,7 +13,7 @@ enum class Education(
     ilsAndroid(
         school = "ILS - Institute for Learning Systems",
         educationTitle = "Android developer",
-        dateFrom = Date(year = 2023, month = 6, day = 1),
+        dateFrom = Date(year = 2023, month = 5),
         dateTo = null,
         technologies = listOf(
             IconLinks.Java,
@@ -28,8 +28,8 @@ enum class Education(
     efz(
         school = "ZLI - Zurich",
         educationTitle = "Computer science EFZ / Swiss federal certificate of competence",
-        dateFrom = Date(year = 2019, month = 8, day = 1),
-        dateTo = Date(year = 2021, month = 8, day = 1),
+        dateFrom = Date(year = 2019, month = 7),
+        dateTo = Date(year = 2021, month = 7),
         technologies = listOf(
             IconLinks.C,
             IconLinks.CSS,
@@ -53,8 +53,8 @@ enum class Education(
     haf(
         school = "Hamburg Academy for distance learning",
         educationTitle = "Computer science HAF",
-        dateFrom = Date(year = 2017, month = 7, day = 12),
-        dateTo = Date(year = 2020, month = 6, day = 6),
+        dateFrom = Date(year = 2017, month = 6),
+        dateTo = Date(year = 2020, month = 5),
         technologies = listOf(
             IconLinks.CPP,
             IconLinks.CSharp,

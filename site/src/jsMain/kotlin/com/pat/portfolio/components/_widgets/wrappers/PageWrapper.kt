@@ -11,11 +11,9 @@ import com.varabyte.kobweb.compose.foundation.layout.Box
 import com.varabyte.kobweb.compose.foundation.layout.Column
 import com.varabyte.kobweb.compose.ui.Alignment
 import com.varabyte.kobweb.compose.ui.Modifier
-import com.varabyte.kobweb.compose.ui.modifiers.backgroundColor
-import com.varabyte.kobweb.compose.ui.modifiers.fillMaxSize
-import com.varabyte.kobweb.compose.ui.modifiers.fillMaxWidth
-import com.varabyte.kobweb.compose.ui.modifiers.overflow
+import com.varabyte.kobweb.compose.ui.modifiers.*
 import org.jetbrains.compose.web.css.percent
+import org.jetbrains.compose.web.css.px
 
 @Composable
 fun PageWrapper(
@@ -32,7 +30,10 @@ fun PageWrapper(
             ContactModal()
         MouseFollowingGradient()
         Column(
-            modifier = Modifier.fillMaxWidth(90.percent)
+            modifier = Modifier
+                .fillMaxWidth(90.percent)
+                .maxWidth(1920.px),
+            horizontalAlignment = Alignment.CenterHorizontally
         ) {
             content()
         }

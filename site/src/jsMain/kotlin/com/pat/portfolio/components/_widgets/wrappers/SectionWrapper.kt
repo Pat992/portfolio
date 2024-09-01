@@ -8,7 +8,6 @@ import com.varabyte.kobweb.compose.ui.Modifier
 import com.varabyte.kobweb.compose.ui.modifiers.*
 import com.varabyte.kobweb.compose.ui.toAttrs
 import org.jetbrains.compose.web.css.px
-import org.jetbrains.compose.web.css.vh
 import org.jetbrains.compose.web.dom.Section
 
 @Composable
@@ -24,7 +23,7 @@ fun SectionWrapper(
             .id(section.id)
             .classNames("section")
             .fillMaxWidth()
-            .minHeight(100.vh)
+            .maxWidth(1920.px)
             .toAttrs()
     ) {
         Column(

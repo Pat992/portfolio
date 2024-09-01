@@ -32,6 +32,7 @@ fun ProjectItem(
         Card(
             modifier = Modifier
                 .fillMaxSize()
+                .maxWidth(1920.px)
                 .padding(all = 25.px),
             theme = Theme.entries[colorIndex],
             content = {

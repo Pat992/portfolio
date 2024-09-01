@@ -19,7 +19,8 @@ fun SvgElement(
     width: Double,
     color: String,
     viewBoxValue: String,
-    modifier: Modifier = Modifier
+    modifier: Modifier = Modifier,
+    pathModifier: Modifier = Modifier
 ) {
     Svg(
         attrs = Modifier
@@ -36,6 +37,7 @@ fun SvgElement(
                     property("stroke", color)
                 }
                 .size(0.95.percent)
+                .then(pathModifier)
                 .toAttrs {
                     attr("fill", color)
                     attr("d", path)

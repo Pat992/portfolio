@@ -97,41 +97,41 @@ enum class Position(
 ) {
     FamedlyFrontend(
         jobTitle = "Frontend Developer",
-        dateFrom = Date(year = 2024, month = 1, day = 1),
+        dateFrom = Date(year = 2024, month = 0),
         dateTo = null
     ),
     QuibiqArchitect(
         jobTitle = "Solution Architect",
-        dateFrom = Date(year = 2023, month = 11, day = 1),
-        dateTo = Date(year = 2023, month = 12, day = 31),
+        dateFrom = Date(year = 2023, month = 10),
+        dateTo = Date(year = 2023, month = 11),
     ),
     QuibiqLeadDev(
         jobTitle = "Lead Developer",
-        dateFrom = Date(year = 2023, month = 1, day = 1),
-        dateTo = Date(year = 2023, month = 10, day = 31),
+        dateFrom = Date(year = 2023, month = 0),
+        dateTo = Date(year = 2023, month = 9),
         showCompany = false
     ),
     QuibiqSeniorDev(
         jobTitle = "Senior Developer",
-        dateFrom = Date(year = 2022, month = 7, day = 1),
-        dateTo = Date(year = 2022, month = 12, day = 31),
+        dateFrom = Date(year = 2022, month = 6),
+        dateTo = Date(year = 2022, month = 11),
         showCompany = false
     ),
     QuibiqDev3(
         jobTitle = "Developer D3",
-        dateFrom = Date(year = 2021, month = 7, day = 1),
-        dateTo = Date(year = 2022, month = 6, day = 30),
+        dateFrom = Date(year = 2021, month = 6),
+        dateTo = Date(year = 2022, month = 5),
         showCompany = false
     ),
     QuibiqDev1(
         jobTitle = "Developer D1",
-        dateFrom = Date(year = 2020, month = 3, day = 1),
-        dateTo = Date(year = 2021, month = 6, day = 30),
+        dateFrom = Date(year = 2020, month = 2),
+        dateTo = Date(year = 2021, month = 5),
         showCompany = false
     ),
     AndeoIntern(
         jobTitle = "Intern Web Developer",
-        dateFrom = Date(year = 2019, month = 8, day = 1),
-        dateTo = Date(year = 2021, month = 2, day = 30),
+        dateFrom = Date(year = 2019, month = 7),
+        dateTo = Date(year = 2020, month = 1),
     )
 }

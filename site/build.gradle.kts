@@ -24,6 +24,11 @@ kobweb {
                         raw("@import url(\"/styles/splide-min.css\") layer(splide)")
                     }
                 }
+                style {
+                    unsafe {
+                        raw("@import url(\"/styles/loading-spinner.css\") layer(spinner)")
+                    }
+                }
             }
         }
 

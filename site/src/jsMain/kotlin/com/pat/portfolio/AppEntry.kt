@@ -27,4 +27,5 @@ fun AppEntry(content: @Composable () -> Unit) {
 @InitSilk
 fun initSilk(context: InitSilkContext) {
     context.stylesheet.cssLayers.add("splide", after = SilkLayer.BASE)
+    context.stylesheet.cssLayers.add("spinner", after = SilkLayer.BASE)
 }
