@@ -44,13 +44,13 @@ fun ProjectItem(
                         modifier = Modifier
                             .fillMaxWidth()
                             .justifyContent(JustifyContent.SpaceBetween)
-                            .margin(bottom = 100.px),
+                            .margin(bottom = 50.px),
                     ) {
                         ImageElement(
                             modifier = Modifier
                                 .borderRadius(15.px)
                                 .margin(bottom = 25.px)
-                                .height(100.px),
+                                .height(75.px),
                             src = subProject.icon,
                             alt = subProject.title
                         )
