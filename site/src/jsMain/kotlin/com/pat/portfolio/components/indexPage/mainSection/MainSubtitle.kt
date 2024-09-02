@@ -38,11 +38,10 @@ fun MainSubtitle(
             )
             .letterSpacing(if (breakpoint >= Breakpoint.MD) 1.5.cssRem else 1.2.cssRem)
             .display(DisplayStyle.InlineBlock)
-            .backgroundSize(BackgroundSize.of(100.percent))
+            .backgroundSize(BackgroundSize.Cover)
             .backgroundClip(BackgroundClip.Text)
             .backgroundImage(url = url("/images/text/text-gradient.svg"))
             .styleModifier {
-//                property("background", "url(\"/images/text/text-gradient.svg\")")
                 property("-webkit-text-fill-color", "transparent")
             }
             .then(modifier)
