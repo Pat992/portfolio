@@ -1,0 +1,94 @@
+@import '../../global';
+
+.skills {
+    position: relative;
+    justify-content: space-between;
+    z-index: 1;
+    overflow: hidden;
+    margin: 10vh auto;
+    width: 100vw;
+    height: 100%;
+    margin: 0;
+    padding-top: 20vh;
+
+    .title {
+        margin-left: 5vw;
+    }
+
+    .skill-body {
+        width: 90vw;
+        display: flex;
+        margin: 0 auto;
+    }
+
+    .skills-bkg {
+        z-index: -1;
+        height: 100%;
+        width: 130vw;
+        position: absolute;
+        margin: 0 -20vw;
+    }
+
+    .expirience-list {
+        flex-grow: 2;
+
+        li {
+            margin: 50px auto;
+            display: flex;
+        }
+
+        div {
+            margin-left: 50px;
+        }
+
+        h3 {
+            font-size: 75%;
+            margin-bottom: 10px;
+        }
+
+        p,
+        .main-color {
+            font-size: 50%;
+        }
+    }
+
+    .skill-list {
+        flex-shrink: 2;
+
+        ul {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        li {
+            margin: auto 15px;
+        }
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .skills {
+        .expirience-list {
+            h3 {
+                font-size: 75%;
+                margin-bottom: 10px;
+            }
+
+            p,
+            .main-color {
+                font-size: 75%;
+            }
+
+            div {
+                margin-left: 20px;
+            }
+        }
+
+        .skill-list {
+            ul {
+                flex-direction: column;
+                flex-wrap: wrap;
+            }
+        }
+    }
+}

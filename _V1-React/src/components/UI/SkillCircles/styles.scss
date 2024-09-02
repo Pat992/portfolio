@@ -1,0 +1,53 @@
+@import '../../../global';
+
+.skill {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    p {
+        margin-top: 10px;
+        font-size: 50%;
+    }
+}
+
+.skill-circle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: calc(8rem + 1vw);
+    height: calc(8rem + 1vw);
+    border-radius: 50%;
+
+    .flutter-circle {
+        margin-right: calc(0.1rem + 0.5vw);
+    }
+
+    .biztalk-circle {
+        margin-right: calc(0.5rem + 0.5vw);
+        margin-top: calc(1rem + 0.5vw);
+        height: 100%;
+        width: 100%;
+    }
+
+    svg {
+        height: 50%;
+        width: 50%;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .skill {
+        p {
+            font-size: 75%;
+        }
+    }
+
+    .skill-circle {
+        width: calc(5rem + 1vw);
+        height: calc(5rem + 1vw);
+    }
+}
