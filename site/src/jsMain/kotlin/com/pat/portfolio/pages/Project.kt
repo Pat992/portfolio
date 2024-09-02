@@ -12,7 +12,7 @@ import com.varabyte.kobweb.core.Page
 import com.varabyte.kobweb.core.rememberPageContext
 import kotlinx.browser.window
 
-@Page("project")
+@Page("portfolio/project")
 @Composable
 fun ProjectPage() {
     val context = rememberPageContext()
