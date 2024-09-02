@@ -1,5 +1,6 @@
 site:
   title: "Patrick Hettich - Web | Mobile | Data integration | APIs"
+  routePrefix: "portfolio" # repo name for gh-pages
 
 server:
   files:
