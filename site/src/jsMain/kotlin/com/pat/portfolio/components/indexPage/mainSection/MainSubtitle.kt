@@ -40,7 +40,7 @@ fun MainSubtitle(
             .display(DisplayStyle.InlineBlock)
             .backgroundSize(BackgroundSize.Cover)
             .backgroundClip(BackgroundClip.Text)
-            .backgroundImage(url = url("/images/text/text-gradient.svg"))
+            .backgroundImage(url = url("/portfolio/images/text/text-gradient.svg"))
             .styleModifier {
                 property("-webkit-text-fill-color", "transparent")
             }
