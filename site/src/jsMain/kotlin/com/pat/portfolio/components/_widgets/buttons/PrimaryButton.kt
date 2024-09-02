@@ -22,7 +22,8 @@ fun PrimaryButton(
     onSubmit: (SyntheticMouseEvent) -> Unit
 ) {
     Button(
-        attrs = Modifier
+        attrs = PrimaryButtonStyleGradient
+            .toModifier()
             .primaryButton()
             .cursor(Cursor.Pointer)
             .onClick { event -> onSubmit(event) }
@@ -30,9 +31,8 @@ fun PrimaryButton(
             .toAttrs(),
     ) {
         Box(
-            modifier =
-            PrimaryButtonStyleGradient
-                .toModifier()
+            modifier = Modifier
+                .classNames("button-gradient")
                 .primaryButtonGradient()
                 .zIndex(-1)
                 .fillMaxSize()

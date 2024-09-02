@@ -7,6 +7,7 @@ import com.pat.portfolio.core.styles.primaryButtonGradient
 import com.varabyte.kobweb.compose.css.PointerEvents
 import com.varabyte.kobweb.compose.foundation.layout.Box
 import com.varabyte.kobweb.compose.ui.Modifier
+import com.varabyte.kobweb.compose.ui.modifiers.classNames
 import com.varabyte.kobweb.compose.ui.modifiers.fillMaxSize
 import com.varabyte.kobweb.compose.ui.modifiers.pointerEvents
 import com.varabyte.kobweb.compose.ui.modifiers.zIndex
@@ -21,15 +22,15 @@ fun PrimaryLinkElement(
     path: String,
 ) {
     Link(
-        modifier = Modifier
+        modifier = PrimaryButtonStyleGradient
+            .toModifier()
             .primaryButton()
             .then(modifier),
         path = path,
     ) {
         Box(
-            modifier =
-            PrimaryButtonStyleGradient
-                .toModifier()
+            modifier = Modifier
+                .classNames("button-gradient")
                 .then(modifier)
                 .primaryButtonGradient()
                 .zIndex(-1)
