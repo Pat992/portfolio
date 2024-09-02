@@ -12,13 +12,16 @@ import com.varabyte.kobweb.compose.ui.Alignment
 import com.varabyte.kobweb.compose.ui.Modifier
 import com.varabyte.kobweb.compose.ui.modifiers.fillMaxWidth
 import com.varabyte.kobweb.compose.ui.modifiers.fontSize
+import com.varabyte.kobweb.compose.ui.modifiers.height
 import com.varabyte.kobweb.silk.components.text.SpanText
 import com.varabyte.kobweb.silk.theme.breakpoint.rememberBreakpoint
+import org.jetbrains.compose.web.css.vh
 
 @Composable
 fun MainSection() {
     val breakpoint = rememberBreakpoint()
     SectionWrapper(
+        modifier = Modifier.height(100.vh),
         section = Section.Main
     ) {
         MainTitle(breakpoint = breakpoint)

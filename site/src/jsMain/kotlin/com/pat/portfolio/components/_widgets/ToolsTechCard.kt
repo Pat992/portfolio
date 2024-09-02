@@ -8,17 +8,14 @@ import com.pat.portfolio.components._widgets.text.Subtitle
 import com.pat.portfolio.core.styles.Theme
 import com.pat.portfolio.models.IconLinks
 import com.varabyte.kobweb.compose.foundation.layout.Arrangement
+import com.varabyte.kobweb.compose.foundation.layout.Box
 import com.varabyte.kobweb.compose.foundation.layout.Column
 import com.varabyte.kobweb.compose.foundation.layout.Row
 import com.varabyte.kobweb.compose.ui.Modifier
-import com.varabyte.kobweb.compose.ui.modifiers.fillMaxWidth
-import com.varabyte.kobweb.compose.ui.modifiers.margin
-import com.varabyte.kobweb.compose.ui.modifiers.order
-import com.varabyte.kobweb.compose.ui.modifiers.padding
-import com.varabyte.kobweb.silk.components.layout.SimpleGrid
-import com.varabyte.kobweb.silk.components.layout.numColumns
+import com.varabyte.kobweb.compose.ui.modifiers.*
 import com.varabyte.kobweb.silk.style.breakpoint.Breakpoint
 import com.varabyte.kobweb.silk.theme.breakpoint.rememberBreakpoint
+import org.jetbrains.compose.web.css.FlexWrap
 import org.jetbrains.compose.web.css.px
 
 @Composable
@@ -78,10 +75,18 @@ private fun ToolsTechCardGrid(
             text = title,
             modifier = Modifier.margin(bottom = 25.px)
         )
-        SimpleGrid(
-            numColumns = numColumns(base = 2)
+        Row(
+            modifier = Modifier
+                .fillMaxWidth()
+                .flexWrap(FlexWrap.Wrap)
         ) {
-            iconLinks.forEach { HorizontalLinkItem(it) }
+            iconLinks.forEach {
+                Box(
+                    modifier = Modifier.width(150.px)
+                ) {
+                    HorizontalLinkItem(it)
+                }
+            }
         }
     }
 }

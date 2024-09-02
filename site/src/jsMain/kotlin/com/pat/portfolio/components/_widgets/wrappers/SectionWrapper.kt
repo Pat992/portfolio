@@ -17,13 +17,14 @@ fun SectionWrapper(
     content: @Composable () -> Unit
 ) {
     Section(
-        attrs = modifier
+        attrs = Modifier
             .zIndex(1)
             .padding(top = 150.px)
             .id(section.id)
             .classNames("section")
             .fillMaxWidth()
             .maxWidth(1920.px)
+            .then(modifier)
             .toAttrs()
     ) {
         Column(

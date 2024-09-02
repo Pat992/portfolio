@@ -75,7 +75,7 @@ fun Navigation(
                 Link(
                     modifier = NavItemStyle
                         .toModifier()
-                        .height(40.px)
+                        .size(40.px)
                         .textAlign(TextAlign.Center)
                         .link(),
                     path = "/${Section.Main.path}",

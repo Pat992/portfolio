@@ -10,9 +10,11 @@ import com.varabyte.kobweb.compose.foundation.layout.Column
 import com.varabyte.kobweb.compose.foundation.layout.Row
 import com.varabyte.kobweb.compose.ui.Modifier
 import com.varabyte.kobweb.compose.ui.modifiers.fillMaxWidth
+import com.varabyte.kobweb.compose.ui.modifiers.flexWrap
 import com.varabyte.kobweb.compose.ui.modifiers.margin
 import com.varabyte.kobweb.silk.style.breakpoint.Breakpoint
 import com.varabyte.kobweb.silk.theme.breakpoint.rememberBreakpoint
+import org.jetbrains.compose.web.css.FlexWrap
 import org.jetbrains.compose.web.css.percent
 import org.jetbrains.compose.web.css.px
 
@@ -49,7 +51,9 @@ private fun ToolsItem(
         text = title
     )
     Row(
-        modifier = Modifier.fillMaxWidth(),
+        modifier = Modifier
+            .fillMaxWidth()
+            .flexWrap(FlexWrap.Wrap),
     ) {
         iconLinks.forEach { iconLink ->
             VerticalLinkItem(iconLink = iconLink)
