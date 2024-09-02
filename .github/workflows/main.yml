@@ -10,7 +10,7 @@ on:
       - master
 
 jobs:
-  export_and_upload:
+  build:
     runs-on: ubuntu-latest
     defaults:
       run:
