@@ -11,6 +11,7 @@ import com.pat.portfolio.observables.ViewportDataObservable
 import com.varabyte.kobweb.compose.css.TextAlign
 import com.varabyte.kobweb.compose.foundation.layout.Box
 import com.varabyte.kobweb.compose.ui.Modifier
+import com.varabyte.kobweb.compose.ui.attrsModifier
 import com.varabyte.kobweb.compose.ui.graphics.Colors
 import com.varabyte.kobweb.compose.ui.modifiers.*
 import com.varabyte.kobweb.compose.ui.thenIf
@@ -40,6 +41,10 @@ fun NavigationItem(section: Section) {
                 .toModifier()
                 .width(250.px)
                 .textAlign(TextAlign.Center)
+                .title("${section.title} section link")
+                .attrsModifier {
+                    attr("alt", "${section.title} section link")
+                }
                 .onClick {
                     scope.launch {
                         delay(500)

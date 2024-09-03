@@ -79,6 +79,7 @@ fun ProjectItem(
                         Tools(subProject = subProject)
                         Overview(subProject = subProject)
                         PrimaryLinkElement(
+                            title = "${subProject.title} website",
                             path = subProject.externalUrl,
                             content = { SpanText("Visit") }
                         )

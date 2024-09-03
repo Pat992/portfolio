@@ -32,6 +32,7 @@ fun MainSection() {
         ) {
             PrimaryLinkElement(
                 path = Section.Contact.path,
+                title = "Contact section link",
                 content =
                 {
                     SpanText(

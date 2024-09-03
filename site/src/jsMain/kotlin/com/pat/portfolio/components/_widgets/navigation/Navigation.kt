@@ -15,6 +15,7 @@ import com.varabyte.kobweb.compose.foundation.layout.Box
 import com.varabyte.kobweb.compose.foundation.layout.Row
 import com.varabyte.kobweb.compose.ui.Alignment
 import com.varabyte.kobweb.compose.ui.Modifier
+import com.varabyte.kobweb.compose.ui.attrsModifier
 import com.varabyte.kobweb.compose.ui.graphics.Colors
 import com.varabyte.kobweb.compose.ui.modifiers.*
 import com.varabyte.kobweb.compose.ui.toAttrs
@@ -77,7 +78,11 @@ fun Navigation(
                         .toModifier()
                         .size(40.px)
                         .textAlign(TextAlign.Center)
-                        .link(),
+                        .link()
+                        .title("${Section.Main.title} section link")
+                        .attrsModifier {
+                            attr("alt", "${Section.Main.title} section link")
+                        },
                     path = "/${Section.Main.path}",
                 ) {
                     ImageElement(
