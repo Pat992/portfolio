@@ -48,9 +48,10 @@ fun TextareaElement(
                 .height(400.px)
                 .titleText()
                 .padding(leftRight = 15.px, topBottom = 10.px)
+                .ariaRequired(isRequired)
                 .attrsModifier {
                     if (isRequired)
-                        attr("required", "true")
+                        attr("required","")
                 }
                 .toAttrs(),
         )

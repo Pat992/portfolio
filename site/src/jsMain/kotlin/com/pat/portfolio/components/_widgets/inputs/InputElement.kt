@@ -8,7 +8,6 @@ import com.pat.portfolio.core.styles.paragraphText
 import com.pat.portfolio.core.styles.titleText
 import com.varabyte.kobweb.compose.foundation.layout.Column
 import com.varabyte.kobweb.compose.ui.Modifier
-import com.varabyte.kobweb.compose.ui.attrsModifier
 import com.varabyte.kobweb.compose.ui.modifiers.fillMaxWidth
 import com.varabyte.kobweb.compose.ui.modifiers.fontSize
 import com.varabyte.kobweb.compose.ui.modifiers.id
@@ -51,12 +50,9 @@ fun InputElement(
                 .titleText()
                 .fontSize(if (breakpoint >= Breakpoint.MD) PARAGRAPH_SIZE else PARAGRAPH_SIZE_SMALL)
                 .glass()
-                .padding(leftRight = 15.px, topBottom = 10.px)
-                .attrsModifier {
-                    if (isRequired)
-                        attr("required", "true")
-                },
+                .padding(leftRight = 15.px, topBottom = 10.px),
             type = inputType,
+            required = isRequired,
             value = value,
             onValueChange = { value -> onValueChange(value) }
         )

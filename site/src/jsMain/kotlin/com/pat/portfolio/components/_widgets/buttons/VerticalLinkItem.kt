@@ -18,6 +18,7 @@ import org.jetbrains.compose.web.css.px
 fun VerticalLinkItem(iconLink: IconLinks) {
     val breakpoint = rememberBreakpoint()
     LinkElement(
+        title = iconLink.itemName,
         path = iconLink.url,
         modifier = Modifier
             .padding(10.px)

@@ -24,6 +24,7 @@ fun HorizontalLinkItem(
 ) {
     val breakpoint = rememberBreakpoint()
     LinkElement(
+        title = iconLink.itemName,
         path = iconLink.url
     ) {
         Row(

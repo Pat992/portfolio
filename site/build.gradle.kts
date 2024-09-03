@@ -21,12 +21,12 @@ kobweb {
             head.add {
                 style {
                     unsafe {
-                        raw("@import url(\"/portfolio/styles/splide-min.css\") layer(splide)")
+                        raw("@import url(\"/portfolio/styles/splide-min.css\") layer(splide);")
                     }
                 }
                 style {
                     unsafe {
-                        raw("@import url(\"/portfolio/styles/loading-spinner.css\") layer(spinner)")
+                        raw("@import url(\"/portfolio/styles/loading-spinner.css\") layer(spinner);")
                     }
                 }
             }

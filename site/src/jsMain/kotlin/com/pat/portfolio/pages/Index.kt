@@ -53,7 +53,7 @@ fun HomePage() {
                 NavigationItem(section)
             }
     })
-    if (GithubObservable.requestStatus == RequestStatus.LOADING) LoadingSpinner()
+    if (!GithubObservable.hasRequestSent) LoadingSpinner()
     else
         PageWrapper {
             Navigation(navigationItems = {

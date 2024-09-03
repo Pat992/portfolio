@@ -12,7 +12,7 @@ import org.jetbrains.compose.web.css.px
 import org.jetbrains.compose.web.css.s
 
 val MainSectionTitleStyle = CssStyle {
-    cssRule(" > #main-title-extension > ul") {
+    cssRule(" > #main-title-extension > #main-section-span") {
         Modifier
             .animation(
                 MainSectionTitleKeyframes.toAnimation(

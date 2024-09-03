@@ -28,23 +28,25 @@ fun SectionTitle(
 ) {
     val breakpoint = rememberBreakpoint()
     val onViewportEntered = ViewportDataObservable.sectionId == id
-    Column {
+    Column(
+        modifier = Modifier.margin(bottom = 50.px)
+    ) {
         H3(
             attrs = Modifier
                 .padding(0.px)
-                .margin(bottom = 50.px)
+                .margin(bottom = 5.px)
                 .titleText()
                 .fontSize(if (breakpoint >= Breakpoint.MD) SUBTITLE_SIZE else SUBTITLE_SIZE_SMALL)
                 .toAttrs(),
         ) {
             Text(title)
-            Box(
-                modifier = Modifier
-                    .width(if (!onViewportEntered) 0.percent else 100.percent)
-                    .linearGradientSmall()
-                    .backgroundColor(Theme.MainTextColor.rgb)
-                    .transition(Transition.of("width", duration = 500.ms))
-            )
         }
+        Box(
+            modifier = Modifier
+                .width(if (!onViewportEntered) 0.percent else 100.percent)
+                .linearGradientSmall()
+                .backgroundColor(Theme.MainTextColor.rgb)
+                .transition(Transition.of("width", duration = 500.ms))
+        )
     }
 }

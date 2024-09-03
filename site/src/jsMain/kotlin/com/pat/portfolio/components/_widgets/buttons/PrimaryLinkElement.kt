@@ -4,15 +4,14 @@ import androidx.compose.runtime.Composable
 import com.pat.portfolio.core.styles.PrimaryButtonStyleGradient
 import com.pat.portfolio.core.styles.primaryButton
 import com.pat.portfolio.core.styles.primaryButtonGradient
-import com.varabyte.kobweb.compose.css.PointerEvents
-import com.varabyte.kobweb.compose.foundation.layout.Box
 import com.varabyte.kobweb.compose.ui.Modifier
 import com.varabyte.kobweb.compose.ui.modifiers.classNames
 import com.varabyte.kobweb.compose.ui.modifiers.fillMaxSize
-import com.varabyte.kobweb.compose.ui.modifiers.pointerEvents
 import com.varabyte.kobweb.compose.ui.modifiers.zIndex
+import com.varabyte.kobweb.compose.ui.toAttrs
 import com.varabyte.kobweb.silk.components.navigation.Link
 import com.varabyte.kobweb.silk.style.toModifier
+import org.jetbrains.compose.web.dom.Span
 
 
 @Composable
@@ -28,18 +27,15 @@ fun PrimaryLinkElement(
             .then(modifier),
         path = path,
     ) {
-        Box(
-            modifier = Modifier
+        Span(
+            attrs = Modifier
                 .classNames("button-gradient")
                 .then(modifier)
                 .primaryButtonGradient()
                 .zIndex(-1)
                 .fillMaxSize()
+                .toAttrs()
         )
-        Box(
-            modifier = Modifier.pointerEvents(PointerEvents.None)
-        ) {
-            content()
-        }
+        content()
     }
 }

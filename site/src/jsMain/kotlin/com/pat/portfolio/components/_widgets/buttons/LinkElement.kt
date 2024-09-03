@@ -7,9 +7,11 @@ import com.pat.portfolio.core.styles.link
 import com.varabyte.kobweb.compose.css.TextAlign
 import com.varabyte.kobweb.compose.foundation.layout.Box
 import com.varabyte.kobweb.compose.ui.Modifier
+import com.varabyte.kobweb.compose.ui.attrsModifier
 import com.varabyte.kobweb.compose.ui.modifiers.borderRadius
 import com.varabyte.kobweb.compose.ui.modifiers.padding
 import com.varabyte.kobweb.compose.ui.modifiers.textAlign
+import com.varabyte.kobweb.compose.ui.modifiers.title
 import com.varabyte.kobweb.silk.components.navigation.Link
 import com.varabyte.kobweb.silk.style.toModifier
 import org.jetbrains.compose.web.css.px
@@ -19,6 +21,7 @@ fun LinkElement(
     modifier: Modifier = Modifier,
     linkModifier: Modifier = Modifier,
     path: String,
+    title: String,
     content: @Composable () -> Unit
 ) {
     Box(
@@ -32,7 +35,11 @@ fun LinkElement(
             modifier = NavItemStyle
                 .toModifier()
                 .textAlign(TextAlign.Center)
+                .title("$title website")
                 .link()
+                .attrsModifier {
+                    attr("alt", "$title website")
+                }
                 .then(linkModifier),
             path = path,
         ) {

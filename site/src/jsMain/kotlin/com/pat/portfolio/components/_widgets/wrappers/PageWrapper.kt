@@ -26,8 +26,7 @@ fun PageWrapper(
             .overflow(Overflow.Hidden),
         contentAlignment = Alignment.Center
     ) {
-        if (EmailJsObservable.sendingStatus != RequestStatus.NULL)
-            ContactModal()
+        if (EmailJsObservable.sendingStatus != RequestStatus.NULL) ContactModal()
         MouseFollowingGradient()
         Column(
             modifier = Modifier

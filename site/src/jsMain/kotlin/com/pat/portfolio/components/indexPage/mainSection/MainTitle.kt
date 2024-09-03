@@ -18,10 +18,7 @@ import org.jetbrains.compose.web.css.DisplayStyle
 import org.jetbrains.compose.web.css.Position
 import org.jetbrains.compose.web.css.px
 import org.jetbrains.compose.web.css.times
-import org.jetbrains.compose.web.dom.H1
-import org.jetbrains.compose.web.dom.Li
-import org.jetbrains.compose.web.dom.Text
-import org.jetbrains.compose.web.dom.Ul
+import org.jetbrains.compose.web.dom.*
 
 @Composable
 fun MainTitle(
@@ -40,8 +37,8 @@ fun MainTitle(
                 .toAttrs()
         ) {
             SpanText("DEVELOPER - ")
-            Box(
-                modifier = Modifier
+            Span(
+                attrs = Modifier
                     .id("main-title-extension")
                     .overflow(Overflow.Hidden)
                     .position(Position.Relative)
@@ -51,9 +48,14 @@ fun MainTitle(
                             1.5
                         )
                     )
+                    .toAttrs()
             ) {
-                Ul(
+                Span(
                     attrs = Modifier
+                        .id("main-section-span")
+                        .overflow(Overflow.Hidden)
+                        .position(Position.Relative)
+                        .float(CSSFloat.Right)
                         .padding(left = 0.px)
                         .toAttrs()
                 ) {
@@ -70,7 +72,7 @@ fun MainTitle(
 private fun MainTitleItem(
     text: String
 ) {
-    Li(
+    Span(
         attrs = Modifier
             .display(DisplayStyle.Block)
             .height(90.px)
