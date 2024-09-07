@@ -28,7 +28,7 @@ fun HomePage() {
             ViewportDataObservable.sectionId = Section.Projects.id
         }
 
-        if (GithubObservable.requestStatus != RequestStatus.SUCCESS)
+        if (GithubObservable.requestStatus != RequestStatus.SUCCESS && GithubObservable.requestStatus != RequestStatus.FAILURE)
             githubRepositoryGetLanguages()
     }
 
@@ -53,29 +53,28 @@ fun HomePage() {
                 NavigationItem(section)
             }
     })
-    if (!GithubObservable.hasRequestSent) LoadingSpinner()
-    else
-        PageWrapper {
-            Navigation(navigationItems = {
-                Section
-                    .entries
-                    .filter { entry ->
-                        entry != Section.Main &&
-                                entry != Section.Footer &&
-                                entry != Section.Contact
-                    }
-                    .forEach { section ->
-                        if (section.ordinal == (Section.entries.size) / 2)
-                            Box()
-                        NavigationItem(section)
-                    }
-            })
-            MainSection()
-            if (GithubObservable.requestStatus == RequestStatus.SUCCESS) LanguagesSection()
-            ProjectsSection()
-            WorkSection()
-            EducationSection()
-            ContactSection()
-            FooterSection()
-        }
+    LoadingSpinner()
+    PageWrapper {
+        Navigation(navigationItems = {
+            Section
+                .entries
+                .filter { entry ->
+                    entry != Section.Main &&
+                            entry != Section.Footer &&
+                            entry != Section.Contact
+                }
+                .forEach { section ->
+                    if (section.ordinal == (Section.entries.size) / 2)
+                        Box()
+                    NavigationItem(section)
+                }
+        })
+        MainSection()
+        if (GithubObservable.requestStatus == RequestStatus.SUCCESS) LanguagesSection()
+        ProjectsSection()
+        WorkSection()
+        EducationSection()
+        ContactSection()
+        FooterSection()
+    }
 }

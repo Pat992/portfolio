@@ -17,6 +17,7 @@ version = "1.0-SNAPSHOT"
 kobweb {
     app {
         index {
+            lang.set("en")
             description.set("Patrick Hettich, mobile and web development, API integration, and data integration using technologies like Flutter, Java, C#, Javascript, Azure, and Kotlin.")
             head.add {
                 style {

@@ -5,6 +5,7 @@ import com.pat.portfolio.components._widgets.MouseFollowingGradient
 import com.pat.portfolio.components.indexPage.contactSection.ContactModal
 import com.pat.portfolio.core.styles.Theme
 import com.pat.portfolio.observables.EmailJsObservable
+import com.pat.portfolio.observables.GithubObservable
 import com.pat.portfolio.observables.RequestStatus
 import com.varabyte.kobweb.compose.css.Overflow
 import com.varabyte.kobweb.compose.foundation.layout.Box
@@ -12,6 +13,7 @@ import com.varabyte.kobweb.compose.foundation.layout.Column
 import com.varabyte.kobweb.compose.ui.Alignment
 import com.varabyte.kobweb.compose.ui.Modifier
 import com.varabyte.kobweb.compose.ui.modifiers.*
+import org.jetbrains.compose.web.css.DisplayStyle
 import org.jetbrains.compose.web.css.percent
 import org.jetbrains.compose.web.css.px
 
@@ -23,6 +25,7 @@ fun PageWrapper(
         modifier = Modifier
             .fillMaxSize()
             .backgroundColor(Theme.BackgroundColor.rgb)
+            .display(if (GithubObservable.requestStatus == RequestStatus.LOADING) DisplayStyle.None else DisplayStyle.Grid)
             .overflow(Overflow.Hidden),
         contentAlignment = Alignment.Center
     ) {

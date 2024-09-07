@@ -9,5 +9,4 @@ data object GithubObservable {
     var languagesCount by mutableStateOf(0)
     var languages: MutableList<GithubLanguageDto> by mutableStateOf(mutableListOf())
     var requestStatus by mutableStateOf(RequestStatus.NULL)
-    var hasRequestSent by mutableStateOf(false)
 }

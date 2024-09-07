@@ -10,7 +10,6 @@ suspend fun githubRepositoryGetLanguages() {
     val res = githubInfrastructureGetLanguages()
     if (res == null) {
         GithubObservable.requestStatus = RequestStatus.FAILURE
-        GithubObservable.hasRequestSent = true
         return
     }
 
@@ -23,5 +22,4 @@ suspend fun githubRepositoryGetLanguages() {
             GithubObservable.languagesCount += language.count
         }
     GithubObservable.requestStatus = RequestStatus.SUCCESS
-    GithubObservable.hasRequestSent = true
 }
